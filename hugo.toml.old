@@ -176,32 +176,32 @@ name = "Contact me"
 weight = 4
 url = "contact/"
 
-#[languages.es-es]
-#languageName = "Español"
-#title = "El blog de Dennis"
+[languages.es-es]
+languageName = "Español"
+title = "El blog de Dennis"
 
-#[languages.es-es.params]
-#author = "Dennis Gabriel"
-#info = ["Ingeniero aeroespacial", "Analista de ciberseguridad Junior"]
-#description = "Blog personal de Dennis"
-#keywords = "IT,ciberseguridad,cloud"
+[languages.es-es.params]
+author = "Dennis Gabriel"
+info = ["Ingeniero aeroespacial", "Analista de ciberseguridad Junior"]
+description = "Blog personal de Dennis"
+keywords = "IT,ciberseguridad,cloud"
 
-#[[languages.es-es.menu.main]]
-#name = "Sobre mi"
-#weight = 1
-#url = "about/"
+[[languages.es-es.menu.main]]
+name = "Sobre mi"
+weight = 1
+url = "about/"
 
-#[[languages.es-es.menu.main]]
-#name = "Máquinas HTB"
-#weight = 2
-#url = "posts/"
+[[languages.es-es.menu.main]]
+name = "Máquinas HTB"
+weight = 2
+url = "posts/"
 
-#[[languages.es-es.menu.main]]
-#name = "Proyectos"
-#weight = 3
-#url = "projects/"
+[[languages.es-es.menu.main]]
+name = "Proyectos"
+weight = 3
+url = "projects/"
 
-#[[languages.es-es.menu.main]]
-#name = "Contacto"
-#weight = 4
-#url = "contact/"
+[[languages.es-es.menu.main]]
+name = "Contacto"
+weight = 4
+url = "contact/"
