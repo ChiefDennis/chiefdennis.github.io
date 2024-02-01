@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <sitemap>
-    <loc>https://chiefdennis.github.io/en/sitemap.xml</loc>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>https://chiefdennis.github.io/es-es/sitemap.xml</loc>
-    
-  </sitemap>
-  
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://chiefdennis.github.io/about/</loc>
+    <lastmod>2024-01-28T19:19:53+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/contact/</loc>
+    <lastmod>2024-01-28T19:19:53+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/authors/</loc>
+    <lastmod>2023-12-29T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/</loc>
+    <lastmod>2023-12-29T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/authors/dennis-drebitca/</loc>
+    <lastmod>2023-12-29T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/projects/nmea_ip_to_google_earth/</loc>
+    <lastmod>2023-12-29T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/open-source/</loc>
+    <lastmod>2023-12-29T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/projects/</loc>
+    <lastmod>2023-12-29T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/source-code-compilation/</loc>
+    <lastmod>2023-12-29T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/</loc>
+    <lastmod>2023-12-29T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/windows/</loc>
+    <lastmod>2023-12-29T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/posts/htb_clicker/</loc>
+    <lastmod>2023-11-27T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/posts/</loc>
+    <lastmod>2023-11-27T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/posts/htb_codify/</loc>
+    <lastmod>2023-09-13T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/categories/</loc>
+  </url><url>
+    <loc>https://chiefdennis.github.io/series/</loc>
+  </url>
+</urlset>

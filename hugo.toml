@@ -12,7 +12,7 @@ enableEmoji = true
 noClasses = false
 
 [params]
-author = "Dennis Gabriel"
+author = "Dennis Drebitca"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "Chief Dennis' personal blog"
 keywords = "blog,developer,personal,cybersecurity,IT,cloud"
