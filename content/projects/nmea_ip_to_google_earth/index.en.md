@@ -12,11 +12,11 @@ series = []
 +++
 
 In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. 
-In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Eart) do it through a COM port. So, how can we 'translate' the TCP/IP data into a serial COM stream?
+In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we 'translate' the TCP/IP data into a serial COM stream?
 
 This is achieved through virtual COM port simulation, a piece of software that can simulate a physical COM port connection. To the eyes of the software that reads the COM port, it is indistinguisheable from a physical port. There are a lot of options when choosing the software, so lets define the requirements:
 
-	- Must have a CLI, not only GUI, so it can be setup using a VBS o Powershell script
+	- Must have a CLI, not only GUI, so it can be setup using a VBS or Powershell script
 	- Must be easy to control
 	- Must provide a way to connect a TCP/IP stream to the COM port
 	- Must be free and/or open source
