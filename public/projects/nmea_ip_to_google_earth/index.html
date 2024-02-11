@@ -13,18 +13,19 @@
 
 
 <meta name="author" content="Dennis Drebitca">
-<meta name="description" content="In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Eart) do it through a COM port. So, how can we &rsquo;translate&rsquo; the TCP/IP data into a serial COM stream?">
+<meta name="description" content="In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we &rsquo;translate&rsquo; the TCP/IP data into a serial COM stream?">
 <meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
 
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="GPS NMEA TCP/IP stream to COM port via com0com and com2tcp"/>
-<meta name="twitter:description" content="In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Eart) do it through a COM port. So, how can we &rsquo;translate&rsquo; the TCP/IP data into a serial COM stream?"/>
+<meta name="twitter:description" content="In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we &rsquo;translate&rsquo; the TCP/IP data into a serial COM stream?"/>
 
 <meta property="og:title" content="GPS NMEA TCP/IP stream to COM port via com0com and com2tcp" />
-<meta property="og:description" content="In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Eart) do it through a COM port. So, how can we &rsquo;translate&rsquo; the TCP/IP data into a serial COM stream?" />
+<meta property="og:description" content="In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we &rsquo;translate&rsquo; the TCP/IP data into a serial COM stream?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chiefdennis.github.io/projects/nmea_ip_to_google_earth/" /><meta property="article:section" content="projects" />
 <meta property="article:published_time" content="2023-12-29T15:43:16+01:00" />
 <meta property="article:modified_time" content="2023-12-29T15:43:16+01:00" />
+
 
 
 
@@ -152,7 +153,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              4-minute read
+              5-minute read
             </span>
           </div>
           <div class="authors">
@@ -180,9 +181,9 @@
       <div class="post-content">
         
         <p>In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port.
-In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Eart) do it through a COM port. So, how can we &rsquo;translate&rsquo; the TCP/IP data into a serial COM stream?</p>
+In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we &rsquo;translate&rsquo; the TCP/IP data into a serial COM stream?</p>
 <p>This is achieved through virtual COM port simulation, a piece of software that can simulate a physical COM port connection. To the eyes of the software that reads the COM port, it is indistinguisheable from a physical port. There are a lot of options when choosing the software, so lets define the requirements:</p>
-<pre><code>- Must have a CLI, not only GUI, so it can be setup using a VBS o Powershell script
+<pre><code>- Must have a CLI, not only GUI, so it can be setup using a VBS or Powershell script
 - Must be easy to control
 - Must provide a way to connect a TCP/IP stream to the COM port
 - Must be free and/or open source
@@ -225,6 +226,7 @@ In this case, I have a router that has an internal GPS that can serve the NMEA s
 <p>Next, open a terminal (Powershell or CMD) in that folder and run the following commands. In this case, I&rsquo;m using Powershell:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">.\com2tcp.exe \\.\CNCB0 8500
 </span></span></code></pre></div><p>This command links the data between port 8500 and CNCB0. When the command is run, we should see that data starts coming in. <strong>DO NOT CLOSE THE WINDOW THE PROGRAM WILL STOP.</strong> A future blog post will explain how to run the program as a service on the background every time the PC powers up.</p>
+<p><em>(Comment: If you want to kow more about the usage of com0com and com2tcp, you cand find more documentation <a href="https://com0com.sourceforge.net/"  class="external-link" target="_blank" rel="noopener">here</a> and <a href="http://com0com.sourceforge.net/doc/UsingCom0com.pdf"  class="external-link" target="_blank" rel="noopener">here</a> )</em></p>
 <p><img src="4.png" alt="image"></p>
 <p>Now, com2tcp is set up correctly, and the last piece of the puzzle has to be configured. The TCP/IP stream is now converted into a virtual COM port and served on port COM99, ready to be read.</p>
 <h2 id="google-earth">
@@ -234,6 +236,21 @@ In this case, I have a router that has an internal GPS that can serve the NMEA s
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
+<p>Now we can use the GPS&rsquo; NMEA stream to see our GPS position in Google Maps, for example. Open Google Earth, go to Tools -&gt; GPS -&gt; Real Time -&gt; Start.</p>
+<p><img src="5.png" alt="image"></p>
+<p>And, if everyting is set up properly, Google Earth should read the data coming in from COM99 and the GPS location should be shown on the map.</p>
+<p><img src="6.png" alt="image"></p>
+<h2 id="conclusion">
+  Conclusion.
+  <a class="heading-link" href="#conclusion">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The null-modem emulator project is a open-source set of applications that allowed us to emulate a pair of virtual COM ports, and the redirection of TCP/IP data to them.</p>
+<p>com0com is the program responsible to create the virtual COM pair at kernel-level, and the virtual bus that connects them. It is a simple precompiled executable that is easily installed.</p>
+<p>com2tcp is the program that routes the TCP/IP stream into one of the virtual ports created by com0com. It is presented as C++ source code that has to be compiled.</p>
+<p>In future posts, I will explain how to program, install and run com2tcp as a service on startup.</p>
 
       </div>
 

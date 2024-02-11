@@ -13,7 +13,7 @@
       <link>https://chiefdennis.github.io/projects/nmea_ip_to_google_earth/</link>
       <pubDate>Fri, 29 Dec 2023 15:43:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/projects/nmea_ip_to_google_earth/</guid>
-      <description>In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Eart) do it through a COM port. So, how can we &amp;rsquo;translate&amp;rsquo; the TCP/IP data into a serial COM stream?</description>
+      <description>In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we &amp;rsquo;translate&amp;rsquo; the TCP/IP data into a serial COM stream?</description>
     </item>
   </channel>
 </rss>

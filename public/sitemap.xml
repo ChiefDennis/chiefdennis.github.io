@@ -35,17 +35,72 @@
     <loc>https://chiefdennis.github.io/tags/windows/</loc>
     <lastmod>2023-12-29T15:43:16+01:00</lastmod>
   </url><url>
+    <loc>https://chiefdennis.github.io/tags/azure/</loc>
+    <lastmod>2023-12-03T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/projects/manage_entra_id_users/</loc>
+    <lastmod>2023-12-03T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/series/microsoft-azure/</loc>
+    <lastmod>2023-12-03T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/series/</loc>
+    <lastmod>2023-12-03T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/api-enumeration/</loc>
+    <lastmod>2023-11-27T13:07:16+01:00</lastmod>
+  </url><url>
     <loc>https://chiefdennis.github.io/posts/htb_clicker/</loc>
+    <lastmod>2023-11-27T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/command-injection/</loc>
+    <lastmod>2023-11-27T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/crlf-injection/</loc>
+    <lastmod>2023-11-27T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/cve-2023-0386/</loc>
+    <lastmod>2023-11-27T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/cyberchef/</loc>
+    <lastmod>2023-11-27T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/js-deobfuscation/</loc>
+    <lastmod>2023-11-27T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/parameter-tampering/</loc>
+    <lastmod>2023-11-27T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/perl_startup-local-privilege-escalation/</loc>
+    <lastmod>2023-11-27T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/php-reverse-shell/</loc>
     <lastmod>2023-11-27T13:07:16+01:00</lastmod>
   </url><url>
     <loc>https://chiefdennis.github.io/posts/</loc>
     <lastmod>2023-11-27T13:07:16+01:00</lastmod>
   </url><url>
+    <loc>https://chiefdennis.github.io/tags/sql-injection/</loc>
+    <lastmod>2023-11-27T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/posts/htb_twomillion/</loc>
+    <lastmod>2023-11-27T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/batch-script-analysis/</loc>
+    <lastmod>2023-09-13T13:07:16+01:00</lastmod>
+  </url><url>
     <loc>https://chiefdennis.github.io/posts/htb_codify/</loc>
     <lastmod>2023-09-13T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>https://chiefdennis.github.io/categories/</loc>
+    <loc>https://chiefdennis.github.io/tags/hash-cracking/</loc>
+    <lastmod>2023-09-13T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>https://chiefdennis.github.io/series/</loc>
+    <loc>https://chiefdennis.github.io/tags/johntheripper/</loc>
+    <lastmod>2023-09-13T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/python-scripting/</loc>
+    <lastmod>2023-09-13T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/categories/</loc>
   </url>
 </urlset>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hash cracking on Chief Dennis&#39; Blog</title>
+    <link>https://chiefdennis.github.io/tags/hash-cracking/</link>
+    <description>Recent content in Hash cracking on Chief Dennis&#39; Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 13 Sep 2023 13:07:16 +0100</lastBuildDate>
+    <atom:link href="https://chiefdennis.github.io/tags/hash-cracking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Codify HTB Walkthrough</title>
+      <link>https://chiefdennis.github.io/posts/htb_codify/</link>
+      <pubDate>Wed, 13 Sep 2023 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/posts/htb_codify/</guid>
+      <description>The Codify HTB machine is a easy difficulty level HackTheBox Linux Machine. The main techniques used to crack this machine are:&#xA;- Hash cracking with JohnTheRipper&#xD;- Sandbox escape&#xD;- Batch Script Analysis&#xD;- Python Scripting&#xD;Reconnaissance&#xD;Link to heading&#xD;I started by running a NMAP scan to look for services and versions running on open ports;&#xA;We can see that the usual ports 22 and 80 are open. However, port 3000 is also open running node.</description>
+    </item>
+  </channel>
+</rss>

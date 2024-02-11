@@ -5,7 +5,7 @@ title = "TwoMillion HTB Walkthrough"
 description = ""
 slug = ""
 authors = ["Dennis Drebitca"]
-tags = []
+tags = ["CVE-2023-0386","Cyberchef", "Command-Injection", "JS deobfuscation", "API enumeration"]
 categories = []
 externalLink = ""
 series = []
@@ -21,7 +21,8 @@ The TwoMillion HTB machine is an easy difficulty level HackTheBox Machine. The m
     - Command Injection
     - Burpsuite
     - CVE-2023-0386
-    - Cyberchef
+    - JS deobfuscation with Cyberchef
+    - API enumeration
 
 
 ## Reconnaissance

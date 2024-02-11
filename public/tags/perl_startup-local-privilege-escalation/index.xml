@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Perl_startup Local Privilege Escalation on Chief Dennis&#39; Blog</title>
+    <link>https://chiefdennis.github.io/tags/perl_startup-local-privilege-escalation/</link>
+    <description>Recent content in Perl_startup Local Privilege Escalation on Chief Dennis&#39; Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 27 Nov 2023 13:07:16 +0100</lastBuildDate>
+    <atom:link href="https://chiefdennis.github.io/tags/perl_startup-local-privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clicker HTB Walkthrough</title>
+      <link>https://chiefdennis.github.io/posts/htb_clicker/</link>
+      <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/posts/htb_clicker/</guid>
+      <description>The Clicker HTB machine is a medium difficulty level HackTheBox Machine. The main techniques used to crack this machine are:&#xA;- SQL Injection&#xD;- CRLF Injection&#xD;- Parameter Tampering&#xD;- PHP Reverse Shell&#xD;- Perl_startup Local Privilege Escalation&#xD;Reconnaissance&#xD;Link to heading&#xD;We start a broad Nmap scan by executing the following command:&#xA;sudo nmap -sS -T5 -vvv -p- 10.10.11.232 -Pn -oG nmap_inicial Where the arguments mean:&#xA;-sS: SYN port scan&#xD;-T5: Using timing template 5 of NMAP&#xD;-vvv: Triple verbose so NMAP prints a lot of information&#xD;-p-: All ports are scanned&#xD;-Pn: Skips Host Discovery&#xD;-oG: Grep Format&#xD;The scan returns the following information:</description>
+    </item>
+  </channel>
+</rss>

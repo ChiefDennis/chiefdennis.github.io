@@ -5,7 +5,7 @@ title = "Codify HTB Walkthrough"
 description = ""
 slug = ""
 authors = ["Dennis Drebitca"]
-tags = []
+tags = ["Hash cracking", "JohnTheRipper", "Batch Script Analysis", "Python Scripting"]
 categories = []
 externalLink = ""
 series = []
@@ -15,9 +15,9 @@ series = []
 
 The Codify HTB machine is a easy difficulty level HackTheBox Linux Machine. The main techniques used to crack this machine are:
 
-	- Hash cracking with JohnTheRipper
+    - Hash cracking with JohnTheRipper
     - Sandbox escape
-    - Bahs Script Analysis
+    - Batch Script Analysis
     - Python Scripting
 
 ## Reconnaissance

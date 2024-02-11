@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microsoft Azure on Chief Dennis&#39; Blog</title>
+    <link>https://chiefdennis.github.io/series/microsoft-azure/</link>
+    <description>Recent content in Microsoft Azure on Chief Dennis&#39; Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 03 Dec 2023 15:43:16 +0100</lastBuildDate>
+    <atom:link href="https://chiefdennis.github.io/series/microsoft-azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure: Manage Entra ID users via Azure Portal</title>
+      <link>https://chiefdennis.github.io/projects/manage_entra_id_users/</link>
+      <pubDate>Sun, 03 Dec 2023 15:43:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/projects/manage_entra_id_users/</guid>
+      <description>In this post we will learn how to create, edit and delete Microsoft Entra ID users. Microsoft Entra ID is an integrated cloud identity and access solution, and a leader in the market for managing directories, enabling access to applications, and protecting identities.&#xA;To create a user, first navigate to Microsoft Entra ID in the Azure Portal.&#xA;Then click on Users.&#xA;You will be seeing the Users page. On the left hand menu, we can see the following tabs:</description>
+    </item>
+  </channel>
+</rss>
