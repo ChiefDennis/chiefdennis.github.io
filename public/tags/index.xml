@@ -6,8 +6,71 @@
     <description>Recent content in Tags on Chief Dennis&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 29 Dec 2023 15:43:16 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 02 Feb 2024 13:07:16 +0100</lastBuildDate>
     <atom:link href="https://chiefdennis.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2023-51457</title>
+      <link>https://chiefdennis.github.io/tags/cve-2023-51457/</link>
+      <pubDate>Fri, 02 Feb 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/cve-2023-51457/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dirsearch</title>
+      <link>https://chiefdennis.github.io/tags/dirsearch/</link>
+      <pubDate>Fri, 02 Feb 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/dirsearch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hash cracking</title>
+      <link>https://chiefdennis.github.io/tags/hash-cracking/</link>
+      <pubDate>Fri, 02 Feb 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/hash-cracking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hashcat</title>
+      <link>https://chiefdennis.github.io/tags/hashcat/</link>
+      <pubDate>Fri, 02 Feb 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/hashcat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>API enumeration</title>
+      <link>https://chiefdennis.github.io/tags/api-enumeration/</link>
+      <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/api-enumeration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Command-Injection</title>
+      <link>https://chiefdennis.github.io/tags/command-injection/</link>
+      <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/command-injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2023-0386</title>
+      <link>https://chiefdennis.github.io/tags/cve-2023-0386/</link>
+      <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/cve-2023-0386/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cyberchef</title>
+      <link>https://chiefdennis.github.io/tags/cyberchef/</link>
+      <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/cyberchef/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JS deobfuscation</title>
+      <link>https://chiefdennis.github.io/tags/js-deobfuscation/</link>
+      <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/js-deobfuscation/</guid>
+      <description></description>
+    </item>
     <item>
       <title>open-source</title>
       <link>https://chiefdennis.github.io/tags/open-source/</link>
@@ -37,45 +100,10 @@
       <description></description>
     </item>
     <item>
-      <title>API enumeration</title>
-      <link>https://chiefdennis.github.io/tags/api-enumeration/</link>
-      <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/api-enumeration/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Command-Injection</title>
-      <link>https://chiefdennis.github.io/tags/command-injection/</link>
-      <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/command-injection/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>CRLF Injection</title>
       <link>https://chiefdennis.github.io/tags/crlf-injection/</link>
       <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/tags/crlf-injection/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CVE-2023-0386</title>
-      <link>https://chiefdennis.github.io/tags/cve-2023-0386/</link>
-      <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2023-0386/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cyberchef</title>
-      <link>https://chiefdennis.github.io/tags/cyberchef/</link>
-      <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cyberchef/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>JS deobfuscation</title>
-      <link>https://chiefdennis.github.io/tags/js-deobfuscation/</link>
-      <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/js-deobfuscation/</guid>
       <description></description>
     </item>
     <item>
@@ -111,13 +139,6 @@
       <link>https://chiefdennis.github.io/tags/batch-script-analysis/</link>
       <pubDate>Wed, 13 Sep 2023 13:07:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/tags/batch-script-analysis/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hash cracking</title>
-      <link>https://chiefdennis.github.io/tags/hash-cracking/</link>
-      <pubDate>Wed, 13 Sep 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/hash-cracking/</guid>
       <description></description>
     </item>
     <item>

