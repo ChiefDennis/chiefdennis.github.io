@@ -11,7 +11,7 @@ externalLink = ""
 series = []
 +++
 
-![image](Screenshot_20.png)
+![image](Screenshot_20.png#centre)
 
 [comment]: <> (Insertar imagen de la carátula de la máquina)
 

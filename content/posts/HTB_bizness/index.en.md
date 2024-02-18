@@ -2,7 +2,7 @@
 draft = false
 date = 2024-02-02T13:07:16+01:00
 title = "Bizness HTB Walkthrough"
-description = ""
+description = "testestestestest"
 slug = ""
 authors = ["Dennis Drebitca"]
 tags = ["Hash cracking", "Hashcat", "CVE-2023-51457", "Dirsearch"]

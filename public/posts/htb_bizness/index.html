@@ -13,23 +13,14 @@
 
 
 <meta name="author" content="Dennis Drebitca">
-<meta name="description" content="The Bizness HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
-- Dirsearch- CVE-2023-51467- Grep, find and strings- HashcatReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
-sudo nmap -sS -T5 -vvv -p- 10.10.11.252 -Pn -oG nmap_inicial Where the arguments mean:
--sS: SYN port scan-T5: Using timing template 5 of NMAP-vvv: Triple verbose so NMAP prints a lot of information-p-: All ports are scanned-Pn: Skips Host Discovery-oG: Grep FormatThe scan returns the following information:">
+<meta name="description" content="testestestestest">
 <meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
 
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Bizness HTB Walkthrough"/>
-<meta name="twitter:description" content="The Bizness HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
-- Dirsearch- CVE-2023-51467- Grep, find and strings- HashcatReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
-sudo nmap -sS -T5 -vvv -p- 10.10.11.252 -Pn -oG nmap_inicial Where the arguments mean:
--sS: SYN port scan-T5: Using timing template 5 of NMAP-vvv: Triple verbose so NMAP prints a lot of information-p-: All ports are scanned-Pn: Skips Host Discovery-oG: Grep FormatThe scan returns the following information:"/>
+<meta name="twitter:description" content="testestestestest"/>
 
 <meta property="og:title" content="Bizness HTB Walkthrough" />
-<meta property="og:description" content="The Bizness HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
-- Dirsearch- CVE-2023-51467- Grep, find and strings- HashcatReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
-sudo nmap -sS -T5 -vvv -p- 10.10.11.252 -Pn -oG nmap_inicial Where the arguments mean:
--sS: SYN port scan-T5: Using timing template 5 of NMAP-vvv: Triple verbose so NMAP prints a lot of information-p-: All ports are scanned-Pn: Skips Host Discovery-oG: Grep FormatThe scan returns the following information:" />
+<meta property="og:description" content="testestestestest" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chiefdennis.github.io/posts/htb_bizness/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-02-02T13:07:16+01:00" />
@@ -200,10 +191,10 @@ sudo nmap -sS -T5 -vvv -p- 10.10.11.252 -Pn -oG nmap_inicial Where the arguments
         
         <p><img src="15.png#center" alt="image"></p>
 <p>The Bizness HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:</p>
-<pre><code>- Dirsearch
-- CVE-2023-51467
-- Grep, find and strings
-- Hashcat
+<pre><code>    - Dirsearch
+    - CVE-2023-51467
+    - Grep, find and strings
+    - Hashcat
 </code></pre>
 <h2 id="reconnaissance">
   Reconnaissance
@@ -247,7 +238,7 @@ sudo nmap -sS -T5 -vvv -p- 10.10.11.252 -Pn -oG nmap_inicial Where the arguments
 <p>The directory bruteforce reveals the /control/login page. There is nothing of interest besides the login and Join HTB buttons.</p>
 <p><img src="6.png" alt="image"></p>
 <p>On the down right corner, we can see the release of the OFBiz software.</p>
-<p><img src="7.png" alt="image"></p>
+<p><img src="7.png#center" alt="image"></p>
 <p>Doing some investigation, it turns out that Ofbiz is vulnerable to a authentication bypass and RCE because of <a href="https://www.cvedetails.com/cve/CVE-2023-51467/" title="CVE-2023-51467 security vulnerability details"  class="external-link" target="_blank" rel="noopener">CVE-2023-51467</a>.</p>
 <h2 id="initial-access">
   Initial access
@@ -300,7 +291,7 @@ sudo nmap -sS -T5 -vvv -p- 10.10.11.252 -Pn -oG nmap_inicial Where the arguments
 <p>We got the password!! Now we just have to run su and enter the password to get a root terminal.</p>
 <p><img src="14.png" alt="image"></p>
 <p>Lastly, we can grab the root flag and the machine is done!!</p>
-<p><img src="15.png" alt="image"></p>
+<p><img src="15.png#center" alt="image"></p>
 
       </div>
 
