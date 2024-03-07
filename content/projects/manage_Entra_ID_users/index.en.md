@@ -1,5 +1,5 @@
 +++
-title = "Azure: Manage Entra ID users via Azure Portal"
+title = "Manage Entra ID users via Azure Portal"
 date = 2023-12-03T15:43:16+01:00
 draft = false
 description = ""

@@ -6,8 +6,15 @@
     <description>Recent content in JohnTheRipper on Chief Dennis&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Sep 2023 13:07:16 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 17 Feb 2024 13:07:16 +0100</lastBuildDate>
     <atom:link href="https://chiefdennis.github.io/tags/johntheripper/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monitored HTB Walkthrough</title>
+      <link>https://chiefdennis.github.io/posts/htb_monitored/</link>
+      <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/posts/htb_monitored/</guid>
+      <description>The Monitored HTB machine is a medium difficulty level HackTheBox Machine. The main tools and techniques used to crack this machine are:&#xA;- Dirsearch&#xD;- CVE-2023-40931&#xD;- NMAP UDP scan&#xD;- SNMP enumeration with SNMPwalk&#xD;- JohnTheRipper&#xD;- SQL injection with SQLmap&#xD;Reconnaissance&#xD;Link to heading&#xD;We start a broad Nmap TCP scan by executing the following command:&#xA;sudo nmap -sS -T5 -vvv -p- 10.10.11.248 -Pn -oG nmap_inicial Where the arguments mean:</description>
+    </item>
     <item>
       <title>Codify HTB Walkthrough</title>
       <link>https://chiefdennis.github.io/posts/htb_codify/</link>
