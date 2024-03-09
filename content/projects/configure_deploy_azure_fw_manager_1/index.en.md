@@ -1,5 +1,5 @@
 +++
-title = "Configure and deploy Azure Firewall Manager: Part 1"
+title = "Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture"
 date = 2024-02-26T08:43:16+01:00
 draft = false
 description = ""
