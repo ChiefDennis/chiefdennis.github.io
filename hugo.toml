@@ -16,7 +16,7 @@ author = "Dennis Drebitca"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "Chief Dennis' personal blog"
 keywords = "blog,developer,personal,cybersecurity,IT,cloud"
-info = ["Aerospace engineer", "Junior Cybersecurity Analyst"]
+info = ["Aerospace engineer", "Junior Cloud Security Engineer"]
 avatarURL = "avatar.png"
 #gravatar = ""
 dateFormat = "January 2, 2006"
@@ -107,7 +107,7 @@ url = "contact/"
 
 #[languages.es-es.params]
 #author = "Dennis Gabriel"
-#info = ["Ingeniero aeroespacial", "Analista de ciberseguridad Junior"]
+#info = ["Ingeniero aeroespacial", "Ingeniero de seguridad cloud junior"]
 #description = "Blog personal de Dennis"
 #keywords = "IT,ciberseguridad,cloud"
 
