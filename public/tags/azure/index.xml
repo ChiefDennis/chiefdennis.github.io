@@ -6,10 +6,24 @@
     <description>Recent content in Azure on Chief Dennis&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 Dec 2023 15:43:16 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 09 Mar 2024 08:43:16 +0100</lastBuildDate>
     <atom:link href="https://chiefdennis.github.io/tags/azure/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Azure: Manage Entra ID users via Azure Portal</title>
+      <title>Configure and deploy Azure Firewall Manager Part 2: Deploy the servers</title>
+      <link>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/</link>
+      <pubDate>Sat, 09 Mar 2024 08:43:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/</guid>
+      <description>For part 2 of the series, we will deploy our workloads/servers. This process is similar as to any virtual machine deployment in the Azure Cloud.&#xA;Deploy the servers&#xD;Link to heading&#xD;Deploying servers involves setting up and preparing a server to host and run applications or services. When discussing deploying servers in a cloud environment, this process often consists of creating and configuring virtual machines, setting up network connectivity and security, and installing and configuring software, all done within the cloud provider&amp;rsquo;s management interface or using infrastructure as code (IaC) tools such as Terraform.</description>
+    </item>
+    <item>
+      <title>Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture</title>
+      <link>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_1/</link>
+      <pubDate>Mon, 26 Feb 2024 08:43:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_1/</guid>
+      <description>Azure Firewall Manager is a central network security policy and route management service for globally distributed, software-defined perimeters. It can provide security management for two network architecture types, the secured virtual hub and the hub virtual network.&#xA;Using Azure Firewall Manager, you can create secured virtual hubs to secure your cloud network traffic destined to private IP addresses, Azure PaaS, and the Internet. Traffic routing to the firewall is automated, so there&amp;rsquo;s no need to create user-defined routes (UDRs).</description>
+    </item>
+    <item>
+      <title>Manage Entra ID users via Azure Portal</title>
       <link>https://chiefdennis.github.io/projects/manage_entra_id_users/</link>
       <pubDate>Sun, 03 Dec 2023 15:43:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/projects/manage_entra_id_users/</guid>

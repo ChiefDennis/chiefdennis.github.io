@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtual Machines on Chief Dennis&#39; Blog</title>
+    <link>https://chiefdennis.github.io/tags/virtual-machines/</link>
+    <description>Recent content in Virtual Machines on Chief Dennis&#39; Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 09 Mar 2024 08:43:16 +0100</lastBuildDate>
+    <atom:link href="https://chiefdennis.github.io/tags/virtual-machines/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configure and deploy Azure Firewall Manager Part 2: Deploy the servers</title>
+      <link>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/</link>
+      <pubDate>Sat, 09 Mar 2024 08:43:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/</guid>
+      <description>For part 2 of the series, we will deploy our workloads/servers. This process is similar as to any virtual machine deployment in the Azure Cloud.&#xA;Deploy the servers&#xD;Link to heading&#xD;Deploying servers involves setting up and preparing a server to host and run applications or services. When discussing deploying servers in a cloud environment, this process often consists of creating and configuring virtual machines, setting up network connectivity and security, and installing and configuring software, all done within the cloud provider&amp;rsquo;s management interface or using infrastructure as code (IaC) tools such as Terraform.</description>
+    </item>
+  </channel>
+</rss>

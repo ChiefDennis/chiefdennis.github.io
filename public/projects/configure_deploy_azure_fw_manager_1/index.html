@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture · Chief Dennis&#39; Blog
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Dennis Drebitca">
+<meta name="description" content="Azure Firewall Manager is a central network security policy and route management service for globally distributed, software-defined perimeters. It can provide security management for two network architecture types, the secured virtual hub and the hub virtual network.
+Using Azure Firewall Manager, you can create secured virtual hubs to secure your cloud network traffic destined to private IP addresses, Azure PaaS, and the Internet. Traffic routing to the firewall is automated, so there&rsquo;s no need to create user-defined routes (UDRs).">
+<meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture"/>
+<meta name="twitter:description" content="Azure Firewall Manager is a central network security policy and route management service for globally distributed, software-defined perimeters. It can provide security management for two network architecture types, the secured virtual hub and the hub virtual network.
+Using Azure Firewall Manager, you can create secured virtual hubs to secure your cloud network traffic destined to private IP addresses, Azure PaaS, and the Internet. Traffic routing to the firewall is automated, so there&rsquo;s no need to create user-defined routes (UDRs)."/>
+
+<meta property="og:title" content="Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture" />
+<meta property="og:description" content="Azure Firewall Manager is a central network security policy and route management service for globally distributed, software-defined perimeters. It can provide security management for two network architecture types, the secured virtual hub and the hub virtual network.
+Using Azure Firewall Manager, you can create secured virtual hubs to secure your cloud network traffic destined to private IP addresses, Azure PaaS, and the Internet. Traffic routing to the firewall is automated, so there&rsquo;s no need to create user-defined routes (UDRs)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_1/" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2024-02-26T08:43:16+01:00" />
+<meta property="article:modified_time" content="2024-02-26T08:43:16+01:00" />
+<meta property="og:see_also" content="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/" /><meta property="og:see_also" content="https://chiefdennis.github.io/projects/manage_entra_id_users/" />
+<meta property="og:see_also" content="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/" />
+
+
+
+
+
+
+<link rel="canonical" href="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_1/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/custom.min.2a79daf6f50f047418cd5f1adc44afa5a9ae0e8b4a05eb7e390d42591bde2719.css" integrity="sha256-Knna9vUPBHQYzV8a3ESvpamuDotKBet&#43;OQ1CWRveJxk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Chief Dennis&#39; Blog
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Catch The Flag</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_1/">
+              Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-02-26T08:43:16&#43;01:00">
+                February 26, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa fa-user" aria-hidden="true"></i>
+    <a href="/authors/dennis-drebitca/">Dennis Drebitca</a></div>
+
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/azure/">Azure</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>Azure Firewall Manager is a central network security policy and route management service for globally distributed, software-defined perimeters. It can provide security management for two network architecture types, the secured virtual hub and the hub virtual network.</p>
+<p>Using Azure Firewall Manager, you can create secured virtual hubs to secure your cloud network traffic destined to private IP addresses, Azure PaaS, and the Internet. Traffic routing to the firewall is automated, so there&rsquo;s no need to create user-defined routes (UDRs).</p>
+<p><img src="image1.png#center" alt="image"></p>
+<p>In this series of posts, we will learn how to:</p>
+<ol>
+<li>Create the spoke virtual network</li>
+<li>Create a secured virtual hub</li>
+<li>Connect the hub and spoke virtual networks</li>
+<li>Deploy the servers</li>
+<li>Route traffic to your hub</li>
+<li>Create a firewall policy and secure the hub</li>
+<li>Test the firewall</li>
+</ol>
+<p>For part 1 of the series, we will configure points 1, 2 and 3.</p>
+<h2 id="create-a-hub-and-spoke-architecture">
+  Create a hub and spoke architecture
+  <a class="heading-link" href="#create-a-hub-and-spoke-architecture">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In this first secrtion, we will create two spoke virtual networks and subnets and the secured virtual hub where you can place our servers.</p>
+<h3 id="create-two-spoke-virtual-networks-and-subnets">
+  Create two spoke virtual networks and subnets
+  <a class="heading-link" href="#create-two-spoke-virtual-networks-and-subnets">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>First, we will create a Resource Group where all the resources in this project will be allocated. The Resource Group will be named <strong>Az_FW_Man_Project.</strong></p>
+<p>We have to click Resource Groups -&gt; Create</p>
+<p><img src="Scr_1.png" alt="image"></p>
+<p>Then, select the Subscription, the Resources Group&rsquo;s name and the Region. Then, click &ldquo;Review + create&rdquo;. Then, click create.</p>
+<p><img src="Scr.png" alt="image"></p>
+<p>Now that we have the Resource Group where all our resources will live, lets create the two spoke virtual networks and subnets. The two virtual networks will each have a workload server in them and will be protected by the firewall.</p>
+<ol>
+<li>
+<p>From the Azure portal home page, select Create a resource.</p>
+</li>
+<li>
+<p>Search for Virtual network and select Create.</p>
+</li>
+</ol>
+<p><img src="Scr_2.png" alt="image"></p>
+<ol start="3">
+<li>Select your subscription, the Resouce Group we have created earlier, and the name of the virtual network. In this case, it will be Spoke-1. Also select the Region, it has to be the same as the RG (Resource Group).</li>
+</ol>
+<p><img src="Scr_3.png" alt="image"></p>
+<ol start="4">
+<li>
+<p>Select Next: IP Addresses.</p>
+</li>
+<li>
+<p>For Address space, accept the default 10.0.0.0/16. Select Add subnet.</p>
+</li>
+</ol>
+<p><img src="Scr_4.png" alt="image"></p>
+<ol start="6">
+<li>For Subnet name, type Workload-1-SN. For Subnet address range, type 10.0.1.0/24. Click Add.</li>
+</ol>
+<p><img src="Scr_5.png" alt="image"></p>
+<ol start="7">
+<li>Lastly, delete the default subnet. The only subnet now should be Workload-1-SN. Select Review + create and then select Create.</li>
+</ol>
+<p><img src="Scr_6.png" alt="image"></p>
+<p>You can review the settings in this window before clicking Create.</p>
+<p><img src="Scr_7.png" alt="image"></p>
+<p>Repeat this procedure to create another similar virtual network in the fw-manager-rg resource group:</p>
+<p>Name: Spoke-02</p>
+<p>Address space: 10.1.0.0/16</p>
+<p>Subnet name: Workload-02-SN</p>
+<p>Subnet address range: 10.1.1.0/24</p>
+<p>It is important that the subnet address ranges do not overlap.</p>
+<h3 id="create-the-secured-virtual-hub">
+  Create the secured virtual hub:
+  <a class="heading-link" href="#create-the-secured-virtual-hub">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Create your secured virtual hub using Firewall Manager.</p>
+<ol>
+<li>
+<p>From the Azure portal home page, select All services. In the search box, type Firewall Manager and select Firewall Manager.</p>
+</li>
+<li>
+<p>On the Firewall Manager page under Deployments, select Virtual hubs.</p>
+</li>
+</ol>
+<p><img src="Scr_8.png" alt="image"></p>
+<ol start="3">
+<li>On the Firewall Manager | Virtual hubs page, select Create new secured virtual hub.</li>
+</ol>
+<p><img src="Scr_9.png" alt="image"></p>
+<ol start="4">
+<li>
+<p>Select your Subscription, Resource group (Az_FW_Man_Project) and Region (East US).</p>
+</li>
+<li>
+<p>For the Secured virtual hub name, type Hub-1. For Hub address space, type 10.2.0.0/16.</p>
+</li>
+<li>
+<p>Select New vWAN and name it  VWan-1. For Type Select Standard.</p>
+</li>
+<li>
+<p>Leave the Include VPN gateway to enable Trusted Security Partners check box cleared.</p>
+</li>
+</ol>
+<p><img src="Scr_10.png" alt="image"></p>
+<ol start="8">
+<li>
+<p>Select Next: Azure Firewall.</p>
+</li>
+<li>
+<p>Accept the default Azure FirewallEnabled setting.</p>
+</li>
+<li>
+<p>For Azure Firewall tier, select Standard. IMPORTANT TO SELECT STANDARD.</p>
+</li>
+<li>
+<p>For Avaliablity zones, I selected None. Also specify the number op public IP addresses needed. In this case, 1 is enough.</p>
+</li>
+<li>
+<p>Select the Firewall Policy to apply at the new Azure Firewall instance. Select Default Deny Policy, which we will modify later in the post.</p>
+</li>
+<li>
+<p>Select Next: Security Partner Provider.</p>
+</li>
+</ol>
+<p><img src="Scr_11.png" alt="image"></p>
+<ol start="14">
+<li>
+<p>Accept the default Trusted Security Partner Disabled setting and select Next: Review + create.</p>
+</li>
+<li>
+<p>In this page, we can review the settings for our virtual hub. Once everything is checked, select Create. It may take up to thirty minutes for the secured virtual hub to create.</p>
+</li>
+</ol>
+<p><img src="Scr_12.png" alt="image"></p>
+<p>You can get the firewall public IP address after the deployment is complete.</p>
+<ol>
+<li>
+<p>Open Firewall Manager.</p>
+</li>
+<li>
+<p>Select Virtual hubs.</p>
+</li>
+<li>
+<p>Select hub-01.</p>
+</li>
+<li>
+<p>Under Azure Firewall, select Public IP configuration.</p>
+</li>
+<li>
+<p>Note the public IP address to use later.</p>
+</li>
+</ol>
+<h3 id="connect-the-hub-and-spoke-virtual-networks">
+  Connect the hub and spoke virtual networks
+  <a class="heading-link" href="#connect-the-hub-and-spoke-virtual-networks">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Here, we will peer (or connect) the hub and spoke virtual networks. Peering is a mechanism that seamlessly connects two or more Azure virtual networks. Once peered, these networks appear as one for connectivity purposes, and the traffic between them travels through the Microsoft backbone infrastructure, not over the public internet.</p>
+<p>Lets peer the hub and spoke virtual networks:</p>
+<ol>
+<li>Select the resource group of the project, then select the VWan-1 virtual WAN which we configured earlier.</li>
+</ol>
+<p><img src="Scr_13.png" alt="image"></p>
+<ol start="2">
+<li>Under Connectivity, select Virtual network connections. Select Add connection.</li>
+</ol>
+<p><img src="Scr_14.png" alt="image"></p>
+<ol start="3">
+<li>
+<p>For Connection name, type Hub-Spoke-1. For Hubs, select Hub-1. For Resource group, select the project&rsquo;s Resource Group.</p>
+</li>
+<li>
+<p>For Virtual network, select Spoke-1. Leave everything else as is.</p>
+</li>
+</ol>
+<p><img src="Scr_15.png" alt="image"></p>
+<ol start="5">
+<li>
+<p>Select Create.</p>
+</li>
+<li>
+<p>Repeat to connect the Spoke-2 virtual network: connection name - Hub-Spoke-2.</p>
+</li>
+</ol>
+<p>We have successfuly created our two spoke virtual networks and the secure hub, and peered them toguether.</p>
+<p>Thank you for reading Part 1 of the &ldquo;Configure and deploy Azure FW Manager&rdquo; series. In Part 2 of the series, we will create a firewall policy and secure our hub. In the last part of the series, Part 3, we will deploy the &ldquo;workload&rdquo; servers, and thest the firewall.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+      <h3 id="see-also-in-microsoft-azure">
+        See also in Microsoft Azure
+        <a class="heading-link" href="#see-also-in-microsoft-azure">
+          <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+          <span class="sr-only">Link to heading</span>
+        </a>
+      </h3>
+      <nav>
+        <ul>
+        
+        
+          
+            <li>
+              <a href="/projects/configure_deploy_azure_fw_manager_2/">Configure and deploy Azure Firewall Manager Part 2: Deploy the servers</a>
+            </li>
+          
+        
+          
+        
+          
+            <li>
+              <a href="/projects/manage_entra_id_users/">Manage Entra ID users via Azure Portal</a>
+            </li>
+          
+        
+        </ul>
+      </nav>
+    
+  
+    
+    
+    
+      <h3 id="see-also-in-configure-and-deploy-azure-firewall-manager">
+        See also in Configure and deploy Azure Firewall Manager
+        <a class="heading-link" href="#see-also-in-configure-and-deploy-azure-firewall-manager">
+          <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+          <span class="sr-only">Link to heading</span>
+        </a>
+      </h3>
+      <nav>
+        <ul>
+        
+        
+          
+            <li>
+              <a href="/projects/configure_deploy_azure_fw_manager_2/">Configure and deploy Azure Firewall Manager Part 2: Deploy the servers</a>
+            </li>
+          
+        
+          
+        
+        </ul>
+      </nav>
+    
+  
+</section>
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2024
+     Dennis Drebitca 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

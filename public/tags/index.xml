@@ -6,8 +6,22 @@
     <description>Recent content in Tags on Chief Dennis&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 17 Feb 2024 13:07:16 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 09 Mar 2024 08:43:16 +0100</lastBuildDate>
     <atom:link href="https://chiefdennis.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure</title>
+      <link>https://chiefdennis.github.io/tags/azure/</link>
+      <pubDate>Sat, 09 Mar 2024 08:43:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/azure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Virtual Machines</title>
+      <link>https://chiefdennis.github.io/tags/virtual-machines/</link>
+      <pubDate>Sat, 09 Mar 2024 08:43:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/virtual-machines/</guid>
+      <description></description>
+    </item>
     <item>
       <title>CVE-2023-51457</title>
       <link>https://chiefdennis.github.io/tags/cve-2023-51457/</link>
@@ -132,13 +146,6 @@
       <link>https://chiefdennis.github.io/tags/windows/</link>
       <pubDate>Fri, 29 Dec 2023 15:43:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/tags/windows/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Azure</title>
-      <link>https://chiefdennis.github.io/tags/azure/</link>
-      <pubDate>Sun, 03 Dec 2023 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/azure/</guid>
       <description></description>
     </item>
     <item>
