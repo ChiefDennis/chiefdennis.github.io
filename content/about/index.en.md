@@ -1,7 +1,13 @@
 +++
 date = 2024-01-28T19:19:53+01:00
 draft = false
+title = "About"
 +++
+
+
+![image](avatar.png#center)
+
+
 
 Hello! I'm Dennis, an Aerospace Engineering graduate who embarked on a journey of exploration and innovation. My academic journey reached new heights when I successfully attained my Aerospace Engineering Degree, marking a significant milestone in my educational pursuit.
 
