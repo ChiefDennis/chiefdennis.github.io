@@ -5,5 +5,3 @@ draft = false
 +++
 
 Hey! You can contact me via my [LinkedIn profile](https://www.linkedin.com/in/dennis-gabriel-drebitca-popovici-8731b4233/) or via [e-mail](mailto:dennis.drebitca@gmail.com).
-
-I would love to hear from you! :)
