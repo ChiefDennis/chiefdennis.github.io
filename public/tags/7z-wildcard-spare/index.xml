@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>7z Wildcard Spare on Chief Dennis&#39; Blog</title>
+    <link>https://chiefdennis.github.io/tags/7z-wildcard-spare/</link>
+    <description>Recent content in 7z Wildcard Spare on Chief Dennis&#39; Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 29 May 2024 13:07:16 +0100</lastBuildDate>
+    <atom:link href="https://chiefdennis.github.io/tags/7z-wildcard-spare/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Usage HTB Walkthrough</title>
+      <link>https://chiefdennis.github.io/posts/htb_usage/</link>
+      <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/posts/htb_usage/</guid>
+      <description>The Usage HTB machine is a madium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:&#xA;- Blind SQL injection with SQLmap&#xD;- Burpsuite&#xD;- Hash cracking with JohnTheRipper&#xD;- 7z Wildcard Spare exploitation&#xD;Reconnaissance&#xD;Link to heading&#xD;We start a broad Nmap scan by executing the following command:&#xA;sudo nmap -sS -T5 -vvv -p- 10.10.11.18 -Pn -oG nmap_inicial Where the arguments mean:</description>
+    </item>
+  </channel>
+</rss>

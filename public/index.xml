@@ -6,8 +6,22 @@
     <description>Recent content on Chief Dennis&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Apr 2024 08:43:16 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 04 Jun 2024 13:07:16 +0100</lastBuildDate>
     <atom:link href="https://chiefdennis.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BoardLight HTB Walkthrough</title>
+      <link>https://chiefdennis.github.io/posts/htb_boardlight/</link>
+      <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/posts/htb_boardlight/</guid>
+      <description>The Usage HTB machine is a madium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:&#xA;- Grep / Find&#xD;- Subdomain discovery with ffuf&#xD;- CVE-2023-30253&#xD;- CVE-2022-37706&#xD;Reconnaissance&#xD;Link to heading&#xD;We start a broad Nmap scan by executing the following command:&#xA;sudo nmap -sS -T5 -vvv -p- 10.10.11.11 -Pn -oG nmap_inicial Where the arguments mean:&#xA;-sS: SYN port scan&#xD;-T5: Using timing template 5 of NMAP&#xD;-vvv: Triple verbose so NMAP prints a lot of information&#xD;-p-: All ports are scanned&#xD;-Pn: Skips Host Discovery&#xD;-oG: Grep Format&#xD;The scan returns the following information:</description>
+    </item>
+    <item>
+      <title>Usage HTB Walkthrough</title>
+      <link>https://chiefdennis.github.io/posts/htb_usage/</link>
+      <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/posts/htb_usage/</guid>
+      <description>The Usage HTB machine is a madium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:&#xA;- Blind SQL injection with SQLmap&#xD;- Burpsuite&#xD;- Hash cracking with JohnTheRipper&#xD;- 7z Wildcard Spare exploitation&#xD;Reconnaissance&#xD;Link to heading&#xD;We start a broad Nmap scan by executing the following command:&#xA;sudo nmap -sS -T5 -vvv -p- 10.10.11.18 -Pn -oG nmap_inicial Where the arguments mean:</description>
+    </item>
     <item>
       <title>Configure and deploy Azure Firewall Manager Part 3: Test the Firewall</title>
       <link>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_3/</link>
@@ -55,7 +69,7 @@
       <link>https://chiefdennis.github.io/contact/</link>
       <pubDate>Sun, 28 Jan 2024 19:19:53 +0100</pubDate>
       <guid>https://chiefdennis.github.io/contact/</guid>
-      <description>Hey! You can contact me via my LinkedIn profile or via e-mail.&#xA;I would love to hear from you! :)</description>
+      <description>Hey! You can contact me via my LinkedIn profile or via e-mail.</description>
     </item>
     <item>
       <title>TwoMillion HTB Walkthrough</title>

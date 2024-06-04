@@ -6,8 +6,106 @@
     <description>Recent content in Tags on Chief Dennis&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Apr 2024 08:43:16 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 04 Jun 2024 13:07:16 +0100</lastBuildDate>
     <atom:link href="https://chiefdennis.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE-2022-37706</title>
+      <link>https://chiefdennis.github.io/tags/cve-2022-37706/</link>
+      <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/cve-2022-37706/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2023-30253</title>
+      <link>https://chiefdennis.github.io/tags/cve-2023-30253/</link>
+      <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/cve-2023-30253/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dollibarr</title>
+      <link>https://chiefdennis.github.io/tags/dollibarr/</link>
+      <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/dollibarr/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ffuf</title>
+      <link>https://chiefdennis.github.io/tags/ffuf/</link>
+      <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/ffuf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Find</title>
+      <link>https://chiefdennis.github.io/tags/find/</link>
+      <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/find/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grep</title>
+      <link>https://chiefdennis.github.io/tags/grep/</link>
+      <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/grep/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Subdomain Discovery</title>
+      <link>https://chiefdennis.github.io/tags/subdomain-discovery/</link>
+      <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/subdomain-discovery/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>7z Wildcard Spare</title>
+      <link>https://chiefdennis.github.io/tags/7z-wildcard-spare/</link>
+      <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/7z-wildcard-spare/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Burpsuite</title>
+      <link>https://chiefdennis.github.io/tags/burpsuite/</link>
+      <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/burpsuite/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hash Cracking</title>
+      <link>https://chiefdennis.github.io/tags/hash-cracking/</link>
+      <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/hash-cracking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JohnTheRipper</title>
+      <link>https://chiefdennis.github.io/tags/johntheripper/</link>
+      <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/johntheripper/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL Injection</title>
+      <link>https://chiefdennis.github.io/tags/sql-injection/</link>
+      <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/sql-injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQLmap</title>
+      <link>https://chiefdennis.github.io/tags/sqlmap/</link>
+      <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/sqlmap/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>wfuzz</title>
+      <link>https://chiefdennis.github.io/tags/wfuzz/</link>
+      <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/wfuzz/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Azure</title>
       <link>https://chiefdennis.github.io/tags/azure/</link>
@@ -23,10 +121,10 @@
       <description></description>
     </item>
     <item>
-      <title>CVE-2023-51457</title>
-      <link>https://chiefdennis.github.io/tags/cve-2023-51457/</link>
+      <title>CVE-2023-40931</title>
+      <link>https://chiefdennis.github.io/tags/cve-2023-40931/</link>
       <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2023-51457/</guid>
+      <guid>https://chiefdennis.github.io/tags/cve-2023-40931/</guid>
       <description></description>
     </item>
     <item>
@@ -34,13 +132,6 @@
       <link>https://chiefdennis.github.io/tags/dirsearch/</link>
       <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/tags/dirsearch/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>JohnTheRipper</title>
-      <link>https://chiefdennis.github.io/tags/johntheripper/</link>
-      <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/johntheripper/</guid>
       <description></description>
     </item>
     <item>
@@ -58,20 +149,6 @@
       <description></description>
     </item>
     <item>
-      <title>SQL Injection</title>
-      <link>https://chiefdennis.github.io/tags/sql-injection/</link>
-      <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/sql-injection/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SQLmap</title>
-      <link>https://chiefdennis.github.io/tags/sqlmap/</link>
-      <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/sqlmap/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>UDP enumeration</title>
       <link>https://chiefdennis.github.io/tags/udp-enumeration/</link>
       <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
@@ -79,10 +156,10 @@
       <description></description>
     </item>
     <item>
-      <title>Hash cracking</title>
-      <link>https://chiefdennis.github.io/tags/hash-cracking/</link>
+      <title>CVE-2023-51457</title>
+      <link>https://chiefdennis.github.io/tags/cve-2023-51457/</link>
       <pubDate>Fri, 02 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/hash-cracking/</guid>
+      <guid>https://chiefdennis.github.io/tags/cve-2023-51457/</guid>
       <description></description>
     </item>
     <item>
@@ -93,14 +170,14 @@
       <description></description>
     </item>
     <item>
-      <title>API enumeration</title>
+      <title>API Enumeration</title>
       <link>https://chiefdennis.github.io/tags/api-enumeration/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/tags/api-enumeration/</guid>
       <description></description>
     </item>
     <item>
-      <title>Command-Injection</title>
+      <title>Command Injection</title>
       <link>https://chiefdennis.github.io/tags/command-injection/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/tags/command-injection/</guid>
@@ -121,7 +198,7 @@
       <description></description>
     </item>
     <item>
-      <title>JS deobfuscation</title>
+      <title>JS Deobfuscation</title>
       <link>https://chiefdennis.github.io/tags/js-deobfuscation/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/tags/js-deobfuscation/</guid>

@@ -3,7 +3,7 @@ title = "Chief Dennis' Blog"
 theme = "hugo-coder"
 languageCode = "en"
 defaultContentLanguage = "en"
-paginate = 6
+paginate = 12
 enableEmoji = true
 # Enable Disqus comments
 # disqusShortname = "yourdiscussshortname"
@@ -97,8 +97,13 @@ weight = 3
 url = "projects/"
 
 [[languages.en.menu.main]]
-name = "Contact me"
+name = "Tags"
 weight = 4
+url = "tags/"
+
+[[languages.en.menu.main]]
+name = "Contact me"
+weight = 5
 url = "contact/"
 
 #[languages.es-es]

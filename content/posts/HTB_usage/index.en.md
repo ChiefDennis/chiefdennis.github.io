@@ -5,7 +5,7 @@ title = "Usage HTB Walkthrough"
 description = ""
 slug = ""
 authors = ["Dennis Drebitca"]
-tags = [""]
+tags = ["SQL Injection","SQLmap","Burpsuite", "Hash Cracking", "JohnTheRipper","7z Wildcard Spare", "wfuzz"]
 categories = []
 externalLink = ""
 series = []
@@ -21,8 +21,8 @@ The Usage HTB machine is a madium difficulty level HackTheBox Machine. The main 
     - Blind SQL injection with SQLmap
     - Burpsuite
     - Hash cracking with JohnTheRipper
-    - JS deobfuscation with Cyberchef
-    - API enumeration
+    - 7z Wildcard Spare exploitation
+
 
 
 ## Reconnaissance
