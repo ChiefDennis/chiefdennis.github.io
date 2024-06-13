@@ -8,7 +8,7 @@ authors = ["Dennis Drebitca"]
 tags = ["Subdomain Discovery","ffuf","Dollibarr","Find","Grep","CVE-2023-30253","CVE-2022-37706"]
 categories = []
 externalLink = ""
-series = []
+series = "HTB"]
 +++
 
 ![image](Scr_25.png#centre)
@@ -16,7 +16,7 @@ series = []
 [comment]: <> (Insertar imagen de la carátula de la máquina)
 
 
-The Usage HTB machine is a madium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
+The BoardLight HTB machine is a medium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
 
     - Grep / Find
     - Subdomain discovery with ffuf

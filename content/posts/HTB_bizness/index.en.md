@@ -8,7 +8,7 @@ authors = ["Dennis Drebitca"]
 tags = ["Hash Cracking", "Hashcat", "CVE-2023-51457", "Dirsearch","Grep","Find"]
 categories = []
 externalLink = ""
-series = []
+series = ["HTB"]
 +++
 
 

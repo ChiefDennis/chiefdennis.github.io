@@ -8,7 +8,7 @@ authors = ["Dennis Drebitca"]
 tags = ["SQL Injection","CRLF Injection","Parameter Tampering","PHP Reverse Shell","Perl_startup Local Privilege Escalation"]
 categories = []
 externalLink = ""
-series = []
+series = ["HTB"]
 +++
 
 ![image](clicker.jpg)

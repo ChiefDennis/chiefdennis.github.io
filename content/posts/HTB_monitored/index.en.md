@@ -8,7 +8,7 @@ authors = ["Dennis Drebitca"]
 tags = ["NMAP UDP", "JohnTheRipper", "CVE-2023-40931", "Dirsearch", "UDP enumeration", "SNMPwalk", "SQLmap", "SQL injection"]
 categories = []
 externalLink = ""
-series = []
+series = ["HTB"]
 +++
 
 ![image](Screenshot_20.png)

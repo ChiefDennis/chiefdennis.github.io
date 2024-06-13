@@ -8,7 +8,7 @@ authors = ["Dennis Drebitca"]
 tags = ["SQL Injection","SQLmap","Burpsuite", "Hash Cracking", "JohnTheRipper","7z Wildcard Spare", "wfuzz"]
 categories = []
 externalLink = ""
-series = []
+series = ["HTB"]
 +++
 
 ![image](Scr_20.png#centre)

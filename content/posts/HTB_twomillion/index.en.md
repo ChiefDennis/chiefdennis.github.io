@@ -8,7 +8,7 @@ authors = ["Dennis Drebitca"]
 tags = ["CVE-2023-0386","Cyberchef", "Command Injection", "JS Deobfuscation", "API Enumeration","Grep"]
 categories = []
 externalLink = ""
-series = []
+series = ["HTB"]
 +++
 
 ![image](Screenshot_20.png#centre)

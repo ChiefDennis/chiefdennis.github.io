@@ -8,7 +8,7 @@ authors = ["Dennis Drebitca"]
 tags = ["Hash cracking", "JohnTheRipper", "Batch Script Analysis", "Python Scripting"]
 categories = []
 externalLink = ""
-series = []
+series = ["HTB"]
 +++
 
 ![image](codify.png)
