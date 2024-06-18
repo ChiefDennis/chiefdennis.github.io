@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ClearML on Chief Dennis&#39; Blog</title>
+    <link>https://chiefdennis.github.io/tags/clearml/</link>
+    <description>Recent content in ClearML on Chief Dennis&#39; Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 16 Jun 2024 13:07:16 +0100</lastBuildDate>
+    <atom:link href="https://chiefdennis.github.io/tags/clearml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blurry HTB Walkthrough</title>
+      <link>https://chiefdennis.github.io/posts/htb_blurry/</link>
+      <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/posts/htb_blurry/</guid>
+      <description>The Blurry HTB machine is a medium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:&#xA;- ClearML&#xD;- CVE-2024-24590&#xD;- Json deserialization&#xD;- Scipt analysis&#xD;- Fickling&#xD;- Python scripting&#xD;Reconnaissance&#xD;Link to heading&#xD;We start a broad Nmap scan by executing the following command:&#xA;sudo nmap -sS -T5 -vvv -p- 10.10.11.19 -Pn -oG nmap_inicial Where the arguments mean:&#xA;-sS: SYN port scan&#xD;-T5: Using timing template 5 of NMAP&#xD;-vvv: Triple verbose so NMAP prints a lot of information&#xD;-p-: All ports are scanned&#xD;-Pn: Skips Host Discovery&#xD;-oG: Grep Format&#xD;The scan returns the following information:</description>
+    </item>
+  </channel>
+</rss>

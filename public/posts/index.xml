@@ -6,14 +6,28 @@
     <description>Recent content in Posts on Chief Dennis&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Jun 2024 13:07:16 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jun 2024 13:07:16 +0100</lastBuildDate>
     <atom:link href="https://chiefdennis.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blurry HTB Walkthrough</title>
+      <link>https://chiefdennis.github.io/posts/htb_blurry/</link>
+      <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/posts/htb_blurry/</guid>
+      <description>The Blurry HTB machine is a medium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:&#xA;- ClearML&#xD;- CVE-2024-24590&#xD;- Json deserialization&#xD;- Scipt analysis&#xD;- Fickling&#xD;- Python scripting&#xD;Reconnaissance&#xD;Link to heading&#xD;We start a broad Nmap scan by executing the following command:&#xA;sudo nmap -sS -T5 -vvv -p- 10.10.11.19 -Pn -oG nmap_inicial Where the arguments mean:&#xA;-sS: SYN port scan&#xD;-T5: Using timing template 5 of NMAP&#xD;-vvv: Triple verbose so NMAP prints a lot of information&#xD;-p-: All ports are scanned&#xD;-Pn: Skips Host Discovery&#xD;-oG: Grep Format&#xD;The scan returns the following information:</description>
+    </item>
+    <item>
+      <title>Runner HTB Walkthrough</title>
+      <link>https://chiefdennis.github.io/posts/htb_runner/</link>
+      <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/posts/htb_runner/</guid>
+      <description>The Runner HTB machine is a medium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:&#xA;- Subdirectory discovery with ffuf&#xD;- CVE-2024-27198&#xD;- Hash cracking with JohnTheRipper&#xD;- Docker escape&#xD;- CVE-2024-21626&#xD;Reconnaissance&#xD;Link to heading&#xD;We start a broad Nmap scan by executing the following command:&#xA;sudo nmap -sS -T5 -vvv -p- 10.10.11.13 -Pn -oG nmap_inicial Where the arguments mean:&#xA;-sS: SYN port scan&#xD;-T5: Using timing template 5 of NMAP&#xD;-vvv: Triple verbose so NMAP prints a lot of information&#xD;-p-: All ports are scanned&#xD;-Pn: Skips Host Discovery&#xD;-oG: Grep Format&#xD;The scan returns the following information:</description>
+    </item>
     <item>
       <title>BoardLight HTB Walkthrough</title>
       <link>https://chiefdennis.github.io/posts/htb_boardlight/</link>
       <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/posts/htb_boardlight/</guid>
-      <description>The Usage HTB machine is a madium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:&#xA;- Grep / Find&#xD;- Subdomain discovery with ffuf&#xD;- CVE-2023-30253&#xD;- CVE-2022-37706&#xD;Reconnaissance&#xD;Link to heading&#xD;We start a broad Nmap scan by executing the following command:&#xA;sudo nmap -sS -T5 -vvv -p- 10.10.11.11 -Pn -oG nmap_inicial Where the arguments mean:&#xA;-sS: SYN port scan&#xD;-T5: Using timing template 5 of NMAP&#xD;-vvv: Triple verbose so NMAP prints a lot of information&#xD;-p-: All ports are scanned&#xD;-Pn: Skips Host Discovery&#xD;-oG: Grep Format&#xD;The scan returns the following information:</description>
+      <description>The BoardLight HTB machine is a medium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:&#xA;- Grep / Find&#xD;- Subdomain discovery with ffuf&#xD;- CVE-2023-30253&#xD;- CVE-2022-37706&#xD;Reconnaissance&#xD;Link to heading&#xD;We start a broad Nmap scan by executing the following command:&#xA;sudo nmap -sS -T5 -vvv -p- 10.10.11.11 -Pn -oG nmap_inicial Where the arguments mean:&#xA;-sS: SYN port scan&#xD;-T5: Using timing template 5 of NMAP&#xD;-vvv: Triple verbose so NMAP prints a lot of information&#xD;-p-: All ports are scanned&#xD;-Pn: Skips Host Discovery&#xD;-oG: Grep Format&#xD;The scan returns the following information:</description>
     </item>
     <item>
       <title>Usage HTB Walkthrough</title>

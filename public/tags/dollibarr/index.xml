@@ -13,7 +13,7 @@
       <link>https://chiefdennis.github.io/posts/htb_boardlight/</link>
       <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/posts/htb_boardlight/</guid>
-      <description>The Usage HTB machine is a madium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:&#xA;- Grep / Find&#xD;- Subdomain discovery with ffuf&#xD;- CVE-2023-30253&#xD;- CVE-2022-37706&#xD;Reconnaissance&#xD;Link to heading&#xD;We start a broad Nmap scan by executing the following command:&#xA;sudo nmap -sS -T5 -vvv -p- 10.10.11.11 -Pn -oG nmap_inicial Where the arguments mean:&#xA;-sS: SYN port scan&#xD;-T5: Using timing template 5 of NMAP&#xD;-vvv: Triple verbose so NMAP prints a lot of information&#xD;-p-: All ports are scanned&#xD;-Pn: Skips Host Discovery&#xD;-oG: Grep Format&#xD;The scan returns the following information:</description>
+      <description>The BoardLight HTB machine is a medium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:&#xA;- Grep / Find&#xD;- Subdomain discovery with ffuf&#xD;- CVE-2023-30253&#xD;- CVE-2022-37706&#xD;Reconnaissance&#xD;Link to heading&#xD;We start a broad Nmap scan by executing the following command:&#xA;sudo nmap -sS -T5 -vvv -p- 10.10.11.11 -Pn -oG nmap_inicial Where the arguments mean:&#xA;-sS: SYN port scan&#xD;-T5: Using timing template 5 of NMAP&#xD;-vvv: Triple verbose so NMAP prints a lot of information&#xD;-p-: All ports are scanned&#xD;-Pn: Skips Host Discovery&#xD;-oG: Grep Format&#xD;The scan returns the following information:</description>
     </item>
   </channel>
 </rss>

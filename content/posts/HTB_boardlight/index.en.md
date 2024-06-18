@@ -8,7 +8,7 @@ authors = ["Dennis Drebitca"]
 tags = ["Subdomain Discovery","ffuf","Dollibarr","Find","Grep","CVE-2023-30253","CVE-2022-37706"]
 categories = []
 externalLink = ""
-series = "HTB"]
+series = ["HTB"]
 +++
 
 ![image](Scr_25.png#centre)

@@ -6,8 +6,99 @@
     <description>Recent content in Tags on Chief Dennis&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Jun 2024 13:07:16 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jun 2024 13:07:16 +0100</lastBuildDate>
     <atom:link href="https://chiefdennis.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ClearML</title>
+      <link>https://chiefdennis.github.io/tags/clearml/</link>
+      <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/clearml/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2024-24590</title>
+      <link>https://chiefdennis.github.io/tags/cve-2024-24590/</link>
+      <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/cve-2024-24590/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fickling</title>
+      <link>https://chiefdennis.github.io/tags/fickling/</link>
+      <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/fickling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Json deserialization</title>
+      <link>https://chiefdennis.github.io/tags/json-deserialization/</link>
+      <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/json-deserialization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python scripting</title>
+      <link>https://chiefdennis.github.io/tags/python-scripting/</link>
+      <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/python-scripting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Script analysis</title>
+      <link>https://chiefdennis.github.io/tags/script-analysis/</link>
+      <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/script-analysis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2024-21626</title>
+      <link>https://chiefdennis.github.io/tags/cve-2024-21626/</link>
+      <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/cve-2024-21626/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2024-27198</title>
+      <link>https://chiefdennis.github.io/tags/cve-2024-27198/</link>
+      <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/cve-2024-27198/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker Escape</title>
+      <link>https://chiefdennis.github.io/tags/docker-escape/</link>
+      <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/docker-escape/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ffuf</title>
+      <link>https://chiefdennis.github.io/tags/ffuf/</link>
+      <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/ffuf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grep</title>
+      <link>https://chiefdennis.github.io/tags/grep/</link>
+      <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/grep/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JohnTheRipper</title>
+      <link>https://chiefdennis.github.io/tags/johntheripper/</link>
+      <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/johntheripper/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>runC</title>
+      <link>https://chiefdennis.github.io/tags/runc/</link>
+      <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/tags/runc/</guid>
+      <description></description>
+    </item>
     <item>
       <title>CVE-2022-37706</title>
       <link>https://chiefdennis.github.io/tags/cve-2022-37706/</link>
@@ -30,24 +121,10 @@
       <description></description>
     </item>
     <item>
-      <title>ffuf</title>
-      <link>https://chiefdennis.github.io/tags/ffuf/</link>
-      <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/ffuf/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Find</title>
       <link>https://chiefdennis.github.io/tags/find/</link>
       <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/tags/find/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Grep</title>
-      <link>https://chiefdennis.github.io/tags/grep/</link>
-      <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/grep/</guid>
       <description></description>
     </item>
     <item>
@@ -76,13 +153,6 @@
       <link>https://chiefdennis.github.io/tags/hash-cracking/</link>
       <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/tags/hash-cracking/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>JohnTheRipper</title>
-      <link>https://chiefdennis.github.io/tags/johntheripper/</link>
-      <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/johntheripper/</guid>
       <description></description>
     </item>
     <item>
@@ -258,13 +328,6 @@
       <link>https://chiefdennis.github.io/tags/batch-script-analysis/</link>
       <pubDate>Wed, 13 Sep 2023 13:07:16 +0100</pubDate>
       <guid>https://chiefdennis.github.io/tags/batch-script-analysis/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python Scripting</title>
-      <link>https://chiefdennis.github.io/tags/python-scripting/</link>
-      <pubDate>Wed, 13 Sep 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/python-scripting/</guid>
       <description></description>
     </item>
   </channel>

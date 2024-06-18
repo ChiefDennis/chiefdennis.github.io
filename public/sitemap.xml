@@ -3,12 +3,72 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://chiefdennis.github.io/authors/</loc>
-    <lastmod>2024-06-04T13:07:16+01:00</lastmod>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>https://chiefdennis.github.io/posts/htb_boardlight/</loc>
-    <lastmod>2024-06-04T13:07:16+01:00</lastmod>
+    <loc>https://chiefdennis.github.io/posts/htb_blurry/</loc>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
   </url><url>
     <loc>https://chiefdennis.github.io/</loc>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/clearml/</loc>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/cve-2024-24590/</loc>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/authors/dennis-drebitca/</loc>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/fickling/</loc>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/series/htb/</loc>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/json-deserialization/</loc>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/posts/</loc>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/python-scripting/</loc>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/script-analysis/</loc>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/series/</loc>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/</loc>
+    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/cve-2024-21626/</loc>
+    <lastmod>2024-06-10T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/cve-2024-27198/</loc>
+    <lastmod>2024-06-10T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/docker-escape/</loc>
+    <lastmod>2024-06-10T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/ffuf/</loc>
+    <lastmod>2024-06-10T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/grep/</loc>
+    <lastmod>2024-06-10T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/johntheripper/</loc>
+    <lastmod>2024-06-10T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/runc/</loc>
+    <lastmod>2024-06-10T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/posts/htb_runner/</loc>
+    <lastmod>2024-06-10T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/posts/htb_boardlight/</loc>
     <lastmod>2024-06-04T13:07:16+01:00</lastmod>
   </url><url>
     <loc>https://chiefdennis.github.io/tags/cve-2022-37706/</loc>
@@ -17,28 +77,13 @@
     <loc>https://chiefdennis.github.io/tags/cve-2023-30253/</loc>
     <lastmod>2024-06-04T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>https://chiefdennis.github.io/authors/dennis-drebitca/</loc>
-    <lastmod>2024-06-04T13:07:16+01:00</lastmod>
-  </url><url>
     <loc>https://chiefdennis.github.io/tags/dollibarr/</loc>
-    <lastmod>2024-06-04T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>https://chiefdennis.github.io/tags/ffuf/</loc>
     <lastmod>2024-06-04T13:07:16+01:00</lastmod>
   </url><url>
     <loc>https://chiefdennis.github.io/tags/find/</loc>
     <lastmod>2024-06-04T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>https://chiefdennis.github.io/tags/grep/</loc>
-    <lastmod>2024-06-04T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>https://chiefdennis.github.io/posts/</loc>
-    <lastmod>2024-06-04T13:07:16+01:00</lastmod>
-  </url><url>
     <loc>https://chiefdennis.github.io/tags/subdomain-discovery/</loc>
-    <lastmod>2024-06-04T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>https://chiefdennis.github.io/tags/</loc>
     <lastmod>2024-06-04T13:07:16+01:00</lastmod>
   </url><url>
     <loc>https://chiefdennis.github.io/tags/7z-wildcard-spare/</loc>
@@ -48,9 +93,6 @@
     <lastmod>2024-05-29T13:07:16+01:00</lastmod>
   </url><url>
     <loc>https://chiefdennis.github.io/tags/hash-cracking/</loc>
-    <lastmod>2024-05-29T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>https://chiefdennis.github.io/tags/johntheripper/</loc>
     <lastmod>2024-05-29T13:07:16+01:00</lastmod>
   </url><url>
     <loc>https://chiefdennis.github.io/tags/sql-injection/</loc>
@@ -78,9 +120,6 @@
     <lastmod>2024-04-11T08:43:16+01:00</lastmod>
   </url><url>
     <loc>https://chiefdennis.github.io/projects/</loc>
-    <lastmod>2024-04-11T08:43:16+01:00</lastmod>
-  </url><url>
-    <loc>https://chiefdennis.github.io/series/</loc>
     <lastmod>2024-04-11T08:43:16+01:00</lastmod>
   </url><url>
     <loc>https://chiefdennis.github.io/tags/virtual-machines/</loc>
@@ -177,9 +216,6 @@
     <lastmod>2023-09-13T13:07:16+01:00</lastmod>
   </url><url>
     <loc>https://chiefdennis.github.io/posts/htb_codify/</loc>
-    <lastmod>2023-09-13T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>https://chiefdennis.github.io/tags/python-scripting/</loc>
     <lastmod>2023-09-13T13:07:16+01:00</lastmod>
   </url><url>
     <loc>https://chiefdennis.github.io/categories/</loc>
