@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on Chief Dennis&#39; Blog</title>
-    <link>https://chiefdennis.github.io/series/</link>
+    <link>http://localhost:1313/series/</link>
     <description>Recent content in Series on Chief Dennis&#39; Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 16 Jun 2024 13:07:16 +0100</lastBuildDate>
-    <atom:link href="https://chiefdennis.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTB</title>
-      <link>https://chiefdennis.github.io/series/htb/</link>
+      <link>http://localhost:1313/series/htb/</link>
       <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/series/htb/</guid>
+      <guid>http://localhost:1313/series/htb/</guid>
       <description></description>
     </item>
     <item>
-      <title>Configure and deploy Azure Firewall Manager</title>
-      <link>https://chiefdennis.github.io/series/configure-and-deploy-azure-firewall-manager/</link>
+      <title>Configure and Deploy Azure Firewall Manager</title>
+      <link>http://localhost:1313/series/configure-and-deploy-azure-firewall-manager/</link>
       <pubDate>Thu, 11 Apr 2024 08:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/series/configure-and-deploy-azure-firewall-manager/</guid>
+      <guid>http://localhost:1313/series/configure-and-deploy-azure-firewall-manager/</guid>
       <description></description>
     </item>
     <item>
       <title>Microsoft Azure</title>
-      <link>https://chiefdennis.github.io/series/microsoft-azure/</link>
+      <link>http://localhost:1313/series/microsoft-azure/</link>
       <pubDate>Thu, 11 Apr 2024 08:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/series/microsoft-azure/</guid>
+      <guid>http://localhost:1313/series/microsoft-azure/</guid>
       <description></description>
     </item>
   </channel>

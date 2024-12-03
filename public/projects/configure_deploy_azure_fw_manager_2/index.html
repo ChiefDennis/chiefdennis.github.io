@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <title>
   Configure and deploy Azure Firewall Manager Part 2: Deploy the servers · Chief Dennis&#39; Blog
 </title>
@@ -14,29 +14,45 @@
 
 <meta name="author" content="Dennis Drebitca">
 <meta name="description" content="For part 2 of the series, we will deploy our workloads/servers. This process is similar as to any virtual machine deployment in the Azure Cloud.
-Deploy the serversLink to headingDeploying servers involves setting up and preparing a server to host and run applications or services. When discussing deploying servers in a cloud environment, this process often consists of creating and configuring virtual machines, setting up network connectivity and security, and installing and configuring software, all done within the cloud provider&rsquo;s management interface or using infrastructure as code (IaC) tools such as Terraform.">
+
+  Deploy the servers
+  
+    
+    Link to heading
+  
+
+Deploying servers involves setting up and preparing a server to host and run applications or services. When discussing deploying servers in a cloud environment, this process often consists of creating and configuring virtual machines, setting up network connectivity and security, and installing and configuring software, all done within the cloud provider&rsquo;s management interface or using infrastructure as code (IaC) tools such as Terraform.">
 <meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Configure and deploy Azure Firewall Manager Part 2: Deploy the servers"/>
-<meta name="twitter:description" content="For part 2 of the series, we will deploy our workloads/servers. This process is similar as to any virtual machine deployment in the Azure Cloud.
-Deploy the serversLink to headingDeploying servers involves setting up and preparing a server to host and run applications or services. When discussing deploying servers in a cloud environment, this process often consists of creating and configuring virtual machines, setting up network connectivity and security, and installing and configuring software, all done within the cloud provider&rsquo;s management interface or using infrastructure as code (IaC) tools such as Terraform."/>
-
-<meta property="og:title" content="Configure and deploy Azure Firewall Manager Part 2: Deploy the servers" />
-<meta property="og:description" content="For part 2 of the series, we will deploy our workloads/servers. This process is similar as to any virtual machine deployment in the Azure Cloud.
-Deploy the serversLink to headingDeploying servers involves setting up and preparing a server to host and run applications or services. When discussing deploying servers in a cloud environment, this process often consists of creating and configuring virtual machines, setting up network connectivity and security, and installing and configuring software, all done within the cloud provider&rsquo;s management interface or using infrastructure as code (IaC) tools such as Terraform." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/" /><meta property="article:section" content="projects" />
-<meta property="article:published_time" content="2024-03-09T08:43:16+01:00" />
-<meta property="article:modified_time" content="2024-03-09T08:43:16+01:00" />
-<meta property="og:see_also" content="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_3/" /><meta property="og:see_also" content="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_1/" /><meta property="og:see_also" content="https://chiefdennis.github.io/projects/manage_entra_id_users/" />
-<meta property="og:see_also" content="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_3/" /><meta property="og:see_also" content="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_1/" />
 
 
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Configure and deploy Azure Firewall Manager Part 2: Deploy the servers">
+  <meta name="twitter:description" content="For part 2 of the series, we will deploy our workloads/servers. This process is similar as to any virtual machine deployment in the Azure Cloud.
+Deploy the serversLink to headingDeploying servers involves setting up and preparing a server to host and run applications or services. When discussing deploying servers in a cloud environment, this process often consists of creating and configuring virtual machines, setting up network connectivity and security, and installing and configuring software, all done within the cloud provider’s management interface or using infrastructure as code (IaC) tools such as Terraform.">
+
+<meta property="og:url" content="http://localhost:1313/projects/configure_deploy_azure_fw_manager_2/">
+  <meta property="og:site_name" content="Chief Dennis&#39; Blog">
+  <meta property="og:title" content="Configure and deploy Azure Firewall Manager Part 2: Deploy the servers">
+  <meta property="og:description" content="For part 2 of the series, we will deploy our workloads/servers. This process is similar as to any virtual machine deployment in the Azure Cloud.
+Deploy the serversLink to headingDeploying servers involves setting up and preparing a server to host and run applications or services. When discussing deploying servers in a cloud environment, this process often consists of creating and configuring virtual machines, setting up network connectivity and security, and installing and configuring software, all done within the cloud provider’s management interface or using infrastructure as code (IaC) tools such as Terraform.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2024-03-09T08:43:16+01:00">
+    <meta property="article:modified_time" content="2024-03-09T08:43:16+01:00">
+    <meta property="article:tag" content="Azure">
+    <meta property="article:tag" content="Virtual Machines">
+      <meta property="og:see_also" content="http://localhost:1313/projects/configure_deploy_azure_fw_manager_3/">
+      <meta property="og:see_also" content="http://localhost:1313/projects/configure_deploy_azure_fw_manager_1/">
+      <meta property="og:see_also" content="http://localhost:1313/projects/manage_entra_id_users/">
+      <meta property="og:see_also" content="http://localhost:1313/projects/configure_deploy_azure_fw_manager_3/">
+      <meta property="og:see_also" content="http://localhost:1313/projects/configure_deploy_azure_fw_manager_1/">
 
 
 
 
-<link rel="canonical" href="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/">
+<link rel="canonical" href="http://localhost:1313/projects/configure_deploy_azure_fw_manager_2/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -46,7 +62,7 @@ Deploy the serversLink to headingDeploying servers involves setting up and pre
 
   
   
-  <link rel="stylesheet" href="/css/coder.min.38c4552ac40f9ae3408bad40358f654ebd8804412fe74ed56f2d6c8a7af82dd3.css" integrity="sha256-OMRVKsQPmuNAi61ANY9lTr2IBEEv507Vby1sinr4LdM=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
 
 
 
@@ -56,7 +72,7 @@ Deploy the serversLink to headingDeploying servers involves setting up and pre
   
     
     
-    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
   
 
 
@@ -64,7 +80,7 @@ Deploy the serversLink to headingDeploying servers involves setting up and pre
  
   
     
-    <link rel="stylesheet" href="/css/custom.min.de332fc1405ae8603f697e77d3ffe869fde950cc77184ea542dc2be374a0b92b.css" integrity="sha256-3jMvwUBa6GA/aX530//oaf3pUMx3GE6lQtwr43SguSs=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/css/custom.css" media="screen">
   
 
 
@@ -109,7 +125,7 @@ Deploy the serversLink to headingDeploying servers involves setting up and pre
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="https://chiefdennis.github.io">
+    <a class="navigation-title" href="http://localhost:1313/">
       Chief Dennis&#39; Blog
     </a>
     
@@ -156,7 +172,7 @@ Deploy the serversLink to headingDeploying servers involves setting up and pre
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/">
+            <a class="title-link" href="http://localhost:1313/projects/configure_deploy_azure_fw_manager_2/">
               Configure and deploy Azure Firewall Manager Part 2: Deploy the servers
             </a>
           </h1>
@@ -207,7 +223,7 @@ Deploy the serversLink to headingDeploying servers involves setting up and pre
 <ol>
 <li>On the Azure portal, go to the Marketplace. Search for Virtual Machine, and select it.</li>
 </ol>
-<p><img src="Scr.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_2/Scr.png"></p>
 <ol start="2">
 <li>
 <p>Enter these values for the virtual machine:</p>
@@ -224,8 +240,8 @@ Deploy the serversLink to headingDeploying servers involves setting up and pre
 <p>Select Next: Disks and then Next: Networking.</p>
 </li>
 </ol>
-<p><img src="Scr_1.png" alt="image">
-<img src="Scr_2.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_2/Scr_1.png">
+<img alt="image" src="/projects/configure_deploy_azure_fw_manager_2/Scr_2.png"></p>
 <ol start="5">
 <li>
 <p>Select Spoke-1 for the virtual network and select Workload-1-SN for the subnet.</p>
@@ -234,7 +250,7 @@ Deploy the serversLink to headingDeploying servers involves setting up and pre
 <p>For for Public IP, select <strong>None</strong>. This is because we will connect to our VMs via the secured Virtual Hub. Also select None for Public inbound ports.</p>
 </li>
 </ol>
-<p><img src="Scr_3.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_2/Scr_3.png"></p>
 <ol start="9">
 <li>
 <p>Accept the other defaults and select Next: Management.</p>
@@ -268,71 +284,9 @@ Deploy the serversLink to headingDeploying servers involves setting up and pre
     
     
     
-      <h3 id="see-also-in-microsoft-azure">
-        See also in Microsoft Azure
-        <a class="heading-link" href="#see-also-in-microsoft-azure">
-          <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-          <span class="sr-only">Link to heading</span>
-        </a>
-      </h3>
-      <nav>
-        <ul>
-        
-        
-          
-            <li>
-              <a href="/projects/configure_deploy_azure_fw_manager_3/">Configure and deploy Azure Firewall Manager Part 3: Test the Firewall</a>
-            </li>
-          
-        
-          
-        
-          
-            <li>
-              <a href="/projects/configure_deploy_azure_fw_manager_1/">Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="/projects/manage_entra_id_users/">Manage Entra ID users via Azure Portal</a>
-            </li>
-          
-        
-        </ul>
-      </nav>
-    
   
     
     
-    
-      <h3 id="see-also-in-configure-and-deploy-azure-firewall-manager">
-        See also in Configure and deploy Azure Firewall Manager
-        <a class="heading-link" href="#see-also-in-configure-and-deploy-azure-firewall-manager">
-          <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-          <span class="sr-only">Link to heading</span>
-        </a>
-      </h3>
-      <nav>
-        <ul>
-        
-        
-          
-            <li>
-              <a href="/projects/configure_deploy_azure_fw_manager_3/">Configure and deploy Azure Firewall Manager Part 3: Test the Firewall</a>
-            </li>
-          
-        
-          
-        
-          
-            <li>
-              <a href="/projects/configure_deploy_azure_fw_manager_1/">Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture</a>
-            </li>
-          
-        
-        </ul>
-      </nav>
     
   
 </section>
@@ -368,13 +322,15 @@ Deploy the serversLink to headingDeploying servers involves setting up and pre
 
   
   
-  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  <script src="/js/coder.js"></script>
   
 
   
 
   
 
+
+  
 
   
 

@@ -2,332 +2,332 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Chief Dennis&#39; Blog</title>
-    <link>https://chiefdennis.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Chief Dennis&#39; Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 16 Jun 2024 13:07:16 +0100</lastBuildDate>
-    <atom:link href="https://chiefdennis.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ClearML</title>
-      <link>https://chiefdennis.github.io/tags/clearml/</link>
+      <link>http://localhost:1313/tags/clearml/</link>
       <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/clearml/</guid>
+      <guid>http://localhost:1313/tags/clearml/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2024-24590</title>
-      <link>https://chiefdennis.github.io/tags/cve-2024-24590/</link>
+      <link>http://localhost:1313/tags/cve-2024-24590/</link>
       <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2024-24590/</guid>
+      <guid>http://localhost:1313/tags/cve-2024-24590/</guid>
       <description></description>
     </item>
     <item>
       <title>Fickling</title>
-      <link>https://chiefdennis.github.io/tags/fickling/</link>
+      <link>http://localhost:1313/tags/fickling/</link>
       <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/fickling/</guid>
+      <guid>http://localhost:1313/tags/fickling/</guid>
       <description></description>
     </item>
     <item>
-      <title>Json deserialization</title>
-      <link>https://chiefdennis.github.io/tags/json-deserialization/</link>
+      <title>Json Deserialization</title>
+      <link>http://localhost:1313/tags/json-deserialization/</link>
       <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/json-deserialization/</guid>
+      <guid>http://localhost:1313/tags/json-deserialization/</guid>
       <description></description>
     </item>
     <item>
-      <title>Python scripting</title>
-      <link>https://chiefdennis.github.io/tags/python-scripting/</link>
+      <title>Python Scripting</title>
+      <link>http://localhost:1313/tags/python-scripting/</link>
       <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/python-scripting/</guid>
+      <guid>http://localhost:1313/tags/python-scripting/</guid>
       <description></description>
     </item>
     <item>
-      <title>Script analysis</title>
-      <link>https://chiefdennis.github.io/tags/script-analysis/</link>
+      <title>Script Analysis</title>
+      <link>http://localhost:1313/tags/script-analysis/</link>
       <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/script-analysis/</guid>
+      <guid>http://localhost:1313/tags/script-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2024-21626</title>
-      <link>https://chiefdennis.github.io/tags/cve-2024-21626/</link>
+      <link>http://localhost:1313/tags/cve-2024-21626/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2024-21626/</guid>
+      <guid>http://localhost:1313/tags/cve-2024-21626/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2024-27198</title>
-      <link>https://chiefdennis.github.io/tags/cve-2024-27198/</link>
+      <link>http://localhost:1313/tags/cve-2024-27198/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2024-27198/</guid>
+      <guid>http://localhost:1313/tags/cve-2024-27198/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker Escape</title>
-      <link>https://chiefdennis.github.io/tags/docker-escape/</link>
+      <link>http://localhost:1313/tags/docker-escape/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/docker-escape/</guid>
+      <guid>http://localhost:1313/tags/docker-escape/</guid>
       <description></description>
     </item>
     <item>
-      <title>ffuf</title>
-      <link>https://chiefdennis.github.io/tags/ffuf/</link>
+      <title>Ffuf</title>
+      <link>http://localhost:1313/tags/ffuf/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/ffuf/</guid>
+      <guid>http://localhost:1313/tags/ffuf/</guid>
       <description></description>
     </item>
     <item>
       <title>Grep</title>
-      <link>https://chiefdennis.github.io/tags/grep/</link>
+      <link>http://localhost:1313/tags/grep/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/grep/</guid>
+      <guid>http://localhost:1313/tags/grep/</guid>
       <description></description>
     </item>
     <item>
       <title>JohnTheRipper</title>
-      <link>https://chiefdennis.github.io/tags/johntheripper/</link>
+      <link>http://localhost:1313/tags/johntheripper/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/johntheripper/</guid>
+      <guid>http://localhost:1313/tags/johntheripper/</guid>
       <description></description>
     </item>
     <item>
-      <title>runC</title>
-      <link>https://chiefdennis.github.io/tags/runc/</link>
+      <title>RunC</title>
+      <link>http://localhost:1313/tags/runc/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/runc/</guid>
+      <guid>http://localhost:1313/tags/runc/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2022-37706</title>
-      <link>https://chiefdennis.github.io/tags/cve-2022-37706/</link>
+      <link>http://localhost:1313/tags/cve-2022-37706/</link>
       <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2022-37706/</guid>
+      <guid>http://localhost:1313/tags/cve-2022-37706/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2023-30253</title>
-      <link>https://chiefdennis.github.io/tags/cve-2023-30253/</link>
+      <link>http://localhost:1313/tags/cve-2023-30253/</link>
       <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2023-30253/</guid>
+      <guid>http://localhost:1313/tags/cve-2023-30253/</guid>
       <description></description>
     </item>
     <item>
       <title>Dollibarr</title>
-      <link>https://chiefdennis.github.io/tags/dollibarr/</link>
+      <link>http://localhost:1313/tags/dollibarr/</link>
       <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/dollibarr/</guid>
+      <guid>http://localhost:1313/tags/dollibarr/</guid>
       <description></description>
     </item>
     <item>
       <title>Find</title>
-      <link>https://chiefdennis.github.io/tags/find/</link>
+      <link>http://localhost:1313/tags/find/</link>
       <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/find/</guid>
+      <guid>http://localhost:1313/tags/find/</guid>
       <description></description>
     </item>
     <item>
       <title>Subdomain Discovery</title>
-      <link>https://chiefdennis.github.io/tags/subdomain-discovery/</link>
+      <link>http://localhost:1313/tags/subdomain-discovery/</link>
       <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/subdomain-discovery/</guid>
+      <guid>http://localhost:1313/tags/subdomain-discovery/</guid>
       <description></description>
     </item>
     <item>
       <title>7z Wildcard Spare</title>
-      <link>https://chiefdennis.github.io/tags/7z-wildcard-spare/</link>
+      <link>http://localhost:1313/tags/7z-wildcard-spare/</link>
       <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/7z-wildcard-spare/</guid>
+      <guid>http://localhost:1313/tags/7z-wildcard-spare/</guid>
       <description></description>
     </item>
     <item>
       <title>Burpsuite</title>
-      <link>https://chiefdennis.github.io/tags/burpsuite/</link>
+      <link>http://localhost:1313/tags/burpsuite/</link>
       <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/burpsuite/</guid>
+      <guid>http://localhost:1313/tags/burpsuite/</guid>
       <description></description>
     </item>
     <item>
       <title>Hash Cracking</title>
-      <link>https://chiefdennis.github.io/tags/hash-cracking/</link>
+      <link>http://localhost:1313/tags/hash-cracking/</link>
       <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/hash-cracking/</guid>
+      <guid>http://localhost:1313/tags/hash-cracking/</guid>
       <description></description>
     </item>
     <item>
       <title>SQL Injection</title>
-      <link>https://chiefdennis.github.io/tags/sql-injection/</link>
+      <link>http://localhost:1313/tags/sql-injection/</link>
       <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/sql-injection/</guid>
+      <guid>http://localhost:1313/tags/sql-injection/</guid>
       <description></description>
     </item>
     <item>
       <title>SQLmap</title>
-      <link>https://chiefdennis.github.io/tags/sqlmap/</link>
+      <link>http://localhost:1313/tags/sqlmap/</link>
       <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/sqlmap/</guid>
+      <guid>http://localhost:1313/tags/sqlmap/</guid>
       <description></description>
     </item>
     <item>
-      <title>wfuzz</title>
-      <link>https://chiefdennis.github.io/tags/wfuzz/</link>
+      <title>Wfuzz</title>
+      <link>http://localhost:1313/tags/wfuzz/</link>
       <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/wfuzz/</guid>
+      <guid>http://localhost:1313/tags/wfuzz/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure</title>
-      <link>https://chiefdennis.github.io/tags/azure/</link>
+      <link>http://localhost:1313/tags/azure/</link>
       <pubDate>Thu, 11 Apr 2024 08:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/azure/</guid>
+      <guid>http://localhost:1313/tags/azure/</guid>
       <description></description>
     </item>
     <item>
       <title>Virtual Machines</title>
-      <link>https://chiefdennis.github.io/tags/virtual-machines/</link>
+      <link>http://localhost:1313/tags/virtual-machines/</link>
       <pubDate>Thu, 11 Apr 2024 08:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/virtual-machines/</guid>
+      <guid>http://localhost:1313/tags/virtual-machines/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2023-40931</title>
-      <link>https://chiefdennis.github.io/tags/cve-2023-40931/</link>
+      <link>http://localhost:1313/tags/cve-2023-40931/</link>
       <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2023-40931/</guid>
+      <guid>http://localhost:1313/tags/cve-2023-40931/</guid>
       <description></description>
     </item>
     <item>
       <title>Dirsearch</title>
-      <link>https://chiefdennis.github.io/tags/dirsearch/</link>
+      <link>http://localhost:1313/tags/dirsearch/</link>
       <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/dirsearch/</guid>
+      <guid>http://localhost:1313/tags/dirsearch/</guid>
       <description></description>
     </item>
     <item>
       <title>NMAP UDP</title>
-      <link>https://chiefdennis.github.io/tags/nmap-udp/</link>
+      <link>http://localhost:1313/tags/nmap-udp/</link>
       <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/nmap-udp/</guid>
+      <guid>http://localhost:1313/tags/nmap-udp/</guid>
       <description></description>
     </item>
     <item>
       <title>SNMPwalk</title>
-      <link>https://chiefdennis.github.io/tags/snmpwalk/</link>
+      <link>http://localhost:1313/tags/snmpwalk/</link>
       <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/snmpwalk/</guid>
+      <guid>http://localhost:1313/tags/snmpwalk/</guid>
       <description></description>
     </item>
     <item>
-      <title>UDP enumeration</title>
-      <link>https://chiefdennis.github.io/tags/udp-enumeration/</link>
+      <title>UDP Enumeration</title>
+      <link>http://localhost:1313/tags/udp-enumeration/</link>
       <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/udp-enumeration/</guid>
+      <guid>http://localhost:1313/tags/udp-enumeration/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2023-51457</title>
-      <link>https://chiefdennis.github.io/tags/cve-2023-51457/</link>
+      <link>http://localhost:1313/tags/cve-2023-51457/</link>
       <pubDate>Fri, 02 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2023-51457/</guid>
+      <guid>http://localhost:1313/tags/cve-2023-51457/</guid>
       <description></description>
     </item>
     <item>
       <title>Hashcat</title>
-      <link>https://chiefdennis.github.io/tags/hashcat/</link>
+      <link>http://localhost:1313/tags/hashcat/</link>
       <pubDate>Fri, 02 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/hashcat/</guid>
+      <guid>http://localhost:1313/tags/hashcat/</guid>
       <description></description>
     </item>
     <item>
       <title>API Enumeration</title>
-      <link>https://chiefdennis.github.io/tags/api-enumeration/</link>
+      <link>http://localhost:1313/tags/api-enumeration/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/api-enumeration/</guid>
+      <guid>http://localhost:1313/tags/api-enumeration/</guid>
       <description></description>
     </item>
     <item>
       <title>Command Injection</title>
-      <link>https://chiefdennis.github.io/tags/command-injection/</link>
+      <link>http://localhost:1313/tags/command-injection/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/command-injection/</guid>
+      <guid>http://localhost:1313/tags/command-injection/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2023-0386</title>
-      <link>https://chiefdennis.github.io/tags/cve-2023-0386/</link>
+      <link>http://localhost:1313/tags/cve-2023-0386/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2023-0386/</guid>
+      <guid>http://localhost:1313/tags/cve-2023-0386/</guid>
       <description></description>
     </item>
     <item>
       <title>Cyberchef</title>
-      <link>https://chiefdennis.github.io/tags/cyberchef/</link>
+      <link>http://localhost:1313/tags/cyberchef/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cyberchef/</guid>
+      <guid>http://localhost:1313/tags/cyberchef/</guid>
       <description></description>
     </item>
     <item>
       <title>JS Deobfuscation</title>
-      <link>https://chiefdennis.github.io/tags/js-deobfuscation/</link>
+      <link>http://localhost:1313/tags/js-deobfuscation/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/js-deobfuscation/</guid>
+      <guid>http://localhost:1313/tags/js-deobfuscation/</guid>
       <description></description>
     </item>
     <item>
-      <title>open-source</title>
-      <link>https://chiefdennis.github.io/tags/open-source/</link>
+      <title>Open-Source</title>
+      <link>http://localhost:1313/tags/open-source/</link>
       <pubDate>Fri, 29 Dec 2023 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/open-source/</guid>
+      <guid>http://localhost:1313/tags/open-source/</guid>
       <description></description>
     </item>
     <item>
-      <title>source code compilation</title>
-      <link>https://chiefdennis.github.io/tags/source-code-compilation/</link>
+      <title>Source Code Compilation</title>
+      <link>http://localhost:1313/tags/source-code-compilation/</link>
       <pubDate>Fri, 29 Dec 2023 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/source-code-compilation/</guid>
+      <guid>http://localhost:1313/tags/source-code-compilation/</guid>
       <description></description>
     </item>
     <item>
-      <title>windows</title>
-      <link>https://chiefdennis.github.io/tags/windows/</link>
+      <title>Windows</title>
+      <link>http://localhost:1313/tags/windows/</link>
       <pubDate>Fri, 29 Dec 2023 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/windows/</guid>
+      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     <item>
       <title>CRLF Injection</title>
-      <link>https://chiefdennis.github.io/tags/crlf-injection/</link>
+      <link>http://localhost:1313/tags/crlf-injection/</link>
       <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/crlf-injection/</guid>
+      <guid>http://localhost:1313/tags/crlf-injection/</guid>
       <description></description>
     </item>
     <item>
       <title>Parameter Tampering</title>
-      <link>https://chiefdennis.github.io/tags/parameter-tampering/</link>
+      <link>http://localhost:1313/tags/parameter-tampering/</link>
       <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/parameter-tampering/</guid>
+      <guid>http://localhost:1313/tags/parameter-tampering/</guid>
       <description></description>
     </item>
     <item>
       <title>Perl_startup Local Privilege Escalation</title>
-      <link>https://chiefdennis.github.io/tags/perl_startup-local-privilege-escalation/</link>
+      <link>http://localhost:1313/tags/perl_startup-local-privilege-escalation/</link>
       <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/perl_startup-local-privilege-escalation/</guid>
+      <guid>http://localhost:1313/tags/perl_startup-local-privilege-escalation/</guid>
       <description></description>
     </item>
     <item>
       <title>PHP Reverse Shell</title>
-      <link>https://chiefdennis.github.io/tags/php-reverse-shell/</link>
+      <link>http://localhost:1313/tags/php-reverse-shell/</link>
       <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/php-reverse-shell/</guid>
+      <guid>http://localhost:1313/tags/php-reverse-shell/</guid>
       <description></description>
     </item>
     <item>
       <title>Batch Script Analysis</title>
-      <link>https://chiefdennis.github.io/tags/batch-script-analysis/</link>
+      <link>http://localhost:1313/tags/batch-script-analysis/</link>
       <pubDate>Wed, 13 Sep 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/batch-script-analysis/</guid>
+      <guid>http://localhost:1313/tags/batch-script-analysis/</guid>
       <description></description>
     </item>
   </channel>

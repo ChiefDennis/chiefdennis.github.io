@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Configure and deploy Azure Firewall Manager on Chief Dennis&#39; Blog</title>
-    <link>https://chiefdennis.github.io/series/configure-and-deploy-azure-firewall-manager/</link>
-    <description>Recent content in Configure and deploy Azure Firewall Manager on Chief Dennis&#39; Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Configure and Deploy Azure Firewall Manager on Chief Dennis&#39; Blog</title>
+    <link>http://localhost:1313/series/configure-and-deploy-azure-firewall-manager/</link>
+    <description>Recent content in Configure and Deploy Azure Firewall Manager on Chief Dennis&#39; Blog</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 11 Apr 2024 08:43:16 +0100</lastBuildDate>
-    <atom:link href="https://chiefdennis.github.io/series/configure-and-deploy-azure-firewall-manager/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/series/configure-and-deploy-azure-firewall-manager/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Configure and deploy Azure Firewall Manager Part 3: Test the Firewall</title>
-      <link>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_3/</link>
+      <link>http://localhost:1313/projects/configure_deploy_azure_fw_manager_3/</link>
       <pubDate>Thu, 11 Apr 2024 08:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_3/</guid>
-      <description>For part 3 of the series, test the firewall in two steps. First, we’ll test the application rule; then, we’ll test the network rule. To test the firewall rules, we’ll connect a remote desktop using the firewall’s public IP address, which is NATed to Workload-1. From there, we’ll use a browser to test the application rule and connect a remote desktop to Workload-2 to test the network rule. It is important to remember, as with all testing, firewall testing is essential to maintaining a secure network and mustn’t be overlooked.</description>
+      <guid>http://localhost:1313/projects/configure_deploy_azure_fw_manager_3/</guid>
+      <description>&lt;p&gt;For part 3 of the series,  test the firewall in two steps. First, we’ll test the application rule; then, we’ll test the network rule. To test the firewall rules, we’ll connect a remote desktop using the firewall’s public IP address, which is NATed to Workload-1. From there, we’ll use a browser to test the application rule and connect a remote desktop to Workload-2 to test the network rule. It is important to remember, as with all testing, firewall testing is essential to maintaining a secure network and mustn’t be overlooked.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configure and deploy Azure Firewall Manager Part 2: Deploy the servers</title>
-      <link>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/</link>
+      <link>http://localhost:1313/projects/configure_deploy_azure_fw_manager_2/</link>
       <pubDate>Sat, 09 Mar 2024 08:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/</guid>
-      <description>For part 2 of the series, we will deploy our workloads/servers. This process is similar as to any virtual machine deployment in the Azure Cloud.&#xA;Deploy the servers&#xD;Link to heading&#xD;Deploying servers involves setting up and preparing a server to host and run applications or services. When discussing deploying servers in a cloud environment, this process often consists of creating and configuring virtual machines, setting up network connectivity and security, and installing and configuring software, all done within the cloud provider&amp;rsquo;s management interface or using infrastructure as code (IaC) tools such as Terraform.</description>
+      <guid>http://localhost:1313/projects/configure_deploy_azure_fw_manager_2/</guid>
+      <description>&lt;p&gt;For part 2 of the series, we will deploy our workloads/servers. This process is similar as to any virtual machine deployment in the Azure Cloud.&lt;/p&gt;&#xA;&lt;h3 id=&#34;deploy-the-servers&#34;&gt;&#xD;&#xA;  Deploy the servers&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#deploy-the-servers&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;Deploying servers involves setting up and preparing a server to host and run applications or services. When discussing deploying servers in a cloud environment, this process often consists of creating and configuring virtual machines, setting up network connectivity and security, and installing and configuring software, all done within the cloud provider&amp;rsquo;s management interface or using infrastructure as code (IaC) tools such as Terraform.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture</title>
-      <link>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_1/</link>
+      <link>http://localhost:1313/projects/configure_deploy_azure_fw_manager_1/</link>
       <pubDate>Mon, 26 Feb 2024 08:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_1/</guid>
-      <description>Azure Firewall Manager is a central network security policy and route management service for globally distributed, software-defined perimeters. It can provide security management for two network architecture types, the secured virtual hub and the hub virtual network.&#xA;Using Azure Firewall Manager, you can create secured virtual hubs to secure your cloud network traffic destined to private IP addresses, Azure PaaS, and the Internet. Traffic routing to the firewall is automated, so there&amp;rsquo;s no need to create user-defined routes (UDRs).</description>
+      <guid>http://localhost:1313/projects/configure_deploy_azure_fw_manager_1/</guid>
+      <description>&lt;p&gt;Azure Firewall Manager is a central network security policy and route management service for globally distributed, software-defined perimeters. It can provide security management for two network architecture types, the secured virtual hub and the hub virtual network.&lt;/p&gt;&#xA;&lt;p&gt;Using Azure Firewall Manager, you can create secured virtual hubs to secure your cloud network traffic destined to private IP addresses, Azure PaaS, and the Internet. Traffic routing to the firewall is automated, so there&amp;rsquo;s no need to create user-defined routes (UDRs).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

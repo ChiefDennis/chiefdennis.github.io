@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <title>
   GPS NMEA TCP/IP stream to COM port via com0com and com2tcp · Chief Dennis&#39; Blog
 </title>
@@ -13,25 +13,33 @@
 
 
 <meta name="author" content="Dennis Drebitca">
-<meta name="description" content="In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we &rsquo;translate&rsquo; the TCP/IP data into a serial COM stream?">
+<meta name="description" content="In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port.
+In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we &rsquo;translate&rsquo; the TCP/IP data into a serial COM stream?">
 <meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="GPS NMEA TCP/IP stream to COM port via com0com and com2tcp"/>
-<meta name="twitter:description" content="In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we &rsquo;translate&rsquo; the TCP/IP data into a serial COM stream?"/>
-
-<meta property="og:title" content="GPS NMEA TCP/IP stream to COM port via com0com and com2tcp" />
-<meta property="og:description" content="In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we &rsquo;translate&rsquo; the TCP/IP data into a serial COM stream?" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://chiefdennis.github.io/projects/nmea_ip_to_google_earth/" /><meta property="article:section" content="projects" />
-<meta property="article:published_time" content="2023-12-29T15:43:16+01:00" />
-<meta property="article:modified_time" content="2023-12-29T15:43:16+01:00" />
 
 
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="GPS NMEA TCP/IP stream to COM port via com0com and com2tcp">
+  <meta name="twitter:description" content="In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we ’translate’ the TCP/IP data into a serial COM stream?">
+
+<meta property="og:url" content="http://localhost:1313/projects/nmea_ip_to_google_earth/">
+  <meta property="og:site_name" content="Chief Dennis&#39; Blog">
+  <meta property="og:title" content="GPS NMEA TCP/IP stream to COM port via com0com and com2tcp">
+  <meta property="og:description" content="In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port. In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we ’translate’ the TCP/IP data into a serial COM stream?">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2023-12-29T15:43:16+01:00">
+    <meta property="article:modified_time" content="2023-12-29T15:43:16+01:00">
+    <meta property="article:tag" content="Open-Source">
+    <meta property="article:tag" content="Windows">
+    <meta property="article:tag" content="Source Code Compilation">
 
 
 
 
-<link rel="canonical" href="https://chiefdennis.github.io/projects/nmea_ip_to_google_earth/">
+<link rel="canonical" href="http://localhost:1313/projects/nmea_ip_to_google_earth/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -41,7 +49,7 @@
 
   
   
-  <link rel="stylesheet" href="/css/coder.min.38c4552ac40f9ae3408bad40358f654ebd8804412fe74ed56f2d6c8a7af82dd3.css" integrity="sha256-OMRVKsQPmuNAi61ANY9lTr2IBEEv507Vby1sinr4LdM=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
 
 
 
@@ -51,7 +59,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
   
 
 
@@ -59,7 +67,7 @@
  
   
     
-    <link rel="stylesheet" href="/css/custom.min.de332fc1405ae8603f697e77d3ffe869fde950cc77184ea542dc2be374a0b92b.css" integrity="sha256-3jMvwUBa6GA/aX530//oaf3pUMx3GE6lQtwr43SguSs=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/css/custom.css" media="screen">
   
 
 
@@ -104,7 +112,7 @@
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="https://chiefdennis.github.io">
+    <a class="navigation-title" href="http://localhost:1313/">
       Chief Dennis&#39; Blog
     </a>
     
@@ -151,7 +159,7 @@
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="https://chiefdennis.github.io/projects/nmea_ip_to_google_earth/">
+            <a class="title-link" href="http://localhost:1313/projects/nmea_ip_to_google_earth/">
               GPS NMEA TCP/IP stream to COM port via com0com and com2tcp
             </a>
           </h1>
@@ -177,15 +185,15 @@
           <div class="tags">
   <i class="fa-solid fa-tag" aria-hidden="true"></i>
     <span class="tag">
-      <a href="/tags/open-source/">open-source</a>
+      <a href="/tags/open-source/">Open-Source</a>
     </span>
       <span class="separator">•</span>
     <span class="tag">
-      <a href="/tags/windows/">windows</a>
+      <a href="/tags/windows/">Windows</a>
     </span>
       <span class="separator">•</span>
     <span class="tag">
-      <a href="/tags/source-code-compilation/">source code compilation</a>
+      <a href="/tags/source-code-compilation/">Source Code Compilation</a>
     </span></div>
 
         </div>
@@ -202,7 +210,7 @@ In this case, I have a router that has an internal GPS that can serve the NMEA s
 - Must be free and/or open source
 </code></pre>
 <p>Following these requirements, the programs chosen are com0com and com2tcp. They are part of the <a href="https://sourceforge.net/projects/com0com/"  class="external-link" target="_blank" rel="noopener">Null-modem emulator</a> project on SourgeForge. The flow chart of the information is going to look like this:</p>
-<p><img src="0.png" alt="image"></p>
+<p><img alt="image" src="/projects/nmea_ip_to_google_earth/0.png"></p>
 <h2 id="com0com">
   com0com
   <a class="heading-link" href="#com0com">
@@ -214,7 +222,7 @@ In this case, I have a router that has an internal GPS that can serve the NMEA s
 <p>&lsquo;The Null-modem emulator (com0com) is a kernel-mode virtual serial port driver for Windows. You can create an unlimited number of virtual COM port pairs and use any pair to connect one COM port based application to another.&rsquo;</p>
 <p>It works by creating any number of virtual ports on the system, and linking them via a virtual bus. We will use the virtual COM pair number 0, where one of them is going to receive the TCP/IP traffic using the next program (com2tcp), and the other one is going to be the one connecting to the end software.</p>
 <p>The com0com software presents itself as a self-signed x64 executable that installs the program. To install it, just run the installer as and administrator. Make sure that the all the following options are selected.</p>
-<p><img src="1.png" alt="image"></p>
+<p><img alt="image" src="/projects/nmea_ip_to_google_earth/1.png"></p>
 <p>If after the installation a GUI appears, you can close it.</p>
 <p>Then, open a administrator terminal window (cmd.exe on windows) and run the following commands one by one. First, navigate to the installation folder on the C:\ drive:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">cd</span> C:\Program Files (x86)\com0com
@@ -223,7 +231,7 @@ In this case, I have a router that has an internal GPS that can serve the NMEA s
 </span></span></code></pre></div><p>Then we are going to rename one of the COMs to COM99, which will be the one where Google Earth will be connected.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">.\setupc.exe change CNCA0 PortName=COM99
 </span></span></code></pre></div><p>Now, COM ports are ready. When inspected in Device Manager, they should look like this:</p>
-<p><img src="2.png" alt="image"></p>
+<p><img alt="image" src="/projects/nmea_ip_to_google_earth/2.png"></p>
 <h2 id="com2tcp">
   com2tcp
   <a class="heading-link" href="#com2tcp">
@@ -233,14 +241,14 @@ In this case, I have a router that has an internal GPS that can serve the NMEA s
 </h2>
 <p>Com2tcp is the tool that translates the TCP/IP data into a serial output that will be connected to the virtual port CNCB0.</p>
 <p>The com2tcp software presents itself as a Visual Studio Project that has to be compiled. Open Visual Studio and import the .vcproj project file. Then, in the build menu, click &lsquo;Build Solution&rsquo;</p>
-<p><img src="3.png" alt="image"></p>
+<p><img alt="image" src="/projects/nmea_ip_to_google_earth/3.png"></p>
 <p>The compiled binary is in the Releases folder, alongside with many other files that are not strictly necessary for the program to function. The only file needed is the com2tcp.exe executable.</p>
-<p><img src="3.5.png" alt="image"></p>
+<p><img alt="image" src="/projects/nmea_ip_to_google_earth/3.5.png"></p>
 <p>Next, open a terminal (Powershell or CMD) in that folder and run the following commands. In this case, I&rsquo;m using Powershell:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">.\com2tcp.exe \\.\CNCB0 8500
 </span></span></code></pre></div><p>This command links the data between port 8500 and CNCB0. When the command is run, we should see that data starts coming in. <strong>DO NOT CLOSE THE WINDOW THE PROGRAM WILL STOP.</strong> A future blog post will explain how to run the program as a service on the background every time the PC powers up.</p>
 <p><em>(Comment: If you want to kow more about the usage of com0com and com2tcp, you cand find more documentation <a href="https://com0com.sourceforge.net/"  class="external-link" target="_blank" rel="noopener">here</a> and <a href="http://com0com.sourceforge.net/doc/UsingCom0com.pdf"  class="external-link" target="_blank" rel="noopener">here</a> )</em></p>
-<p><img src="4.png" alt="image"></p>
+<p><img alt="image" src="/projects/nmea_ip_to_google_earth/4.png"></p>
 <p>Now, com2tcp is set up correctly, and the last piece of the puzzle has to be configured. The TCP/IP stream is now converted into a virtual COM port and served on port COM99, ready to be read.</p>
 <h2 id="google-earth">
   Google Earth
@@ -250,9 +258,9 @@ In this case, I have a router that has an internal GPS that can serve the NMEA s
   </a>
 </h2>
 <p>Now we can use the GPS&rsquo; NMEA stream to see our GPS position in Google Maps, for example. Open Google Earth, go to Tools -&gt; GPS -&gt; Real Time -&gt; Start.</p>
-<p><img src="5.png" alt="image"></p>
+<p><img alt="image" src="/projects/nmea_ip_to_google_earth/5.png"></p>
 <p>And, if everyting is set up properly, Google Earth should read the data coming in from COM99 and the GPS location should be shown on the map.</p>
-<p><img src="6.png" alt="image"></p>
+<p><img alt="image" src="/projects/nmea_ip_to_google_earth/6.png"></p>
 <h2 id="conclusion">
   Conclusion.
   <a class="heading-link" href="#conclusion">
@@ -302,13 +310,15 @@ In this case, I have a router that has an internal GPS that can serve the NMEA s
 
   
   
-  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  <script src="/js/coder.js"></script>
   
 
   
 
   
 
+
+  
 
   
 

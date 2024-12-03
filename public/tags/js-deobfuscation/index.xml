@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JS Deobfuscation on Chief Dennis&#39; Blog</title>
-    <link>https://chiefdennis.github.io/tags/js-deobfuscation/</link>
+    <link>http://localhost:1313/tags/js-deobfuscation/</link>
     <description>Recent content in JS Deobfuscation on Chief Dennis&#39; Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 16 Jan 2024 13:07:16 +0100</lastBuildDate>
-    <atom:link href="https://chiefdennis.github.io/tags/js-deobfuscation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/js-deobfuscation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TwoMillion HTB Walkthrough</title>
-      <link>https://chiefdennis.github.io/posts/htb_twomillion/</link>
+      <link>http://localhost:1313/posts/htb_twomillion/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/posts/htb_twomillion/</guid>
-      <description>The TwoMillion HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:&#xA;- Command Injection&#xD;- Burpsuite&#xD;- CVE-2023-0386&#xD;- JS deobfuscation with Cyberchef&#xD;- API enumeration&#xD;Reconnaissance&#xD;Link to heading&#xD;We start a broad Nmap scan by executing the following command:&#xA;sudo nmap -sS -T5 -vvv -p- 10.10.11.221 -Pn -oG nmap_inicial Where the arguments mean:&#xA;-sS: SYN port scan&#xD;-T5: Using timing template 5 of NMAP&#xD;-vvv: Triple verbose so NMAP prints a lot of information&#xD;-p-: All ports are scanned&#xD;-Pn: Skips Host Discovery&#xD;-oG: Grep Format&#xD;The scan returns the following information:</description>
+      <guid>http://localhost:1313/posts/htb_twomillion/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;http://localhost:1313/posts/htb_twomillion/Screenshot_20.png#centre&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The TwoMillion HTB machine is an easy difficulty level HackTheBox Machine. The main techniques and tools used to crack this machine are:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;- Command Injection&#xD;&#xA;- Burpsuite&#xD;&#xA;- CVE-2023-0386&#xD;&#xA;- JS deobfuscation with Cyberchef&#xD;&#xA;- API enumeration&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h2 id=&#34;reconnaissance&#34;&gt;&#xD;&#xA;  Reconnaissance&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#reconnaissance&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;We start a broad Nmap scan by executing the following command:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo nmap -sS -T5 -vvv -p- 10.10.11.221 -Pn -oG nmap_inicial&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Where the arguments mean:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

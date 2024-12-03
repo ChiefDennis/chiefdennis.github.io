@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <title>
   Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture · Chief Dennis&#39; Blog
 </title>
@@ -17,26 +17,34 @@
 Using Azure Firewall Manager, you can create secured virtual hubs to secure your cloud network traffic destined to private IP addresses, Azure PaaS, and the Internet. Traffic routing to the firewall is automated, so there&rsquo;s no need to create user-defined routes (UDRs).">
 <meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture"/>
-<meta name="twitter:description" content="Azure Firewall Manager is a central network security policy and route management service for globally distributed, software-defined perimeters. It can provide security management for two network architecture types, the secured virtual hub and the hub virtual network.
-Using Azure Firewall Manager, you can create secured virtual hubs to secure your cloud network traffic destined to private IP addresses, Azure PaaS, and the Internet. Traffic routing to the firewall is automated, so there&rsquo;s no need to create user-defined routes (UDRs)."/>
-
-<meta property="og:title" content="Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture" />
-<meta property="og:description" content="Azure Firewall Manager is a central network security policy and route management service for globally distributed, software-defined perimeters. It can provide security management for two network architecture types, the secured virtual hub and the hub virtual network.
-Using Azure Firewall Manager, you can create secured virtual hubs to secure your cloud network traffic destined to private IP addresses, Azure PaaS, and the Internet. Traffic routing to the firewall is automated, so there&rsquo;s no need to create user-defined routes (UDRs)." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_1/" /><meta property="article:section" content="projects" />
-<meta property="article:published_time" content="2024-02-26T08:43:16+01:00" />
-<meta property="article:modified_time" content="2024-02-26T08:43:16+01:00" />
-<meta property="og:see_also" content="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_3/" /><meta property="og:see_also" content="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/" /><meta property="og:see_also" content="https://chiefdennis.github.io/projects/manage_entra_id_users/" />
-<meta property="og:see_also" content="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_3/" /><meta property="og:see_also" content="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/" />
 
 
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture">
+  <meta name="twitter:description" content="Azure Firewall Manager is a central network security policy and route management service for globally distributed, software-defined perimeters. It can provide security management for two network architecture types, the secured virtual hub and the hub virtual network.
+Using Azure Firewall Manager, you can create secured virtual hubs to secure your cloud network traffic destined to private IP addresses, Azure PaaS, and the Internet. Traffic routing to the firewall is automated, so there’s no need to create user-defined routes (UDRs).">
+
+<meta property="og:url" content="http://localhost:1313/projects/configure_deploy_azure_fw_manager_1/">
+  <meta property="og:site_name" content="Chief Dennis&#39; Blog">
+  <meta property="og:title" content="Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture">
+  <meta property="og:description" content="Azure Firewall Manager is a central network security policy and route management service for globally distributed, software-defined perimeters. It can provide security management for two network architecture types, the secured virtual hub and the hub virtual network.
+Using Azure Firewall Manager, you can create secured virtual hubs to secure your cloud network traffic destined to private IP addresses, Azure PaaS, and the Internet. Traffic routing to the firewall is automated, so there’s no need to create user-defined routes (UDRs).">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2024-02-26T08:43:16+01:00">
+    <meta property="article:modified_time" content="2024-02-26T08:43:16+01:00">
+    <meta property="article:tag" content="Azure">
+      <meta property="og:see_also" content="http://localhost:1313/projects/configure_deploy_azure_fw_manager_3/">
+      <meta property="og:see_also" content="http://localhost:1313/projects/configure_deploy_azure_fw_manager_2/">
+      <meta property="og:see_also" content="http://localhost:1313/projects/manage_entra_id_users/">
+      <meta property="og:see_also" content="http://localhost:1313/projects/configure_deploy_azure_fw_manager_3/">
+      <meta property="og:see_also" content="http://localhost:1313/projects/configure_deploy_azure_fw_manager_2/">
 
 
 
 
-<link rel="canonical" href="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_1/">
+<link rel="canonical" href="http://localhost:1313/projects/configure_deploy_azure_fw_manager_1/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -46,7 +54,7 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
 
   
   
-  <link rel="stylesheet" href="/css/coder.min.38c4552ac40f9ae3408bad40358f654ebd8804412fe74ed56f2d6c8a7af82dd3.css" integrity="sha256-OMRVKsQPmuNAi61ANY9lTr2IBEEv507Vby1sinr4LdM=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
 
 
 
@@ -56,7 +64,7 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
   
     
     
-    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
   
 
 
@@ -64,7 +72,7 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
  
   
     
-    <link rel="stylesheet" href="/css/custom.min.de332fc1405ae8603f697e77d3ffe869fde950cc77184ea542dc2be374a0b92b.css" integrity="sha256-3jMvwUBa6GA/aX530//oaf3pUMx3GE6lQtwr43SguSs=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/css/custom.css" media="screen">
   
 
 
@@ -109,7 +117,7 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="https://chiefdennis.github.io">
+    <a class="navigation-title" href="http://localhost:1313/">
       Chief Dennis&#39; Blog
     </a>
     
@@ -156,7 +164,7 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_1/">
+            <a class="title-link" href="http://localhost:1313/projects/configure_deploy_azure_fw_manager_1/">
               Configure and deploy Azure Firewall Manager Part 1: Create a hub and spoke architecture
             </a>
           </h1>
@@ -192,7 +200,7 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
         
         <p>Azure Firewall Manager is a central network security policy and route management service for globally distributed, software-defined perimeters. It can provide security management for two network architecture types, the secured virtual hub and the hub virtual network.</p>
 <p>Using Azure Firewall Manager, you can create secured virtual hubs to secure your cloud network traffic destined to private IP addresses, Azure PaaS, and the Internet. Traffic routing to the firewall is automated, so there&rsquo;s no need to create user-defined routes (UDRs).</p>
-<p><img src="image1.png#center" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/image1.png#center"></p>
 <p>In this series of posts, we will learn how to:</p>
 <ol>
 <li>Create the spoke virtual network</li>
@@ -221,9 +229,9 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
 </h3>
 <p>First, we will create a Resource Group where all the resources in this project will be allocated. The Resource Group will be named <strong>Az_FW_Man_Project.</strong></p>
 <p>We have to click Resource Groups -&gt; Create</p>
-<p><img src="Scr_1.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_1.png"></p>
 <p>Then, select the Subscription, the Resources Group&rsquo;s name and the Region. Then, click &ldquo;Review + create&rdquo;. Then, click create.</p>
-<p><img src="Scr.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr.png"></p>
 <p>Now that we have the Resource Group where all our resources will live, lets create the two spoke virtual networks and subnets. The two virtual networks will each have a workload server in them and will be protected by the firewall.</p>
 <ol>
 <li>
@@ -233,11 +241,11 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
 <p>Search for Virtual network and select Create.</p>
 </li>
 </ol>
-<p><img src="Scr_2.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_2.png"></p>
 <ol start="3">
 <li>Select your subscription, the Resouce Group we have created earlier, and the name of the virtual network. In this case, it will be Spoke-1. Also select the Region, it has to be the same as the RG (Resource Group).</li>
 </ol>
-<p><img src="Scr_3.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_3.png"></p>
 <ol start="4">
 <li>
 <p>Select Next: IP Addresses.</p>
@@ -246,17 +254,17 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
 <p>For Address space, accept the default 10.0.0.0/16. Select Add subnet.</p>
 </li>
 </ol>
-<p><img src="Scr_4.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_4.png"></p>
 <ol start="6">
 <li>For Subnet name, type Workload-1-SN. For Subnet address range, type 10.0.1.0/24. Click Add.</li>
 </ol>
-<p><img src="Scr_5.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_5.png"></p>
 <ol start="7">
 <li>Lastly, delete the default subnet. The only subnet now should be Workload-1-SN. Select Review + create and then select Create.</li>
 </ol>
-<p><img src="Scr_6.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_6.png"></p>
 <p>You can review the settings in this window before clicking Create.</p>
-<p><img src="Scr_7.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_7.png"></p>
 <p>Repeat this procedure to create another similar virtual network in the fw-manager-rg resource group:</p>
 <p>Name: Spoke-02</p>
 <p>Address space: 10.1.0.0/16</p>
@@ -279,11 +287,11 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
 <p>On the Firewall Manager page under Deployments, select Virtual hubs.</p>
 </li>
 </ol>
-<p><img src="Scr_8.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_8.png"></p>
 <ol start="3">
 <li>On the Firewall Manager | Virtual hubs page, select Create new secured virtual hub.</li>
 </ol>
-<p><img src="Scr_9.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_9.png"></p>
 <ol start="4">
 <li>
 <p>Select your Subscription, Resource group (Az_FW_Man_Project) and Region (East US).</p>
@@ -298,7 +306,7 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
 <p>Leave the Include VPN gateway to enable Trusted Security Partners check box cleared.</p>
 </li>
 </ol>
-<p><img src="Scr_10.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_10.png"></p>
 <ol start="8">
 <li>
 <p>Select Next: Azure Firewall.</p>
@@ -319,7 +327,7 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
 <p>Select Next: Security Partner Provider.</p>
 </li>
 </ol>
-<p><img src="Scr_11.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_11.png"></p>
 <ol start="14">
 <li>
 <p>Accept the default Trusted Security Partner Disabled setting and select Next: Review + create.</p>
@@ -328,7 +336,7 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
 <p>In this page, we can review the settings for our virtual hub. Once everything is checked, select Create. It may take up to thirty minutes for the secured virtual hub to create.</p>
 </li>
 </ol>
-<p><img src="Scr_12.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_12.png"></p>
 <p>You can get the firewall public IP address after the deployment is complete.</p>
 <ol>
 <li>
@@ -359,11 +367,11 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
 <ol>
 <li>Select the resource group of the project, then select the VWan-1 virtual WAN which we configured earlier.</li>
 </ol>
-<p><img src="Scr_13.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_13.png"></p>
 <ol start="2">
 <li>Under Connectivity, select Virtual network connections. Select Add connection.</li>
 </ol>
-<p><img src="Scr_14.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_14.png"></p>
 <ol start="3">
 <li>
 <p>For Connection name, type Hub-Spoke-1. For Hubs, select Hub-1. For Resource group, select the project&rsquo;s Resource Group.</p>
@@ -372,7 +380,7 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
 <p>For Virtual network, select Spoke-1. Leave everything else as is.</p>
 </li>
 </ol>
-<p><img src="Scr_15.png" alt="image"></p>
+<p><img alt="image" src="/projects/configure_deploy_azure_fw_manager_1/Scr_15.png"></p>
 <ol start="5">
 <li>
 <p>Select Create.</p>
@@ -395,71 +403,9 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
     
     
     
-      <h3 id="see-also-in-microsoft-azure">
-        See also in Microsoft Azure
-        <a class="heading-link" href="#see-also-in-microsoft-azure">
-          <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-          <span class="sr-only">Link to heading</span>
-        </a>
-      </h3>
-      <nav>
-        <ul>
-        
-        
-          
-            <li>
-              <a href="/projects/configure_deploy_azure_fw_manager_3/">Configure and deploy Azure Firewall Manager Part 3: Test the Firewall</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="/projects/configure_deploy_azure_fw_manager_2/">Configure and deploy Azure Firewall Manager Part 2: Deploy the servers</a>
-            </li>
-          
-        
-          
-        
-          
-            <li>
-              <a href="/projects/manage_entra_id_users/">Manage Entra ID users via Azure Portal</a>
-            </li>
-          
-        
-        </ul>
-      </nav>
-    
   
     
     
-    
-      <h3 id="see-also-in-configure-and-deploy-azure-firewall-manager">
-        See also in Configure and deploy Azure Firewall Manager
-        <a class="heading-link" href="#see-also-in-configure-and-deploy-azure-firewall-manager">
-          <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-          <span class="sr-only">Link to heading</span>
-        </a>
-      </h3>
-      <nav>
-        <ul>
-        
-        
-          
-            <li>
-              <a href="/projects/configure_deploy_azure_fw_manager_3/">Configure and deploy Azure Firewall Manager Part 3: Test the Firewall</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="/projects/configure_deploy_azure_fw_manager_2/">Configure and deploy Azure Firewall Manager Part 2: Deploy the servers</a>
-            </li>
-          
-        
-          
-        
-        </ul>
-      </nav>
     
   
 </section>
@@ -495,13 +441,15 @@ Using Azure Firewall Manager, you can create secured virtual hubs to secure your
 
   
   
-  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  <script src="/js/coder.js"></script>
   
 
   
 
   
 
+
+  
 
   
 
