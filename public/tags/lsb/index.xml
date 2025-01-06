@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lsb on Chief Dennis&#39; Blog</title>
+    <link>http://localhost:1313/tags/lsb/</link>
+    <description>Recent content in Lsb on Chief Dennis&#39; Blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Jan 2025 15:43:16 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/lsb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Steganography techniques and usage of S-Tools</title>
+      <link>http://localhost:1313/projects/steganography_and_s-tools/</link>
+      <pubDate>Wed, 01 Jan 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/projects/steganography_and_s-tools/</guid>
+      <description>&lt;p&gt;In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port.&#xA;In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we &amp;rsquo;translate&amp;rsquo; the TCP/IP data into a serial COM stream?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
