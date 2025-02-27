@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  ARP and DNS spoofing with Bettercap · Chief Dennis&#39; Blog
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Dennis Drebitca">
+<meta name="description" content="
+1. Introduction
+2. Attack Execution
+2.1. ARP Poisoning
+2.2. DNS Spoofing
+2.3. Fake Web Page Setup
+2.4. Credential Theft
+3. Stopping the attack
+4. Conclusions
+
+  Introduction
+  
+    
+    Link to heading
+  
+
+In the field of cybersecurity, analyzing vulnerabilities in local networks is a fundamental task for understanding potential threats and designing appropriate defense mechanisms. Among the most common attacks affecting the integrity and confidentiality of information in a network are ARP Spoofing and DNS Spoofing, techniques used to intercept, modify, and redirect traffic from devices connected to a LAN.">
+<meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ARP and DNS spoofing with Bettercap">
+  <meta name="twitter:description" content="1. Introduction
+2. Attack Execution
+2.1. ARP Poisoning
+2.2. DNS Spoofing
+2.3. Fake Web Page Setup
+2.4. Credential Theft
+3. Stopping the attack
+4. Conclusions
+IntroductionLink to headingIn the field of cybersecurity, analyzing vulnerabilities in local networks is a fundamental task for understanding potential threats and designing appropriate defense mechanisms. Among the most common attacks affecting the integrity and confidentiality of information in a network are ARP Spoofing and DNS Spoofing, techniques used to intercept, modify, and redirect traffic from devices connected to a LAN.">
+
+<meta property="og:url" content="http://localhost:1313/projects/arp_and_dns_spoofing_bettercap/">
+  <meta property="og:site_name" content="Chief Dennis&#39; Blog">
+  <meta property="og:title" content="ARP and DNS spoofing with Bettercap">
+  <meta property="og:description" content="1. Introduction
+2. Attack Execution
+2.1. ARP Poisoning
+2.2. DNS Spoofing
+2.3. Fake Web Page Setup
+2.4. Credential Theft
+3. Stopping the attack
+4. Conclusions
+IntroductionLink to headingIn the field of cybersecurity, analyzing vulnerabilities in local networks is a fundamental task for understanding potential threats and designing appropriate defense mechanisms. Among the most common attacks affecting the integrity and confidentiality of information in a network are ARP Spoofing and DNS Spoofing, techniques used to intercept, modify, and redirect traffic from devices connected to a LAN.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2025-02-09T15:43:16+01:00">
+    <meta property="article:modified_time" content="2025-02-09T15:43:16+01:00">
+    <meta property="article:tag" content="Bettercap">
+    <meta property="article:tag" content="ARP Spoofing">
+    <meta property="article:tag" content="DNS Spoofing">
+    <meta property="article:tag" content="Cradential Theft">
+    <meta property="article:tag" content="Wireshark">
+    <meta property="article:tag" content="Website Cloning">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/projects/arp_and_dns_spoofing_bettercap/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/custom.css" media="screen">
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Chief Dennis&#39; Blog
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Catch The Flag</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/tags/">Tags</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/projects/arp_and_dns_spoofing_bettercap/">
+              ARP and DNS spoofing with Bettercap
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-02-09T15:43:16&#43;01:00">
+                February 9, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              10-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/dennis-drebitca/">Dennis Drebitca</a></div>
+
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/bettercap/">Bettercap</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/arp-spoofing/">ARP Spoofing</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/dns-spoofing/">DNS Spoofing</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/cradential-theft/">Cradential Theft</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/wireshark/">Wireshark</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/website-cloning/">Website Cloning</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture0.png"></p>
+<p><a href="#introduction" >1. Introduction</a></p>
+<p><a href="#arp-spoofing-attack" >2. Attack Execution</a></p>
+<p><a href="#arp-spoofing-attack" >2.1. ARP Poisoning</a></p>
+<p><a href="#dns-spoofing-attack" >2.2. DNS Spoofing</a></p>
+<p><a href="#fake-web-page-setup" >2.3. Fake Web Page Setup</a></p>
+<p><a href="#credential-theft" >2.4. Credential Theft</a></p>
+<p><a href="#stopping-the-attack" >3. Stopping the attack</a></p>
+<p><a href="#conclusions" >4. Conclusions</a></p>
+<h1 id="introduction">
+  Introduction
+  <a class="heading-link" href="#introduction">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>In the field of cybersecurity, analyzing vulnerabilities in local networks is a fundamental task for understanding potential threats and designing appropriate defense mechanisms. Among the most common attacks affecting the integrity and confidentiality of information in a network are ARP Spoofing and DNS Spoofing, techniques used to intercept, modify, and redirect traffic from devices connected to a LAN.</p>
+<p>This work aims to analyze how these attacks function, detailing their principles and their impact on network security. Additionally, a proof-of-concept will be carried out using the Bettercap tool in a virtualized environment to demonstrate the feasibility of these attacks and their potential use in security audits.</p>
+<h2 id="the-arp-protocol-and-its-vulnerability">
+  The ARP Protocol and Its Vulnerability
+  <a class="heading-link" href="#the-arp-protocol-and-its-vulnerability">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The Address Resolution Protocol (ARP) is a communication protocol used in local networks to map IP addresses to MAC (Media Access Control) addresses. Its primary function is to allow devices in an Ethernet network to identify the physical address of other devices within the same network segment.</p>
+<p>However, ARP lacks authentication mechanisms, making it susceptible to identity spoofing attacks. An attacker can exploit this vulnerability to manipulate the correspondence between IP and MAC addresses within a network, redirecting legitimate traffic to their device without the victims noticing.</p>
+<h2 id="arp-spoofing-attack">
+  ARP Spoofing Attack
+  <a class="heading-link" href="#arp-spoofing-attack">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>ARP Spoofing, also known as ARP poisoning, is an attack in which a malicious actor sends false ARP responses on the network to associate their MAC address with another device’s IP address, usually the router or a workstation. In this way, the victim&rsquo;s traffic is redirected to the attacker, allowing them to intercept and manipulate data packets.</p>
+<p>The attack is carried out in the following stages:</p>
+<ol>
+<li>Sending forged ARP packets: The attacker generates fraudulent ARP responses that trick the victim into believing that the attacker&rsquo;s MAC address corresponds to the gateway’s IP address.</li>
+<li>Intercepting traffic: By modifying the victim’s ARP cache, traffic directed to the gateway flows through the attacker before reaching its final destination.</li>
+<li>Potential data manipulation or capture: The attacker can analyze the intercepted traffic, perform Man-in-the-Middle (MitM) attacks, or redirect the victim to malicious sites.</li>
+</ol>
+<h2 id="dns-spoofing-attack">
+  DNS Spoofing Attack
+  <a class="heading-link" href="#dns-spoofing-attack">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>DNS Spoofing is a technique used to alter domain name resolution, redirecting victims to fake servers instead of legitimate ones. When a victim attempts to access a website, their device queries a DNS server to obtain the corresponding IP address. An attacker who has already carried out an ARP Spoofing attack can intercept these requests and respond with an IP address they control.</p>
+<p>The attack is conducted as follows:</p>
+<ol>
+<li>Intercepting DNS requests: Through ARP Spoofing, the attacker captures DNS queries sent by the victim.</li>
+<li>Sending false DNS responses: Instead of the real IP address of the requested site, the attacker responds with the address of a malicious server hosting a fake webpage.</li>
+<li>Redirecting the victim to a fake site: When the victim attempts to log into a legitimate service, such as a social network or an online banking platform, they unknowingly enter their credentials on an attacker-controlled site.</li>
+</ol>
+<p>This attack is commonly used for credential theft and phishing schemes.</p>
+<h2 id="bettercap-as-a-security-auditing-tool">
+  Bettercap as a Security Auditing Tool
+  <a class="heading-link" href="#bettercap-as-a-security-auditing-tool">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>To execute the aforementioned attacks, Bettercap will be used—an advanced network security auditing tool. Bettercap allows the execution of Man-in-the-Middle (MitM) attacks, traffic analysis, and real-time packet manipulation.</p>
+<p>Its key features include:</p>
+<ul>
+<li>ARP and DNS spoofing to intercept traffic.</li>
+<li>Capturing credentials transmitted in plaintext.</li>
+<li>Modifying HTTP/HTTPS traffic in real time.</li>
+<li>Functionality in both wired and wireless network environments.</li>
+</ul>
+<h2 id="test-environment">
+  Test Environment
+  <a class="heading-link" href="#test-environment">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The study will be conducted in a virtualized environment with two Kali Linux machines:</p>
+<ul>
+<li>Attacker machine: IP address 192.168.238.128, terminal with a black background.</li>
+<li>Victim machine: IP address 192.168.238.129, terminal with a yellow background for easier distinction.</li>
+</ul>
+<h1 id="attack-execution">
+  Attack Execution
+  <a class="heading-link" href="#attack-execution">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="21-arp-poisoning">
+  2.1. ARP Poisoning
+  <a class="heading-link" href="#21-arp-poisoning">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Before executing the attack, let&rsquo;s examine the information contained in our devices&rsquo; ARP tables. To do this, we run the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">arp -a
+</span></span></code></pre></div><p>The ARP table of the attacking machine is as follows:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture1.png"></p>
+<p>And on the victim machine, the following:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture2.png"></p>
+<p>As we can see, both machines know each other&rsquo;s IP and MAC addresses through the ARP protocol. Next, we will execute the ARP poisoning attack using the Bettercap tool. To do this, we will execute the following commands on the attacking machine:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo bettercap -iface eth0
+</span></span></code></pre></div><p>This starts the bettercap tool.</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture3.png"></p>
+<p>By executing the command “net.probe on”, the tool will start sending packets to “discover” which computers are on the network. With the command “net.show” we can see that it has recognized several other computers, including what will be the victim machine, with IP 192.168.238.129.</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture4.png"></p>
+<p>It is important after a few minutes to stop the net.probe service by executing the command “net.probe off”, otherwise the arp table of the attacking machine will be contaminated with incomplete requests:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture5.png"></p>
+<p>After executing “net.probe off”, the ARP table of the attacking machine returns to normal:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture6.png"></p>
+<p>Now, to execute the ARP spoofing, the following command is executed:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">set</span> arp.spoof.targets 192.168.238.129<span class="p">;</span> <span class="nb">set</span> arp.spoof.fullduplex true<span class="p">;</span> arp.spoof on
+</span></span></code></pre></div><p>The first part of the command, “set arp.spoof.targets” sets the IP address of the victim machine, in this case 192.168.238.129.</p>
+<p>The second part of the command configures the ARP attack to be full duplex, i.e. both the Gateway and the victim machine are attacked.</p>
+<p>The third part of the command starts the ARP spoofing.</p>
+<p>To check if the attack has been successful, we can check the ARP table of the victim machine:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture7.png"></p>
+<p>As can be seen, the MAC address of the Gateway is now the same MAC address as that of our attacking machine. In addition, it can be verified that we are in a duplex ARP spoofing using Wireshark. You can see that ARP responses are sent to both the Gateway (“_ARP 192.168.238.129 (Victim) is at [ATTACKING MAC]”) and the victim machine (“_ARP 192.168.238.2 (GW) is at [ATTACKING MAC]”).</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture8.png"></p>
+<p>Poisonous ARP requests from the attacking machine to the victim and to the GW.</p>
+<h3 id="22-dns-spoofing">
+  2.2. DNS Spoofing
+  <a class="heading-link" href="#22-dns-spoofing">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>We will also perform DNS spoofing, so that, in this case, all DNS requests to <a href="http://www.instagram.com"  class="external-link" target="_blank" rel="noopener">www.instagram.com</a> go through our attacking machine. To do this, we run the following commands in the Bettercap tool:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">set</span> dns.spoof.domains <span class="o">[</span>www.instagram.com<span class="o">](</span>http://www.instagram.com<span class="o">)</span> -&gt; All DNS requests to <span class="o">[</span>www.instagram.com<span class="o">](</span>http://www.instagram.com<span class="o">)</span> will be intercepted.
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> dns.spoof.address 192.168.238.128 -&gt; Requests to previously configured websites <span class="o">(</span>Instagram, in this <span class="k">case</span><span class="o">)</span> will be redirected to our attacking machine.
+</span></span><span class="line"><span class="cl">dns.spoof on -&gt; DNS spoofing is enabled.
+</span></span></code></pre></div><p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture9.png"></p>
+<p>A Wireshark capture shows DNS spoofing in action:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture10.png">
+Poisoned DNS requests.</p>
+<p>You can see the DNS response, where it resolves <a href="http://www.instagram.com"  class="external-link" target="_blank" rel="noopener">www.instagram.com</a> to 192.168.238.128, the IP of our attacker machine.</p>
+<h3 id="23-set-up-of-the-fake-website">
+  2.3. Set-up of the fake website
+  <a class="heading-link" href="#23-set-up-of-the-fake-website">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>An apache http server will be configured on the attacking machine to take advantage of the DNS spoofing attack and capture the victim&rsquo;s credentials. Right now, the user of the victim machine is unaware that he is subjected to A) an ARP spoofing attack and B) a DNS spoofing attack, as the attack is completely unnoticeable to the user.</p>
+<p>A clone of the Instagram home page is going to be configured that captures the data entered by the user. For this purpose, the following project on <a href="https://github.com/athrvadeshmukh/Instagram-and-Facebook-login-page"  class="external-link" target="_blank" rel="noopener">GitHub</a> has been used.</p>
+<p>To do this, we git clone the project:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture11.png">.</p>
+<p>Illustration 11. Git clone of the project</p>
+<p>The index.html file must be modified so that instead of redirecting to a page, it sends a POST request to a malicious PHP file that will store the username and password in clear text.<br>
+The modified index.html file is as follows:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture12.png"></p>
+<p>And now it looks like this:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture13.png"></p>
+<p>Now the form will send a POST request to the capture.php web page with the credentials in clear text:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture14.png"></p>
+<p>It is important to create the log.txt file and chown www-data and chmod 777 so that there are no permissions problems.</p>
+<p>Now the last thing to do is to copy the content of this folder to /var/www/html/ and check if everything works correctly:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo cp -r -p -var/www/html/ -&gt; Copy the files to the root of the web page.
+</span></span><span class="line"><span class="cl">sudo systemctl restart apache2 -&gt; Restart apache2
+</span></span></code></pre></div><p>And now we can navigate to localhost, which is our own IP of the attacker where our malicious web page is hosted:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture15.png"></p>
+<p>If we enter the data, it redirects us to the original Instagram website.</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture16.png"></p>
+<p>From the attacking machine, the fake web page is working correctly.</p>
+<h3 id="24-credentials-theft">
+  2.4. Credentials theft
+  <a class="heading-link" href="#24-credentials-theft">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The ARP spoofing and DNS spoofing attack allows us to monitor all packets circulating between the victim machine and the GW. Therefore, we can find those credentials that are transmitted unencrypted by using Wireshark. To do this, we will try to enter <a href="http://www.instagram.com"  class="external-link" target="_blank" rel="noopener">www.instagram.com</a> on the victim machine:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture17.png"></p>
+<p>It is important to note that the address is instagram.com.</p>
+<p>But this is our fake website as we have poisoned the DNS. When the victim presses the enter button, the data is transmitted unencrypted since http is being used and not https:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture18.png"></p>
+<p>With wireshark we have captured the credentials sent in clear text, and on the attacking machine we can see the same credentials captured by the malicious php script:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture19.png"></p>
+<h1 id="stopping-the-attack">
+  Stopping the attack
+  <a class="heading-link" href="#stopping-the-attack">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>To end the attack, the following commands are executed in Bettercap:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">dns.spoofer stop -&gt; Stops the DNS spoofer
+</span></span><span class="line"><span class="cl">arp.spoofer stop -&gt; Stop the ARP spoofer
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span> -&gt; Closes the Bettercap tool
+</span></span></code></pre></div><p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture20.png"></p>
+<p>Now it remains to check if the ARP tables are back to normal. ARP table of the attacking machine:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture21.png"></p>
+<p>ARP table of the victim machine:</p>
+<p><img src="/projects/arp_and_dns_spoofing_bettercap/Picture22.png"></p>
+<p>As can be seen, the ARP tables have been restored and the attack has been successfully completed.</p>
+<h1 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>This work has demonstrated the feasibility of ARP Spoofing and DNS Spoofing attacks, showing the inherent vulnerabilities of ARP and DNS protocols in local networks. Through the Bettercap tool, it has been possible to intercept and manipulate the traffic of the victim machine, showing how an attacker can perform a Man-in-the-Middle (MitM) attack to steal credentials or redirect a user to fraudulent sites unnoticed.</p>
+<p>However, an attacker with greater knowledge and more advanced tools could significantly increase the impact of the attack. Techniques such as SSL stripping allow a victim to be forced to communicate over HTTP instead of HTTPS, removing the encryption layer and allowing credentials to be captured in clear text. Similarly, downgrade attacks, such as those that exploit vulnerabilities in older protocols (e.g., forcing a server to use TLS 1.0 instead of TLS 1.2 or 1.3), allow attackers to weaken the security of the connection and facilitate the interception of sensitive data.</p>
+<p>In addition, an attacker could combine DNS Spoofing with more sophisticated attacks, such as injecting malicious content into legitimate websites or exploiting vulnerabilities in browsers and applications to further compromise the victim. Tools such as Responder or Evilginx make it possible to capture NTLM authentication password hashes on internal networks or even evade two-factor authentication on websites through reverse proxy attacks.</p>
+<p>To mitigate these risks, it is essential to adopt additional security measures, such as:</p>
+<ul>
+<li>Use of HSTS (HTTP Strict Transport Security) to prevent connections from being forced to use HTTP instead of HTTPS.</li>
+<li>Disabling insecure protocols and configuring servers to force the use of TLS 1.2 or 1.3.</li>
+<li>Multi-factor authentication (MFA) to reduce the impact of compromised credentials.</li>
+<li>Real-time traffic monitoring and analysis, using tools such as Zeek or Suricata to detect anomalous network behavior.</li>
+<li>Network segmentation and use of secure VPNs to limit the scope of potential insider attacks.</li>
+</ul>
+<p>While this work has demonstrated the effectiveness of ARP and DNS Spoofing in a controlled environment, future studies could focus on the implementation of detection and mitigation techniques in enterprise networks, as well as on the evaluation of more advanced attacks, such as those that combine social engineering with network traffic manipulation.</p>
+<p>In conclusion, security in local networks remains a critical challenge, and MitM attacks remain a real threat if adequate protection measures are not implemented. The combination of best practices, secure protocols and monitoring tools is key to minimizing these risks and strengthening the security of the network infrastructure.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+  
+</section>
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2025
+     Dennis Drebitca 
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -6,8 +6,15 @@
     <description>Recent content on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Jan 2025 15:43:16 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2025 15:43:16 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ARP and DNS spoofing with Bettercap</title>
+      <link>http://localhost:1313/projects/arp_and_dns_spoofing_bettercap/</link>
+      <pubDate>Sun, 09 Feb 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/projects/arp_and_dns_spoofing_bettercap/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/projects/arp_and_dns_spoofing_bettercap/Picture0.png&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#introduction&#34; &gt;1. Introduction&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#arp-spoofing-attack&#34; &gt;2. Attack Execution&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#arp-spoofing-attack&#34; &gt;2.1. ARP Poisoning&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#dns-spoofing-attack&#34; &gt;2.2. DNS Spoofing&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#fake-web-page-setup&#34; &gt;2.3. Fake Web Page Setup&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#credential-theft&#34; &gt;2.4. Credential Theft&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#stopping-the-attack&#34; &gt;3. Stopping the attack&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#conclusions&#34; &gt;4. Conclusions&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;&#xD;&#xA;  Introduction&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introduction&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;In the field of cybersecurity, analyzing vulnerabilities in local networks is a fundamental task for understanding potential threats and designing appropriate defense mechanisms. Among the most common attacks affecting the integrity and confidentiality of information in a network are ARP Spoofing and DNS Spoofing, techniques used to intercept, modify, and redirect traffic from devices connected to a LAN.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Steganographic techniques, analysis, and usage of S-Tools</title>
       <link>http://localhost:1313/projects/steganography_and_s-tools/</link>
@@ -90,7 +97,7 @@
       <link>http://localhost:1313/contact/</link>
       <pubDate>Sun, 28 Jan 2024 19:19:53 +0100</pubDate>
       <guid>http://localhost:1313/contact/</guid>
-      <description>&lt;p&gt;Hey! You can contact me via my &lt;a href=&#34;https://www.linkedin.com/in/dennis-gabriel-drebitca-popovici-8731b4233/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LinkedIn profile&lt;/a&gt; or via &lt;a href=&#34;mailto:dennis.drebitca@gmail.com&#34; &gt;e-mail&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Hey! You can contact me via my &lt;a href=&#34;https://www.linkedin.com/in/dennis-gabriel-drebitca-popovici-8731b4233/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LinkedIn profile&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>TwoMillion HTB Walkthrough</title>

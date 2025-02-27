@@ -6,8 +6,36 @@
     <description>Recent content in Tags on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 16 Jun 2024 13:07:16 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jan 2025 15:43:16 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Histogram Analysis</title>
+      <link>http://localhost:1313/tags/histogram-analysis/</link>
+      <pubDate>Wed, 01 Jan 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/histogram-analysis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LSB</title>
+      <link>http://localhost:1313/tags/lsb/</link>
+      <pubDate>Wed, 01 Jan 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/lsb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Wed, 01 Jan 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Steganography</title>
+      <link>http://localhost:1313/tags/steganography/</link>
+      <pubDate>Wed, 01 Jan 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/steganography/</guid>
+      <description></description>
+    </item>
     <item>
       <title>ClearML</title>
       <link>http://localhost:1313/tags/clearml/</link>
