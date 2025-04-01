@@ -6,8 +6,99 @@
     <description>Recent content in Tags on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 23 Feb 2025 15:43:16 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 01 Apr 2025 13:07:16 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argus Surveillance DVR 4.0</title>
+      <link>http://localhost:1313/tags/argus-surveillance-dvr-4.0/</link>
+      <pubDate>Tue, 01 Apr 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/argus-surveillance-dvr-4.0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Feroxbuster</title>
+      <link>http://localhost:1313/tags/feroxbuster/</link>
+      <pubDate>Tue, 01 Apr 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/feroxbuster/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Local File Inclusion</title>
+      <link>http://localhost:1313/tags/local-file-inclusion/</link>
+      <pubDate>Tue, 01 Apr 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/local-file-inclusion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Path Traversal</title>
+      <link>http://localhost:1313/tags/path-traversal/</link>
+      <pubDate>Tue, 01 Apr 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/path-traversal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Privilege Escalation</title>
+      <link>http://localhost:1313/tags/privilege-escalation/</link>
+      <pubDate>Tue, 01 Apr 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/privilege-escalation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RunAs Exploitation</title>
+      <link>http://localhost:1313/tags/runas-exploitation/</link>
+      <pubDate>Tue, 01 Apr 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/runas-exploitation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WinPEAS</title>
+      <link>http://localhost:1313/tags/winpeas/</link>
+      <pubDate>Tue, 01 Apr 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/winpeas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Base64 Password Decoding</title>
+      <link>http://localhost:1313/tags/base64-password-decoding/</link>
+      <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/base64-password-decoding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CyberChef</title>
+      <link>http://localhost:1313/tags/cyberchef/</link>
+      <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/cyberchef/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LinPEAS</title>
+      <link>http://localhost:1313/tags/linpeas/</link>
+      <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/linpeas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MySQL Credential Extraction</title>
+      <link>http://localhost:1313/tags/mysql-credential-extraction/</link>
+      <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/mysql-credential-extraction/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Remote File Inclusion</title>
+      <link>http://localhost:1313/tags/remote-file-inclusion/</link>
+      <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/remote-file-inclusion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Writable /Etc/Passwd Exploit</title>
+      <link>http://localhost:1313/tags/writable-/etc/passwd-exploit/</link>
+      <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/writable-/etc/passwd-exploit/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Metasploitable3</title>
       <link>http://localhost:1313/tags/metasploitable3/</link>
@@ -356,13 +447,6 @@
       <link>http://localhost:1313/tags/cve-2023-0386/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
       <guid>http://localhost:1313/tags/cve-2023-0386/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cyberchef</title>
-      <link>http://localhost:1313/tags/cyberchef/</link>
-      <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
-      <guid>http://localhost:1313/tags/cyberchef/</guid>
       <description></description>
     </item>
     <item>

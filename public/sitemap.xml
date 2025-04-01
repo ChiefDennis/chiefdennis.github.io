@@ -2,14 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/argus-surveillance-dvr-4.0/</loc>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/authors/</loc>
-    <lastmod>2025-02-23T15:43:16+01:00</lastmod>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-02-23T15:43:16+01:00</lastmod>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/authors/dennis-drebitca/</loc>
-    <lastmod>2025-02-23T15:43:16+01:00</lastmod>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/offsec_dvr4/</loc>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/feroxbuster/</loc>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/local-file-inclusion/</loc>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/offsec/</loc>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/path-traversal/</loc>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/runas-exploitation/</loc>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/</loc>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/winpeas/</loc>
+    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/base64-password-decoding/</loc>
+    <lastmod>2025-03-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cyberchef/</loc>
+    <lastmod>2025-03-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linpeas/</loc>
+    <lastmod>2025-03-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mysql-credential-extraction/</loc>
+    <lastmod>2025-03-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/remote-file-inclusion/</loc>
+    <lastmod>2025-03-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/offsec_snookum/</loc>
+    <lastmod>2025-03-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/writable-/etc/passwd-exploit/</loc>
+    <lastmod>2025-03-16T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/metasploitable3/</loc>
     <lastmod>2025-02-23T15:43:16+01:00</lastmod>
@@ -24,9 +81,6 @@
     <lastmod>2025-02-23T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/reconnaisance_vulnerabilities_nessus_openvas/</loc>
-    <lastmod>2025-02-23T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-02-23T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/vulnerability-analysis/</loc>
@@ -48,9 +102,6 @@
     <lastmod>2025-02-09T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/series/network-attacks/</loc>
-    <lastmod>2025-02-09T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/series/</loc>
     <lastmod>2025-02-09T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/website-cloning/</loc>
@@ -93,9 +144,6 @@
     <lastmod>2024-06-16T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/json-deserialization/</loc>
-    <lastmod>2024-06-16T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2024-06-16T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/python-scripting/</loc>
@@ -228,9 +276,6 @@
     <lastmod>2024-01-16T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cve-2023-0386/</loc>
-    <lastmod>2024-01-16T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/cyberchef/</loc>
     <lastmod>2024-01-16T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/js-deobfuscation/</loc>
