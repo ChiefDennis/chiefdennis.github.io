@@ -110,10 +110,16 @@
     <loc>http://localhost:1313/tags/wireshark/</loc>
     <lastmod>2025-02-09T15:43:16+01:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/projects/wifi_challenge_lab/</loc>
+    <lastmod>2025-01-01T15:43:16+01:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/histogram-analysis/</loc>
     <lastmod>2025-01-01T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/lsb/</loc>
+    <lastmod>2025-01-01T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/pentesting-wireless/</loc>
     <lastmod>2025-01-01T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/python/</loc>

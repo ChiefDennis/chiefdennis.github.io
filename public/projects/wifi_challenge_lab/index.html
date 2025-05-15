@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  WifiChallenge Lab CTF · Chief Dennis&#39; Blog
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Dennis Drebitca">
+<meta name="description" content="
+
+  Introduction
+  
+    
+    Link to heading
+  
+
+This write-up summarizes the completion of the WiFiChallenge Lab, a practical cybersecurity exercise focused on wireless network security. Throughout the lab, various Wi-Fi attack techniques were explored and executed, including packet capture, handshake extraction, password cracking, and exploiting common vulnerabilities in WEP and WPA/WPA2 networks. The objective was to simulate real-world scenarios, enhance practical skills in wireless penetration testing, and deepen understanding of Wi-Fi security protocols and their weaknesses. This walkthrough outlines the methodology, tools used, challenges encountered, and key takeaways from the experience.">
+<meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="WifiChallenge Lab CTF">
+  <meta name="twitter:description" content="IntroductionLink to headingThis write-up summarizes the completion of the WiFiChallenge Lab, a practical cybersecurity exercise focused on wireless network security. Throughout the lab, various Wi-Fi attack techniques were explored and executed, including packet capture, handshake extraction, password cracking, and exploiting common vulnerabilities in WEP and WPA/WPA2 networks. The objective was to simulate real-world scenarios, enhance practical skills in wireless penetration testing, and deepen understanding of Wi-Fi security protocols and their weaknesses. This walkthrough outlines the methodology, tools used, challenges encountered, and key takeaways from the experience.">
+
+<meta property="og:url" content="http://localhost:1313/projects/wifi_challenge_lab/">
+  <meta property="og:site_name" content="Chief Dennis&#39; Blog">
+  <meta property="og:title" content="WifiChallenge Lab CTF">
+  <meta property="og:description" content="IntroductionLink to headingThis write-up summarizes the completion of the WiFiChallenge Lab, a practical cybersecurity exercise focused on wireless network security. Throughout the lab, various Wi-Fi attack techniques were explored and executed, including packet capture, handshake extraction, password cracking, and exploiting common vulnerabilities in WEP and WPA/WPA2 networks. The objective was to simulate real-world scenarios, enhance practical skills in wireless penetration testing, and deepen understanding of Wi-Fi security protocols and their weaknesses. This walkthrough outlines the methodology, tools used, challenges encountered, and key takeaways from the experience.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2025-05-15T15:43:16+01:00">
+    <meta property="article:modified_time" content="2025-05-15T15:43:16+01:00">
+    <meta property="article:tag" content="Aircrack-Ng Suite">
+    <meta property="article:tag" content="MDK3">
+    <meta property="article:tag" content="MDK4">
+    <meta property="article:tag" content="Air-Hammer">
+    <meta property="article:tag" content="Eapbuster">
+    <meta property="article:tag" content="Hashcat">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/projects/wifi_challenge_lab/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/custom.css" media="screen">
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Chief Dennis&#39; Blog
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Catch The Flag</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/tags/">Tags</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/projects/wifi_challenge_lab/">
+              WifiChallenge Lab CTF
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-05-15T15:43:16&#43;01:00">
+                May 15, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              17-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/dennis-drebitca/">Dennis Drebitca</a></div>
+
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/aircrack-ng-suite/">Aircrack-Ng Suite</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/mdk3/">MDK3</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/mdk4/">MDK4</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/air-hammer/">Air-Hammer</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/eapbuster/">Eapbuster</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/hashcat/">Hashcat</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/wireshark/">Wireshark</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/hcxtool/">Hcxtool</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/hxcdump/">Hxcdump</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/hcxpcapngtool/">Hcxpcapngtool</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><img src="/projects/wifi_challenge_lab/image1.png"></p>
+<h2 id="introduction">
+  Introduction
+  <a class="heading-link" href="#introduction">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This write-up summarizes the completion of the WiFiChallenge Lab, a practical cybersecurity exercise focused on wireless network security. Throughout the lab, various Wi-Fi attack techniques were explored and executed, including packet capture, handshake extraction, password cracking, and exploiting common vulnerabilities in WEP and WPA/WPA2 networks. The objective was to simulate real-world scenarios, enhance practical skills in wireless penetration testing, and deepen understanding of Wi-Fi security protocols and their weaknesses. This walkthrough outlines the methodology, tools used, challenges encountered, and key takeaways from the experience.</p>
+<h3 id="1-what-is-the-content-of-the-file-rootflagtxt-on-the-vm">
+  1. What is the content of the file /root/flag.txt on the VM?
+  <a class="heading-link" href="#1-what-is-the-content-of-the-file-rootflagtxt-on-the-vm">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>To confirm that the lab has been installed and started correctly, the flag located in the /root directory is extracted:</p>
+<p><img src="/projects/wifi_challenge_lab/image2.png"></p>
+<p>Illustration 1. Flag in the /root directory.</p>
+<h2 id="reconnaissance">
+  Reconnaissance
+  <a class="heading-link" href="#reconnaissance">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="2-what-is-the-channel-that-the-wifi-global-access-point-is-currently-using">
+  2. What is the channel that the wifi-global Access Point is currently using?
+  <a class="heading-link" href="#2-what-is-the-channel-that-the-wifi-global-access-point-is-currently-using">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>To scan the environment, it is necessary to employ a network interface in monitor mode. To do this, the airmon-ng tool is used. To check which network interfaces are installed, you can run the &ldquo;airmon-ng&rdquo; command without arguments:</p>
+<p><img src="/projects/wifi_challenge_lab/image3.png"></p>
+<p>Illustration 2. Network interfaces installed.</p>
+<p>The monitor mode is then mounted on the wlan0 interface using the command &ldquo;airmon-ng start wlan0&rdquo;</p>
+<p><img src="/projects/wifi_challenge_lab/image4.png"></p>
+<p>Illustration 3. Configuring the wlan0 interface in monitor mode.</p>
+<p>Once the interface is in monitor mode, the environment can be captured using the airodump-ng tool. To do this, the following command is executed:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">airodump-ng -w capture -b abg wlan0mon
+</span></span></code></pre></div><p>Where the parameters mean:</p>
+<ul>
+<li>w capture2: Save to the &ldquo;capture&rdquo; document</li>
+<li>b abg: Capture the a, b and g bands, also capturing the 5GHz channels.</li>
+<li>wlan0mon: The interface that is going to be used. It must be in monitor mode.</li>
+</ul>
+<p><img src="/projects/wifi_challenge_lab/image5.png">
+Illustration 4. Capturing the environment. Multiple ESSIDs can be observed.</p>
+<p>This is the answer to the first question: The global Wi-Fi network is on channel 44.</p>
+<h3 id="3-what-is-the-mac-of-the-wifi-it-client">
+  3. What is the MAC of the wifi-IT client?
+  <a class="heading-link" href="#3-what-is-the-mac-of-the-wifi-it-client">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>In the previous screenshot you can also see the channel of the wifi-IT network. With this information, you can scan only on that channel so that there is less noise in the capture. To capture the MAC of the network client, airodump is used again, this time scanning only the desired channel. To do this, the following command is executed:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">airodump-ng -c <span class="m">11</span> wlan0mon
+</span></span></code></pre></div><p>In parallel, the mdk3 tool is run to deauthenticate customers who are on those channels, and get more information about them. To do this, the wlan1 interface is put in monitor mode and the following command is executed in parallel:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mdk3 wlan1mon d -c <span class="m">11</span>
+</span></span></code></pre></div><p>Where the arguments mean:</p>
+<ul>
+<li>wlan1mon: The interface to be used.</li>
+<li>d: The deauthentication attack is chosen.</li>
+<li>c 11: The attack is executed on channel 11.</li>
+</ul>
+<p><img src="/projects/wifi_challenge_lab/image6.png">
+Illustration 5. MDK3 execution.</p>
+<p><img src="/projects/wifi_challenge_lab/image7.png">
+Illustration 6. Capture of channel 11 with airodump-ng.</p>
+<p>This way you get the MAC of the wifi-IT client: 10:F9:6F:AC:53:52.</p>
+<h3 id="4-what-is-the-probe-of-78c1a7bf7246">
+  4. What is the probe of 78:C1:A7:BF:72:46?
+  <a class="heading-link" href="#4-what-is-the-probe-of-78c1a7bf7246">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Using the screenshot above, you can see that MAC 78:C1:A7:BF:72:46 looks for the wifi-offices and Jason networks:</p>
+<p><img src="/projects/wifi_challenge_lab/image8.png">
+Illustration 7. Capture airodump-ng on channel 11.</p>
+<h3 id="5-what-is-the-essid-of-the-hidden-ap-mac-f09fc26a8826">
+  5. What is the ESSID of the hidden AP (mac F0:9F:C2:6A:88:26)?
+  <a class="heading-link" href="#5-what-is-the-essid-of-the-hidden-ap-mac-f09fc26a8826">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>No customers are observed in the hidden network, so brute force must be used. To do this, the mdk4 tool and the wordlist rockyou.txt are used. First, you have to filter in the file rockyou.txt only the lines with 9 characters, since we know the length of the ESSID with previous captures. To do this, grep is used with regex:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">grep -E<span class="s1">&#39;^. {9}$&#39;</span> /root/rockyou-top100000.txt &gt; rockyou_9char.txt
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image9.png">
+Illustration 8. Number of lines in the new dictionary.</p>
+<p>The new dictionary has approximately 120 thousand lines. The mdk4 tool is then used to perform a brute force attack against the MAC of the hidden AP:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mdk4 wlan1mon p -f rockyou_9char.txt -t F0:9F:C2:6A:88:26
+</span></span></code></pre></div><p>Where the arguments mean:</p>
+<ul>
+<li>WLAN1MON: This is the name of the wireless network interface in monitor mode. It has to be in monitor mode for mdk4 to work.</li>
+<li>p: Indicates the &ldquo;WPA Handshake Dictionary Attack&rdquo; attack mode. This mode allows you to test passwordsagainst a Wi-Fi network when you have the handshake captured (although with mdk4 it is done in real time against active networks).</li>
+<li>f rockyou_9char.txt: Indicates the dictionary file that will be used for the attack (in this case, the one containing 9-character passwords).</li>
+<li>t F0:9F:C2:6A:88:26 - Specifies the MAC address of the target access point</li>
+</ul>
+<p><img src="/projects/wifi_challenge_lab/image10.png">
+Illustration 9. Failed attack.</p>
+<p>The attack has not proved successful. The wordlist must be different. All networks start with &ldquo;wifi-&rdquo; so that prefix is added to the list rockyou.txt, using the sed command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sed ‘s/^/wifi-/’ /root/rockyou-top100000.txt &gt; rockyou2.txt
+</span></span></code></pre></div><p>And again, only lines with 9 characters are selected with grep:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">grep -E<span class="s1">&#39;^. {9}$&#39;</span> rockyou2.txt &gt; rockyou_9char.txt
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image11.png">
+Illustration 10. Number of lines in the new dictionary.</p>
+<p>There are only 3336 possible ESSIDs. Again, mdk4 is relaunched with the new dictionary.</p>
+<p><img src="/projects/wifi_challenge_lab/image12.png">
+Illustration 11. Successful attack.</p>
+<p>And the attack has been successful, the ESSID of the hidden network is wifi-free.</p>
+<h2 id="open">
+  OPEN
+  <a class="heading-link" href="#open">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="6-what-is-the-flag-in-the-hidden-ap-router-behind-default-credentials">
+  6. What is the flag in the hidden AP router behind default credentials?
+  <a class="heading-link" href="#6-what-is-the-flag-in-the-hidden-ap-router-behind-default-credentials">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>After connecting to the hidden network, the ifconfig command is executed to find out which is the subnet of the network:</p>
+<p><img src="/projects/wifi_challenge_lab/image13.png">
+Illustration 12. IP granted by the dhcp server.</p>
+<p>To find active hosts on the network, an NMAP scan is performed:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nmap 192.168.16.0/24
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image14.png">
+Illustration 13. NMAP scan to the wifi-free network.</p>
+<p>There is host 192.168.16.1, the Gateway. Here&rsquo;s the interface accessed via port 80:</p>
+<p><img src="/projects/wifi_challenge_lab/image15.png">
+Illustration 14. AP web interface.</p>
+<p>Testing passwords, weak admin/admin credentials are configured:</p>
+<p><img src="/projects/wifi_challenge_lab/image16.png">
+Illustration 15. Flag after logging in to the AP website.</p>
+<p>And after logging in using the credentials, the flag is obtained.</p>
+<h3 id="7-mac-impersonation-what-is-the-flag-on-the-ap-router-of-the-wifi-guest-network">
+  7. MAC impersonation: What is the flag on the AP router of the wifi-guest network?
+  <a class="heading-link" href="#7-mac-impersonation-what-is-the-flag-on-the-ap-router-of-the-wifi-guest-network">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The Wi-Fi guest network is also open. After connecting to the network, the IP is checked again using the ifconfig command:</p>
+<p><img src="/projects/wifi_challenge_lab/image17.png">
+Illustration 16. IP granted by DHCP on the Wi-Fi guest network.</p>
+<p>An NMAP scan is performed again to look for active hosts on the network:</p>
+<p><img src="/projects/wifi_challenge_lab/image18.png">
+Illustration 17. NMAP scanning on the wifi-guest network.</p>
+<p>A host with IP 192.168.10.1 is observed with ports 22, 53, 80, 443 and 8080 open. By accessing the website of said host:</p>
+<p><img src="/projects/wifi_challenge_lab/image19.png">
+Illustration 18. Webpage of the host.</p>
+<p>By clicking on &ldquo;Continue&rdquo;, the website redirects us to the following login form:</p>
+<p><img src="/projects/wifi_challenge_lab/image20.png">
+Illustration 19. Login form.</p>
+<p>We do not have the passwords, so one of the customers connected to the Wi-Fi guest network will be challenged. To do this, airodump-ng is executed on all channels in search of the MACs of the clients of the Wi-Fi guest network:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">airodump-ng -w capture -b abg wlan0mon
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image21.png">
+Illustration 20. Capture airodump-ng.</p>
+<p>There are 2 connected clients, with MAC addresses:</p>
+<ul>
+<li>80:18:44:BF:72:47</li>
+<li>B0:72:BF:B0:78:48</li>
+</ul>
+<p>We are going to replace our MAC address with the MAC address of one of the clients that are already authenticated, hoping that in this way the AP will not ask us for credentials. We connect to the wifi-guest network with the wlan2 adapter and execute the following commands:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ip link show
+</span></span></code></pre></div><p>This command displays all network interfaces in the system (both physical and virtual), along with their status (enabled, disabled, MAC address, etc.). In this case, the MAC of our wlan2 interface is as follows:</p>
+<p><img src="/projects/wifi_challenge_lab/image22.png">
+Illustration 21. WLAN interface MAC2.</p>
+<p>Our wlan2 device appears with its original MAC: 02:00:00:00:20:00. The following commands are then executed as root to change the MAC:</p>
+<ul>
+<li>ip link set dev wlan2 down_ # Disable the device to avoid problems</li>
+<li>ip link set dev wlan2 address 80:18:44:BF:72:47_ # Replace the MAC with the authenticated client</li>
+<li>ip link set dev wlan2 up_ # Wake up the device again</li>
+<li>ip link show_ # Shows the network devices again to check the change</li>
+</ul>
+<p><img src="/projects/wifi_challenge_lab/image23.png">
+Illustration 22. Successful change of the WLAN2 interface MAC.</p>
+<p>The result is that our MAC is now that of an already authenticated device, so now through the browser you can access the router&rsquo;s login directly:</p>
+<p><img src="/projects/wifi_challenge_lab/image24.png">
+Illustration 23. Web login del AP.</p>
+<p>However, now the default admin/admin credentials do not reveal the flag: you have to find the credentials of another user. However, as it is an open network, the traffic is not encrypted, so it can be captured with airodump and then inspected with wireshark for credentials. First, a capture is generated with airodump-ng:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">airodump-ng -w dump.cap wlan1mon
+</span></span></code></pre></div><p>Now, after capturing the traffic, you can inspect the traffic with wireshark.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">wireshark dump.cap-01.cap
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image25.png">
+Illustration 24. Request POST to the login page.</p>
+<p>In the POST request, you can get the credentials of the free1 user:</p>
+<ul>
+<li>Form item: &ldquo;Username&rdquo; = &ldquo;free1&rdquo;</li>
+<li>Form item: &ldquo;Password&rdquo; = &ldquo;Jyl1iq8UajZ1fEK&rdquo;</li>
+<li>Form item: &ldquo;Submit&rdquo; = &ldquo;Login&rdquo;</li>
+</ul>
+<p>By entering the credentials on the AP website, you can get the flag for this challenge:</p>
+<p><img src="/projects/wifi_challenge_lab/image26.png">
+Illustration 25. Flag after stealing the free1 user&rsquo;s credentials.</p>
+<h2 id="wep">
+  WEP
+  <a class="heading-link" href="#wep">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="8-wep-cracking-what-is-the-flag-on-the-wifi-old-ap-website">
+  8. WEP cracking: What is the flag on the wifi-old AP website?
+  <a class="heading-link" href="#8-wep-cracking-what-is-the-flag-on-the-wifi-old-ap-website">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>To crack the password of a WEP network, you have to use the airodump-ng and aircrack-ng tools. First, the packets #data are captured with airodump-ng:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">airodump-ng -w WEP_capture --essid wifi-old -c <span class="m">3</span> wlan0mon
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image27.png">
+Illustration 26. Capture airdump-ng.</p>
+<p>To generate more traffic and capture more IVs, you can use the aireplay-ng tool:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">aireplay-ng -3 -b F0:9F:C2:71:22:11 -h 1E:A8:5D:D1:1A:AF wlan0mon
+</span></span></code></pre></div><p>After capturing a correct number of packets, the password is cracked with aircrack-ng:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">aircrack-ng WEP_capture-01.cap
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image28.png">
+Illustration 27. Breaking the WEP password.</p>
+<p>This password must be used without colons due to standard requirements. Once connected with the password &ldquo;11BB33CD55&rdquo;, we can access the AP:</p>
+<p><img src="/projects/wifi_challenge_lab/image29.png">
+Illustration 28. Flag after logging in to the AP.</p>
+<p>The WEP network flag is obtained.</p>
+<h2 id="wpa2-psk">
+  WPA2-PSK
+  <a class="heading-link" href="#wpa2-psk">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="9-wpa-cracking-with-client-what-is-the-wifi-mobile-ap-password">
+  9. WPA-Cracking with client: What is the wifi-mobile AP password?
+  <a class="heading-link" href="#9-wpa-cracking-with-client-what-is-the-wifi-mobile-ap-password">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Inspecting previous captures, the wifi-mobile network has the following characteristics:</p>
+<ul>
+<li>BSSID: F0:9F:C2:71:22:12</li>
+<li>CH: 6</li>
+<li>ENC: WPA2</li>
+<li>AUTH: PSK</li>
+<li>ESSID: wifi-mobile</li>
+</ul>
+<p>Airodump-ng is executed against the bssid and channel to try to extract the handshake. To do this, the command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">airodump-ng -w wifi-mobile --bssid F0:9F:C2:71:22:12 -c <span class="m">6</span> wlan0mon
+</span></span></code></pre></div><p>At the same time, the mdk3 tool is run to deauthenticate clients and generate data packets to get the handshake faster.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mdk3 wlan1mon d -c 6_
+</span></span></code></pre></div><p>And the handshake has been captured:</p>
+<p><img src="/projects/wifi_challenge_lab/image30.png">
+Illustration 29. Handshake capture.</p>
+<p>Now what remains is to run aircrack to crack the password from the handshake, specifying /root/rockyou.txt as the dictionary.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">aircrack-ng -w /root/rockyou-top100000.txt wifi-mobile-02.cap
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image31.png">
+Illustration 30. Wi-Fi mobile network password.</p>
+<p>The password has been cracked: starwars1.</p>
+<h3 id="10-what-is-the-ip-of-the-web-server-in-the-wifi-mobile-network">
+  10. What is the IP of the web server in the wifi-mobile network?
+  <a class="heading-link" href="#10-what-is-the-ip-of-the-web-server-in-the-wifi-mobile-network">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>After connecting to the network, ifconfig is run to check the assigned IP. With this information, an NMAP scan can be launched to discover active hosts:</p>
+<p><img src="/projects/wifi_challenge_lab/image32.png">
+Illustration 31. IP assigned.</p>
+<p><img src="/projects/wifi_challenge_lab/image33.png">
+Illustration 32. NMAP scan to the wifi-mobile network.</p>
+<p>The router with IP 192.168.2.1 only shows the login page, but there is another host with port 80 open: 192.168.2.9</p>
+<p><img src="/projects/wifi_challenge_lab/image34.png">
+Illustration 33. Webpage on IP 192.168.2.9.</p>
+<p>This flag is actually obtained for point 11. What we are asked at this point is the IP of the host: 192.168.2.9.</p>
+<h3 id="what-is-the-flag-after-login-in-wifi-mobile">
+  What is the flag after login in wifi-mobile?
+  <a class="heading-link" href="#what-is-the-flag-after-login-in-wifi-mobile">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>After obtaining the network password, the captured packets can be decrypted and the traffic inspected with wireshark, with the aim of stealing session cookies. To do this, the airdecap tool is used:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">airdecap-ng -o wpa_decap -e wifi-mobile -p starwars1 wifi-mobile-02.cap
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image35.png">
+Illustration 34. Running the airdecap-ng tool.</p>
+<p>Now, wireshark opens and the traffic is inspected:</p>
+<p><img src="/projects/wifi_challenge_lab/image36.png">
+Illustration 35. POST request to the AP login page.</p>
+<p>In the POST request, you can get the credentials of the test2 user:</p>
+<ul>
+<li>Form item: &ldquo;Username&rdquo; = &ldquo;test2&rdquo;</li>
+<li>Form item: &ldquo;Password&rdquo; = &ldquo;2q60joygCBJQuFo&rdquo;</li>
+<li>Form item: &ldquo;Submit&rdquo; = &ldquo;Login&rdquo;</li>
+</ul>
+<p>There is also a session cookie, which can be obtained from a GET request:</p>
+<p><img src="/projects/wifi_challenge_lab/image37.png">
+Illustration 36. GET request and PHP session cookie.</p>
+<p>You can get the cookie &ldquo;PHPSESSID=im8nhrv3dbnsihu4nholouv9si&rdquo;.</p>
+<p>Logging into the router&rsquo;s administration panel, 192.168.2.1, gets the flag asking for the statement:</p>
+<p><img src="/projects/wifi_challenge_lab/image38.png">
+Illustration 37. Flag after logging in to the AP website.</p>
+<h3 id="11-is-there-client-isolation-in-the-wifi-mobile-network">
+  11. Is there client isolation in the wifi-mobile network?
+  <a class="heading-link" href="#11-is-there-client-isolation-in-the-wifi-mobile-network">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>As seen in challenge number 9, there is no client isolation since we have gained access to 192.168.2.9 and the flag without having the MAC of the other user. (Figure 33).</p>
+<h3 id="12-ap-less-wpa-cracking-what-is-the-wifi-offices-password">
+  12. AP-Less WPA Cracking: What is the wifi-offices password?
+  <a class="heading-link" href="#12-ap-less-wpa-cracking-what-is-the-wifi-offices-password">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Scanning the environment again with airodump-ng, the wifi-offices network is not found, since if it were hidden or in the 5GHz band it would also be discovered. However, there are several customers who are looking for this website, in the Probes section:</p>
+<p><img src="/projects/wifi_challenge_lab/image39.png">
+Illustration 38. Capture airocump-ng.</p>
+<p>To get the password for a Wi-Fi network that is not present, but with potential clients, you can create a fake AP with the same ESSID for clients to try to connect. With these connection attempts, the handshake will be captured.</p>
+<p>To create the fake AP, hostapd is used, creating the following configuration file:</p>
+<p><img src="/projects/wifi_challenge_lab/image40.png">
+Illustration 39. Fake AP configuration file.</p>
+<p>Hostapd is executed with the following command, in debug mode:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hostapd -d hostapd.conf
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image41.png">
+Illustration 40. Running hostapd with the configuration file configured.</p>
+<p>In parallel, it is important to cast airodump-ng so that the handshake is captured:</p>
+<p><img src="/projects/wifi_challenge_lab/image42.png">
+Illustration 41. Captura del handshake de la red wifi-offices.</p>
+<p>Now, to crack the handshake, you use the aircrack-ng tool, and the /root/rockyou-top100000.txt dictionary:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">aircrack-ng wifi-offices-02.cap -w /root/rockyou-top100000.txt
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image43.png">
+Illustration 42. Running aircrack-ng.</p>
+<p>The password has been successfully cracked, turning out to be &ldquo;password1&rdquo;</p>
+<h2 id="wpa3-ccmp-sae">
+  WPA3-CCMP: SAE
+  <a class="heading-link" href="#wpa3-ccmp-sae">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="13-wpa3-ccmp-sae-bruteforce-wacker-what-is-the-flag-on-the-wifi-management-ap-website">
+  13. WPA3-CCMP SAE bruteforce (Wacker): What is the flag on the wifi-management AP website?
+  <a class="heading-link" href="#13-wpa3-ccmp-sae-bruteforce-wacker-what-is-the-flag-on-the-wifi-management-ap-website">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Airodump-ng is used again to scan the environment on channel 11:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">airodump-ng -c <span class="m">11</span> wlan0mon
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image44.png">
+Illustration 43. Capture of airodump-ng on channel 11.</p>
+<p>Apparently, the Wi-Fi management AP has no connected clients. This limits the attacks that can be performed against this AP. It is possible to perform an online brute force attack with a dictionary using the <a href="https://github.com/blunderbuss-wctf/wacker"  class="external-link" target="_blank" rel="noopener">Wacker tool</a>:</p>
+<p><img src="/projects/wifi_challenge_lab/image45.png">
+Illustration 44. Running the Wacker tool.</p>
+<p>The parameters for the tool are as follows:</p>
+<ul>
+<li>wordlist /root/rockyou-100000.txt</li>
+<li>interface wlan3</li>
+<li>bssid F0:9F:C2:11:0A:24</li>
+<li>ssid wifi-management</li>
+<li>freq 2462 (Corresponding to CH 11)</li>
+</ul>
+<p>The command results in the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./wacker.py --wordlist /root/rockyou-top100000.txt --interface wlan3 --bssid F0:9F:C2:11:0A:24 --ssid wifi-management --freq <span class="m">2462</span>
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image46.png">
+Illustration 45. Execution of the wacker.py command.</p>
+<p>With this tool, you get the password for the Wi-Fi management network: chocolate1. We can now access the AP website at 192.168.14.1:</p>
+<p><img src="/projects/wifi_challenge_lab/image47.png">
+Illustration 46. Flag after logging in to the AP website.</p>
+<h3 id="14-wpa3-ccmp-sae-cracking-hcxdumptool-what-is-the-flag-on-the-wifi-it-ap-website">
+  14. WPA3-CCMP SAE cracking (Hcxdumptool): What is the flag on the wifi-IT AP website?
+  <a class="heading-link" href="#14-wpa3-ccmp-sae-cracking-hcxdumptool-what-is-the-flag-on-the-wifi-it-ap-website">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>This network does have clients, so hcxdumptool can be used to capture the SAE handshake and crack it offline with Hashcat. To do this, the following command is executed:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo hcxdumptool -i wlan0mon -o wifi-management.pcapng --enable_status<span class="o">=</span><span class="m">15</span>
+</span></span></code></pre></div><p>Where the arguments are as follows:</p>
+<ul>
+<li>i wlan0mon: wlan0mon interface in monitor mode</li>
+<li>o wifi-management.pcapng: Output file.</li>
+<li>enable_status=15: Show states 1, 2, 4 and 8 (more info in the tool documentation).</li>
+</ul>
+<p><img src="/projects/wifi_challenge_lab/image48.png">
+Illustration 47. Running hcxdumptool.</p>
+<p>After capture, you need to convert the handshakes to a format that hashcat can crack. This is achieved by using the hcxpcapngtool:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hcxpcapngtool -o hashcat_hash.22000 wifi-management.pcapng
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image49.png">
+Illustration 48. Running the hcxpcapngtool tool.</p>
+<p>Once the handshakes have been converted to a format that can be cracked by Hashcat, the tool is run to try to get the passwords. It has been run on another Kali machine where Hashcat is updated, using the -m 22000 mode:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">hashcat -m <span class="m">22000</span> hashcat_hash.22000 rockyou-100000.txt
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image50.png">
+Illustration 49. Use of hashcat to crack the password.</p>
+<p>And you get the wifi-IT password: bubblegum, in addition to the home-WIFI and wifi-mobile passwords. Once the connection with the Wi-Fi network is established, you can access the AP website, at the address 192.168.15.1:</p>
+<p><img src="/projects/wifi_challenge_lab/image51.png">
+Illustration 50. Flag on the AP administration website</p>
+<h2 id="wpa3-ccmp-mgt-recon-mgt">
+  WPA3-CCMP MGT: Recon MGT
+  <a class="heading-link" href="#wpa3-ccmp-mgt-recon-mgt">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="15-domain-extraction-what-is-the-domain-of-the-users-of-the-wifi-regional-network">
+  15. Domain extraction: What is the domain of the users of the wifi-regional network?
+  <a class="heading-link" href="#15-domain-extraction-what-is-the-domain-of-the-users-of-the-wifi-regional-network">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>In the case of an incorrectly configured MGT network, access information in clear text may be leaked before the TLS tunnel is established. In this case, it would be possible to passively capture packets with airodump-ng and examine them later. To do this, airodump-ng is executed on channel 44:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">airodump-ng -w wifi-regional -c <span class="m">44</span> wlan0mon
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image52.png">
+Illustration 51. Airodump-ng capture of channel 44.</p>
+<p>With wireshark, you can analyze captured traffic for clear text information:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">wireshark wifi-regional-01.cap
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image53.png">
+Illustration 52. EAP packet with clear text information.</p>
+<p>By applying the &ldquo;eap&rdquo; filter, the domain of the users of the Wi-Fi regional network is extracted in clear text: CONTOSOREG.</p>
+<h3 id="16-what-is-the-email-address-of-the-servers-certificate">
+  16. What is the email address of the servers certificate?
+  <a class="heading-link" href="#16-what-is-the-email-address-of-the-servers-certificate">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>If the traffic obtained in challenge number 15 is further analyzed, the e-mail address of the certificate server can also be extracted:</p>
+<p><img src="/projects/wifi_challenge_lab/image54.png">
+Illustration 53. Capture of the e-mail address in clear text.</p>
+<p>The mailing address is <a href="mailto:server@WiFiChallenge.com" >server@WiFiChallenge.com</a></p>
+<h3 id="17-what-is-the-eap-method-supported-by-the-wifi-global-ap">
+  17. What is the EAP method supported by the wifi-global AP?
+  <a class="heading-link" href="#17-what-is-the-eap-method-supported-by-the-wifi-global-ap">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The traffic obtained in challenge number 15 is re-analyzed, filtering by the MAC of the Wi-Fi AP and EAP protocol:</p>
+<p><img src="/projects/wifi_challenge_lab/image55.png">
+Illustration 54. Captured wireshark leaked.</p>
+<p>A valid identity has been obtained, and the use of EAP-TLS is observed. You could also use the <a href="https://github.com/blackarrowsec/EAP_buster"  class="external-link" target="_blank" rel="noopener">EAP_buster tool</a>.</p>
+<h2 id="wpa3-ccmp-mgt">
+  WPA3-CCMP MGT
+  <a class="heading-link" href="#wpa3-ccmp-mgt">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="18-wpa3-ccmp-mgt-cracking-eaphammer-what-is-juans-flag-on-the-wifi-corp-ap-website">
+  18. WPA3-CCMP MGT cracking (EAPhammer): What is Juan&rsquo;s flag on the wifi-corp AP website?
+  <a class="heading-link" href="#18-wpa3-ccmp-mgt-cracking-eaphammer-what-is-juans-flag-on-the-wifi-corp-ap-website">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>First, airodump-ng is launched to check if there are any clients connected to wifi-corp:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">airodump-ng -w wifi-corp -c <span class="m">44</span> --bssid F0:9F:C2:71:22:1A wlan0mon
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image56.png">
+Illustration 55. Capture airodump-ng.</p>
+<ul>
+<li>wifi-corp MAC 1: F0:9F:C2:71:22:1A</li>
+<li>wifi-corp MAC 2: F0:9F:C2:71:22:15</li>
+<li>Client 1 MAC: 64:32:A8:07:6C:40</li>
+<li>Client 2 MAC: 64:32:A8:BA:6C:41</li>
+</ul>
+<p>To attack a misconfigured MGT network, it is possible to create a malicious AP with a self-signed certificate, the same type as the one customers expect. In this way, they will try to connect to the fake AP and send their credentials. To do this, <a href="https://github.com/s0lst1c3/eaphammer"  class="external-link" target="_blank" rel="noopener">eaphammer</a>, a tool to launch evil-twin attacks against WPA2-Enterprise networks, is used. First, you create the self-signed certificates by running:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./eaphammer --cert-wizard
+</span></span></code></pre></div><p>Once the certificates are configured, the following command is executed</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./eaphammer -i wlan2 --auth wpa-eap --essid wifi-corp --creds --negotiate balanced
+</span></span></code></pre></div><p>Where the arguments are as follows:</p>
+<ul>
+<li>i wlan2: The interface used (wlan2)</li>
+<li>auth wpa-eap: Specifies the type of authentication. In this case, WPA-EAP.</li>
+<li>essid wifi-corp: Defines the name of the fake network (the SSID).</li>
+<li>creds: Enables authentication credential capture.</li>
+<li>Negotiate balanced: Use a balanced crypto trading method.</li>
+</ul>
+<p><img src="/projects/wifi_challenge_lab/image58.png">
+Illustration 56. Running the EAP_Hamer tool.</p>
+<p>The fake AP is already running. Airplay-ng must now be used to deauthenticate clients from the original wifi-corp networks. There are two APs, so you have to attack both to prevent clients from connecting to the other AP that isn&rsquo;t being attacked. The following commands must be executed in parallel:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">aireplay-ng -0 <span class="m">0</span> -a F0:9F:C2:71:22:1A wlan0mon -c 64:32:A8:07:6C:40
+</span></span><span class="line"><span class="cl">aireplay-ng -0 <span class="m">0</span> -a F0:9F:C2:71:22:15 wlan1mon -c 64:32:A8:07:6C:40
+</span></span></code></pre></div><p>These aireplay-ng commands target client 1, with MAC 64:32:A8:07:6C:40.</p>
+<p><img src="/projects/wifi_challenge_lab/image59.png">
+Illustration 57. Running aireplay-ng against AP 1.</p>
+<p><img src="/projects/wifi_challenge_lab/image60.png">
+Illustration 58. Running aireplay-ng against AP 2.</p>
+<p>After a few minutes, you get the NTLM hash of john in the eaphammer window:</p>
+<p><img src="/projects/wifi_challenge_lab/image61.png">
+Illustration 59. Obtaining the NTLM hash.</p>
+<p>The NTLM to crack with hashcat is:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">juan.tr::::549dc53acaaffe5194a685758b801dec5e01400ba17f9e27:4f9c7e009fdd25ae
+</span></span></code></pre></div><p>To crack it, you run hashcat:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;john.tr::::549dc53acaaffe5194a685758b801dec5e01400ba17f9e27:4f9c7e009fdd25ae&#39;</span> &gt; <span class="nb">hash</span> <span class="c1"># hash is saved in the &#34;hash&#34; document</span>
+</span></span><span class="line"><span class="cl">hashcat <span class="nb">hash</span> rockyou-top100000.txt <span class="c1"># Hash is cracked with hashcat</span>
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image62.png">
+Illustration 60. Hashcat cracking of NTLM hash.</p>
+<p>The password has been successfully cracked: bulldogs1234. With this, we can connect to the network with the following configuration:</p>
+<p><img src="/projects/wifi_challenge_lab/image63.png">
+Illustration 61. Parameters for connecting to the WPA2-Enterprise network.</p>
+<p>By accessing the AP website (192.168.6.1), and logging in with CONTOSO\juan.tr::bulldogs1234 credentials, we can get the following flag:</p>
+<p><img src="/projects/wifi_challenge_lab/image64.png">
+Illustration 62. Flag after logging in to the AP website.</p>
+<h3 id="19-wpa3-ccmp-mgt-online-bruteforce-air-hammer-what-is-contosotest-flag-on-the-wifi-corp-ap-website">
+  19. WPA3-CCMP MGT online bruteforce (air-hammer): What is CONTOSO\test flag on the wifi-corp AP website?
+  <a class="heading-link" href="#19-wpa3-ccmp-mgt-online-bruteforce-air-hammer-what-is-contosotest-flag-on-the-wifi-corp-ap-website">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>To perform brute force attacks knowing the username, you can use the <a href="https://github.com/Wh1t3Rh1n0/air-hammer"  class="external-link" target="_blank" rel="noopener">air-hammer</a> tool. Air-Hammer is an online brute force attack tool used against WPA-Enterprise networks.</p>
+<p><img src="/projects/wifi_challenge_lab/image65.png">
+Illustration 63. Information about the air-hammer tool.</p>
+<p>The following command is to be used:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./air-hammer.py -i wlan5 -e wifi-corp -u users.txt -p /root/rockyou-top100000.txt
+</span></span></code></pre></div><p>You need to save the CONTOSO\test user in the users.txt file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">echo</span> ‘CONTOSO<span class="se">\\</span>test’ &gt; users.txt
+</span></span></code></pre></div><p>And now you can launch air-hammer:</p>
+<p><img src="/projects/wifi_challenge_lab/image66.png">
+Illustration 64. Running the air-hammer tool.</p>
+<p>Now, if you log in to the AP administration website, 192.168.6.1 with the credentials CONTOSO\test::monkey, you get the flag:</p>
+<p><img src="/projects/wifi_challenge_lab/image67.png">
+Illustration 65. Flag after logging in to the AP website.</p>
+<h3 id="20-wpa3-ccmp-mgt-online-bruteforce-air-hammer-what-is-the-flag-for-the-user-with-pass-12345678-on-the-wifi-corp-ap">
+  20. WPA3-CCMP MGT online bruteforce (air-hammer): What is the flag for the user with pass 12345678 on the wifi-corp AP?
+  <a class="heading-link" href="#20-wpa3-ccmp-mgt-online-bruteforce-air-hammer-what-is-the-flag-for-the-user-with-pass-12345678-on-the-wifi-corp-ap">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>As we know the password, you have to perform an attack similar to the previous one with air-hammer, but in this case it is not brute force but password spray. First, you have to generate the list of usernames. The statement states that you should use the top-usernames-shortlist.txt dictionary in /root/, but first add the domain &ldquo;CONTOSO\&rdquo; to each line. To do this, the SED tool is used:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sed <span class="s1">&#39;s/^/CONTOSO\\\\/&#39;</span> /root/top-usernames-shortlist.txt &gt; usernames-contoso.txt
+</span></span></code></pre></div><p>Next, air-hammer is used again to make the password spray:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./air-hammer.py -i wlan5 -e wifi-corp -u usernames-contoso.txt -P <span class="m">12345678</span>
+</span></span></code></pre></div><p><img src="/projects/wifi_challenge_lab/image68.png">
+Illustration 66. Running air-hammer password spray.</p>
+<p>Earned the credentials: &ldquo;CONTOSO\ftp:12345678&rdquo;. By logging in to the AP administration website, 192.168.6.1, you get the flag:</p>
+<p><img src="/projects/wifi_challenge_lab/image69.png">
+Illustration 67. Flag after logging in to the AP website with the credentials obtained.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+  
+</section>
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2025
+     Dennis Drebitca 
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
