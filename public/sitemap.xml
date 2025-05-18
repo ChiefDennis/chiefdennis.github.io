@@ -2,16 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/argus-surveillance-dvr-4.0/</loc>
-    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+    <loc>http://localhost:1313/tags/air-hammer/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/aircrack-ng-suite/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/authors/</loc>
-    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/authors/dennis-drebitca/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/eapbuster/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hashcat/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hcxpcapngtool/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hcxtool/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hxcdump/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mdk3/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mdk4/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/pentesting-wireless/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/wifi_challenge_lab/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/wireshark/</loc>
+    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/argus-surveillance-dvr-4.0/</loc>
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/offsec_dvr4/</loc>
@@ -38,16 +83,13 @@
     <loc>http://localhost:1313/tags/runas-exploitation/</loc>
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
-    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/winpeas/</loc>
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/base64-password-decoding/</loc>
+    <lastmod>2025-03-16T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/offsec_cockpit/</loc>
     <lastmod>2025-03-16T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cyberchef/</loc>
@@ -77,9 +119,6 @@
     <loc>http://localhost:1313/tags/openvas/</loc>
     <lastmod>2025-02-23T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
-    <lastmod>2025-02-23T15:43:16+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/projects/reconnaisance_vulnerabilities_nessus_openvas/</loc>
     <lastmod>2025-02-23T15:43:16+01:00</lastmod>
   </url><url>
@@ -107,19 +146,10 @@
     <loc>http://localhost:1313/tags/website-cloning/</loc>
     <lastmod>2025-02-09T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/wireshark/</loc>
-    <lastmod>2025-02-09T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/projects/wifi_challenge_lab/</loc>
-    <lastmod>2025-01-01T15:43:16+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/histogram-analysis/</loc>
     <lastmod>2025-01-01T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/lsb/</loc>
-    <lastmod>2025-01-01T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/series/pentesting-wireless/</loc>
     <lastmod>2025-01-01T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/python/</loc>
@@ -264,9 +294,6 @@
     <lastmod>2024-02-02T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cve-2023-51457/</loc>
-    <lastmod>2024-02-02T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/hashcat/</loc>
     <lastmod>2024-02-02T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/about/</loc>

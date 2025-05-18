@@ -6,8 +6,15 @@
     <description>Recent content in Series on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Apr 2025 13:07:16 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 15 May 2025 15:43:16 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pentesting Wireless</title>
+      <link>http://localhost:1313/series/pentesting-wireless/</link>
+      <pubDate>Thu, 15 May 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/series/pentesting-wireless/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Offsec</title>
       <link>http://localhost:1313/series/offsec/</link>
@@ -20,13 +27,6 @@
       <link>http://localhost:1313/series/network-attacks/</link>
       <pubDate>Sun, 09 Feb 2025 15:43:16 +0100</pubDate>
       <guid>http://localhost:1313/series/network-attacks/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Pentesting Wireless</title>
-      <link>http://localhost:1313/series/pentesting-wireless/</link>
-      <pubDate>Wed, 01 Jan 2025 15:43:16 +0100</pubDate>
-      <guid>http://localhost:1313/series/pentesting-wireless/</guid>
       <description></description>
     </item>
     <item>
