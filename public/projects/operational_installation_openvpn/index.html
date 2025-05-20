@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Operational installation of a VPN with OpenVPN · Chief Dennis&#39; Blog
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Dennis Drebitca">
+<meta name="description" content="
+
+  Introduction
+  
+    
+    Link to heading
+  
+
+Currently, Virtual Private Networks (VPNs) are a widely used solution to establish secure communication channels over public or shared networks. Its main objective is to offer confidentiality, authentication and integrity in the transmission of data between different devices, simulating a private local network by encrypting the information that circulates through the network.
+In this practice, a VPN has been implemented using OpenVPN, an open-source toolthat allows you to create encrypted tunnels based on the SSL/TLS protocol. The work environment is composed of three Kali Linux virtual machines:">
+<meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Operational installation of a VPN with OpenVPN">
+  <meta name="twitter:description" content="IntroductionLink to headingCurrently, Virtual Private Networks (VPNs) are a widely used solution to establish secure communication channels over public or shared networks. Its main objective is to offer confidentiality, authentication and integrity in the transmission of data between different devices, simulating a private local network by encrypting the information that circulates through the network.
+In this practice, a VPN has been implemented using OpenVPN, an open-source toolthat allows you to create encrypted tunnels based on the SSL/TLS protocol. The work environment is composed of three Kali Linux virtual machines:">
+
+<meta property="og:url" content="http://localhost:1313/projects/operational_installation_openvpn/">
+  <meta property="og:site_name" content="Chief Dennis&#39; Blog">
+  <meta property="og:title" content="Operational installation of a VPN with OpenVPN">
+  <meta property="og:description" content="IntroductionLink to headingCurrently, Virtual Private Networks (VPNs) are a widely used solution to establish secure communication channels over public or shared networks. Its main objective is to offer confidentiality, authentication and integrity in the transmission of data between different devices, simulating a private local network by encrypting the information that circulates through the network.
+In this practice, a VPN has been implemented using OpenVPN, an open-source toolthat allows you to create encrypted tunnels based on the SSL/TLS protocol. The work environment is composed of three Kali Linux virtual machines:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2025-05-20T15:43:16+01:00">
+    <meta property="article:modified_time" content="2025-05-20T15:43:16+01:00">
+    <meta property="article:tag" content="PKI">
+    <meta property="article:tag" content="VPN">
+    <meta property="article:tag" content="OpenVPN">
+    <meta property="article:tag" content="Certificates">
+    <meta property="article:tag" content="Networkig">
+    <meta property="article:tag" content="VMWare">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/projects/operational_installation_openvpn/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/custom.css" media="screen">
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Chief Dennis&#39; Blog
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Catch The Flag</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/tags/">Tags</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/projects/operational_installation_openvpn/">
+              Operational installation of a VPN with OpenVPN
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-05-20T15:43:16&#43;01:00">
+                May 20, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              11-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/dennis-drebitca/">Dennis Drebitca</a></div>
+
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/pki/">PKI</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/vpn/">VPN</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/openvpn/">OpenVPN</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/certificates/">Certificates</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/networkig/">Networkig</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/vmware/">VMWare</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p><img src="/projects/operational_installation_openvpn/image1.png"></p>
+<h2 id="introduction">
+  Introduction
+  <a class="heading-link" href="#introduction">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Currently, Virtual Private Networks (VPNs) are a widely used solution to establish secure communication channels over public or shared networks. Its main objective is to offer confidentiality, authentication and integrity in the transmission of data between different devices, simulating a private local network by encrypting the information that circulates through the network.</p>
+<p>In this practice, a VPN has been implemented using OpenVPN, an open-source toolthat allows you to create encrypted tunnels based on the SSL/TLS protocol. The work environment is composed of three Kali Linux virtual machines:</p>
+<ul>
+<li>VM1 and VM2: VPN clients.</li>
+<li>VM3: VPN server.</li>
+</ul>
+<p>The main objective has been to allow clients (VM1 and VM2), despite being on different physical networks (192.168.20.0/24 and 192.168.10.0/24 respectively), to communicate with each other exclusively through the VPN tunnel (10.8.0.0/24). To achieve this, the necessary certificates and keys have been generated with the easy-rsa tool, the OpenVPN server has been configured and the client-to-client option has been enabled to allow direct communication between clients within the tunnel.</p>
+<p>As part of the additional challenge (bonus), the environment has been designed in such a way that communication between clinets is not possible through physical interfaces, thanks to network segmentation through different subnetworks. In this way, VM2 and VM3 do not have direct visibility between their local IPs, and can only exchange informationwhen connected to the VPN server, thus reinforcing the isolation and security of the environment.</p>
+<p>This type of architecture is especially useful in scenarios where segmenting networks is required for security reasons, such as in corporate environments, data centers, or isolated test environments.</p>
+<h2 id="network-configuration">
+  Network Configuration
+  <a class="heading-link" href="#network-configuration">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>To segment the network totally, two different networks have been created in VMWare, VNet-1 and VNet-2. VNet-1 will occupy IP space 192.168.10.0/24, and VNet-2 will occupy space 192.168.20.0/24. In this way, client 1 will be connected to the VNet-1 network and client 2 to the VNet-2 network, ensuring a total segmentation of the network. The server will have 2 different network interfaces, one on each network. This configuration can be summarized in the following table:</p>
+<p>First, the two virtual networks are created in VMWare:</p>
+<p><img src="/projects/operational_installation_openvpn/image2.png">
+Illustration 1. Creation of the VNet-1 virtual network.</p>
+<p><img src="/projects/operational_installation_openvpn/image3.png">
+Illustration 2. Creation of the VNet-2 virtual network.</p>
+<p>Once the subnets have been configured and the network adapters of the machines have been connected to them, the IPs of the machines must be configured to be the right ones.</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>VM</strong></th>
+          <th><strong>Role</strong></th>
+          <th><strong>Network Adapter</strong></th>
+          <th><strong>IP address</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>VM1</td>
+          <td>Client 1</td>
+          <td>Custom (VNet-1)</td>
+          <td>192.168.10.10</td>
+      </tr>
+      <tr>
+          <td>VM2</td>
+          <td>clinet 2</td>
+          <td>Custom (VNet-2)</td>
+          <td>192.168.20.10</td>
+      </tr>
+      <tr>
+          <td>VM3</td>
+          <td>VPN Server</td>
+          <td>Two adapters:</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>- Custom (VNet-1)</td>
+          <td>192.168.10.1</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>- Custom (VNet-2)</td>
+          <td>192.168.20.1</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="vm1-client-1">
+  VM1 (Client 1)
+  <a class="heading-link" href="#vm1-client-1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ul>
+<li>Adapter 1: Custom (VNet-1)</li>
+<li>IP: 192.168.10.10/24</li>
+<li>Gateway: 192.168.10.1 (the adapter IP in VM3)</li>
+</ul>
+<p>To get this configuration, you need to run the following commands:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo ifconfig eth0 192.168.10.10 netmask 255.255.255.0
+</span></span><span class="line"><span class="cl">sudo ip route add default via 192.168.10.1 dev eth0
+</span></span></code></pre></div><p><img src="/projects/operational_installation_openvpn/image4.png">
+Illustration 3. Client Paths 1 (VM1).</p>
+<h4 id="vm2-client-2">
+  VM2 (Client 2)
+  <a class="heading-link" href="#vm2-client-2">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ul>
+<li>Adapter 1: Custom (VNet-2)</li>
+<li>IP: 192.168.20.10/24</li>
+<li>Gateway: 192.168.20.1 (the IP of the adapter in VM3)</li>
+</ul>
+<p>To get this configuration, you need to run the following commands:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo ifconfig eth0 192.168.20.10 netmask 255.255.255.0
+</span></span><span class="line"><span class="cl">sudo ip route add default via 192.168.20.1 dev eth0
+</span></span></code></pre></div><p><img src="/projects/operational_installation_openvpn/image5.png">
+Illustration 4. Client Paths 2 (VM2).</p>
+<h4 id="vm3-vpn-server">
+  VM3 (VPN Server)
+  <a class="heading-link" href="#vm3-vpn-server">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ul>
+<li>Adapter 1: Custom (VNet-1) → IP: 192.168.10.1</li>
+<li>Adapter 2: Custom (VNet-2) → IP: 192.168.20.1</li>
+</ul>
+<p>To get this configuration, you need to run the following commands:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo ifconfig eth0 192.168.10.1 netmask 255.255.255.0
+</span></span><span class="line"><span class="cl">sudo ifconfig eth1 192.168.20.1 netmask 255.255.255.0
+</span></span></code></pre></div><p><img src="/projects/operational_installation_openvpn/image6.png">
+Illustration 5. Virtual interfaces present on the server (VM3).</p>
+<p>Importantly, these settings are temporary since ifconfig has been used, and will not be maintained after the machines are restarted.</p>
+<h2 id="infrastructure-installation">
+  Infrastructure Installation
+  <a class="heading-link" href="#infrastructure-installation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="pki-configuration">
+  PKI Configuration
+  <a class="heading-link" href="#pki-configuration">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The first step in building an openVPN service is to establish a PKI, &ldquo;Public Key Infrastructure&rdquo;. This PKI consists of:</p>
+<ul>
+<li>A unique certificate (also known as a private key) and a private key for each server and client</li>
+<li>A master certificate issued by the CA (Certificate Authority)</li>
+</ul>
+<p>Both the server and client are authenticated bi-directionally using the CA-signed certificates. This has several advantages:</p>
+<ul>
+<li>The server only needs to know its own certificate/key. You don&rsquo;t need to know each clinet&rsquo;s individual certificates.</li>
+<li>The server only accepts clients whose certificates have been signed by the CA. This can be checked on the server without the need for a connection to the CA, so the private key of the CA may be hosted on a different machine and even disconnected from the network.</li>
+<li>If the private key of any of the parties is exposed, it can be added to a CRL, &ldquo;Certificate Revocation List&rdquo;, being able to reject compromised certificates without the need to rebuild the entire PKI infrastructure.</li>
+<li>The server can impose client-specific authorization rules based on data from the certificate itself.</li>
+</ul>
+<h4 id="creating-the-ca-and-certificates">
+  Creating the CA and Certificates
+  <a class="heading-link" href="#creating-the-ca-and-certificates">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>First, the necessary packages are installed to build the infrastructure. OpenVPN and easy-RSA will be used. These can be installed using the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt update <span class="p">&amp;</span> sudo apt install openvpn easy-rsa -y
+</span></span></code></pre></div><p>Once the necessary tools have been installed, a directory called openVPN-CA is created in the user&rsquo;s personal folder with the file structure needed to work with easy-RSA.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">make-cadir ~/openvpn-ca
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/openvpn-ca
+</span></span></code></pre></div><p>The next step is to modify the &ldquo;vars&rdquo; file with the default values that will be used when issuing the certificates. These are the parameters defined for this practice:</p>
+<ul>
+<li>set_var EASYRSA_REQ_COUNTRY &ldquo;IS&rdquo;</li>
+<li>set_var EASYRSA_REQ_PROVINCE &ldquo;Madrid&rdquo;</li>
+<li>set_var EASYRSA_REQ_CITY &ldquo;Madrid&rdquo;</li>
+<li>set_var EASYRSA_REQ_ORG &ldquo;DennisCA S.A.&rdquo;</li>
+<li>set_var EASYRSA_REQ_EMAIL &ldquo;<a href="mailto:dennis@dennisCA.com" >dennis@dennisCA.com</a>&rdquo;</li>
+<li>set_var EASYRSA_REQ_OU &ldquo;DennisCA S.A.&rdquo;</li>
+<li>set_var EASYRSA_KEY_SIZE 2048</li>
+<li>set_var EASYRSA_CA_EXPIRE 3650</li>
+<li>set_var EASYRSA_CERT_EXPIRE 365</li>
+</ul>
+<p>The most important parameters are:</p>
+<ul>
+<li>EASYRSA_KEY_SIZE: Size of certificates, keys, etc. In this case, 2048 has been used, generating relatively weak keys. The use of 4096 or 8196-bit keys is recommended for added security.</li>
+<li>EASYRSA_KEY_EXPIRE: Days when the CA master certificate expires. 5 years is recommended.</li>
+<li>EASYRSA_CERT_EXPIRE: Days on which the issued certificate expires. 1 year is recommended.</li>
+</ul>
+<p>The following command is then executed to start the PKI and build the CA:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./easyrsa heat-pki
+</span></span><span class="line"><span class="cl">./easyrsa build-ca
+</span></span></code></pre></div><p><img src="/projects/operational_installation_openvpn/image7.png">
+Illustration 6. PKI initialization.</p>
+<p><img src="/projects/operational_installation_openvpn/image8.png">
+Illustration 7. Creation of the CA.</p>
+<p>Now you need to create the public-private key pair for the server. Each server has a unique key pair issued by the CA. Normally, the private keys of the servers are decrypted so that they can be restarted without user input. The request for the signature of the certificate is issued as follows:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./easyrsa gen-req server nopass
+</span></span></code></pre></div><p><img src="/projects/operational_installation_openvpn/image9.png">
+Illustration 8. Creating the Signature Request for the Server Key Pair.</p>
+<p>The same is done for each clinet:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./easyrsa gen-req client1
+</span></span><span class="line"><span class="cl">./easyrsa gen-req client2
+</span></span></code></pre></div><p><img src="/projects/operational_installation_openvpn/image10.png">
+Illustration 9. Creating the Key Pair Signing Request for Client 1.</p>
+<p>Next, the petition must be signed by the CA. This is done by first importing the request and then signing it, whether it is a request for both client and server. In our case, it is not necessary to import the requests since they have been generated on this same machine. To view such requests, you can use the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./easyrsa show-req NAME
+</span></span></code></pre></div><p><img src="/projects/operational_installation_openvpn/image11.png">
+Illustration 10. Verification of the request for the server keys.</p>
+<p>To sign the certificates and create them, the following commands are executed:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./easyrsa sign-req server server <span class="c1"># To sign the server request</span>
+</span></span><span class="line"><span class="cl">./easyrsa sign-req client client1 <span class="c1"># To sign the clinet request</span>
+</span></span><span class="line"><span class="cl">./easyrsa sign-req client client2
+</span></span></code></pre></div><p>After confirming and entering the password for the CA key, the certificates required for both client and server have been created. Next, you need to generate the Diffie-Hellman parameters used for the TLS handshake in client-server authentication. To do this, the following command is executed:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./easyrsa gen-dh
+</span></span></code></pre></div><p>Finally, a TLS key is created using openVPN:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">openvpn --genkey secret TLS.key
+</span></span></code></pre></div><p>Now we have all the necessary certificates and keys for the openVPN infrastructure.</p>
+<h3 id="openvpn-server-settings">
+  OpenVPN Server Settings
+  <a class="heading-link" href="#openvpn-server-settings">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>You need to copy the necessary certificates and files to the openVPN directory. The files required with ca.crt, server.crt, server.key, dh.pem and TLS.key:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo cp ca.crt dh.pem ./issued/server.crt ./private/server.key ./private/TLS.key /etc/openvpn
+</span></span></code></pre></div><p>Next, you need to create the openVPN server configuration file. To do this, the file &ldquo;/usr/share/doc/openvpn/examples/sample-config-files/server.conf&rdquo; is taken as an example. It must be modified to fit our needs:</p>
+<ul>
+<li>port 1194 # Port</li>
+<li>Therefore, UDP # Protocol</li>
+<li>Dev tun # Device</li>
+<li>CA.crt # CA Certificate</li>
+<li>cert server.crt # Server certificate</li>
+<li>key server.key # Server private key</li>
+<li>dh dh.pem # DH Parameters</li>
+<li>TLS-AUTH TLS.key 0 # TLS Key</li>
+<li>Server 10.8.0.0 255.255.255.0 # VPN Subnet</li>
+<li>client-to-client # <strong>VERY IMPORTANT: This option needs to be enabled so that clients can see each other through the VPN.</strong></li>
+</ul>
+<p>The rest can be left with the default settings. Now, you can start the openVPN service with the server.conf configuration:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo systemctl start openvpn@server
+</span></span></code></pre></div><p>To have the service start automatically when the machine starts, the following command can be executed:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> openvpn@server
+</span></span></code></pre></div><h3 id="configuring-clients">
+  Configuring Clients
+  <a class="heading-link" href="#configuring-clients">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Once the server has been successfully configured, the clients need to be configured. To do this, the following files must be copied to each machine:</p>
+<ul>
+<li>ca.crt: The digital certificate (which acts as a public key) of the CA</li>
+<li>TLS.key: The TLS Private Key</li>
+<li>client.crt: The client&rsquo;s certificate</li>
+<li>cliente.key: The client&rsquo;s public key</li>
+</ul>
+<p>Next, you need to create an openVPN client configuration file. This file must have the same configuration that has been created for the server. To do this, the file &ldquo;/usr/share/doc/openvpn/examples/sample-config-files/client.conf&rdquo; is taken as a starting point. The following important parameters are modified:</p>
+<ul>
+<li>remote 192.168.10.1 1194 # IP and port of the openVPN server</li>
+<li>CA.crt # CA Certificate</li>
+<li>cert cliente1.crt # clinet Certificate</li>
+<li>Key cliente1.key # clinet private key</li>
+<li>TLS-AUTH TLS.key 1 # TLS Key</li>
+</ul>
+<p>All files and certificates must be copied to /etc/openvpn.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo cp <span class="se">\*</span> /etc/openvpn
+</span></span></code></pre></div><p>In the same way, on machine 2 the client.conf file must be modified as follows:</p>
+<ul>
+<li>remote 192.168.20.1 1194 # IP and port of the openVPN server</li>
+<li>CA.crt # CA Certificate</li>
+<li>cert cliente2.crt # clinet Certificate</li>
+<li>Key cliente2.key # clinet private key</li>
+<li>TLS-AUTH TLS.key 1 # TLS Key</li>
+</ul>
+<p>The configuration has been carried out satisfactorily. Now all that remains is to start the openVPN services on both client machines, executing the command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">openvpn clientX.conf
+</span></span></code></pre></div><h2 id="system-function-check">
+  System Function Check
+  <a class="heading-link" href="#system-function-check">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>You can see that the VPN is working properly on the machines:</p>
+<h4 id="client-1">
+  Client 1
+  <a class="heading-link" href="#client-1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Running openVPN yields the following output:</p>
+<p><img src="/projects/operational_installation_openvpn/image12.png">
+Illustration 11. OpenVPN output on client 1.</p>
+<p>To verify that a new tun0 network virtual interface has been created, you can use the &ldquo;ip a&rdquo; command. Tun0 with IP 10.8.0.2 is displayed successfully.</p>
+<p><img src="/projects/operational_installation_openvpn/image13.png">
+Illustration 12. List of the client&rsquo;s virtual interfaces 1.</p>
+<p>Finally, it remains to check the route through the VPN. To do this, use &ldquo;ip r&rdquo;:</p>
+<p><img src="/projects/operational_installation_openvpn/image14.png">
+Illustration 13. Client IP routes 1.</p>
+<p>It can be confirmed that the connection is perfectly configured.</p>
+<h4 id="client-2">
+  Client 2
+  <a class="heading-link" href="#client-2">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Running openVPN yields the following output:</p>
+<p><img src="/projects/operational_installation_openvpn/image15.png">
+Illustration 14. Output of openVPN on client 2.</p>
+<p>To verify that a new tun0 network virtual interface has been created, you can use the &ldquo;ip a&rdquo; command. Tun0 with IP 10.8.0.3 is displayed successfully.</p>
+<p><img src="/projects/operational_installation_openvpn/image16.png">
+Illustration 15. List of the client&rsquo;s virtual interfaces 2.</p>
+<p>Finally, it remains to check the route through the VPN. To do this, use &ldquo;ip r&rdquo;:</p>
+<p><img src="/projects/operational_installation_openvpn/image17.png">
+Illustration 16. Client IP routes 2.</p>
+<p>It can be confirmed that the connection is perfectly configured.</p>
+<h4 id="server">
+  Server
+  <a class="heading-link" href="#server">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>You can check the status of the openVPN service using the following command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo systemctl status openvpn@server
+</span></span></code></pre></div><p>It can be seen that the service is running, and that the two clients have connected satisfactorily:</p>
+<p><img src="/projects/operational_installation_openvpn/image18.png">
+Illustration 17. Status of the openVPN service.</p>
+<p>Likewise, the tun0 virtual interface can be observed using the command &ldquo;ip a&rdquo;:</p>
+<p><img src="/projects/operational_installation_openvpn/image19.png">
+Illustration 18. List of virtual interfaces of the server.</p>
+<h2 id="checking-the-configured-network">
+  Checking the configured network
+  <a class="heading-link" href="#checking-the-configured-network">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Before connecting the VPN, VM1 and VM2 can&rsquo;t ping each other (they&rsquo;re on different physical subnets and don&rsquo;t have routes between them). Once connected to the VPN, IPs such as 10.8.0.2 and 10.8.0.3, for example, will be assigned and they will be seen between them through the tunnel. Let&rsquo;s review the structure of the network once again:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>VM</strong></th>
+          <th><strong>Role</strong></th>
+          <th><strong>IP address (physical adapters)</strong></th>
+          <th><strong>IP address (tun0)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>VM1</td>
+          <td>Client 1</td>
+          <td>192.168.10.10</td>
+          <td>10.8.0.2</td>
+      </tr>
+      <tr>
+          <td>VM2</td>
+          <td>clinet 2</td>
+          <td>192.168.20.10</td>
+          <td>10.8.0.3</td>
+      </tr>
+      <tr>
+          <td>VM3</td>
+          <td>VPN Server</td>
+          <td>192.168.10.1, 192.168.20.1</td>
+          <td>10.8.0.1</td>
+      </tr>
+  </tbody>
+</table>
+<p>The 192.168.10/24 and 192.168.20/24 subnets are completely isolated and no routing rules have been added to the server, so clients cannot communicate before connecting to the VPN. This is shown by attempting to ping client 1 to client 2:</p>
+<p><img src="/projects/operational_installation_openvpn/image20.png">
+Illustration 19. Unsatisfactory ping from client 1 to 2.</p>
+<p>In the opposite direction, from client 2 to client 1, there is also no connection:</p>
+<p><img src="/projects/operational_installation_openvpn/image21.png">
+Illustration 20. Unsatisfactory ping from client 2 to 1.</p>
+<p>However, through the tun0 tunnel they do have a connection. Trying to ping from client 1 to client 2 through the tunnel, i.e. IP 10.8.0.3, you do have a connection:</p>
+<p><img src="/projects/operational_installation_openvpn/image22.png">
+Illustration 21. Ping response from client 2 to 1 via the VPN tunnel.</p>
+<p>And conversely, from client 2 to client 1 with IP 10.8.0.2, you also have a connection:</p>
+<p><img src="/projects/operational_installation_openvpn/image23.png">
+Illustration 22. Ping response from client 1 to 2 through the VPN tunnel.</p>
+<p>It can be seen that the objective of the practice has been met, since it has been possible for two machines in different subnets, which cannot be seen, to communicate through the VPN tunnel.</p>
+<h2 id="bibliography">
+  Bibliography
+  <a class="heading-link" href="#bibliography">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>“Easy-RSA v3 OpenVPN Howto.” <em>OpenVPN Community Wiki and Tracker</em>, community.openvpn.net/openvpn/wiki/EasyRSA3-OpenVPN-Howto. Accessed 20 Apr. 2025.</p>
+<p>“Setting up Your Own Certificate Authority (CA).” <em>OpenVPN</em>, openvpn.net/community-resources/setting-up-your-own-certificate-authority-ca/.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+  
+</section>
+
+
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2025
+     Dennis Drebitca 
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

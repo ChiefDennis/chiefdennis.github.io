@@ -6,20 +6,55 @@
     <description>Recent content in Tags on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 May 2025 13:07:16 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 20 May 2025 15:43:16 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Base64 Password Decoding</title>
-      <link>http://localhost:1313/tags/base64-password-decoding/</link>
-      <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
-      <guid>http://localhost:1313/tags/base64-password-decoding/</guid>
+      <title>Certificates</title>
+      <link>http://localhost:1313/tags/certificates/</link>
+      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/certificates/</guid>
       <description></description>
     </item>
     <item>
-      <title>CyberChef</title>
-      <link>http://localhost:1313/tags/cyberchef/</link>
+      <title>Networkig</title>
+      <link>http://localhost:1313/tags/networkig/</link>
+      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/networkig/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenVPN</title>
+      <link>http://localhost:1313/tags/openvpn/</link>
+      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/openvpn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PKI</title>
+      <link>http://localhost:1313/tags/pki/</link>
+      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/pki/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VMWare</title>
+      <link>http://localhost:1313/tags/vmware/</link>
+      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/vmware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VPN</title>
+      <link>http://localhost:1313/tags/vpn/</link>
+      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/vpn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>BurpSuite</title>
+      <link>http://localhost:1313/tags/burpsuite/</link>
       <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
-      <guid>http://localhost:1313/tags/cyberchef/</guid>
+      <guid>http://localhost:1313/tags/burpsuite/</guid>
       <description></description>
     </item>
     <item>
@@ -27,20 +62,6 @@
       <link>http://localhost:1313/tags/feroxbuster/</link>
       <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
       <guid>http://localhost:1313/tags/feroxbuster/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LinPEAS</title>
-      <link>http://localhost:1313/tags/linpeas/</link>
-      <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
-      <guid>http://localhost:1313/tags/linpeas/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MySQL Credential Extraction</title>
-      <link>http://localhost:1313/tags/mysql-credential-extraction/</link>
-      <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
-      <guid>http://localhost:1313/tags/mysql-credential-extraction/</guid>
       <description></description>
     </item>
     <item>
@@ -58,10 +79,17 @@
       <description></description>
     </item>
     <item>
-      <title>Writable /Etc/Passwd Exploit</title>
-      <link>http://localhost:1313/tags/writable-/etc/passwd-exploit/</link>
+      <title>SQLmap</title>
+      <link>http://localhost:1313/tags/sqlmap/</link>
       <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
-      <guid>http://localhost:1313/tags/writable-/etc/passwd-exploit/</guid>
+      <guid>http://localhost:1313/tags/sqlmap/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tar Wildcard Exploitation</title>
+      <link>http://localhost:1313/tags/tar-wildcard-exploitation/</link>
+      <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/tar-wildcard-exploitation/</guid>
       <description></description>
     </item>
     <item>
@@ -170,10 +198,45 @@
       <description></description>
     </item>
     <item>
+      <title>Base64 Password Decoding</title>
+      <link>http://localhost:1313/tags/base64-password-decoding/</link>
+      <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/base64-password-decoding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CyberChef</title>
+      <link>http://localhost:1313/tags/cyberchef/</link>
+      <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/cyberchef/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LinPEAS</title>
+      <link>http://localhost:1313/tags/linpeas/</link>
+      <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/linpeas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MySQL Credential Extraction</title>
+      <link>http://localhost:1313/tags/mysql-credential-extraction/</link>
+      <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/mysql-credential-extraction/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Remote File Inclusion</title>
       <link>http://localhost:1313/tags/remote-file-inclusion/</link>
       <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
       <guid>http://localhost:1313/tags/remote-file-inclusion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Writable /Etc/Passwd Exploit</title>
+      <link>http://localhost:1313/tags/writable-/etc/passwd-exploit/</link>
+      <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/writable-/etc/passwd-exploit/</guid>
       <description></description>
     </item>
     <item>
@@ -401,24 +464,10 @@
       <description></description>
     </item>
     <item>
-      <title>Burpsuite</title>
-      <link>http://localhost:1313/tags/burpsuite/</link>
-      <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
-      <guid>http://localhost:1313/tags/burpsuite/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Hash Cracking</title>
       <link>http://localhost:1313/tags/hash-cracking/</link>
       <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
       <guid>http://localhost:1313/tags/hash-cracking/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SQLmap</title>
-      <link>http://localhost:1313/tags/sqlmap/</link>
-      <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
-      <guid>http://localhost:1313/tags/sqlmap/</guid>
       <description></description>
     </item>
     <item>

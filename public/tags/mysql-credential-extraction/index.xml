@@ -9,13 +9,6 @@
     <lastBuildDate>Sun, 16 Mar 2025 13:07:16 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/mysql-credential-extraction/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Cockpit Offsec Walkthrough</title>
-      <link>http://localhost:1313/posts/offsec_cockpit/</link>
-      <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
-      <guid>http://localhost:1313/posts/offsec_cockpit/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;image0.png&#34; &gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&#xD;&#xA;  Introduction&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introduction&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;sql-injection-vulnerability&#34;&gt;&#xD;&#xA;  SQL injection vulnerability&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#sql-injection-vulnerability&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;A SQL Injection (SQLi) vulnerability is one of the most critical threatsin web applications that interact with databases. This vulnerability occurs when an application does not properly validate and sanitize user input before using it in SQL queries, allowing an attacker to manipulate these queries to access, modify, or delete data in the database.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Snookum Offsec Walkthrough</title>
       <link>http://localhost:1313/posts/offsec_snookum/</link>
       <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>

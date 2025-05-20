@@ -2,19 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/authors/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/certificates/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/authors/dennis-drebitca/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/networkig/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/networking/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/openvpn/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/operational_installation_openvpn/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pki/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/vmware/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/vpn/</loc>
+    <lastmod>2025-05-20T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/burpsuite/</loc>
+    <lastmod>2025-05-18T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/offsec_cockpit/</loc>
+    <lastmod>2025-05-18T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/feroxbuster/</loc>
+    <lastmod>2025-05-18T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/offsec/</loc>
+    <lastmod>2025-05-18T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-05-18T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
+    <lastmod>2025-05-18T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sql-injection/</loc>
+    <lastmod>2025-05-18T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sqlmap/</loc>
+    <lastmod>2025-05-18T13:07:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tar-wildcard-exploitation/</loc>
+    <lastmod>2025-05-18T13:07:16+01:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/air-hammer/</loc>
     <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/aircrack-ng-suite/</loc>
-    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/authors/</loc>
-    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/authors/dennis-drebitca/</loc>
     <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/eapbuster/</loc>
@@ -41,15 +101,6 @@
     <loc>http://localhost:1313/series/pentesting-wireless/</loc>
     <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
-    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/series/</loc>
-    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/projects/wifi_challenge_lab/</loc>
     <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
@@ -62,22 +113,10 @@
     <loc>http://localhost:1313/posts/offsec_dvr4/</loc>
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/feroxbuster/</loc>
-    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/local-file-inclusion/</loc>
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/offsec/</loc>
-    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/path-traversal/</loc>
-    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-04-01T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/runas-exploitation/</loc>
@@ -87,9 +126,6 @@
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/base64-password-decoding/</loc>
-    <lastmod>2025-03-16T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/offsec_cockpit/</loc>
     <lastmod>2025-03-16T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cyberchef/</loc>
@@ -233,16 +269,7 @@
     <loc>http://localhost:1313/tags/7z-wildcard-spare/</loc>
     <lastmod>2024-05-29T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/burpsuite/</loc>
-    <lastmod>2024-05-29T13:07:16+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/hash-cracking/</loc>
-    <lastmod>2024-05-29T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/sql-injection/</loc>
-    <lastmod>2024-05-29T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/sqlmap/</loc>
     <lastmod>2024-05-29T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/htb_usage/</loc>
