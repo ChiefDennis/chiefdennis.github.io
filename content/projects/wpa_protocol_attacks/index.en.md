@@ -1,5 +1,5 @@
 +++
-title = " WPA/WPA2 Protocol: Packet format description and attacks against it"
+title = " WPA/WPA2 Protocol: Packet format analysis and attacks against it"
 date = 2025-06-01T15:43:16+01:00
 draft = false
 description = ""
