@@ -6,8 +6,15 @@
     <description>Recent content in Dennis Drebitca on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 20 May 2025 15:43:16 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jun 2025 15:43:16 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/authors/dennis-drebitca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Packet format description of the WPA/WPA2 protocol and attacks against it</title>
+      <link>http://localhost:1313/projects/wpa_protocol_attacks/</link>
+      <pubDate>Sun, 01 Jun 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/projects/wpa_protocol_attacks/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/projects/wpa_protocol_attacks/image1.png&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;identification-of-the-different-types-of-wpa-protocol-packets&#34;&gt;&#xD;&#xA;  Identification of the different types of WPA protocol packets.&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#identification-of-the-different-types-of-wpa-protocol-packets&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;In this first phase, the analysis of a traffic capture corresponding to a WiFi network with WPA2-PSK authentication has been carried out. The tool used has been Wireshark, due to its ability to interpret and decompose network protocols in a detailed way. The purpose of this point is to identify the different types of packets involved in the WPA2 connection and authentication process, as well as to examine the most relevant fields of each and understand their function within the overall context of the capture.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Operational installation of a VPN with OpenVPN</title>
       <link>http://localhost:1313/projects/operational_installation_openvpn/</link>
