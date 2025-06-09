@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nmap on Chief Dennis&#39; Blog</title>
-    <link>http://localhost:1313/tags/nmap/</link>
-    <description>Recent content in Nmap on Chief Dennis&#39; Blog</description>
+    <title>Metasploit on Chief Dennis&#39; Blog</title>
+    <link>http://localhost:1313/tags/metasploit/</link>
+    <description>Recent content in Metasploit on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 09 Jun 2025 15:43:16 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/nmap/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/metasploit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Internal Cockpit Walkthrough</title>
       <link>http://localhost:1313/posts/offsec_internal/</link>

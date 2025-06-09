@@ -9,7 +9,7 @@
     <lastBuildDate>Sun, 01 Jun 2025 15:43:16 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/hashcat/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Packet format description of the WPA/WPA2 protocol and attacks against it</title>
+      <title> WPA/WPA2 Protocol: Packet format analysis and attacks against it</title>
       <link>http://localhost:1313/projects/wpa_protocol_attacks/</link>
       <pubDate>Sun, 01 Jun 2025 15:43:16 +0100</pubDate>
       <guid>http://localhost:1313/projects/wpa_protocol_attacks/</guid>
