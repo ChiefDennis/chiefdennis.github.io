@@ -261,12 +261,12 @@ In particular, the system is found to be vulnerable to CVE-2009-3103, a security
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sS -T5 -vvv -p- 192.168.132.40 -Pn -oG nmap_inicial
 </span></span></code></pre></div><p>Where the parameters mean:</p>
 <ul>
-<li>S: Escaneo SYN</li>
-<li>5: Using NMAP Timing Template 5</li>
-<li>vv: Triple verbose for NMAP to display a lot of information</li>
-<li>-: All ports are scanned</li>
-<li>n: Skip host discovery</li>
-<li>gG: Formato Grep</li>
+<li>sS: Escaneo SYN</li>
+<li>T5: Using NMAP Timing Template 5</li>
+<li>vvv: Triple verbose for NMAP to display a lot of information</li>
+<li>p-: All ports are scanned</li>
+<li>Pn: Skip host discovery</li>
+<li>oG: Formato Grep</li>
 </ul>
 <p>The result is as follows:</p>
 <p><img src="/posts/offsec_internal/image3.png#center"></p>

@@ -50,12 +50,12 @@ sudo nmap -sS -T5 -vvv -p- 192.168.132.40 -Pn -oG nmap_inicial
 
 Where the parameters mean:
 
--   S: Escaneo SYN
--   5: Using NMAP Timing Template 5
--   vv: Triple verbose for NMAP to display a lot of information
--   -: All ports are scanned
--   n: Skip host discovery
--   gG: Formato Grep
+-   sS: Escaneo SYN
+-   T5: Using NMAP Timing Template 5
+-   vvv: Triple verbose for NMAP to display a lot of information
+-   p-: All ports are scanned
+-   Pn: Skip host discovery
+-   oG: Formato Grep
 
 The result is as follows:
 

@@ -6,21 +6,28 @@
     <description>Recent content in Posts on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 May 2025 13:07:16 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 29 Oct 2025 18:00:00 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ClamAV Offsec Walkthrough</title>
+      <link>http://localhost:1313/posts/clamav-walkthrough/</link>
+      <pubDate>Wed, 29 Oct 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/posts/clamav-walkthrough/</guid>
+      <description>&lt;h2 id=&#34;clamav-offsec-walkthrough&#34;&gt;&#xD;&#xA;  ClamAV OffSec Walkthrough&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#clamav-offsec-walkthrough&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;1-reconnaissance&#34;&gt;&#xD;&#xA;  1 Reconnaissance&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#1-reconnaissance&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;First, a ping is made to verify connection with the machine:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;http://localhost:1313/posts/clamav-walkthrough/Picture.png&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;A high TTL of ~130 is observed. However, the later Nmap scan will show a TTL of 61, which is more typical for Linux machines.&lt;/p&gt;&#xA;&lt;p&gt;A nmap SYN scan is run to discover all open ports:&lt;/p&gt;&#xA;&lt;p&gt;sudo nmap -sS -T5 -vvv -p- 192.168.199.42 -Pn -oG nmap_inicial&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Internal Offsec Walkthrough</title>
+      <link>http://localhost:1313/posts/offsec_internal/</link>
+      <pubDate>Mon, 09 Jun 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/posts/offsec_internal/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/offsec_internal/image1.png#center&#34;&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&#xD;&#xA;  Introduction&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introduction&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;This post analyzes the process of privilege analysis, exploitation, and escalation in a vulnerable Windows environment. To do this, a network scan is carried out using Nmap, identifying open ports and services on the target system. Subsequently, using Metasploit, the presence of vulnerabilities in the SMB service is searched for and verified.&lt;/p&gt;&#xA;&lt;p&gt;In particular, the system is found to be vulnerable to CVE-2009-3103, a security flaw in SMB 2.0.2 that allows remote execution of code with elevated privileges. By exploiting this vulnerability, access is gained to the victim machine with NT AUTHORITY\SYSTEM privileges, granting full control over the system.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Cockpit Offsec Walkthrough</title>
       <link>http://localhost:1313/posts/offsec_cockpit/</link>
       <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
       <guid>http://localhost:1313/posts/offsec_cockpit/</guid>
       <description>&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;http://localhost:1313/posts/offsec_cockpit/image0.png&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&#xD;&#xA;  Introduction&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introduction&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;sql-injection-vulnerability&#34;&gt;&#xD;&#xA;  SQL injection vulnerability&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#sql-injection-vulnerability&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;A SQL Injection (SQLi) vulnerability is one of the most critical threatsin web applications that interact with databases. This vulnerability occurs when an application does not properly validate and sanitize user input before using it in SQL queries, allowing an attacker to manipulate these queries to access, modify, or delete data in the database.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/posts/offsec_internal/</link>
-      <pubDate>Thu, 15 May 2025 15:43:16 +0100</pubDate>
-      <guid>http://localhost:1313/posts/offsec_internal/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/posts/offsec_internal/image1.png&#34;&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&#xD;&#xA;  Introduction&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introduction&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;This post analyzes the process of privilege analysis, exploitation, and escalation in a vulnerable Windows environment. To do this, a network scan is carried out using Nmap, identifying open ports and services on the target system. Subsequently, using Metasploit, the presence of vulnerabilities in the SMB service is searched for and verified.&lt;/p&gt;&#xA;&lt;p&gt;In particular, the system is found to be vulnerable to CVE-2009-3103, a security flaw in SMB 2.0.2 that allows remote execution of code with elevated privileges. By exploiting this vulnerability, access is gained to the victim machine with NT AUTHORITY\SYSTEM privileges, granting full control over the system.&lt;/p&gt;</description>
     </item>
     <item>
       <title>DVR4 Offsec Walkthrough</title>

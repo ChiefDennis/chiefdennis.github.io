@@ -2,19 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/authors/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/binary-decoding/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/clamav/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/clamav-walkthrough/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cyberchef/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/authors/dennis-drebitca/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/inetd/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/offsec/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/perl/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/rce/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/remote-command-execution/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/searchsploit/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sendmail/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/smtp-open-relay/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cve-2009-3103/</loc>
+    <lastmod>2025-06-09T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/offsec_internal/</loc>
+    <lastmod>2025-06-09T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/metasploit/</loc>
+    <lastmod>2025-06-09T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/nmap/</loc>
+    <lastmod>2025-06-09T15:43:16+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/smb/</loc>
+    <lastmod>2025-06-09T15:43:16+01:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/projects/wpa_protocol_attacks/</loc>
     <lastmod>2025-06-01T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/aircrack-ng/</loc>
-    <lastmod>2025-06-01T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/authors/</loc>
-    <lastmod>2025-06-01T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-06-01T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/authors/dennis-drebitca/</loc>
     <lastmod>2025-06-01T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/hashcat/</loc>
@@ -27,12 +87,6 @@
     <lastmod>2025-06-01T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/</loc>
-    <lastmod>2025-06-01T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/series/</loc>
-    <lastmod>2025-06-01T15:43:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-06-01T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/wireshark/</loc>
@@ -71,12 +125,6 @@
     <loc>http://localhost:1313/tags/feroxbuster/</loc>
     <lastmod>2025-05-18T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/offsec/</loc>
-    <lastmod>2025-05-18T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-05-18T13:07:16+01:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/privilege-escalation/</loc>
     <lastmod>2025-05-18T13:07:16+01:00</lastmod>
   </url><url>
@@ -88,9 +136,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/tar-wildcard-exploitation/</loc>
     <lastmod>2025-05-18T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/offsec_internal/</loc>
-    <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/air-hammer/</loc>
     <lastmod>2025-05-15T15:43:16+01:00</lastmod>
@@ -135,9 +180,6 @@
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/base64-password-decoding/</loc>
-    <lastmod>2025-03-16T13:07:16+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/cyberchef/</loc>
     <lastmod>2025-03-16T13:07:16+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/linpeas/</loc>
