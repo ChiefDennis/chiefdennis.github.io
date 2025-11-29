@@ -2,59 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/apache-zookeeper/</loc>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/authors/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/binary-decoding/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/clamav/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/clamav-walkthrough/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cyberchef/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/authors/dennis-drebitca/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/exhibitor/</loc>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/exhibitor-unauthenticated-rce/</loc>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/exploitdb-48654/</loc>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/gdump/</loc>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/inetd/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/memory-dump/</loc>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/series/offsec/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/password-store/</loc>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/pelican-walkthrough/</loc>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/perl/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/rce/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/remote-command-execution/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/searchsploit/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/sendmail/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/series/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/smtp-open-relay/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/suid/</loc>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-10-29T18:00:00+01:00</lastmod>
+    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cve-2009-3103/</loc>
     <lastmod>2025-06-09T15:43:16+01:00</lastmod>

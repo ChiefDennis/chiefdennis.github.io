@@ -6,14 +6,14 @@
     <description>Recent content in Binary Decoding on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Oct 2025 18:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 29 Aug 2025 18:00:00 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/binary-decoding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ClamAV Offsec Walkthrough</title>
       <link>http://localhost:1313/posts/clamav-walkthrough/</link>
-      <pubDate>Wed, 29 Oct 2025 18:00:00 +0100</pubDate>
+      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
       <guid>http://localhost:1313/posts/clamav-walkthrough/</guid>
-      <description>&lt;h2 id=&#34;clamav-offsec-walkthrough&#34;&gt;&#xD;&#xA;  ClamAV OffSec Walkthrough&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#clamav-offsec-walkthrough&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;1-reconnaissance&#34;&gt;&#xD;&#xA;  1 Reconnaissance&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#1-reconnaissance&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;First, a ping is made to verify connection with the machine:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;http://localhost:1313/posts/clamav-walkthrough/Picture.png&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;A high TTL of ~130 is observed. However, the later Nmap scan will show a TTL of 61, which is more typical for Linux machines.&lt;/p&gt;&#xA;&lt;p&gt;A nmap SYN scan is run to discover all open ports:&lt;/p&gt;&#xA;&lt;p&gt;sudo nmap -sS -T5 -vvv -p- 192.168.199.42 -Pn -oG nmap_inicial&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;clamav-offsec-walkthrough&#34;&gt;&#xD;&#xA;  ClamAV OffSec Walkthrough&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#clamav-offsec-walkthrough&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;1-reconnaissance&#34;&gt;&#xD;&#xA;  1. Reconnaissance&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#1-reconnaissance&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;First, a ping is made to verify connection with the machine:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;http://localhost:1313/posts/clamav-walkthrough/Picture.png&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;A high TTL of ~130 is observed. However, the later Nmap scan will show a TTL of 61, which is more typical for Linux machines.&lt;/p&gt;&#xA;&lt;p&gt;A nmap SYN scan is run to discover all open ports:&lt;/p&gt;&#xA;&lt;p&gt;sudo nmap -sS -T5 -vvv -p- 192.168.199.42 -Pn -oG nmap_inicial&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
