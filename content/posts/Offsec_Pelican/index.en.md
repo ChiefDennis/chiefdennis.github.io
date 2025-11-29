@@ -117,11 +117,10 @@ After stabilizing the shell, enumeration tools (linpeas, pspy) are executed.
 
 We can run:
 ```sh
-sudo /bin/gdump
+sudo /bin/gcore
 ```
 
-This binary is effectively a wrapper around process-dumping functionality, similar to `gcore`.  
-It allows privileged users to dump the memory of another process — which is a powerful primitive when misconfigured.
+This binary allows privileged users to dump the memory of another process — which is a powerful primitive when misconfigured.
 
 Additionally, a strange SUID binary named password-store is found:
 
@@ -135,14 +134,13 @@ To identify relevant running processes, `pspy` is used:
 
 We observe that a process related to the password-store or authentication runs with PID 494.  
 
-Since we can dump arbitrary process memory via `sudo gdump`, we extract it:
+Since we can dump arbitrary process memory via `sudo gcore`, we extract it:
 
 ```sh
 sudo /bin/gcore -a -o output.txt 494
 ```
 
-This produces a large ELF core dump.  
-We extract readable strings:
+This produces a large ELF core dump. We extract readable strings:
 
 ```sh
 strings output.txt.494 > output_cleaned.txt
