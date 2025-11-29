@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MDK3 on Chief Dennis&#39; Blog</title>
-    <link>http://localhost:1313/tags/mdk3/</link>
+    <link>https://chiefdennis.github.io/tags/mdk3/</link>
     <description>Recent content in MDK3 on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 15 May 2025 15:43:16 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/mdk3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chiefdennis.github.io/tags/mdk3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WifiChallenge Lab CTF</title>
-      <link>http://localhost:1313/projects/wifi_challenge_lab/</link>
+      <link>https://chiefdennis.github.io/projects/wifi_challenge_lab/</link>
       <pubDate>Thu, 15 May 2025 15:43:16 +0100</pubDate>
-      <guid>http://localhost:1313/projects/wifi_challenge_lab/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/projects/wifi_challenge_lab/image1.png&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&#xD;&#xA;  Introduction&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introduction&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;This write-up summarizes the completion of the WiFiChallenge Lab, a practical cybersecurity exercise focused on wireless network security. Throughout the lab, various Wi-Fi attack techniques were explored and executed, including packet capture, handshake extraction, password cracking, and exploiting common vulnerabilities in WEP and WPA/WPA2 networks. The objective was to simulate real-world scenarios, enhance practical skills in wireless penetration testing, and deepen understanding of Wi-Fi security protocols and their weaknesses. This walkthrough outlines the methodology, tools used, challenges encountered, and key takeaways from the experience.&lt;/p&gt;</description>
+      <guid>https://chiefdennis.github.io/projects/wifi_challenge_lab/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://chiefdennis.github.io/projects/wifi_challenge_lab/image1.png&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&#xD;&#xA;  Introduction&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introduction&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;This write-up summarizes the completion of the WiFiChallenge Lab, a practical cybersecurity exercise focused on wireless network security. Throughout the lab, various Wi-Fi attack techniques were explored and executed, including packet capture, handshake extraction, password cracking, and exploiting common vulnerabilities in WEP and WPA/WPA2 networks. The objective was to simulate real-world scenarios, enhance practical skills in wireless penetration testing, and deepen understanding of Wi-Fi security protocols and their weaknesses. This walkthrough outlines the methodology, tools used, challenges encountered, and key takeaways from the experience.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

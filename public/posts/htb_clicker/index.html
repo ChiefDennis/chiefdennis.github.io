@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <title>
   Clicker HTB Walkthrough · Chief Dennis&#39; Blog
 </title>
@@ -41,7 +41,7 @@ Where the arguments mean:">
 - SQL Injection- CRLF Injection- Parameter Tampering- PHP Reverse Shell- Perl_startup Local Privilege EscalationReconnaissanceLink to headingWe start a broad Nmap scan by executing the following command:
 sudo nmap -sS -T5 -vvv -p- 10.10.11.232 -Pn -oG nmap_inicial Where the arguments mean:">
 
-<meta property="og:url" content="http://localhost:1313/posts/htb_clicker/">
+<meta property="og:url" content="https://chiefdennis.github.io/posts/htb_clicker/">
   <meta property="og:site_name" content="Chief Dennis&#39; Blog">
   <meta property="og:title" content="Clicker HTB Walkthrough">
   <meta property="og:description" content="The Clicker HTB machine is a medium difficulty level HackTheBox Machine. The main techniques used to crack this machine are:
@@ -57,18 +57,18 @@ sudo nmap -sS -T5 -vvv -p- 10.10.11.232 -Pn -oG nmap_inicial Where the arguments
     <meta property="article:tag" content="Parameter Tampering">
     <meta property="article:tag" content="PHP Reverse Shell">
     <meta property="article:tag" content="Perl_startup Local Privilege Escalation">
-      <meta property="og:see_also" content="http://localhost:1313/posts/htb_blurry/">
-      <meta property="og:see_also" content="http://localhost:1313/posts/htb_runner/">
-      <meta property="og:see_also" content="http://localhost:1313/posts/htb_boardlight/">
-      <meta property="og:see_also" content="http://localhost:1313/posts/htb_usage/">
-      <meta property="og:see_also" content="http://localhost:1313/posts/htb_monitored/">
-      <meta property="og:see_also" content="http://localhost:1313/posts/htb_bizness/">
-      <meta property="og:see_also" content="http://localhost:1313/posts/htb_twomillion/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/htb_blurry/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/htb_runner/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/htb_boardlight/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/htb_usage/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/htb_monitored/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/htb_bizness/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/htb_twomillion/">
 
 
 
 
-<link rel="canonical" href="http://localhost:1313/posts/htb_clicker/">
+<link rel="canonical" href="https://chiefdennis.github.io/posts/htb_clicker/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -78,7 +78,7 @@ sudo nmap -sS -T5 -vvv -p- 10.10.11.232 -Pn -oG nmap_inicial Where the arguments
 
   
   
-  <link rel="stylesheet" href="/css/coder.css" media="screen">
+  <link rel="stylesheet" href="/css/coder.min.ed30115a76cdaa62f2229e973d5b1c89b2d3dd4b1d9c07a729baad06aa3b0cbe.css" integrity="sha256-7TARWnbNqmLyIp6XPVscibLT3UsdnAenKbqtBqo7DL4=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -88,7 +88,7 @@ sudo nmap -sS -T5 -vvv -p- 10.10.11.232 -Pn -oG nmap_inicial Where the arguments
   
     
     
-    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
   
 
 
@@ -96,7 +96,7 @@ sudo nmap -sS -T5 -vvv -p- 10.10.11.232 -Pn -oG nmap_inicial Where the arguments
  
   
     
-    <link rel="stylesheet" href="/css/custom.css" media="screen">
+    <link rel="stylesheet" href="/css/custom.min.de332fc1405ae8603f697e77d3ffe869fde950cc77184ea542dc2be374a0b92b.css" integrity="sha256-3jMvwUBa6GA/aX530//oaf3pUMx3GE6lQtwr43SguSs=" crossorigin="anonymous" media="screen" />
   
 
 
@@ -141,7 +141,7 @@ sudo nmap -sS -T5 -vvv -p- 10.10.11.232 -Pn -oG nmap_inicial Where the arguments
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="http://localhost:1313/">
+    <a class="navigation-title" href="https://chiefdennis.github.io/">
       Chief Dennis&#39; Blog
     </a>
     
@@ -188,7 +188,7 @@ sudo nmap -sS -T5 -vvv -p- 10.10.11.232 -Pn -oG nmap_inicial Where the arguments
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="http://localhost:1313/posts/htb_clicker/">
+            <a class="title-link" href="https://chiefdennis.github.io/posts/htb_clicker/">
               Clicker HTB Walkthrough
             </a>
           </h1>
@@ -620,7 +620,7 @@ And it works! Checking out the file:</p>
 
   
   
-  <script src="/js/coder.js"></script>
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
   
 
   

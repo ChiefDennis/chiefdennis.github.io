@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Open-Source on Chief Dennis&#39; Blog</title>
-    <link>http://localhost:1313/tags/open-source/</link>
+    <link>https://chiefdennis.github.io/tags/open-source/</link>
     <description>Recent content in Open-Source on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 29 Dec 2023 15:43:16 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chiefdennis.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GPS NMEA TCP/IP stream to COM port via com0com and com2tcp</title>
-      <link>http://localhost:1313/projects/nmea_ip_to_google_earth/</link>
+      <link>https://chiefdennis.github.io/projects/nmea_ip_to_google_earth/</link>
       <pubDate>Fri, 29 Dec 2023 15:43:16 +0100</pubDate>
-      <guid>http://localhost:1313/projects/nmea_ip_to_google_earth/</guid>
+      <guid>https://chiefdennis.github.io/projects/nmea_ip_to_google_earth/</guid>
       <description>&lt;p&gt;In this project we will explore how we can serve TCP/IP data coming in through an open port, and turn it into a virtual serial port or COM port.&#xA;In this case, I have a router that has an internal GPS that can serve the NMEA sentences to a given IP and port via TCP/IP. However, most programs that use GPS (like Google Earth) do it through a COM port. So, how can we &amp;rsquo;translate&amp;rsquo; the TCP/IP data into a serial COM stream?&lt;/p&gt;</description>
     </item>
   </channel>

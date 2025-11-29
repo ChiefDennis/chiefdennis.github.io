@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Memory Dump on Chief Dennis&#39; Blog</title>
-    <link>http://localhost:1313/tags/memory-dump/</link>
+    <link>https://chiefdennis.github.io/tags/memory-dump/</link>
     <description>Recent content in Memory Dump on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 29 Aug 2025 18:00:00 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/memory-dump/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Nov 2025 11:00:00 +0100</lastBuildDate>
+    <atom:link href="https://chiefdennis.github.io/tags/memory-dump/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pelican Offsec Walkthrough</title>
-      <link>http://localhost:1313/posts/pelican-walkthrough/</link>
-      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
-      <guid>http://localhost:1313/posts/pelican-walkthrough/</guid>
-      <description>&lt;h2 id=&#34;pelican-offsec-walkthrough&#34;&gt;&#xD;&#xA;  Pelican OffSec Walkthrough&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#pelican-offsec-walkthrough&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;http://localhost:1313/posts/pelican-walkthrough/Picture_0.png&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;This walkthrough covers the full exploitation path for the Pelican target, from initial reconnaissance to root compromise and post-exploitation considerations.&lt;br&gt;&#xA;We focus on service enumeration, misconfigurations, abusing an exposed Exhibitor instance, credential extraction through memory dumping, and privilege escalation.&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-reconnaissance&#34;&gt;&#xD;&#xA;  1. Reconnaissance&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#1-reconnaissance&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;First, a ping is made to verify connection with the machine:&lt;/p&gt;</description>
+      <link>https://chiefdennis.github.io/posts/pelican-walkthrough/</link>
+      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
+      <guid>https://chiefdennis.github.io/posts/pelican-walkthrough/</guid>
+      <description>&lt;h2 id=&#34;pelican-offsec-walkthrough&#34;&gt;&#xD;&#xA;  Pelican OffSec Walkthrough&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#pelican-offsec-walkthrough&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://chiefdennis.github.io/posts/pelican-walkthrough/Picture_0.png&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;This walkthrough covers the full exploitation path for the Pelican target, from initial reconnaissance to root compromise and post-exploitation considerations. We focus on service enumeration, misconfigurations, abusing an exposed Exhibitor instance, credential extraction through memory dumping, and privilege escalation.&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-reconnaissance&#34;&gt;&#xD;&#xA;  1. Reconnaissance&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#1-reconnaissance&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;First, a ping is made to verify connection with the machine:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

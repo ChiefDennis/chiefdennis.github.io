@@ -9,12 +9,12 @@ title = "About"
 
 
 
-Hello! I'm Dennis, an Aerospace Engineering graduate who embarked on a journey of exploration and innovation. My academic journey reached new heights when I successfully attained my Aerospace Engineering Degree, marking a significant milestone in my educational pursuit.
+Hello! I’m Dennis, a cybersecurity engineer with a background in aerospace engineering and a passion for complex technical systems. My academic journey began with a Bachelor’s in Aerospace Engineering, where I developed strong analytical and problem-solving skills that continue to shape the way I approach technology and security.
 
-I kick-started my professional voyage in the dynamic world of aerospace by contributing my skills and knowledge at Airbus. This invaluable experience laid the groundwork for my current role at Cicomtec Sistemas SL. Here, I find myself immersed in the realm of cutting-edge technology, working with a team that specializes in providing telecommunication devices, including surveillance tools to high-profile clients and special forces.
+Over the years, I’ve worked in environments that blend telecommunications, IT security, and critical infrastructure. These roles have allowed me to gain hands-on experience with Linux systems, networking, cloud architectures, firewalls, IDS/IPS, automation, and secure system design. I’ve also been deeply involved in vulnerability management, patch orchestration, and the development of technical solutions that improve the reliability and security of large-scale operational systems.
 
-My responsibilities have afforded me a panoramic view of technology, networking, and Linux operating systems. Engaging in cloud projects, particularly in Microsoft Azure, has become second nature to me. From deploying and configuring virtual machines to orchestrating NSG and firewalls, I thrive in the ever-evolving landscape of IT solutions.
+To advance my expertise, I completed a Master’s Degree in Cybersecurity, graduating with the highest distinction and earning a 10/10 on my master’s thesis, which focused on cloud security and crypto-agile key orchestration across major cloud providers. This academic work solidified my interest in cryptography, cloud security, and secure infrastructure.
 
-While conquering the tech world, I've also set my sights on the realm of cybersecurity. Armed with the SC-900 Microsoft Certification, I'm currently sharpening my skills for the AZ-500 certification. Beyond certifications, I have my eyes on a future in cybersecurity and am contemplating pursuing a master's degree in the field to deepen my expertise.
+I hold the Microsoft SC-900 certification and am currently pursuing AZ-500 to further strengthen my cloud security capabilities. My technical toolkit spans Python, Bash, PowerShell, cloud services, and a broad range of security tools and methodologies.
 
-Away from the complexities of circuits and codes, I find peace in the enchanting world of classical music. For over 15 years, I've been a devoted pianist, earning accolades for my musical accomplishments. I take immense joy in sharing my passion for music with others and have had the privilege of teaching piano to students of all ages.
+Beyond technology, I’m a classically trained pianist with over 15 years of musical education. Music continues to be a meaningful creative outlet and an important part of my life.
