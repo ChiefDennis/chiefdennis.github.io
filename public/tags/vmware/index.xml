@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VMWare on Chief Dennis&#39; Blog</title>
-    <link>https://chiefdennis.github.io/tags/vmware/</link>
+    <link>http://localhost:1313/tags/vmware/</link>
     <description>Recent content in VMWare on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 20 May 2025 15:43:16 +0100</lastBuildDate>
-    <atom:link href="https://chiefdennis.github.io/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Operational installation of a VPN with OpenVPN</title>
-      <link>https://chiefdennis.github.io/projects/operational_installation_openvpn/</link>
+      <link>http://localhost:1313/projects/operational_installation_openvpn/</link>
       <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/projects/operational_installation_openvpn/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://chiefdennis.github.io/projects/operational_installation_openvpn/image1.png&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&#xD;&#xA;  Introduction&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introduction&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Currently, Virtual Private Networks (VPNs) are a widely used solution to establish secure communication channels over public or shared networks. Its main objective is to offer confidentiality, authentication and integrity in the transmission of data between different devices, simulating a private local network by encrypting the information that circulates through the network.&lt;/p&gt;&#xA;&lt;p&gt;In this practice, a VPN has been implemented using OpenVPN, an open-source toolthat allows you to create encrypted tunnels based on the SSL/TLS protocol. The work environment is composed of three Kali Linux virtual machines:&lt;/p&gt;</description>
+      <guid>http://localhost:1313/projects/operational_installation_openvpn/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/projects/operational_installation_openvpn/image1.png&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&#xD;&#xA;  Introduction&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introduction&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Currently, Virtual Private Networks (VPNs) are a widely used solution to establish secure communication channels over public or shared networks. Its main objective is to offer confidentiality, authentication and integrity in the transmission of data between different devices, simulating a private local network by encrypting the information that circulates through the network.&lt;/p&gt;&#xA;&lt;p&gt;In this practice, a VPN has been implemented using OpenVPN, an open-source toolthat allows you to create encrypted tunnels based on the SSL/TLS protocol. The work environment is composed of three Kali Linux virtual machines:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

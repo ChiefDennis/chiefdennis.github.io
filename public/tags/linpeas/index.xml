@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LinPEAS on Chief Dennis&#39; Blog</title>
-    <link>https://chiefdennis.github.io/tags/linpeas/</link>
+    <link>http://localhost:1313/tags/linpeas/</link>
     <description>Recent content in LinPEAS on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 16 Mar 2025 13:07:16 +0100</lastBuildDate>
-    <atom:link href="https://chiefdennis.github.io/tags/linpeas/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/linpeas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Snookum Offsec Walkthrough</title>
-      <link>https://chiefdennis.github.io/posts/offsec_snookum/</link>
+      <link>http://localhost:1313/posts/offsec_snookum/</link>
       <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/posts/offsec_snookum/</guid>
+      <guid>http://localhost:1313/posts/offsec_snookum/</guid>
       <description>&lt;h2 id=&#34;snookum-offsec-walkthrough&#34;&gt;&#xD;&#xA;  Snookum OffSec Walkthrough&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#snookum-offsec-walkthrough&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;rfi-vulnerability&#34;&gt;&#xD;&#xA;  RFI Vulnerability&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#rfi-vulnerability&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;Remote File Inclusion (RFI) is a vulnerability in web applications that allows an attacker to upload and execute files hosted on external servers. This flaw occurs when an applicationdynamically includes files without properly validating user input, which can lead to the execution of malicious code. If proper security measures are not taken, RFI can completely compromise a system, facilitating data theft, malware execution, or even full control of the server.&lt;/p&gt;</description>
     </item>
   </channel>

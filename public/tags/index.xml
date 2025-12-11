@@ -2,794 +2,836 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Chief Dennis&#39; Blog</title>
-    <link>https://chiefdennis.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Chief Dennis&#39; Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 29 Nov 2025 19:00:00 +0100</lastBuildDate>
-    <atom:link href="https://chiefdennis.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Dec 2025 13:07:16 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CS-Cart Authenticated RCE</title>
-      <link>https://chiefdennis.github.io/tags/cs-cart-authenticated-rce/</link>
-      <pubDate>Sat, 29 Nov 2025 19:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cs-cart-authenticated-rce/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PHP Webshell</title>
-      <link>https://chiefdennis.github.io/tags/php-webshell/</link>
-      <pubDate>Sat, 29 Nov 2025 19:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/php-webshell/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Weak Credentials</title>
-      <link>https://chiefdennis.github.io/tags/weak-credentials/</link>
-      <pubDate>Sat, 29 Nov 2025 19:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/weak-credentials/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Apache-ZooKeeper</title>
-      <link>https://chiefdennis.github.io/tags/apache-zookeeper/</link>
-      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/apache-zookeeper/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Exhibitor</title>
-      <link>https://chiefdennis.github.io/tags/exhibitor/</link>
-      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/exhibitor/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Exhibitor Unauthenticated RCE</title>
-      <link>https://chiefdennis.github.io/tags/exhibitor-unauthenticated-rce/</link>
-      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/exhibitor-unauthenticated-rce/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ExploitDB-48654</title>
-      <link>https://chiefdennis.github.io/tags/exploitdb-48654/</link>
-      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/exploitdb-48654/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Gdump</title>
-      <link>https://chiefdennis.github.io/tags/gdump/</link>
-      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/gdump/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Memory Dump</title>
-      <link>https://chiefdennis.github.io/tags/memory-dump/</link>
-      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/memory-dump/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Password-Store</title>
-      <link>https://chiefdennis.github.io/tags/password-store/</link>
-      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/password-store/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>RCE</title>
-      <link>https://chiefdennis.github.io/tags/rce/</link>
-      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/rce/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SUID</title>
-      <link>https://chiefdennis.github.io/tags/suid/</link>
-      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/suid/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Binary Decoding</title>
-      <link>https://chiefdennis.github.io/tags/binary-decoding/</link>
-      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/binary-decoding/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ClamAV</title>
-      <link>https://chiefdennis.github.io/tags/clamav/</link>
-      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/clamav/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CyberChef</title>
-      <link>https://chiefdennis.github.io/tags/cyberchef/</link>
-      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cyberchef/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Inetd</title>
-      <link>https://chiefdennis.github.io/tags/inetd/</link>
-      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/inetd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Perl</title>
-      <link>https://chiefdennis.github.io/tags/perl/</link>
-      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/perl/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Remote Command Execution</title>
-      <link>https://chiefdennis.github.io/tags/remote-command-execution/</link>
-      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/remote-command-execution/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SearchSploit</title>
-      <link>https://chiefdennis.github.io/tags/searchsploit/</link>
-      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/searchsploit/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sendmail</title>
-      <link>https://chiefdennis.github.io/tags/sendmail/</link>
-      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/sendmail/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SMTP Open Relay</title>
-      <link>https://chiefdennis.github.io/tags/smtp-open-relay/</link>
-      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/smtp-open-relay/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CVE-2009-3103</title>
-      <link>https://chiefdennis.github.io/tags/cve-2009-3103/</link>
-      <pubDate>Mon, 09 Jun 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2009-3103/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Metasploit</title>
-      <link>https://chiefdennis.github.io/tags/metasploit/</link>
-      <pubDate>Mon, 09 Jun 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/metasploit/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Nmap</title>
-      <link>https://chiefdennis.github.io/tags/nmap/</link>
-      <pubDate>Mon, 09 Jun 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/nmap/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SMB</title>
-      <link>https://chiefdennis.github.io/tags/smb/</link>
-      <pubDate>Mon, 09 Jun 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/smb/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Aircrack-Ng</title>
-      <link>https://chiefdennis.github.io/tags/aircrack-ng/</link>
-      <pubDate>Sun, 01 Jun 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/aircrack-ng/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hashcat</title>
-      <link>https://chiefdennis.github.io/tags/hashcat/</link>
-      <pubDate>Sun, 01 Jun 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/hashcat/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Hcxpcapngtool</title>
-      <link>https://chiefdennis.github.io/tags/hcxpcapngtool/</link>
-      <pubDate>Sun, 01 Jun 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/hcxpcapngtool/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Wireshark</title>
-      <link>https://chiefdennis.github.io/tags/wireshark/</link>
-      <pubDate>Sun, 01 Jun 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/wireshark/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Certificates</title>
-      <link>https://chiefdennis.github.io/tags/certificates/</link>
-      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/certificates/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Networkig</title>
-      <link>https://chiefdennis.github.io/tags/networkig/</link>
-      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/networkig/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>OpenVPN</title>
-      <link>https://chiefdennis.github.io/tags/openvpn/</link>
-      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/openvpn/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PKI</title>
-      <link>https://chiefdennis.github.io/tags/pki/</link>
-      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/pki/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>VMWare</title>
-      <link>https://chiefdennis.github.io/tags/vmware/</link>
-      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/vmware/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>VPN</title>
-      <link>https://chiefdennis.github.io/tags/vpn/</link>
-      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/vpn/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>BurpSuite</title>
-      <link>https://chiefdennis.github.io/tags/burpsuite/</link>
-      <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/burpsuite/</guid>
+      <title>Authorized_keys</title>
+      <link>http://localhost:1313/tags/authorized_keys/</link>
+      <pubDate>Thu, 11 Dec 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/authorized_keys/</guid>
       <description></description>
     </item>
     <item>
       <title>Feroxbuster</title>
-      <link>https://chiefdennis.github.io/tags/feroxbuster/</link>
+      <link>http://localhost:1313/tags/feroxbuster/</link>
+      <pubDate>Thu, 11 Dec 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/feroxbuster/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GTFObins</title>
+      <link>http://localhost:1313/tags/gtfobins/</link>
+      <pubDate>Thu, 11 Dec 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/gtfobins/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NFS</title>
+      <link>http://localhost:1313/tags/nfs/</link>
+      <pubDate>Thu, 11 Dec 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/nfs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSH</title>
+      <link>http://localhost:1313/tags/ssh/</link>
+      <pubDate>Thu, 11 Dec 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/ssh/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Start-Stop-Deamon</title>
+      <link>http://localhost:1313/tags/start-stop-deamon/</link>
+      <pubDate>Thu, 11 Dec 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/start-stop-deamon/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SUID Privilege Escalation</title>
+      <link>http://localhost:1313/tags/suid-privilege-escalation/</link>
+      <pubDate>Thu, 11 Dec 2025 13:07:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/suid-privilege-escalation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CS-Cart Authenticated RCE</title>
+      <link>http://localhost:1313/tags/cs-cart-authenticated-rce/</link>
+      <pubDate>Sat, 29 Nov 2025 19:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/cs-cart-authenticated-rce/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PHP Webshell</title>
+      <link>http://localhost:1313/tags/php-webshell/</link>
+      <pubDate>Sat, 29 Nov 2025 19:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/php-webshell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Weak Credentials</title>
+      <link>http://localhost:1313/tags/weak-credentials/</link>
+      <pubDate>Sat, 29 Nov 2025 19:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/weak-credentials/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Apache-ZooKeeper</title>
+      <link>http://localhost:1313/tags/apache-zookeeper/</link>
+      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/apache-zookeeper/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Exhibitor</title>
+      <link>http://localhost:1313/tags/exhibitor/</link>
+      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/exhibitor/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Exhibitor Unauthenticated RCE</title>
+      <link>http://localhost:1313/tags/exhibitor-unauthenticated-rce/</link>
+      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/exhibitor-unauthenticated-rce/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ExploitDB-48654</title>
+      <link>http://localhost:1313/tags/exploitdb-48654/</link>
+      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/exploitdb-48654/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gdump</title>
+      <link>http://localhost:1313/tags/gdump/</link>
+      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/gdump/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Memory Dump</title>
+      <link>http://localhost:1313/tags/memory-dump/</link>
+      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/memory-dump/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Password-Store</title>
+      <link>http://localhost:1313/tags/password-store/</link>
+      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/password-store/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RCE</title>
+      <link>http://localhost:1313/tags/rce/</link>
+      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/rce/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SUID</title>
+      <link>http://localhost:1313/tags/suid/</link>
+      <pubDate>Sat, 29 Nov 2025 11:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/suid/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Binary Decoding</title>
+      <link>http://localhost:1313/tags/binary-decoding/</link>
+      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/binary-decoding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ClamAV</title>
+      <link>http://localhost:1313/tags/clamav/</link>
+      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/clamav/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CyberChef</title>
+      <link>http://localhost:1313/tags/cyberchef/</link>
+      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/cyberchef/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Inetd</title>
+      <link>http://localhost:1313/tags/inetd/</link>
+      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/inetd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Perl</title>
+      <link>http://localhost:1313/tags/perl/</link>
+      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/perl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Remote Command Execution</title>
+      <link>http://localhost:1313/tags/remote-command-execution/</link>
+      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/remote-command-execution/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SearchSploit</title>
+      <link>http://localhost:1313/tags/searchsploit/</link>
+      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/searchsploit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sendmail</title>
+      <link>http://localhost:1313/tags/sendmail/</link>
+      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/sendmail/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SMTP Open Relay</title>
+      <link>http://localhost:1313/tags/smtp-open-relay/</link>
+      <pubDate>Fri, 29 Aug 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/smtp-open-relay/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CVE-2009-3103</title>
+      <link>http://localhost:1313/tags/cve-2009-3103/</link>
+      <pubDate>Mon, 09 Jun 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/cve-2009-3103/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Metasploit</title>
+      <link>http://localhost:1313/tags/metasploit/</link>
+      <pubDate>Mon, 09 Jun 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/metasploit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nmap</title>
+      <link>http://localhost:1313/tags/nmap/</link>
+      <pubDate>Mon, 09 Jun 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/nmap/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SMB</title>
+      <link>http://localhost:1313/tags/smb/</link>
+      <pubDate>Mon, 09 Jun 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/smb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Aircrack-Ng</title>
+      <link>http://localhost:1313/tags/aircrack-ng/</link>
+      <pubDate>Sun, 01 Jun 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/aircrack-ng/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hashcat</title>
+      <link>http://localhost:1313/tags/hashcat/</link>
+      <pubDate>Sun, 01 Jun 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/hashcat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hcxpcapngtool</title>
+      <link>http://localhost:1313/tags/hcxpcapngtool/</link>
+      <pubDate>Sun, 01 Jun 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/hcxpcapngtool/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wireshark</title>
+      <link>http://localhost:1313/tags/wireshark/</link>
+      <pubDate>Sun, 01 Jun 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/wireshark/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Certificates</title>
+      <link>http://localhost:1313/tags/certificates/</link>
+      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/certificates/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Networkig</title>
+      <link>http://localhost:1313/tags/networkig/</link>
+      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/networkig/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenVPN</title>
+      <link>http://localhost:1313/tags/openvpn/</link>
+      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/openvpn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PKI</title>
+      <link>http://localhost:1313/tags/pki/</link>
+      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/pki/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VMWare</title>
+      <link>http://localhost:1313/tags/vmware/</link>
+      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/vmware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VPN</title>
+      <link>http://localhost:1313/tags/vpn/</link>
+      <pubDate>Tue, 20 May 2025 15:43:16 +0100</pubDate>
+      <guid>http://localhost:1313/tags/vpn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>BurpSuite</title>
+      <link>http://localhost:1313/tags/burpsuite/</link>
       <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/feroxbuster/</guid>
+      <guid>http://localhost:1313/tags/burpsuite/</guid>
       <description></description>
     </item>
     <item>
       <title>Privilege Escalation</title>
-      <link>https://chiefdennis.github.io/tags/privilege-escalation/</link>
+      <link>http://localhost:1313/tags/privilege-escalation/</link>
       <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/privilege-escalation/</guid>
+      <guid>http://localhost:1313/tags/privilege-escalation/</guid>
       <description></description>
     </item>
     <item>
       <title>SQL Injection</title>
-      <link>https://chiefdennis.github.io/tags/sql-injection/</link>
+      <link>http://localhost:1313/tags/sql-injection/</link>
       <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/sql-injection/</guid>
+      <guid>http://localhost:1313/tags/sql-injection/</guid>
       <description></description>
     </item>
     <item>
       <title>SQLmap</title>
-      <link>https://chiefdennis.github.io/tags/sqlmap/</link>
+      <link>http://localhost:1313/tags/sqlmap/</link>
       <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/sqlmap/</guid>
+      <guid>http://localhost:1313/tags/sqlmap/</guid>
       <description></description>
     </item>
     <item>
       <title>Tar Wildcard Exploitation</title>
-      <link>https://chiefdennis.github.io/tags/tar-wildcard-exploitation/</link>
+      <link>http://localhost:1313/tags/tar-wildcard-exploitation/</link>
       <pubDate>Sun, 18 May 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/tar-wildcard-exploitation/</guid>
+      <guid>http://localhost:1313/tags/tar-wildcard-exploitation/</guid>
       <description></description>
     </item>
     <item>
       <title>Air-Hammer</title>
-      <link>https://chiefdennis.github.io/tags/air-hammer/</link>
+      <link>http://localhost:1313/tags/air-hammer/</link>
       <pubDate>Thu, 15 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/air-hammer/</guid>
+      <guid>http://localhost:1313/tags/air-hammer/</guid>
       <description></description>
     </item>
     <item>
       <title>Aircrack-Ng Suite</title>
-      <link>https://chiefdennis.github.io/tags/aircrack-ng-suite/</link>
+      <link>http://localhost:1313/tags/aircrack-ng-suite/</link>
       <pubDate>Thu, 15 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/aircrack-ng-suite/</guid>
+      <guid>http://localhost:1313/tags/aircrack-ng-suite/</guid>
       <description></description>
     </item>
     <item>
       <title>Eapbuster</title>
-      <link>https://chiefdennis.github.io/tags/eapbuster/</link>
+      <link>http://localhost:1313/tags/eapbuster/</link>
       <pubDate>Thu, 15 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/eapbuster/</guid>
+      <guid>http://localhost:1313/tags/eapbuster/</guid>
       <description></description>
     </item>
     <item>
       <title>Hcxtool</title>
-      <link>https://chiefdennis.github.io/tags/hcxtool/</link>
+      <link>http://localhost:1313/tags/hcxtool/</link>
       <pubDate>Thu, 15 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/hcxtool/</guid>
+      <guid>http://localhost:1313/tags/hcxtool/</guid>
       <description></description>
     </item>
     <item>
       <title>Hxcdump</title>
-      <link>https://chiefdennis.github.io/tags/hxcdump/</link>
+      <link>http://localhost:1313/tags/hxcdump/</link>
       <pubDate>Thu, 15 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/hxcdump/</guid>
+      <guid>http://localhost:1313/tags/hxcdump/</guid>
       <description></description>
     </item>
     <item>
       <title>MDK3</title>
-      <link>https://chiefdennis.github.io/tags/mdk3/</link>
+      <link>http://localhost:1313/tags/mdk3/</link>
       <pubDate>Thu, 15 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/mdk3/</guid>
+      <guid>http://localhost:1313/tags/mdk3/</guid>
       <description></description>
     </item>
     <item>
       <title>MDK4</title>
-      <link>https://chiefdennis.github.io/tags/mdk4/</link>
+      <link>http://localhost:1313/tags/mdk4/</link>
       <pubDate>Thu, 15 May 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/mdk4/</guid>
+      <guid>http://localhost:1313/tags/mdk4/</guid>
       <description></description>
     </item>
     <item>
       <title>Argus Surveillance DVR 4.0</title>
-      <link>https://chiefdennis.github.io/tags/argus-surveillance-dvr-4.0/</link>
+      <link>http://localhost:1313/tags/argus-surveillance-dvr-4.0/</link>
       <pubDate>Tue, 01 Apr 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/argus-surveillance-dvr-4.0/</guid>
+      <guid>http://localhost:1313/tags/argus-surveillance-dvr-4.0/</guid>
       <description></description>
     </item>
     <item>
       <title>Local File Inclusion</title>
-      <link>https://chiefdennis.github.io/tags/local-file-inclusion/</link>
+      <link>http://localhost:1313/tags/local-file-inclusion/</link>
       <pubDate>Tue, 01 Apr 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/local-file-inclusion/</guid>
+      <guid>http://localhost:1313/tags/local-file-inclusion/</guid>
       <description></description>
     </item>
     <item>
       <title>Path Traversal</title>
-      <link>https://chiefdennis.github.io/tags/path-traversal/</link>
+      <link>http://localhost:1313/tags/path-traversal/</link>
       <pubDate>Tue, 01 Apr 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/path-traversal/</guid>
+      <guid>http://localhost:1313/tags/path-traversal/</guid>
       <description></description>
     </item>
     <item>
       <title>RunAs Exploitation</title>
-      <link>https://chiefdennis.github.io/tags/runas-exploitation/</link>
+      <link>http://localhost:1313/tags/runas-exploitation/</link>
       <pubDate>Tue, 01 Apr 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/runas-exploitation/</guid>
+      <guid>http://localhost:1313/tags/runas-exploitation/</guid>
       <description></description>
     </item>
     <item>
       <title>WinPEAS</title>
-      <link>https://chiefdennis.github.io/tags/winpeas/</link>
+      <link>http://localhost:1313/tags/winpeas/</link>
       <pubDate>Tue, 01 Apr 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/winpeas/</guid>
+      <guid>http://localhost:1313/tags/winpeas/</guid>
       <description></description>
     </item>
     <item>
       <title>Base64 Password Decoding</title>
-      <link>https://chiefdennis.github.io/tags/base64-password-decoding/</link>
+      <link>http://localhost:1313/tags/base64-password-decoding/</link>
       <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/base64-password-decoding/</guid>
+      <guid>http://localhost:1313/tags/base64-password-decoding/</guid>
       <description></description>
     </item>
     <item>
       <title>LinPEAS</title>
-      <link>https://chiefdennis.github.io/tags/linpeas/</link>
+      <link>http://localhost:1313/tags/linpeas/</link>
       <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/linpeas/</guid>
+      <guid>http://localhost:1313/tags/linpeas/</guid>
       <description></description>
     </item>
     <item>
       <title>MySQL Credential Extraction</title>
-      <link>https://chiefdennis.github.io/tags/mysql-credential-extraction/</link>
+      <link>http://localhost:1313/tags/mysql-credential-extraction/</link>
       <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/mysql-credential-extraction/</guid>
+      <guid>http://localhost:1313/tags/mysql-credential-extraction/</guid>
       <description></description>
     </item>
     <item>
       <title>Remote File Inclusion</title>
-      <link>https://chiefdennis.github.io/tags/remote-file-inclusion/</link>
+      <link>http://localhost:1313/tags/remote-file-inclusion/</link>
       <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/remote-file-inclusion/</guid>
+      <guid>http://localhost:1313/tags/remote-file-inclusion/</guid>
       <description></description>
     </item>
     <item>
       <title>Writable /Etc/Passwd Exploit</title>
-      <link>https://chiefdennis.github.io/tags/writable-/etc/passwd-exploit/</link>
+      <link>http://localhost:1313/tags/writable-/etc/passwd-exploit/</link>
       <pubDate>Sun, 16 Mar 2025 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/writable-/etc/passwd-exploit/</guid>
+      <guid>http://localhost:1313/tags/writable-/etc/passwd-exploit/</guid>
       <description></description>
     </item>
     <item>
       <title>Metasploitable3</title>
-      <link>https://chiefdennis.github.io/tags/metasploitable3/</link>
+      <link>http://localhost:1313/tags/metasploitable3/</link>
       <pubDate>Sun, 23 Feb 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/metasploitable3/</guid>
+      <guid>http://localhost:1313/tags/metasploitable3/</guid>
       <description></description>
     </item>
     <item>
       <title>Nessus</title>
-      <link>https://chiefdennis.github.io/tags/nessus/</link>
+      <link>http://localhost:1313/tags/nessus/</link>
       <pubDate>Sun, 23 Feb 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/nessus/</guid>
+      <guid>http://localhost:1313/tags/nessus/</guid>
       <description></description>
     </item>
     <item>
       <title>OpenVAS</title>
-      <link>https://chiefdennis.github.io/tags/openvas/</link>
+      <link>http://localhost:1313/tags/openvas/</link>
       <pubDate>Sun, 23 Feb 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/openvas/</guid>
+      <guid>http://localhost:1313/tags/openvas/</guid>
       <description></description>
     </item>
     <item>
       <title>Vulnerability Analysis</title>
-      <link>https://chiefdennis.github.io/tags/vulnerability-analysis/</link>
+      <link>http://localhost:1313/tags/vulnerability-analysis/</link>
       <pubDate>Sun, 23 Feb 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/vulnerability-analysis/</guid>
+      <guid>http://localhost:1313/tags/vulnerability-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>ARP Spoofing</title>
-      <link>https://chiefdennis.github.io/tags/arp-spoofing/</link>
+      <link>http://localhost:1313/tags/arp-spoofing/</link>
       <pubDate>Sun, 09 Feb 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/arp-spoofing/</guid>
+      <guid>http://localhost:1313/tags/arp-spoofing/</guid>
       <description></description>
     </item>
     <item>
       <title>Bettercap</title>
-      <link>https://chiefdennis.github.io/tags/bettercap/</link>
+      <link>http://localhost:1313/tags/bettercap/</link>
       <pubDate>Sun, 09 Feb 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/bettercap/</guid>
+      <guid>http://localhost:1313/tags/bettercap/</guid>
       <description></description>
     </item>
     <item>
       <title>Cradential Theft</title>
-      <link>https://chiefdennis.github.io/tags/cradential-theft/</link>
+      <link>http://localhost:1313/tags/cradential-theft/</link>
       <pubDate>Sun, 09 Feb 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cradential-theft/</guid>
+      <guid>http://localhost:1313/tags/cradential-theft/</guid>
       <description></description>
     </item>
     <item>
       <title>DNS Spoofing</title>
-      <link>https://chiefdennis.github.io/tags/dns-spoofing/</link>
+      <link>http://localhost:1313/tags/dns-spoofing/</link>
       <pubDate>Sun, 09 Feb 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/dns-spoofing/</guid>
+      <guid>http://localhost:1313/tags/dns-spoofing/</guid>
       <description></description>
     </item>
     <item>
       <title>Website Cloning</title>
-      <link>https://chiefdennis.github.io/tags/website-cloning/</link>
+      <link>http://localhost:1313/tags/website-cloning/</link>
       <pubDate>Sun, 09 Feb 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/website-cloning/</guid>
+      <guid>http://localhost:1313/tags/website-cloning/</guid>
       <description></description>
     </item>
     <item>
       <title>Histogram Analysis</title>
-      <link>https://chiefdennis.github.io/tags/histogram-analysis/</link>
+      <link>http://localhost:1313/tags/histogram-analysis/</link>
       <pubDate>Wed, 01 Jan 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/histogram-analysis/</guid>
+      <guid>http://localhost:1313/tags/histogram-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>LSB</title>
-      <link>https://chiefdennis.github.io/tags/lsb/</link>
+      <link>http://localhost:1313/tags/lsb/</link>
       <pubDate>Wed, 01 Jan 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/lsb/</guid>
+      <guid>http://localhost:1313/tags/lsb/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://chiefdennis.github.io/tags/python/</link>
+      <link>http://localhost:1313/tags/python/</link>
       <pubDate>Wed, 01 Jan 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/python/</guid>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Steganography</title>
-      <link>https://chiefdennis.github.io/tags/steganography/</link>
+      <link>http://localhost:1313/tags/steganography/</link>
       <pubDate>Wed, 01 Jan 2025 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/steganography/</guid>
+      <guid>http://localhost:1313/tags/steganography/</guid>
       <description></description>
     </item>
     <item>
       <title>ClearML</title>
-      <link>https://chiefdennis.github.io/tags/clearml/</link>
+      <link>http://localhost:1313/tags/clearml/</link>
       <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/clearml/</guid>
+      <guid>http://localhost:1313/tags/clearml/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2024-24590</title>
-      <link>https://chiefdennis.github.io/tags/cve-2024-24590/</link>
+      <link>http://localhost:1313/tags/cve-2024-24590/</link>
       <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2024-24590/</guid>
+      <guid>http://localhost:1313/tags/cve-2024-24590/</guid>
       <description></description>
     </item>
     <item>
       <title>Fickling</title>
-      <link>https://chiefdennis.github.io/tags/fickling/</link>
+      <link>http://localhost:1313/tags/fickling/</link>
       <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/fickling/</guid>
+      <guid>http://localhost:1313/tags/fickling/</guid>
       <description></description>
     </item>
     <item>
       <title>Json Deserialization</title>
-      <link>https://chiefdennis.github.io/tags/json-deserialization/</link>
+      <link>http://localhost:1313/tags/json-deserialization/</link>
       <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/json-deserialization/</guid>
+      <guid>http://localhost:1313/tags/json-deserialization/</guid>
       <description></description>
     </item>
     <item>
       <title>Python Scripting</title>
-      <link>https://chiefdennis.github.io/tags/python-scripting/</link>
+      <link>http://localhost:1313/tags/python-scripting/</link>
       <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/python-scripting/</guid>
+      <guid>http://localhost:1313/tags/python-scripting/</guid>
       <description></description>
     </item>
     <item>
       <title>Script Analysis</title>
-      <link>https://chiefdennis.github.io/tags/script-analysis/</link>
+      <link>http://localhost:1313/tags/script-analysis/</link>
       <pubDate>Sun, 16 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/script-analysis/</guid>
+      <guid>http://localhost:1313/tags/script-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2024-21626</title>
-      <link>https://chiefdennis.github.io/tags/cve-2024-21626/</link>
+      <link>http://localhost:1313/tags/cve-2024-21626/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2024-21626/</guid>
+      <guid>http://localhost:1313/tags/cve-2024-21626/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2024-27198</title>
-      <link>https://chiefdennis.github.io/tags/cve-2024-27198/</link>
+      <link>http://localhost:1313/tags/cve-2024-27198/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2024-27198/</guid>
+      <guid>http://localhost:1313/tags/cve-2024-27198/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker Escape</title>
-      <link>https://chiefdennis.github.io/tags/docker-escape/</link>
+      <link>http://localhost:1313/tags/docker-escape/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/docker-escape/</guid>
+      <guid>http://localhost:1313/tags/docker-escape/</guid>
       <description></description>
     </item>
     <item>
       <title>Ffuf</title>
-      <link>https://chiefdennis.github.io/tags/ffuf/</link>
+      <link>http://localhost:1313/tags/ffuf/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/ffuf/</guid>
+      <guid>http://localhost:1313/tags/ffuf/</guid>
       <description></description>
     </item>
     <item>
       <title>Grep</title>
-      <link>https://chiefdennis.github.io/tags/grep/</link>
+      <link>http://localhost:1313/tags/grep/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/grep/</guid>
+      <guid>http://localhost:1313/tags/grep/</guid>
       <description></description>
     </item>
     <item>
       <title>JohnTheRipper</title>
-      <link>https://chiefdennis.github.io/tags/johntheripper/</link>
+      <link>http://localhost:1313/tags/johntheripper/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/johntheripper/</guid>
+      <guid>http://localhost:1313/tags/johntheripper/</guid>
       <description></description>
     </item>
     <item>
       <title>RunC</title>
-      <link>https://chiefdennis.github.io/tags/runc/</link>
+      <link>http://localhost:1313/tags/runc/</link>
       <pubDate>Mon, 10 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/runc/</guid>
+      <guid>http://localhost:1313/tags/runc/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2022-37706</title>
-      <link>https://chiefdennis.github.io/tags/cve-2022-37706/</link>
+      <link>http://localhost:1313/tags/cve-2022-37706/</link>
       <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2022-37706/</guid>
+      <guid>http://localhost:1313/tags/cve-2022-37706/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2023-30253</title>
-      <link>https://chiefdennis.github.io/tags/cve-2023-30253/</link>
+      <link>http://localhost:1313/tags/cve-2023-30253/</link>
       <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2023-30253/</guid>
+      <guid>http://localhost:1313/tags/cve-2023-30253/</guid>
       <description></description>
     </item>
     <item>
       <title>Dollibarr</title>
-      <link>https://chiefdennis.github.io/tags/dollibarr/</link>
+      <link>http://localhost:1313/tags/dollibarr/</link>
       <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/dollibarr/</guid>
+      <guid>http://localhost:1313/tags/dollibarr/</guid>
       <description></description>
     </item>
     <item>
       <title>Find</title>
-      <link>https://chiefdennis.github.io/tags/find/</link>
+      <link>http://localhost:1313/tags/find/</link>
       <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/find/</guid>
+      <guid>http://localhost:1313/tags/find/</guid>
       <description></description>
     </item>
     <item>
       <title>Subdomain Discovery</title>
-      <link>https://chiefdennis.github.io/tags/subdomain-discovery/</link>
+      <link>http://localhost:1313/tags/subdomain-discovery/</link>
       <pubDate>Tue, 04 Jun 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/subdomain-discovery/</guid>
+      <guid>http://localhost:1313/tags/subdomain-discovery/</guid>
       <description></description>
     </item>
     <item>
       <title>7z Wildcard Spare</title>
-      <link>https://chiefdennis.github.io/tags/7z-wildcard-spare/</link>
+      <link>http://localhost:1313/tags/7z-wildcard-spare/</link>
       <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/7z-wildcard-spare/</guid>
+      <guid>http://localhost:1313/tags/7z-wildcard-spare/</guid>
       <description></description>
     </item>
     <item>
       <title>Hash Cracking</title>
-      <link>https://chiefdennis.github.io/tags/hash-cracking/</link>
+      <link>http://localhost:1313/tags/hash-cracking/</link>
       <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/hash-cracking/</guid>
+      <guid>http://localhost:1313/tags/hash-cracking/</guid>
       <description></description>
     </item>
     <item>
       <title>Wfuzz</title>
-      <link>https://chiefdennis.github.io/tags/wfuzz/</link>
+      <link>http://localhost:1313/tags/wfuzz/</link>
       <pubDate>Wed, 29 May 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/wfuzz/</guid>
+      <guid>http://localhost:1313/tags/wfuzz/</guid>
       <description></description>
     </item>
     <item>
       <title>Azure</title>
-      <link>https://chiefdennis.github.io/tags/azure/</link>
+      <link>http://localhost:1313/tags/azure/</link>
       <pubDate>Thu, 11 Apr 2024 08:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/azure/</guid>
+      <guid>http://localhost:1313/tags/azure/</guid>
       <description></description>
     </item>
     <item>
       <title>Virtual Machines</title>
-      <link>https://chiefdennis.github.io/tags/virtual-machines/</link>
+      <link>http://localhost:1313/tags/virtual-machines/</link>
       <pubDate>Thu, 11 Apr 2024 08:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/virtual-machines/</guid>
+      <guid>http://localhost:1313/tags/virtual-machines/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2023-40931</title>
-      <link>https://chiefdennis.github.io/tags/cve-2023-40931/</link>
+      <link>http://localhost:1313/tags/cve-2023-40931/</link>
       <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2023-40931/</guid>
+      <guid>http://localhost:1313/tags/cve-2023-40931/</guid>
       <description></description>
     </item>
     <item>
       <title>Dirsearch</title>
-      <link>https://chiefdennis.github.io/tags/dirsearch/</link>
+      <link>http://localhost:1313/tags/dirsearch/</link>
       <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/dirsearch/</guid>
+      <guid>http://localhost:1313/tags/dirsearch/</guid>
       <description></description>
     </item>
     <item>
       <title>NMAP UDP</title>
-      <link>https://chiefdennis.github.io/tags/nmap-udp/</link>
+      <link>http://localhost:1313/tags/nmap-udp/</link>
       <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/nmap-udp/</guid>
+      <guid>http://localhost:1313/tags/nmap-udp/</guid>
       <description></description>
     </item>
     <item>
       <title>SNMPwalk</title>
-      <link>https://chiefdennis.github.io/tags/snmpwalk/</link>
+      <link>http://localhost:1313/tags/snmpwalk/</link>
       <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/snmpwalk/</guid>
+      <guid>http://localhost:1313/tags/snmpwalk/</guid>
       <description></description>
     </item>
     <item>
       <title>UDP Enumeration</title>
-      <link>https://chiefdennis.github.io/tags/udp-enumeration/</link>
+      <link>http://localhost:1313/tags/udp-enumeration/</link>
       <pubDate>Sat, 17 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/udp-enumeration/</guid>
+      <guid>http://localhost:1313/tags/udp-enumeration/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2023-51457</title>
-      <link>https://chiefdennis.github.io/tags/cve-2023-51457/</link>
+      <link>http://localhost:1313/tags/cve-2023-51457/</link>
       <pubDate>Fri, 02 Feb 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2023-51457/</guid>
+      <guid>http://localhost:1313/tags/cve-2023-51457/</guid>
       <description></description>
     </item>
     <item>
       <title>API Enumeration</title>
-      <link>https://chiefdennis.github.io/tags/api-enumeration/</link>
+      <link>http://localhost:1313/tags/api-enumeration/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/api-enumeration/</guid>
+      <guid>http://localhost:1313/tags/api-enumeration/</guid>
       <description></description>
     </item>
     <item>
       <title>Command Injection</title>
-      <link>https://chiefdennis.github.io/tags/command-injection/</link>
+      <link>http://localhost:1313/tags/command-injection/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/command-injection/</guid>
+      <guid>http://localhost:1313/tags/command-injection/</guid>
       <description></description>
     </item>
     <item>
       <title>CVE-2023-0386</title>
-      <link>https://chiefdennis.github.io/tags/cve-2023-0386/</link>
+      <link>http://localhost:1313/tags/cve-2023-0386/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/cve-2023-0386/</guid>
+      <guid>http://localhost:1313/tags/cve-2023-0386/</guid>
       <description></description>
     </item>
     <item>
       <title>JS Deobfuscation</title>
-      <link>https://chiefdennis.github.io/tags/js-deobfuscation/</link>
+      <link>http://localhost:1313/tags/js-deobfuscation/</link>
       <pubDate>Tue, 16 Jan 2024 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/js-deobfuscation/</guid>
+      <guid>http://localhost:1313/tags/js-deobfuscation/</guid>
       <description></description>
     </item>
     <item>
       <title>Open-Source</title>
-      <link>https://chiefdennis.github.io/tags/open-source/</link>
+      <link>http://localhost:1313/tags/open-source/</link>
       <pubDate>Fri, 29 Dec 2023 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/open-source/</guid>
+      <guid>http://localhost:1313/tags/open-source/</guid>
       <description></description>
     </item>
     <item>
       <title>Source Code Compilation</title>
-      <link>https://chiefdennis.github.io/tags/source-code-compilation/</link>
+      <link>http://localhost:1313/tags/source-code-compilation/</link>
       <pubDate>Fri, 29 Dec 2023 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/source-code-compilation/</guid>
+      <guid>http://localhost:1313/tags/source-code-compilation/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows</title>
-      <link>https://chiefdennis.github.io/tags/windows/</link>
+      <link>http://localhost:1313/tags/windows/</link>
       <pubDate>Fri, 29 Dec 2023 15:43:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/windows/</guid>
+      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     <item>
       <title>CRLF Injection</title>
-      <link>https://chiefdennis.github.io/tags/crlf-injection/</link>
+      <link>http://localhost:1313/tags/crlf-injection/</link>
       <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/crlf-injection/</guid>
+      <guid>http://localhost:1313/tags/crlf-injection/</guid>
       <description></description>
     </item>
     <item>
       <title>Parameter Tampering</title>
-      <link>https://chiefdennis.github.io/tags/parameter-tampering/</link>
+      <link>http://localhost:1313/tags/parameter-tampering/</link>
       <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/parameter-tampering/</guid>
+      <guid>http://localhost:1313/tags/parameter-tampering/</guid>
       <description></description>
     </item>
     <item>
       <title>Perl_startup Local Privilege Escalation</title>
-      <link>https://chiefdennis.github.io/tags/perl_startup-local-privilege-escalation/</link>
+      <link>http://localhost:1313/tags/perl_startup-local-privilege-escalation/</link>
       <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/perl_startup-local-privilege-escalation/</guid>
+      <guid>http://localhost:1313/tags/perl_startup-local-privilege-escalation/</guid>
       <description></description>
     </item>
     <item>
       <title>PHP Reverse Shell</title>
-      <link>https://chiefdennis.github.io/tags/php-reverse-shell/</link>
+      <link>http://localhost:1313/tags/php-reverse-shell/</link>
       <pubDate>Mon, 27 Nov 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/php-reverse-shell/</guid>
+      <guid>http://localhost:1313/tags/php-reverse-shell/</guid>
       <description></description>
     </item>
     <item>
       <title>Batch Script Analysis</title>
-      <link>https://chiefdennis.github.io/tags/batch-script-analysis/</link>
+      <link>http://localhost:1313/tags/batch-script-analysis/</link>
       <pubDate>Wed, 13 Sep 2023 13:07:16 +0100</pubDate>
-      <guid>https://chiefdennis.github.io/tags/batch-script-analysis/</guid>
+      <guid>http://localhost:1313/tags/batch-script-analysis/</guid>
       <description></description>
     </item>
   </channel>
